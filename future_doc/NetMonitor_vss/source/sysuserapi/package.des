@@ -1,0 +1,48 @@
+<sysuserapi version="1" type="cpp" includedir="." platform="all">
+	<parameter>
+		<UFDatatypeEnv>
+		<FTDEnv>
+		<FTDSysUserEnv>
+	</parameter>
+	<depend>
+		<ftdprotocol version="1"/>
+	</depend>
+	<cppfile>
+		<FtdcSysUserApiImpl.cpp/>
+		<FtdcSysUserApiImplBase.cpp/>
+	</cppfile>
+	<headfile>
+		<FtdcSysUserApi.h/>
+		<FtdcSysUserApiImpl.h/>
+		<FtdcSysUserApiImplBase.h/>
+		<FtdcSysUserApiDataType.h/>
+		<FtdcSysUserApiStruct.h/>
+	</headfile>
+	<command>
+		<pump>
+			<target type=file value=FtdcSysUserApiDataType.h/>
+			<template type=file value=FtdcSysUserApiDataType.h.tpl/>
+			<env type=parameter value=UFDatatypeEnv/>
+		</pump>
+		<pump>
+			<target type=file value=FtdcSysUserApiStruct.h/>
+			<template type=file value=FtdcSysUserApiStruct.h.tpl/>
+			<env type=parameter value=FTDEnv/>
+		</pump>
+		<pump>
+			<target type=file value=FtdcSysUserApi.h/>
+			<template type=file value=FtdcSysUserApi.h.tpl/>
+			<env type=parameter value=FTDSysUserEnv/>
+		</pump>
+		<pump>
+			<target type=file value=FtdcSysUserApiImpl.h/>
+			<template type=file value=FtdcSysUserApiImpl.h.tpl/>
+			<env type=parameter value=FTDSysUserEnv/>
+		</pump>
+		<pump>
+			<target type=file value=FtdcSysUserApiImpl.cpp/>
+			<template type=file value=FtdcSysUserApiImpl.cpp.tpl/>
+			<env type=parameter value=FTDSysUserEnv/>
+		</pump>
+	</command>
+</sysuserapi>

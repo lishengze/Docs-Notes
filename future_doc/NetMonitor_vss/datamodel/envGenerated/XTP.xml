@@ -1,0 +1,2556 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE XTP SYSTEM "../commonEnv/XTP.dtd">
+<XTP author="赵鸿昊" version="1.0" head="XTP" comment="XTP协议中用到的各种包和域">
+	<packages>
+		<package name="Nop" tid="0x00000009" comment="空操作" usage="request">
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspError" tid="0x00000001" comment="错误应答" usage="response">
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqUserLogin" tid="0x00001001" comment="用户登录请求" usage="request">
+			<field name="UserLogin" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspUserLogin" tid="0x00001002" comment="用户登录应答" usage="response">
+			<field name="UserLogin" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqUserLogout" tid="0x00001003" comment="用户退出请求" usage="request">
+			<field name="UserLogout" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspUserLogout" tid="0x00001004" comment="用户退出应答" usage="response">
+			<field name="UserLogout" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqOrderInsert" tid="0x00001005" comment="报单录入请求" usage="request">
+			<field name="InputOrder" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspOrderInsert" tid="0x00001006" comment="报单录入应答" usage="response">
+			<field name="InputOrder" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqOrderAction" tid="0x00001007" comment="报单操作请求" usage="request">
+			<field name="OrderAction" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="RspOrderAction" tid="0x00001008" comment="报单操作应答" usage="response">
+			<field name="OrderAction" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQuoteInsert" tid="0x00001009" comment="报价录入请求" usage="request">
+			<field name="InputQuote" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="RspQuoteInsert" tid="0x0000100A" comment="报价录入应答" usage="response">
+			<field name="InputQuote" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQuoteAction" tid="0x0000100B" comment="报价操作请求" usage="request">
+			<field name="QuoteAction" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="RspQuoteAction" tid="0x0000100C" comment="报价操作应答" usage="response">
+			<field name="QuoteAction" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqOTCOrderInsert" tid="0x0000100D" comment="OTC报单录入请求" usage="request">
+			<field name="OTCOrder" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="RspOTCOrderInsert" tid="0x0000100E" comment="OTC报单录入应答" usage="response">
+			<field name="OTCOrder" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqUserPasswordUpdate" tid="0x0000100F" comment="用户密码修改请求" usage="request">
+			<field name="UserPasswordUpdate" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspUserPasswordUpdate" tid="0x00001010" comment="用户密码修改应答" usage="response">
+			<field name="UserPasswordUpdate" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqExecOrderInsert" tid="0x00001011" comment="执行宣告录入请求" usage="request">
+			<field name="InputExecOrder" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspExecOrderInsert" tid="0x00001012" comment="执行宣告录入应答" usage="response">
+			<field name="InputExecOrder" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqExecOrderAction" tid="0x00001013" comment="执行宣告操作请求" usage="request">
+			<field name="ExecOrderAction" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="RspExecOrderAction" tid="0x00001014" comment="执行宣告操作应答" usage="response">
+			<field name="ExecOrderAction" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqAdminOrderInsert" tid="0x00001015" comment="管理报单录入请求" usage="request">
+			<field name="InputAdminOrder" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspAdminOrderInsert" tid="0x00001016" comment="管理报单录入应答" usage="response">
+			<field name="InputAdminOrder" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqCombOrderInsert" tid="0x00001017" comment="组合报单录入请求" usage="request">
+			<field name="InputCombOrder" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspCombOrderInsert" tid="0x00001018" comment="组合报单录入应答" usage="response">
+			<field name="InputCombOrder" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqBulletin" tid="0x00002005" comment="交易所公告请求" usage="request">
+			<field name="Bulletin" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspBulletin" tid="0x00002006" comment="交易所公告请求应答" usage="response">
+			<field name="Bulletin" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqInstrumentStatusUpdate" tid="0x00002007" comment="合约交易状态改变请求" usage="request">
+			<field name="InstrumentStatus" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="RspInstrumentStatusUpdate" tid="0x00002008" comment="合约交易状态改变应答" usage="response">
+			<field name="InstrumentStatus" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqForceUserExit" tid="0x0000200B" comment="强制用户退出请求" usage="request">
+			<field name="ForceUserExit" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspForceUserExit" tid="0x0000200C" comment="强制用户退出应答" usage="response">
+			<field name="ForceUserExit" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqForceUserLogout" tid="0x0000200D" comment="用户会话删除请求" usage="request">
+			<field name="ForceUserExit" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspForceUserLogout" tid="0x0000200E" comment="用户会话删除应答" usage="response">
+			<field name="ForceUserExit" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqExchangeDataSyncStatusUpdate" tid="0x00002013" comment="交易所数据同步状态改变请求" usage="request">
+			<field name="ExchangeDataSyncStatus" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspExchangeDataSyncStatusUpdate" tid="0x00002014" comment="交易所数据同步状态改变应答" usage="response">
+			<field name="ExchangeDataSyncStatus" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqSGDataSyncStatusUpdate" tid="0x00002015" comment="结算组数据同步状态改变请求" usage="request">
+			<field name="SGDataSyncStatus" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspSGDataSyncStatusUpdate" tid="0x00002016" comment="结算组数据同步状态改变应答" usage="response">
+			<field name="SGDataSyncStatus" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqExchangeDataSync" tid="0x00002801" comment="交易所数据同步请求" usage="request">
+			<field name="ExchangeTradingDay" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspExchangeDataSync" tid="0x00002802" comment="交易所数据同步应答" usage="response">
+			<field name="ExchangeTradingDay" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqSgDataSync" tid="0x00002803" comment="结算组数据同步请求" usage="request">
+			<field name="SettlementSession" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspSgDataSync" tid="0x00002804" comment="结算组数据同步应答" usage="response">
+			<field name="SettlementSession" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqInformation" tid="0x00002805" comment="交易所信息请求" usage="request">
+			<field name="Information" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspInformation" tid="0x00002806" comment="交易所公告信息应答" usage="response">
+			<field name="Information" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqFrontStatus" tid="0x00009001" comment="前置状态报告请求" usage="request">
+			<field name="FrontStatus" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspFrontStatus" tid="0x00009002" comment="前置状态报告应答" usage="response">
+			<field name="FrontStatus" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryPartAccount" tid="0x00004001" comment="会员资金查询请求" usage="request">
+			<field name="QryPartAccount" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryPartAccount" tid="0x00004002" comment="会员资金查询应答" usage="response">
+			<field name="RspPartAccount" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryOrder" tid="0x00004003" comment="报单查询请求" usage="request">
+			<field name="QryOrder" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryOrder" tid="0x00004004" comment="报单查询应答" usage="response">
+			<field name="Order" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryQuote" tid="0x00004005" comment="报价查询请求" usage="request">
+			<field name="QryQuote" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryQuote" tid="0x00004006" comment="报价查询应答" usage="response">
+			<field name="Quote" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryTrade" tid="0x00004007" comment="成交单查询请求" usage="request">
+			<field name="QryTrade" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryTrade" tid="0x00004008" comment="成交单查询应答" usage="response">
+			<field name="Trade" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryClient" tid="0x00004009" comment="会员客户查询请求" usage="request">
+			<field name="QryClient" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryClient" tid="0x0000400A" comment="会员客户查询应答" usage="response">
+			<field name="RspClient" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryPartPosition" tid="0x0000400B" comment="会员持仓查询请求" usage="request">
+			<field name="QryPartPosition" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryPartPosition" tid="0x0000400C" comment="会员持仓查询应答" usage="response">
+			<field name="RspPartPosition" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryClientPosition" tid="0x0000400D" comment="客户持仓查询请求" usage="request">
+			<field name="QryClientPosition" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryClientPosition" tid="0x0000400E" comment="客户持仓查询应答" usage="response">
+			<field name="RspClientPosition" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryInstrument" tid="0x0000400F" comment="合约查询请求" usage="request">
+			<field name="QryInstrument" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryInstrument" tid="0x00004010" comment="合约查询应答" usage="response">
+			<field name="RspInstrument" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryInstrumentStatus" tid="0x00004011" comment="合约交易状态查询请求" usage="request">
+			<field name="QryInstrumentStatus" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryInstrumentStatus" tid="0x00004012" comment="合约交易状态查询应答" usage="response">
+			<field name="InstrumentStatus" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQrySGDataSyncStatus" tid="0x00004013" comment="结算组数据同步状态查询请求" usage="request">
+			<field name="QrySGDataSyncStatus" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQrySGDataSyncStatus" tid="0x00004014" comment="结算组数据同步状态查询应答" usage="response">
+			<field name="SGDataSyncStatus" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryHedgeVolume" tid="0x00004015" comment="保值额度查询" usage="request">
+			<field name="QryHedgeVolume" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryHedgeVolume" tid="0x00004016" comment="保值额度应答" usage="response">
+			<field name="HedgeVolume" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryCombOrder" tid="0x00004017" comment="组合报单查询请求" usage="request">
+			<field name="QryCombOrder" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryCombOrder" tid="0x00004018" comment="组合报单查询应答" usage="response">
+			<field name="CombOrder" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryExecOrder" tid="0x00004020" comment="执行宣告查询请求" usage="request">
+			<field name="QryExecOrder" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryExecOrder" tid="0x00004021" comment="执行宣告查询应答" usage="response">
+			<field name="ExecOrder" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryMarketData" tid="0x00004101" comment="普通行情查询请求" usage="request">
+			<field name="QryMarketData" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryMarketData" tid="0x00004102" comment="普通行情查询应答" usage="response">
+			<field name="MarketData" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ReqQryBulletin" tid="0x00004103" comment="交易所公告查询请求" usage="request">
+			<field name="QryBulletin" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryBulletin" tid="0x00004104" comment="交易所公告查询应答" usage="response">
+			<field name="Bulletin" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryUserSession" tid="0x000043D1" comment="用户在线查询请求" usage="request">
+			<field name="QryUserSession" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryUserSession" tid="0x000043D2" comment="用户在线查询应答" usage="response">
+			<field name="UserSession" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryUser" tid="0x000043D3" comment="用户查询请求" usage="request">
+			<field name="QryUser" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryUser" tid="0x000043D4" comment="用户查询应答" usage="response">
+			<field name="User" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryParticipant" tid="0x000043D5" comment="会员查询请求" usage="request">
+			<field name="QryParticipant" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryParticipant" tid="0x000043D6" comment="会员查询应答" usage="response">
+			<field name="Participant" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryMBLMarketData" tid="0x000043E1" comment="合约价位查询" usage="request">
+			<field name="QryMBLMarketData" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryMBLMarketData" tid="0x000043E2" comment="合约价位查询应答" usage="response">
+			<field name="MBLMarketData" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryInformation" tid="0x000043E3" comment="信息查询" usage="request">
+			<field name="QryInformation" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="RspQryInformation" tid="0x000043E4" comment="信息查询应答" usage="response">
+			<field name="Information" minOccur="1" maxOccur="1"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryExchangeStatus" tid="0x00004801" comment="交易所状态查询" usage="request">
+			<field name="QryExchangeStatus" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryExchangeStatus" tid="0x00004802" comment="交易所状态应答" usage="response">
+			<field name="ExchangeStatus" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryExchangeDataSyncStatus" tid="0x00004803" comment="交易所数据同步状态查询" usage="request">
+			<field name="QryExchangeDataSyncStatus" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryExchangeDataSyncStatus" tid="0x00004804" comment="交易所数据同步状态应答" usage="response">
+			<field name="ExchangeDataSyncStatus" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQrySettlementGroupStatus" tid="0x00004811" comment="结算组状态查询" usage="request">
+			<field name="QrySettlementGroupStatus" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQrySettlementGroupStatus" tid="0x00004812" comment="结算组状态应答" usage="response">
+			<field name="SettlementGroupStatus" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryCreditLimit" tid="0x00004813" comment="信用限额查询请求" usage="request">
+			<field name="QryCreditLimit" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryCreditLimit" tid="0x00004814" comment="信用限额查询应答" usage="response">
+			<field name="CreditLimit" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ReqQryExchangeRate" tid="0x00004815" comment="汇率查询请求" usage="request">
+			<field name="QryExchangeRate" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="RspQryExchangeRate" tid="0x00004816" comment="汇率查询应答" usage="response">
+			<field name="RspExchangeRate" minOccur="1" maxOccur="*"/>
+			<field name="RspInfo" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbAccountDeposit" tid="0x00003001" comment="资金帐户入金" usage="dbmt">
+			<field name="DbmtAccountDeposit" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdateAllInstrumentStatus" tid="0x00003002" comment="调整所有合约状态" usage="dbmt">
+			<field name="DbmtUpdateAllInstrumentStatus" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbClockDelta" tid="0x00003003" comment="调整排队机业务时钟" usage="dbmt">
+			<field name="DbmtClockDelta" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="DbInsClient" tid="0x00003021" comment="增加客户" usage="dbmt">
+			<field name="DbmtClient" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdClient" tid="0x00003022" comment="修改客户" usage="dbmt">
+			<field name="DbmtClient" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsPartClient" tid="0x00003024" comment="增加会员客户关系" usage="dbmt">
+			<field name="DbmtPartClient" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelPartClient" tid="0x00003025" comment="删除会员客户关系" usage="dbmt">
+			<field name="DbmtPartClient" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsCurrPartPosiLimitDetail" tid="0x00003031" comment="增加会员合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrPartPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdCurrPartPosiLimitDetail" tid="0x00003032" comment="修改会员合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrPartPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelCurrPartPosiLimitDetail" tid="0x00003033" comment="删除会员合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrPartPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsCurrClientPosiLimitDetail" tid="0x00003041" comment="增加客户合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrClientPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdCurrClientPosiLimitDetail" tid="0x00003042" comment="修改客户合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrClientPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelCurrClientPosiLimitDetail" tid="0x00003043" comment="删除客户合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrClientPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsCurrSpecialPosiLimitDetail" tid="0x00003051" comment="增加特殊客户合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrSpecialPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdCurrSpecialPosiLimitDetail" tid="0x00003052" comment="修改特殊客户合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrSpecialPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelCurrSpecialPosiLimitDetail" tid="0x00003053" comment="删除特殊客户合约持仓限额" usage="dbmt">
+			<field name="DbmtCurrSpecialPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsHedgeDetail" tid="0x00003061" comment="增加保值额度" usage="dbmt">
+			<field name="DbmtHedgeDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdCurrHedge" tid="0x00003062" comment="更新当前保值额度" usage="dbmt">
+			<field name="DbmtCurrHedge" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsUser" tid="0x00003071" comment="增加交易用户" usage="dbmt">
+			<field name="DbmtUser" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdUser" tid="0x00003072" comment="修改交易用户" usage="dbmt">
+			<field name="DbmtUser" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsPartProductRight" tid="0x00003081" comment="增加会员产品权限" usage="dbmt">
+			<field name="DbmtPartProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdPartProductRight" tid="0x00003082" comment="修改会员产品权限" usage="dbmt">
+			<field name="DbmtPartProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelPartProductRight" tid="0x00003083" comment="删除会员产品权限" usage="dbmt">
+			<field name="DbmtPartProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsClientProductRight" tid="0x00003084" comment="增加客户产品权限" usage="dbmt">
+			<field name="DbmtClientProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdClientProductRight" tid="0x00003085" comment="修改客户产品权限" usage="dbmt">
+			<field name="DbmtClientProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelClientProductRight" tid="0x00003086" comment="删除客户产品权限" usage="dbmt">
+			<field name="DbmtClientProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsPartInstrumentRight" tid="0x00003091" comment="增加会员合约权限" usage="dbmt">
+			<field name="DbmtPartInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdPartInstrumentRight" tid="0x00003092" comment="修改会员合约权限" usage="dbmt">
+			<field name="DbmtPartInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelPartInstrumentRight" tid="0x00003093" comment="删除会员合约权限" usage="dbmt">
+			<field name="DbmtPartInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsClientInstrumentRight" tid="0x00003094" comment="增加客户合约权限" usage="dbmt">
+			<field name="DbmtClientInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdClientInstrumentRight" tid="0x00003095" comment="修改客户合约权限" usage="dbmt">
+			<field name="DbmtClientInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelClientInstrumentRight" tid="0x00003096" comment="删除客户合约权限" usage="dbmt">
+			<field name="DbmtClientInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsPartClientProductRight" tid="0x000030F1" comment="增加会员客户产品权限" usage="dbmt">
+			<field name="DbmtPartClientProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdPartClientProductRight" tid="0x000030F2" comment="修改会员客户产品权限" usage="dbmt">
+			<field name="DbmtPartClientProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelPartClientProductRight" tid="0x000030F3" comment="删除会员客户产品权限" usage="dbmt">
+			<field name="DbmtPartClientProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsPartClientInstrumentRight" tid="0x000030F4" comment="增加会员客户合约权限" usage="dbmt">
+			<field name="DbmtPartClientInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdPartClientInstrumentRight" tid="0x000030F5" comment="修改会员客户合约权限" usage="dbmt">
+			<field name="DbmtPartClientInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelPartClientInstrumentRight" tid="0x000030F6" comment="删除会员客户合约权限" usage="dbmt">
+			<field name="DbmtPartClientInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsCurrMarginRateDetail" tid="0x000030A1" comment="增加会员合约保证金率" usage="dbmt">
+			<field name="DbmtCurrMarginRateDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdCurrMarginRateDetail" tid="0x000030A2" comment="修改会员合约保证金率" usage="dbmt">
+			<field name="DbmtCurrMarginRateDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelCurrMarginRateDetail" tid="0x000030A3" comment="删除会员合约保证金率" usage="dbmt">
+			<field name="DbmtCurrMarginRateDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdMarketData" tid="0x000030B1" comment="数据库发出的最终行情" usage="dbmt">
+			<field name="DbmtMarketData" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsUserIP" tid="0x000030C1" comment="增加用户IP地址" usage="dbmt">
+			<field name="DbmtUserIP" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelUserIP" tid="0x000030C3" comment="删除用户IP地址" usage="dbmt">
+			<field name="DbmtUserIP" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbInsCurrPriceBanding" tid="0x000030D1" comment="增加价格绑定" usage="dbmt">
+			<field name="DbmtCurrPriceBanding" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbUpdCurrPriceBanding" tid="0x000030D2" comment="修改价格绑定" usage="dbmt">
+			<field name="DbmtCurrPriceBanding" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="DbDelCurrPriceBanding" tid="0x000030D3" comment="删除价格绑定" usage="dbmt">
+			<field name="DbmtCurrPriceBanding" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfTimeSync" tid="0x00005001" comment="时间同步" usage="notifyIn">
+			<field name="CurrentTime" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="NtfCommPhaseChange" tid="0x00005002" comment="通讯阶段切换通知" usage="notifyIn">
+			<field name="CommPhase" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="NtfDataCenterDesc" tid="0x00005003" comment="数据中心位置通知" usage="notifyIn">
+			<field name="DataCenterDesc" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="NtfInsInstrument" tid="0x00005101" comment="增加合约通知" usage="notifyOut">
+			<field name="Instrument" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="NtfDelInstrument" tid="0x00005102" comment="删除合约通知" usage="notifyOut">
+			<field name="Instrument" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="NtfInsCombinationLeg" tid="0x00005103" comment="增加组合合约单腿通知" usage="notifyOut">
+			<field name="CombinationLeg" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfDelCombinationLeg" tid="0x00005104" comment="删除组合合约单腿通知" usage="notifyOut">
+			<field name="CombinationLeg" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfAliasDefine" tid="0x0000510A" comment="别名定义通知" usage="notifyOut">
+			<field name="AliasDefine" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfOrder" tid="0x00005201" comment="报单通知" usage="notifyOut">
+			<field name="Order" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfTrade" tid="0x00005202" comment="成交通知" usage="notifyOut">
+			<field name="Trade" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfQuote" tid="0x00005203" comment="报价通知" usage="notifyOut">
+			<field name="Quote" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfExecOrder" tid="0x00005204" comment="执行宣告通知" usage="notifyOut">
+			<field name="ExecOrder" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfCombOrder" tid="0x00005205" comment="组合报单通知" usage="notifyOut">
+			<field name="CombOrder" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfInstrumentStatusUpdate" tid="0x00005211" comment="合约交易状态改变通知" usage="notifyOut">
+			<field name="InstrumentStatus" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfDelUserSession" tid="0x00005313" comment="会话删除通知" usage="notifyOut">
+			<field name="UserSession" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfBulletin" tid="0x00005801" comment="交易所公告请求通知" usage="notifyOut">
+			<field name="Bulletin" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfMarketData" tid="0x00005802" comment="普通行情通知" usage="notifyOut">
+			<field name="MarketData" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="NtfDepthMarketData" tid="0x00005803" comment="深度行情通知" usage="notifyOut">
+			<field name="MarketDataBase" minOccur="0" maxOccur="1"/>
+			<field name="MarketDataStatic" minOccur="0" maxOccur="1"/>
+			<field name="MarketDataLastMatch" minOccur="0" maxOccur="1"/>
+			<field name="MarketDataBestPrice" minOccur="0" maxOccur="1"/>
+			<field name="MarketDataBid23" minOccur="0" maxOccur="1"/>
+			<field name="MarketDataAsk23" minOccur="0" maxOccur="1"/>
+			<field name="MarketDataBid45" minOccur="0" maxOccur="1"/>
+			<field name="MarketDataAsk45" minOccur="0" maxOccur="1"/>
+			<field name="MarketDataUpdateTime" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="NtfAdminOrder" tid="0x00005A01" comment="管理报单通知" usage="notifyOut">
+			<field name="AdminOrder" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="ExchangeDataSyncStart" tid="0x00006001" comment="交易所数据同步开始" usage="tinit">
+			<field name="ExchangeTradingDay" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="ExchangeDataSyncEnd" tid="0x00006002" comment="交易所数据同步结束" usage="tinit">
+			<field name="ExchangeTradingDay" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="InitExchange" tid="0x00006101" comment="交易所" usage="exchangeInit">
+			<field name="Exchange" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitSettlementGroup" tid="0x00006102" comment="结算组" usage="exchangeInit">
+			<field name="SettlementGroup" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitMarket" tid="0x00006201" comment="市场" usage="exchangeInit">
+			<field name="Market" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitMarketProduct" tid="0x00006202" comment="市场产品关联" usage="exchangeInit">
+			<field name="MarketProduct" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitMarketProductGroup" tid="0x00006203" comment="市场产品组关联" usage="exchangeInit">
+			<field name="MarketProductGroup" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitMarketDataTopic" tid="0x00006204" comment="行情主题" usage="exchangeInit">
+			<field name="MarketDataTopic" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartTopicSubscribe" tid="0x00006205" comment="会员订阅市场" usage="exchangeInit">
+			<field name="PartTopicSubscribe" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitParticipant" tid="0x00006401" comment="会员" usage="exchangeInit">
+			<field name="Participant" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitUser" tid="0x00006402" comment="用户" usage="exchangeInit">
+			<field name="User" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitClient" tid="0x00006403" comment="客户" usage="exchangeInit">
+			<field name="Client" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartClient" tid="0x00006404" comment="会员客户关系" usage="exchangeInit">
+			<field name="PartClient" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitUserIP" tid="0x00006405" comment="用户IP地址" usage="exchangeInit">
+			<field name="UserIP" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitMdPubStatus" tid="0x00006406" comment="行情发布状态" usage="exchangeInit">
+			<field name="MdPubStatus" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitAliasDefine" tid="0x00006407" comment="别名定义" usage="exchangeInit">
+			<field name="AliasDefine" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitClearingTradingPart" tid="0x00006408" comment="结算交易会员关系" usage="exchangeInit">
+			<field name="ClearingTradingPart" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitUserFunctionRight" tid="0x00006409" comment="用户功能权限" usage="exchangeInit">
+			<field name="UserFunctionRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitAccount" tid="0x0000640A" comment="资金账户" usage="exchangeInit">
+			<field name="Account" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitUserCommFlux" tid="0x0000640B" comment="用户通讯量" usage="exchangeInit">
+			<field name="UserCommFlux" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitIcmiDefine" tid="0x0000640C" comment="有色金属指数定义" usage="exchangeInit">
+			<field name="IcmiDefine" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitIcmiComposition" tid="0x0000640D" comment="有色金属指数成份合约" usage="exchangeInit">
+			<field name="IcmiComposition" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitIcmiWeight" tid="0x0000640E" comment="有色金属指数产品权重" usage="exchangeInit">
+			<field name="IcmiWeight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitIcmiStandardConst" tid="0x0000640F" comment="有色金属指数标准化常数" usage="exchangeInit">
+			<field name="IcmiStandardConst" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitUserMeasure" tid="0x00006410" comment="用户度量" usage="exchangeInit">
+			<field name="UserMeasure" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="SettlementGroupDataSyncStart" tid="0x00007001" comment="结算组数据同步开始" usage="tinit">
+			<field name="SettlementSession" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="SettlementGroupDataSyncEnd" tid="0x00007002" comment="结算组数据同步结束" usage="tinit">
+			<field name="SettlementSession" minOccur="1" maxOccur="1"/>
+		</package>
+		<package name="InitInstrument" tid="0x00007103" comment="合约" usage="sgInit">
+			<field name="Instrument" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCombinationLeg" tid="0x00007104" comment="组合交易合约的单腿" usage="sgInit">
+			<field name="CombinationLeg" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartRoleAccount" tid="0x00007105" comment="会员账户关系" usage="sgInit">
+			<field name="PartRoleAccount" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartProductRole" tid="0x00007201" comment="会员产品角色" usage="sgInit">
+			<field name="PartProductRole" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartProductRight" tid="0x00007202" comment="会员产品交易权限" usage="sgInit">
+			<field name="PartProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartInstrumentRight" tid="0x00007203" comment="会员合约交易权限" usage="sgInit">
+			<field name="PartInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitClientProductRight" tid="0x00007204" comment="客户产品交易权限" usage="sgInit">
+			<field name="ClientProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitClientInstrumentRight" tid="0x00007205" comment="客户合约交易权限" usage="sgInit">
+			<field name="ClientInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartClientProductRight" tid="0x00007206" comment="会员客户产品交易权限" usage="sgInit">
+			<field name="PartClientProductRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartClientInstrumentRight" tid="0x00007207" comment="会员客户合约交易权限" usage="sgInit">
+			<field name="PartClientInstrumentRight" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrProductProperty" tid="0x00007301" comment="产品属性" usage="sgInit">
+			<field name="CurrProductProperty" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrInstrumentProperty" tid="0x00007303" comment="合约属性" usage="sgInit">
+			<field name="CurrInstrumentProperty" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrPriceBanding" tid="0x00007304" comment="当前合约价格绑定" usage="sgInit">
+			<field name="CurrPriceBanding" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrMarginRate" tid="0x00007305" comment="当前合约保证金率" usage="sgInit">
+			<field name="CurrMarginRate" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrMarginRateDetail" tid="0x00007306" comment="当前合约保证金率的详细内容" usage="sgInit">
+			<field name="CurrMarginRateDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrPartPosiLimit" tid="0x00007307" comment="当前会员合约限仓" usage="sgInit">
+			<field name="CurrPartPosiLimit" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrPartPosiLimitDetail" tid="0x00007308" comment="当前会员合约限仓的详细内容" usage="sgInit">
+			<field name="CurrPartPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrClientPosiLimit" tid="0x00007309" comment="当前客户合约限仓" usage="sgInit">
+			<field name="CurrClientPosiLimit" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrClientPosiLimitDetail" tid="0x0000730A" comment="当前客户合约限仓的详细内容" usage="sgInit">
+			<field name="CurrClientPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrSpecialPosiLimit" tid="0x0000730B" comment="当前特殊客户合约限仓" usage="sgInit">
+			<field name="CurrSpecialPosiLimit" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrSpecialPosiLimitDetail" tid="0x0000730C" comment="当前特殊客户合约限仓的详细内容" usage="sgInit">
+			<field name="CurrSpecialPosiLimitDetail" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrHedgeRule" tid="0x0000730D" comment="当前合约套期保值属性" usage="sgInit">
+			<field name="CurrHedgeRule" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrTradingSegmentAttr" tid="0x0000730E" comment="当前合约交易阶段属性" usage="sgInit">
+			<field name="CurrTradingSegmentAttr" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrFuse" tid="0x0000730F" comment="当前合约熔断属性" usage="sgInit">
+			<field name="CurrFuse" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitTradingAccount" tid="0x00007401" comment="交易账户信息" usage="sgInit">
+			<field name="TradingAccount" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitPartPosition" tid="0x00007402" comment="会员合约持仓" usage="sgInit">
+			<field name="PartPosition" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitClientPosition" tid="0x00007403" comment="客户合约持仓" usage="sgInit">
+			<field name="ClientPosition" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitHedgeVolume" tid="0x00007404" comment="保值额度量" usage="sgInit">
+			<field name="HedgeVolume" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitRemainOrder" tid="0x00007405" comment="上日遗留报单" usage="sgInit">
+			<field name="RemainOrder" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitMarketData" tid="0x00007407" comment="市场行情" usage="sgInit">
+			<field name="MarketData" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitBaseReserveAccount" tid="0x0000740A" comment="基础准备金账户" usage="sgInit">
+			<field name="BaseReserveAccount" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitCurrInstrumentOption" tid="0x0000740B" comment="当日期货合约期权属性" usage="sgInit">
+			<field name="CurrInstrumentOption" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitIndexData" tid="0x0000740C" comment="指数初始化行情" usage="sgInit">
+			<field name="IndexData" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitExchangeRate" tid="0x0000740E" comment="当日外币汇率" usage="exchangeInit">
+			<field name="ExchangeRate" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="LoopMeasureData" tid="0x00007411" comment="回路度量" usage="notifyOut">
+			<field name="LoopMeasure" minOccur="1" maxOccur="1"/>
+			<field name="NodeMeasure" minOccur="0" maxOccur="*"/>
+		</package>
+		<package name="LastLoopMeasureData" tid="0x00007414" comment="回路度量结束" usage="notifyOut">
+			<field name="LoopMeasure" minOccur="1" maxOccur="1"/>
+			<field name="NodeMeasure" minOccur="0" maxOccur="*"/>
+		</package>
+		<package name="InitCurrReferenceInstrument" tid="0x00007412" comment="当前参考行情合约" usage="sgInit">
+			<field name="CurrReferenceInstrument" minOccur="1" maxOccur="*"/>
+		</package>
+		<package name="InitProductMarginDeductRate" tid="0x00007413" comment="产品间保证金抵扣率" usage="sgInit">
+			<field name="ProductMarginDeductRate" minOccur="1" maxOccur="*"/>
+		</package>
+	</packages>
+	<fields>
+		<fieldDefine name="UserLogin" fid="0x0001" comment="用户登录">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="Password" type="CPasswordType" description="密码"/>
+			<item name="UserProductInfo" type="CProductInfoType" description="用户端产品信息"/>
+			<item name="InterfaceProductInfo" type="CProductInfoType" description="接口端产品信息"/>
+			<item name="ProtocolInfo" type="CProtocolInfoType" description="协议信息"/>
+			<item name="DataCenterID" type="CDataCenterIDType" description="数据中心代码"/>
+			<item name="LoginTime" type="CTimeType" description="登录成功时间"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MaxOrderLocalID" type="COrderLocalIDType" description="最大报单本地编号"/>
+			<item name="TradingSystemName" type="CTradingSystemNameType" description="交易系统名称"/>
+			<item name="UserType" type="CUserTypeType" description="用户类型"/>
+			<item name="MaxCommFlux" type="CCommFluxType" description="最大通讯量"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+		</fieldDefine>
+		<fieldDefine name="RspInfo" fid="0x0003" comment="响应信息">
+			<item name="ErrorID" type="CErrorIDType" description="错误代码"/>
+			<item name="ErrorMsg" type="CErrorMsgType" description="错误信息"/>
+		</fieldDefine>
+		<fieldDefine name="CommPhase" fid="0x0004" comment="通讯阶段">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="CommPhaseNo" type="CCommPhaseNoType" description="通讯时段号"/>
+		</fieldDefine>
+		<fieldDefine name="ExchangeTradingDay" fid="0x0005" comment="交易所交易日">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="ExchangeID" type="CExchangeIDType" description="交易所代码"/>
+		</fieldDefine>
+		<fieldDefine name="SettlementSession" fid="0x0006" comment="结算会话">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+		</fieldDefine>
+		<fieldDefine name="CurrentTime" fid="0x0007" comment="当前时间">
+			<item name="CurrDate" type="CDateType" description="当前日期"/>
+			<item name="CurrTime" type="CTimeType" description="当前时间"/>
+			<item name="CurrMillisec" type="CMillisecType" description="当前时间（毫秒）"/>
+		</fieldDefine>
+		<fieldDefine name="DataCenterDesc" fid="0x0008" comment="数据中心描述">
+			<item name="DataCenterID" type="CDataCenterIDType" description="数据中心代码"/>
+			<item name="StartMode" type="CStartModeType" description="启动模式"/>
+		</fieldDefine>
+		<fieldDefine name="InputOrder" fid="0x0011" comment="输入报单">
+			<item name="OrderSysID" type="COrderSysIDType" description="报单编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="OrderPriceType" type="COrderPriceTypeType" description="报单价格条件"/>
+			<item name="Direction" type="CDirectionType" description="买卖方向"/>
+			<item name="CombOffsetFlag" type="CCombOffsetFlagType" description="组合开平标志"/>
+			<item name="CombHedgeFlag" type="CCombHedgeFlagType" description="组合投机套保标志"/>
+			<item name="LimitPrice" type="CPriceType" description="价格"/>
+			<item name="VolumeTotalOriginal" type="CVolumeType" description="数量"/>
+			<item name="TimeCondition" type="CTimeConditionType" description="有效期类型"/>
+			<item name="GTDDate" type="CDateType" description="GTD日期"/>
+			<item name="VolumeCondition" type="CVolumeConditionType" description="成交量类型"/>
+			<item name="MinVolume" type="CVolumeType" description="最小成交量"/>
+			<item name="ContingentCondition" type="CContingentConditionType" description="触发条件"/>
+			<item name="StopPrice" type="CPriceType" description="止损价"/>
+			<item name="ForceCloseReason" type="CForceCloseReasonType" description="强平原因"/>
+			<item name="OrderLocalID" type="COrderLocalIDType" description="本地报单编号"/>
+			<item name="IsAutoSuspend" type="CBoolType" description="自动挂起标志"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="OrderAction" fid="0x0012" comment="报单操作">
+			<item name="OrderSysID" type="COrderSysIDType" description="报单编号"/>
+			<item name="OrderLocalID" type="COrderLocalIDType" description="本地报单编号"/>
+			<item name="ActionFlag" type="CActionFlagType" description="报单操作标志"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="LimitPrice" type="CPriceType" description="价格"/>
+			<item name="VolumeChange" type="CVolumeType" description="数量变化"/>
+			<item name="ActionLocalID" type="COrderLocalIDType" description="操作本地编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="OTCOrder" fid="0x0013" comment="OTC报单">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="OTCOrderSysID" type="COTCOrderSysIDType" description="OTC报单编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="Direction" type="CDirectionType" description="买卖方向"/>
+			<item name="OffsetFlag" type="COffsetFlagType" description="开平标志"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="Price" type="CPriceType" description="价格"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="OtherParticipantID" type="CParticipantIDType" description="对手方会员代码"/>
+			<item name="OtherClientID" type="CClientIDType" description="对手方客户代码"/>
+			<item name="OtherUserID" type="CUserIDType" description="对手方交易用户代码"/>
+			<item name="OtherOffsetFlag" type="COffsetFlagType" description="对手方开平标志"/>
+			<item name="OtherHedgeFlag" type="CHedgeFlagType" description="对手方套保标志"/>
+			<item name="OTCOrderLocalID" type="COrderLocalIDType" description="本地OTC报单编号"/>
+			<item name="OTCOrderStatus" type="COTCOrderStatusType" description="OTC报单状态"/>
+			<item name="InsertTime" type="CTimeType" description="插入时间"/>
+			<item name="CancelTime" type="CTimeType" description="撤销时间"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="OtherClearingPartID" type="CParticipantIDType" description="对手方结算会员编号"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="EfpInstrumentID" type="CInstrumentIDType" description="efp对应期货或期权合约代码"/>
+			<item name="ReservePositionFlag" type="CExecOrderPositionFlagType" description="期权行权后是否保留期货头寸的标记"/>
+			<item name="DeliveryMode" type="CDeliveryModeType" description="交割模式"/>
+		</fieldDefine>
+		<fieldDefine name="OrderRspID" fid="0x0014" comment="报单系统编号">
+			<item name="OrderSysID" type="COrderSysIDType" description="报单系统编号"/>
+		</fieldDefine>
+		<fieldDefine name="InputQuote" fid="0x0021" comment="输入报价">
+			<item name="QuoteSysID" type="CQuoteSysIDType" description="报价编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="QuoteLocalID" type="COrderLocalIDType" description="本地报价编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BidCombOffsetFlag" type="CCombOffsetFlagType" description="买方组合开平标志"/>
+			<item name="BidCombHedgeFlag" type="CCombHedgeFlagType" description="买方组合套保标志"/>
+			<item name="BidPrice" type="CPriceType" description="买方价格"/>
+			<item name="AskCombOffsetFlag" type="CCombOffsetFlagType" description="卖方组合开平标志"/>
+			<item name="AskCombHedgeFlag" type="CCombHedgeFlagType" description="卖方组合套保标志"/>
+			<item name="AskPrice" type="CPriceType" description="卖方价格"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="QuoteAction" fid="0x0022" comment="报价操作">
+			<item name="QuoteSysID" type="CQuoteSysIDType" description="报价编号"/>
+			<item name="QuoteLocalID" type="COrderLocalIDType" description="本地报价编号"/>
+			<item name="ActionFlag" type="CActionFlagType" description="报单操作标志"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="ActionLocalID" type="COrderLocalIDType" description="操作本地编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="InputExecOrder" fid="0x0023" comment="输入执行宣告">
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="ExecOrderLocalID" type="COrderLocalIDType" description="本地执行宣告编号"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="OffsetFlag" type="COffsetFlagType" description="开平标志"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="PosiDirection" type="CPosiDirectionType" description="持仓方向"/>
+			<item name="ReservePositionFlag" type="CExecOrderPositionFlagType" description="期权行权后是否保留期货头寸的标记"/>
+			<item name="CloseFlag" type="CExecOrderCloseFlagType" description="期权行权后生成的头寸是否自动平仓"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="ExecOrderAction" fid="0x0024" comment="执行宣告操作">
+			<item name="ExecOrderSysID" type="CExecOrderSysIDType" description="执行宣告编号"/>
+			<item name="ExecOrderLocalID" type="COrderLocalIDType" description="本地执行宣告编号"/>
+			<item name="ActionFlag" type="CActionFlagType" description="报单操作标志"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="ActionLocalID" type="COrderLocalIDType" description="操作本地编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="UserLogout" fid="0x0031" comment="用户登录退出">
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+		</fieldDefine>
+		<fieldDefine name="UserPasswordUpdate" fid="0x0032" comment="用户口令修改">
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="OldPassword" type="CPasswordType" description="旧密码"/>
+			<item name="NewPassword" type="CPasswordType" description="新密码"/>
+		</fieldDefine>
+		<fieldDefine name="LoginInfo" fid="0x0033" comment="用户登录信息">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SequenceNo" type="CSequenceNoType" description="序号"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="UserProductInfo" type="CProductInfoType" description="用户端产品信息"/>
+			<item name="InterfaceProductInfo" type="CProductInfoType" description="接口端产品信息"/>
+			<item name="ProtocolInfo" type="CProtocolInfoType" description="协议信息"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="LoginType" type="CLoginTypeType" description="登录类型"/>
+			<item name="SessionType" type="CSessionTypeType" description="会话类型"/>
+			<item name="ErrorID" type="CErrorIDType" description="错误代码"/>
+			<item name="UpdateDate" type="CDateType" description="更新日期"/>
+			<item name="UpdateTime" type="CTimeType" description="更新时间"/>
+		</fieldDefine>
+		<fieldDefine name="InputCombOrder" fid="0x0041" comment="输入组合报单">
+			<item name="CombOrderSysID" type="COrderSysIDType" description="组合报单编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="LimitPrice" type="CPriceType" description="价格"/>
+			<item name="VolumeTotalOriginal" type="CVolumeType" description="数量"/>
+			<item name="CombOrderLocalID" type="COrderLocalIDType" description="本地报单编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="InstrumentID1" type="CInstrumentIDType" description="合约代码1"/>
+			<item name="Direction1" type="CDirectionType" description="买卖方向1"/>
+			<item name="LegMultiple1" type="CLegMultipleType" description="分腿乘数1"/>
+			<item name="OffsetFlag1" type="COffsetFlagType" description="开平标志1"/>
+			<item name="HedgeFlag1" type="CHedgeFlagType" description="投机套保标志1"/>
+			<item name="InstrumentID2" type="CInstrumentIDType" description="合约代码2"/>
+			<item name="Direction2" type="CDirectionType" description="买卖方向2"/>
+			<item name="LegMultiple2" type="CLegMultipleType" description="分腿乘数2"/>
+			<item name="OffsetFlag2" type="COffsetFlagType" description="开平标志2"/>
+			<item name="HedgeFlag2" type="CHedgeFlagType" description="投机套保标志2"/>
+			<item name="InstrumentID3" type="CInstrumentIDType" description="合约代码3"/>
+			<item name="Direction3" type="CDirectionType" description="买卖方向3"/>
+			<item name="LegMultiple3" type="CLegMultipleType" description="分腿乘数3"/>
+			<item name="OffsetFlag3" type="COffsetFlagType" description="开平标志3"/>
+			<item name="HedgeFlag3" type="CHedgeFlagType" description="投机套保标志3"/>
+			<item name="InstrumentID4" type="CInstrumentIDType" description="合约代码4"/>
+			<item name="Direction4" type="CDirectionType" description="买卖方向4"/>
+			<item name="LegMultiple4" type="CLegMultipleType" description="分腿乘数4"/>
+			<item name="OffsetFlag4" type="COffsetFlagType" description="开平标志4"/>
+			<item name="HedgeFlag4" type="CHedgeFlagType" description="投机套保标志4"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="ForceUserExit" fid="0x0053" comment="强制用户退出">
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryOrder" fid="0x3001" comment="报单查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="OrderSysID" type="COrderSysIDType" description="报单编号"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="TimeStart" type="CTimeType" description="开始时间"/>
+			<item name="TimeEnd" type="CTimeType" description="结束时间"/>
+		</fieldDefine>
+		<fieldDefine name="QryQuote" fid="0x3002" comment="报价查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="QuoteSysID" type="CQuoteSysIDType" description="报价编号"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryTrade" fid="0x3003" comment="成交查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="InstIDStart" type="CInstrumentIDType" description="起始合约代码"/>
+			<item name="InstIDEnd" type="CInstrumentIDType" description="结束合约代码"/>
+			<item name="TradeID" type="CTradeIDType" description="成交编号"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="TimeStart" type="CTimeType" description="开始时间"/>
+			<item name="TimeEnd" type="CTimeType" description="结束时间"/>
+		</fieldDefine>
+		<fieldDefine name="QryMarketData" fid="0x3004" comment="行情查询">
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryClient" fid="0x3006" comment="客户查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="ClientIDStart" type="CClientIDType" description="起始客户代码"/>
+			<item name="ClientIDEnd" type="CClientIDType" description="结束客户代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryPartPosition" fid="0x3007" comment="会员持仓查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="InstIDStart" type="CInstrumentIDType" description="起始合约代码"/>
+			<item name="InstIDEnd" type="CInstrumentIDType" description="结束合约代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryClientPosition" fid="0x3008" comment="客户持仓查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="ClientIDStart" type="CClientIDType" description="起始客户代码"/>
+			<item name="ClientIDEnd" type="CClientIDType" description="结束客户代码"/>
+			<item name="InstIDStart" type="CInstrumentIDType" description="起始合约代码"/>
+			<item name="InstIDEnd" type="CInstrumentIDType" description="结束合约代码"/>
+			<item name="ClientType" type="CClientTypeType" description="客户类型"/>
+		</fieldDefine>
+		<fieldDefine name="QryPartAccount" fid="0x3009" comment="交易资金查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="AccountID" type="CAccountIDType" description="资金帐号"/>
+		</fieldDefine>
+		<fieldDefine name="QryInstrument" fid="0x300A" comment="合约查询">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductGroupID" type="CProductGroupIDType" description="产品组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryInstrumentStatus" fid="0x300B" comment="合约状态查询">
+			<item name="InstIDStart" type="CInstrumentIDType" description="起始合约代码"/>
+			<item name="InstIDEnd" type="CInstrumentIDType" description="结束合约代码"/>
+		</fieldDefine>
+		<fieldDefine name="QrySGDataSyncStatus" fid="0x300C" comment="结算组状态查询">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryUserSession" fid="0x300D" comment="用户在线查询">
+			<item name="UserIDStart" type="CUserIDType" description="起始交易用户代码"/>
+			<item name="UserIDEnd" type="CUserIDType" description="结束交易用户代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryUser" fid="0x300E" comment="用户查询">
+			<item name="UserIDStart" type="CUserIDType" description="起始交易用户代码"/>
+			<item name="UserIDEnd" type="CUserIDType" description="结束交易用户代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryBulletin" fid="0x300F" comment="公告查询">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="MarketID" type="CMarketIDType" description="市场代码"/>
+			<item name="BulletinID" type="CBulletinIDType" description="公告编号"/>
+			<item name="NewsType" type="CNewsTypeType" description="公告类型"/>
+			<item name="NewsUrgency" type="CNewsUrgencyType" description="紧急程度"/>
+		</fieldDefine>
+		<fieldDefine name="QryParticipant" fid="0x3010" comment="会员查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryHedgeVolume" fid="0x3011" comment="保值额度查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="ClientIDStart" type="CClientIDType" description="起始客户代码"/>
+			<item name="ClientIDEnd" type="CClientIDType" description="结束客户代码"/>
+			<item name="InstIDStart" type="CInstrumentIDType" description="起始合约代码"/>
+			<item name="InstIDEnd" type="CInstrumentIDType" description="结束合约代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryExchangeStatus" fid="0x3012" comment="交易所状态查询">
+			<item name="ExchangeID" type="CExchangeIDType" description="交易所代码"/>
+		</fieldDefine>
+		<fieldDefine name="QrySettlementGroupStatus" fid="0x3013" comment="结算组状态查询">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryMBLMarketData" fid="0x3014" comment="合约价位查询">
+			<item name="InstIDStart" type="CInstrumentIDType" description="起始合约代码"/>
+			<item name="InstIDEnd" type="CInstrumentIDType" description="结束合约代码"/>
+			<item name="Direction" type="CDirectionType" description="买卖方向"/>
+		</fieldDefine>
+		<fieldDefine name="QryExchangeDataSyncStatus" fid="0x3015" comment="交易所数据同步状态查询">
+			<item name="ExchangeID" type="CExchangeIDType" description="交易所代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryCombOrder" fid="0x3006" comment="组合报单查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="CombOrderSysID" type="COrderSysIDType" description="组合报单编号"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryExecOrder" fid="0x3016" comment="执行宣告查询">
+			<item name="PartIDStart" type="CParticipantIDType" description="起始会员代码"/>
+			<item name="PartIDEnd" type="CParticipantIDType" description="结束会员代码"/>
+			<item name="ExecOrderSysID" type="CExecOrderSysIDType" description="执行宣告编号"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="TimeStart" type="CTimeType" description="开始时间"/>
+			<item name="TimeEnd" type="CTimeType" description="结束时间"/>
+		</fieldDefine>
+		<fieldDefine name="RspPartAccount" fid="0x3101" comment="会员资金应答">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="PreBalance" type="CMoneyType" description="上次结算准备金"/>
+			<item name="CurrMargin" type="CMoneyType" description="当前保证金总额"/>
+			<item name="CloseProfit" type="CMoneyType" description="平仓盈亏"/>
+			<item name="Premium" type="CMoneyType" description="期权权利金收支"/>
+			<item name="Deposit" type="CMoneyType" description="入金金额"/>
+			<item name="Withdraw" type="CMoneyType" description="出金金额"/>
+			<item name="Balance" type="CMoneyType" description="期货结算准备金"/>
+			<item name="Available" type="CMoneyType" description="可提资金"/>
+			<item name="AccountID" type="CAccountIDType" description="资金帐号"/>
+			<item name="FrozenMargin" type="CMoneyType" description="冻结的保证金"/>
+			<item name="FrozenPremium" type="CMoneyType" description="冻结的权利金"/>
+			<item name="BaseReserve" type="CMoneyType" description="基本准备金"/>
+		</fieldDefine>
+		<fieldDefine name="RspPartPosition" fid="0x3102" comment="会员持仓应答">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="PosiDirection" type="CPosiDirectionType" description="持仓多空方向"/>
+			<item name="YdPosition" type="CVolumeType" description="上日持仓"/>
+			<item name="Position" type="CVolumeType" description="今日持仓"/>
+			<item name="LongFrozen" type="CVolumeType" description="多头冻结"/>
+			<item name="ShortFrozen" type="CVolumeType" description="空头冻结"/>
+			<item name="YdLongFrozen" type="CVolumeType" description="昨日多头冻结"/>
+			<item name="YdShortFrozen" type="CVolumeType" description="昨日空头冻结"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+		</fieldDefine>
+		<fieldDefine name="RspClientPosition" fid="0x3103" comment="客户持仓应答">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="PosiDirection" type="CPosiDirectionType" description="持仓多空方向"/>
+			<item name="YdPosition" type="CVolumeType" description="上日持仓"/>
+			<item name="Position" type="CVolumeType" description="今日持仓"/>
+			<item name="LongFrozen" type="CVolumeType" description="多头冻结"/>
+			<item name="ShortFrozen" type="CVolumeType" description="空头冻结"/>
+			<item name="YdLongFrozen" type="CVolumeType" description="昨日多头冻结"/>
+			<item name="YdShortFrozen" type="CVolumeType" description="昨日空头冻结"/>
+			<item name="BuyTradeVolume" type="CVolumeType" description="当日买成交量"/>
+			<item name="SellTradeVolume" type="CVolumeType" description="当日卖成交量"/>
+			<item name="PositionCost" type="CMoneyType" description="持仓成本"/>
+			<item name="YdPositionCost" type="CMoneyType" description="昨日持仓成本"/>
+			<item name="UseMargin" type="CMoneyType" description="占用的保证金"/>
+			<item name="FrozenMargin" type="CMoneyType" description="冻结的保证金"/>
+			<item name="LongFrozenMargin" type="CMoneyType" description="多头冻结的保证金"/>
+			<item name="ShortFrozenMargin" type="CMoneyType" description="空头冻结的保证金"/>
+			<item name="FrozenPremium" type="CMoneyType" description="冻结的权利金"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+		</fieldDefine>
+		<fieldDefine name="RspInstrument" fid="0x3104" comment="合约查询应答">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ProductGroupID" type="CProductGroupIDType" description="产品组代码"/>
+			<item name="UnderlyingInstrID" type="CInstrumentIDType" description="基础商品代码"/>
+			<item name="ProductClass" type="CProductClassType" description="产品类型"/>
+			<item name="PositionType" type="CPositionTypeType" description="持仓类型"/>
+			<item name="StrikePrice" type="CPriceType" description="执行价"/>
+			<item name="OptionsType" type="COptionsTypeType" description="期权类型"/>
+			<item name="VolumeMultiple" type="CVolumeMultipleType" description="合约数量乘数"/>
+			<item name="UnderlyingMultiple" type="CUnderlyingMultipleType" description="合约基础商品乘数"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="InstrumentName" type="CInstrumentNameType" description="合约名称"/>
+			<item name="DeliveryYear" type="CYearType" description="交割年份"/>
+			<item name="DeliveryMonth" type="CMonthType" description="交割月"/>
+			<item name="AdvanceMonth" type="CAdvanceMonthType" description="提前月份"/>
+			<item name="IsTrading" type="CBoolType" description="当前是否交易"/>
+			<item name="CreateDate" type="CDateType" description="创建日"/>
+			<item name="OpenDate" type="CDateType" description="上市日"/>
+			<item name="ExpireDate" type="CDateType" description="到期日"/>
+			<item name="StartDelivDate" type="CDateType" description="开始交割日"/>
+			<item name="EndDelivDate" type="CDateType" description="最后交割日"/>
+			<item name="BasisPrice" type="CPriceType" description="挂牌基准价"/>
+			<item name="MaxMarketOrderVolume" type="CVolumeType" description="市价单最大下单量"/>
+			<item name="MinMarketOrderVolume" type="CVolumeType" description="市价单最小下单量"/>
+			<item name="MaxLimitOrderVolume" type="CVolumeType" description="限价单最大下单量"/>
+			<item name="MinLimitOrderVolume" type="CVolumeType" description="限价单最小下单量"/>
+			<item name="PriceTick" type="CPriceType" description="最小变动价位"/>
+			<item name="AllowDelivPersonOpen" type="CMonthCountType" description="交割月自然人开仓"/>
+			<item name="CurrencyID" type="CCurrencyIDType" description="币种代码"/>
+		</fieldDefine>
+		<fieldDefine name="QryInformation" fid="0x3105" comment="信息查询">
+			<item name="InformationIDStart" type="CInformationIDType" description="起始信息代码"/>
+			<item name="InformationIDEnd" type="CInformationIDType" description="结束信息代码"/>
+		</fieldDefine>
+		<fieldDefine name="Information" fid="0x3106" comment="信息查询">
+			<item name="InformationID" type="CInformationIDType" description="信息编号"/>
+			<item name="SequenceNo" type="CSequenceNoType" description="序列号"/>
+			<item name="Content" type="CContentType" description="消息正文"/>
+			<item name="ContentLength" type="CContentLengthType" description="正文长度"/>
+			<item name="IsAccomplished" type="CBoolType" description="是否完成"/>
+		</fieldDefine>
+		<fieldDefine name="QryCreditLimit" fid="0x3108" comment="信用限额查询">
+			<item name="ParticipantID" type="CParticipantIDType" description="交易会员编号"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+		</fieldDefine>
+		<fieldDefine name="CreditLimit" fid="0x310A" comment="信用限额">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="PreBalance" type="CMoneyType" description="上次结算准备金"/>
+			<item name="CurrMargin" type="CMoneyType" description="当前保证金总额"/>
+			<item name="CloseProfit" type="CMoneyType" description="平仓盈亏"/>
+			<item name="Premium" type="CMoneyType" description="期权权利金收支"/>
+			<item name="Deposit" type="CMoneyType" description="入金金额"/>
+			<item name="Withdraw" type="CMoneyType" description="出金金额"/>
+			<item name="Balance" type="CMoneyType" description="期货结算准备金"/>
+			<item name="Available" type="CMoneyType" description="可提资金"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="交易会员编号"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="FrozenMargin" type="CMoneyType" description="冻结的保证金"/>
+			<item name="FrozenPremium" type="CMoneyType" description="冻结的权利金"/>
+		</fieldDefine>
+		<fieldDefine name="RspClient" fid="0x310B" comment="客户查询应答">
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="ClientName" type="CPartyNameType" description="客户名称"/>
+			<item name="IdentifiedCardType" type="CIdCardTypeType" description="证件类型"/>
+			<item name="IdentifiedCardNo" type="CIdentifiedCardNoType" description="证件号码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+			<item name="ClientType" type="CClientTypeType" description="客户类型"/>
+			<item name="IsActive" type="CBoolType" description="是否活跃"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员号"/>
+		</fieldDefine>
+		<fieldDefine name="Exchange" fid="0x1101" comment="交易所">
+			<item name="ExchangeID" type="CExchangeIDType" description="交易所代码"/>
+			<item name="ExchangeName" type="CExchangeNameType" description="交易所名称"/>
+		</fieldDefine>
+		<fieldDefine name="SettlementGroup" fid="0x1102" comment="结算组">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementGroupName" type="CSettlementGroupNameType" description="结算组名称"/>
+			<item name="ExchangeID" type="CExchangeIDType" description="交易所代码"/>
+			<item name="Currency" type="CCurrencyType" description="币种"/>
+		</fieldDefine>
+		<fieldDefine name="Market" fid="0x1201" comment="市场">
+			<item name="MarketID" type="CMarketIDType" description="市场代码"/>
+			<item name="MarketName" type="CMarketNameType" description="市场名称"/>
+		</fieldDefine>
+		<fieldDefine name="MarketProduct" fid="0x1202" comment="市场产品关联">
+			<item name="MarketID" type="CMarketIDType" description="市场代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+		</fieldDefine>
+		<fieldDefine name="MarketProductGroup" fid="0x1203" comment="市场产品组关联">
+			<item name="MarketID" type="CMarketIDType" description="市场代码"/>
+			<item name="ProductGroupID" type="CProductGroupIDType" description="产品组代码"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataTopic" fid="0x1204" comment="行情主题">
+			<item name="TopicID" type="CTopicIDType" description="主题代码"/>
+			<item name="TopicName" type="CTopicNameType" description="主题名称"/>
+			<item name="MarketID" type="CMarketIDType" description="市场代码"/>
+			<item name="SnapShotFeq" type="CSecondsType" description="采样频率"/>
+			<item name="MarketDataDepth" type="CMarketDataDepthType" description="市场行情深度"/>
+			<item name="DelaySeconds" type="CSecondsType" description="延迟秒数"/>
+			<item name="MarketDataMode" type="CMarketDataModeType" description="行情模式"/>
+		</fieldDefine>
+		<fieldDefine name="PartTopicSubscribe" fid="0x1205" comment="会员订阅市场">
+			<item name="ParticipantID" type="CParticipantIDType" description="参与者代码"/>
+			<item name="ParticipantType" type="CParticipantTypeType" description="参与者类型"/>
+			<item name="TopicID" type="CTopicIDType" description="主题代码"/>
+		</fieldDefine>
+		<fieldDefine name="Participant" fid="0x1401" comment="会员">
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ParticipantName" type="CParticipantNameType" description="会员名称"/>
+			<item name="ParticipantAbbr" type="CParticipantAbbrType" description="会员简称"/>
+			<item name="MemberType" type="CMemberTypeType" description="会员类型"/>
+			<item name="IsActive" type="CBoolType" description="是否活跃"/>
+		</fieldDefine>
+		<fieldDefine name="User" fid="0x1402" comment="用户">
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="UserType" type="CUserTypeType" description="交易用户类型"/>
+			<item name="Password" type="CPasswordType" description="密码"/>
+			<item name="IsActive" type="CUserActiveType" description="交易员权限"/>
+			<item name="IsDirectConnForbidden" type="CBoolType" description="交易员是否禁止直接连接前置"/>
+		</fieldDefine>
+		<fieldDefine name="Client" fid="0x1403" comment="客户">
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="ClientName" type="CPartyNameType" description="客户名称"/>
+			<item name="IdentifiedCardType" type="CIdCardTypeType" description="证件类型"/>
+			<item name="IdentifiedCardNo" type="CIdentifiedCardNoType" description="证件号码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+			<item name="ClientType" type="CClientTypeType" description="客户类型"/>
+			<item name="IsActive" type="CBoolType" description="是否活跃"/>
+		</fieldDefine>
+		<fieldDefine name="PartClient" fid="0x1404" comment="会员客户关系">
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+		</fieldDefine>
+		<fieldDefine name="UserIP" fid="0x1405" comment="用户IP">
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="IPMask" type="CIPAddressType" description="IP地址掩码"/>
+		</fieldDefine>
+		<fieldDefine name="UserSession" fid="0x1406" comment="用户会话">
+			<item name="FrontID" type="CFrontIDType" description="前置编号"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="UserType" type="CUserTypeType" description="交易用户类型"/>
+			<item name="SessionID" type="CSessionIDType" description="会话编号"/>
+			<item name="LoginTime" type="CTimeType" description="登录时间"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="UserProductInfo" type="CProductInfoType" description="用户端产品信息"/>
+			<item name="InterfaceProductInfo" type="CProductInfoType" description="接口端产品信息"/>
+			<item name="ProtocolInfo" type="CProtocolInfoType" description="协议信息"/>
+			<item name="SessionType" type="CSessionTypeType" description="会话类型"/>
+		</fieldDefine>
+		<fieldDefine name="MdPubStatus" fid="0x1407" comment="行情发布状态">
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="InstrumentStatus" type="CInstrumentStatusType" description="合约交易状态"/>
+			<item name="MdPubStatus" type="CMdPubStatusType" description="行情发布状态"/>
+		</fieldDefine>
+		<fieldDefine name="ClearingTradingPart" fid="0x1408" comment="结算交易会员关系">
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="交易会员"/>
+		</fieldDefine>
+		<fieldDefine name="UserFunctionRight" fid="0x1409" comment="用户功能权限">
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="FunctionCode" type="CFunctionCodeType" description="功能代码"/>
+		</fieldDefine>
+		<fieldDefine name="Account" fid="0x140A" comment="资金账户">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="AccountID" type="CAccountIDType" description="资金帐号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="Currency" type="CCurrencyType" description="币种"/>
+		</fieldDefine>
+		<fieldDefine name="UserCommFlux" fid="0x140B" comment="用户通讯量">
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="MaxCommFlux" type="CCommFluxType" description="最大通讯量"/>
+		</fieldDefine>
+		<fieldDefine name="ProductGroup" fid="0x2101" comment="产品组">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductGroupID" type="CProductGroupIDType" description="产品组代码"/>
+			<item name="ProductGroupName" type="CProductGroupNameType" description="产品组名称"/>
+			<item name="CommodityID" type="CCommodityIDType" description="商品代码"/>
+		</fieldDefine>
+		<fieldDefine name="Product" fid="0x2102" comment="产品">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ProductGroupID" type="CProductGroupIDType" description="产品组代码"/>
+			<item name="ProductName" type="CProductNameType" description="产品名称"/>
+			<item name="ProductClass" type="CProductClassType" description="产品类型"/>
+		</fieldDefine>
+		<fieldDefine name="Instrument" fid="0x2103" comment="合约">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ProductGroupID" type="CProductGroupIDType" description="产品组代码"/>
+			<item name="UnderlyingInstrID" type="CInstrumentIDType" description="基础商品代码"/>
+			<item name="ProductClass" type="CProductClassType" description="产品类型"/>
+			<item name="PositionType" type="CPositionTypeType" description="持仓类型"/>
+			<item name="StrikePrice" type="CPriceType" description="执行价"/>
+			<item name="OptionsType" type="COptionsTypeType" description="期权类型"/>
+			<item name="VolumeMultiple" type="CVolumeMultipleType" description="合约数量乘数"/>
+			<item name="UnderlyingMultiple" type="CUnderlyingMultipleType" description="合约基础商品乘数"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="InstrumentName" type="CInstrumentNameType" description="合约名称"/>
+			<item name="DeliveryYear" type="CYearType" description="交割年份"/>
+			<item name="DeliveryMonth" type="CMonthType" description="交割月"/>
+			<item name="AdvanceMonth" type="CAdvanceMonthType" description="提前月份"/>
+			<item name="IsTrading" type="CBoolType" description="当前是否交易"/>
+			<item name="CurrencyID" type="CCurrencyIDType" description="币种代码"/>
+		</fieldDefine>
+		<fieldDefine name="CombinationLeg" fid="0x2104" comment="组合交易合约的单腿">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="CombInstrumentID" type="CInstrumentIDType" description="组合合约代码"/>
+			<item name="LegID" type="CLegIDType" description="单腿编号"/>
+			<item name="LegInstrumentID" type="CInstrumentIDType" description="单腿合约代码"/>
+			<item name="Direction" type="CDirectionType" description="买卖方向"/>
+			<item name="LegMultiple" type="CLegMultipleType" description="单腿乘数"/>
+			<item name="ImplyLevel" type="CImplyLevelType" description="推导层数"/>
+		</fieldDefine>
+		<fieldDefine name="PartRoleAccount" fid="0x2105" comment="会员账户关系">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+			<item name="AccountID" type="CAccountIDType" description="资金帐号"/>
+		</fieldDefine>
+		<fieldDefine name="PartProductRole" fid="0x2201" comment="会员产品角色">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+		</fieldDefine>
+		<fieldDefine name="PartProductRight" fid="0x2202" comment="会员产品交易权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+		</fieldDefine>
+		<fieldDefine name="PartInstrumentRight" fid="0x2203" comment="会员合约交易权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+		</fieldDefine>
+		<fieldDefine name="ClientProductRight" fid="0x2204" comment="客户产品交易权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+		</fieldDefine>
+		<fieldDefine name="ClientInstrumentRight" fid="0x2205" comment="客户合约交易权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+		</fieldDefine>
+		<fieldDefine name="PartClientProductRight" fid="0x2206" comment="会员客户产品交易权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+		</fieldDefine>
+		<fieldDefine name="PartClientInstrumentRight" fid="0x2207" comment="会员客户合约交易权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+		</fieldDefine>
+		<fieldDefine name="CurrProductProperty" fid="0x2301" comment="产品属性">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ProductLifePhase" type="CProductLifePhaseType" description="产品生命周期状态"/>
+			<item name="TradingModel" type="CTradingModelType" description="交易模式"/>
+			<item name="OptionsLimitRatio" type="CRatioType" description="期权限仓系数"/>
+			<item name="OptionsMgRatio" type="CRatioType" description="期权保证金调整系数"/>
+			<item name="SettlePriceSeconds" type="CSettlePriceSecondsType" description="结算取样时间"/>
+		</fieldDefine>
+		<fieldDefine name="CurrInstrumentProperty" fid="0x2303" comment="合约属性">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="CreateDate" type="CDateType" description="创建日"/>
+			<item name="OpenDate" type="CDateType" description="上市日"/>
+			<item name="ExpireDate" type="CDateType" description="到期日"/>
+			<item name="StartDelivDate" type="CDateType" description="开始交割日"/>
+			<item name="EndDelivDate" type="CDateType" description="最后交割日"/>
+			<item name="BasisPrice" type="CPriceType" description="挂牌基准价"/>
+			<item name="MaxMarketOrderVolume" type="CVolumeType" description="市价单最大下单量"/>
+			<item name="MinMarketOrderVolume" type="CVolumeType" description="市价单最小下单量"/>
+			<item name="MaxLimitOrderVolume" type="CVolumeType" description="限价单最大下单量"/>
+			<item name="MinLimitOrderVolume" type="CVolumeType" description="限价单最小下单量"/>
+			<item name="PriceTick" type="CPriceType" description="最小变动价位"/>
+			<item name="AllowDelivPersonOpen" type="CMonthCountType" description="交割月自然人开仓"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="InstLifePhase" type="CInstLifePhaseType" description="合约生命周期状态"/>
+			<item name="IsFirstTradingDay" type="CBoolType" description="是否首交易日"/>
+		</fieldDefine>
+		<fieldDefine name="CurrPriceBanding" fid="0x2304" comment="当前合约价格绑定">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="PriceLimitType" type="CPriceLimitTypeType" description="限价类型"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="RoundingMode" type="CRoundingModeType" description="舍入方式"/>
+			<item name="UpperValue" type="CPriceType" description="上限"/>
+			<item name="LowerValue" type="CPriceType" description="下限"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="TradingSegmentSN" type="CTradingSegmentSNType" description="交易阶段编号"/>
+		</fieldDefine>
+		<fieldDefine name="CurrMarginRate" fid="0x2305" comment="当前合约保证金率">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="MarginCalcID" type="CMarginCalcIDType" description="保证金算法代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+		</fieldDefine>
+		<fieldDefine name="CurrMarginRateDetail" fid="0x2306" comment="当前合约保证金率的详细内容">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="LongMarginRatio" type="CRatioType" description="多头保证金率"/>
+			<item name="ShortMarginRatio" type="CRatioType" description="空头保证金率"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+		</fieldDefine>
+		<fieldDefine name="CurrPartPosiLimit" fid="0x2307" comment="当前会员合约限仓">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="PartPosiLimitCalcID" type="CPartPosiLimitCalcIDType" description="会员限仓算法代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+		</fieldDefine>
+		<fieldDefine name="CurrPartPosiLimitDetail" fid="0x2308" comment="当前会员合约限仓的详细内容">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="StartTotalPosition" type="CLargeVolumeType" description="限仓起点"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="LongPosLimit" type="CRatioType" description="多头限仓"/>
+			<item name="ShortPosLimit" type="CRatioType" description="空头限仓"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRole" type="CPositionTradingRoleType" description="交易角色"/>
+		</fieldDefine>
+		<fieldDefine name="CurrClientPosiLimit" fid="0x2309" comment="当前客户合约限仓">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ClientPosiLimitCalcID" type="CClientPosiLimitCalcIDType" description="客户限仓算法代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+		</fieldDefine>
+		<fieldDefine name="CurrClientPosiLimitDetail" fid="0x230A" comment="当前客户合约限仓的详细内容">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="StartTotalPosition" type="CLargeVolumeType" description="限仓起点"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="LongPosLimit" type="CRatioType" description="多头限仓"/>
+			<item name="ShortPosLimit" type="CRatioType" description="空头限仓"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientType" type="CClientTypeType" description="客户类型"/>
+		</fieldDefine>
+		<fieldDefine name="CurrSpecialPosiLimit" fid="0x230B" comment="当前特殊客户合约限仓">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ClientPosiLimitCalcID" type="CClientPosiLimitCalcIDType" description="客户限仓算法代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+		</fieldDefine>
+		<fieldDefine name="CurrSpecialPosiLimitDetail" fid="0x230C" comment="当前特殊客户合约限仓的详细内容">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="StartTotalPosition" type="CLargeVolumeType" description="限仓起点"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="LongPosLimit" type="CRatioType" description="多头限仓"/>
+			<item name="ShortPosLimit" type="CRatioType" description="空头限仓"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+		</fieldDefine>
+		<fieldDefine name="CurrHedgeRule" fid="0x230D" comment="当前合约套期保值属性">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="HedgeUsageType" type="CHedgeUsageTypeType" description="套保额度使用类型"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="HedgeCloseTodayType" type="CHedgeCloseTodayTypeType" description="套保额度平今仓类型"/>
+		</fieldDefine>
+		<fieldDefine name="CurrTradingSegmentAttr" fid="0x230E" comment="当前合约交易阶段属性">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="TradingSegmentSN" type="CTradingSegmentSNType" description="交易阶段编号"/>
+			<item name="TradingSegmentName" type="CTradingSegmentNameType" description="交易阶段名称"/>
+			<item name="StartTime" type="CTimeType" description="起始时间"/>
+			<item name="InstrumentStatus" type="CInstrumentStatusType" description="合约交易状态"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="AdvanceDays" type="CAdvanceDaysType" description="提前天数"/>
+		</fieldDefine>
+		<fieldDefine name="CurrFuse" fid="0x230F" comment="当前合约熔断属性">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="PriceLimitType" type="CPriceLimitTypeType" description="限价类型"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="RoundingMode" type="CRoundingModeType" description="舍入方式"/>
+			<item name="UpperValue" type="CPriceType" description="上限"/>
+			<item name="LowerValue" type="CPriceType" description="下限"/>
+			<item name="PriceLimitDuration" type="CDurationType" description="停板持续时间"/>
+			<item name="FuseDuration" type="CDurationType" description="熔断期"/>
+			<item name="TradingFlag" type="CBoolType" description="熔断期是否交易"/>
+			<item name="NoFuseTime" type="CTimeType" description="不启动熔断时间"/>
+			<item name="NoFuseDay" type="CDateType" description="不启动熔断日期"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+		</fieldDefine>
+		<fieldDefine name="TradingAccount" fid="0x2401" comment="交易账户资金信息">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="PreBalance" type="CMoneyType" description="上次结算准备金"/>
+			<item name="CurrMargin" type="CMoneyType" description="当前保证金总额"/>
+			<item name="CloseProfit" type="CMoneyType" description="平仓盈亏"/>
+			<item name="Premium" type="CMoneyType" description="期权权利金收支"/>
+			<item name="Deposit" type="CMoneyType" description="入金金额"/>
+			<item name="Withdraw" type="CMoneyType" description="出金金额"/>
+			<item name="Balance" type="CMoneyType" description="期货结算准备金"/>
+			<item name="Available" type="CMoneyType" description="可提资金"/>
+			<item name="AccountID" type="CAccountIDType" description="资金帐号"/>
+			<item name="FrozenMargin" type="CMoneyType" description="冻结的保证金"/>
+			<item name="FrozenPremium" type="CMoneyType" description="冻结的权利金"/>
+		</fieldDefine>
+		<fieldDefine name="PartPosition" fid="0x2402" comment="会员合约持仓">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="PosiDirection" type="CPosiDirectionType" description="持仓多空方向"/>
+			<item name="YdPosition" type="CVolumeType" description="上日持仓"/>
+			<item name="Position" type="CVolumeType" description="今日持仓"/>
+			<item name="LongFrozen" type="CVolumeType" description="多头冻结"/>
+			<item name="ShortFrozen" type="CVolumeType" description="空头冻结"/>
+			<item name="YdLongFrozen" type="CVolumeType" description="昨日多头冻结"/>
+			<item name="YdShortFrozen" type="CVolumeType" description="昨日空头冻结"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+		</fieldDefine>
+		<fieldDefine name="ClientPosition" fid="0x2403" comment="客户合约持仓">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="PosiDirection" type="CPosiDirectionType" description="持仓多空方向"/>
+			<item name="YdPosition" type="CVolumeType" description="上日持仓"/>
+			<item name="Position" type="CVolumeType" description="今日持仓"/>
+			<item name="LongFrozen" type="CVolumeType" description="多头冻结"/>
+			<item name="ShortFrozen" type="CVolumeType" description="空头冻结"/>
+			<item name="YdLongFrozen" type="CVolumeType" description="昨日多头冻结"/>
+			<item name="YdShortFrozen" type="CVolumeType" description="昨日空头冻结"/>
+			<item name="BuyTradeVolume" type="CVolumeType" description="当日买成交量"/>
+			<item name="SellTradeVolume" type="CVolumeType" description="当日卖成交量"/>
+			<item name="PositionCost" type="CMoneyType" description="持仓成本"/>
+			<item name="YdPositionCost" type="CMoneyType" description="昨日持仓成本"/>
+			<item name="UseMargin" type="CMoneyType" description="占用的保证金"/>
+			<item name="FrozenMargin" type="CMoneyType" description="冻结的保证金"/>
+			<item name="LongFrozenMargin" type="CMoneyType" description="多头冻结的保证金"/>
+			<item name="ShortFrozenMargin" type="CMoneyType" description="空头冻结的保证金"/>
+			<item name="FrozenPremium" type="CMoneyType" description="冻结的权利金"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+		</fieldDefine>
+		<fieldDefine name="HedgeVolume" fid="0x2404" comment="保值额度量">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="LongVolumeOriginal" type="CVolumeType" description="多头保值额度最初申请量"/>
+			<item name="ShortVolumeOriginal" type="CVolumeType" description="空头保值额度最初申请量"/>
+			<item name="LongVolume" type="CVolumeType" description="多头保值额度"/>
+			<item name="ShortVolume" type="CVolumeType" description="空头保值额度"/>
+		</fieldDefine>
+		<fieldDefine name="RemainOrder" fid="0x2405" comment="上日遗留报单">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="OrderSysID" type="COrderSysIDType" description="报单编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="OrderPriceType" type="COrderPriceTypeType" description="报单价格条件"/>
+			<item name="Direction" type="CDirectionType" description="买卖方向"/>
+			<item name="CombOffsetFlag" type="CCombOffsetFlagType" description="组合开平标志"/>
+			<item name="CombHedgeFlag" type="CCombHedgeFlagType" description="组合投机套保标志"/>
+			<item name="LimitPrice" type="CPriceType" description="价格"/>
+			<item name="VolumeTotalOriginal" type="CVolumeType" description="数量"/>
+			<item name="TimeCondition" type="CTimeConditionType" description="有效期类型"/>
+			<item name="GTDDate" type="CDateType" description="GTD日期"/>
+			<item name="VolumeCondition" type="CVolumeConditionType" description="成交量类型"/>
+			<item name="MinVolume" type="CVolumeType" description="最小成交量"/>
+			<item name="ContingentCondition" type="CContingentConditionType" description="触发条件"/>
+			<item name="StopPrice" type="CPriceType" description="止损价"/>
+			<item name="ForceCloseReason" type="CForceCloseReasonType" description="强平原因"/>
+			<item name="OrderLocalID" type="COrderLocalIDType" description="本地报单编号"/>
+			<item name="IsAutoSuspend" type="CBoolType" description="自动挂起标志"/>
+			<item name="OrderSource" type="COrderSourceType" description="报单来源"/>
+			<item name="OrderStatus" type="COrderStatusType" description="报单状态"/>
+			<item name="OrderType" type="COrderTypeType" description="报单类型"/>
+			<item name="VolumeTraded" type="CVolumeType" description="今成交数量"/>
+			<item name="VolumeTotal" type="CVolumeType" description="剩余数量"/>
+			<item name="InsertDate" type="CDateType" description="报单日期"/>
+			<item name="InsertTime" type="CTimeType" description="插入时间"/>
+			<item name="ActiveTime" type="CTimeType" description="激活时间"/>
+			<item name="SuspendTime" type="CTimeType" description="挂起时间"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="CancelTime" type="CTimeType" description="撤销时间"/>
+			<item name="ActiveUserID" type="CUserIDType" description="最后修改交易用户代码"/>
+			<item name="Priority" type="CPriorityType" description="优先权"/>
+			<item name="TimeSortID" type="CTimeSortIDType" description="按时间排队的序号"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="MarketData" fid="0x2407" comment="市场行情">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="LastPrice" type="CPriceType" description="最新价"/>
+			<item name="PreSettlementPrice" type="CPriceType" description="昨结算"/>
+			<item name="PreClosePrice" type="CPriceType" description="昨收盘"/>
+			<item name="PreOpenInterest" type="CLargeVolumeType" description="昨持仓量"/>
+			<item name="OpenPrice" type="CPriceType" description="今开盘"/>
+			<item name="HighestPrice" type="CPriceType" description="最高价"/>
+			<item name="LowestPrice" type="CPriceType" description="最低价"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="Turnover" type="CMoneyType" description="成交金额"/>
+			<item name="OpenInterest" type="CLargeVolumeType" description="持仓量"/>
+			<item name="ClosePrice" type="CPriceType" description="今收盘"/>
+			<item name="SettlementPrice" type="CPriceType" description="今结算"/>
+			<item name="UpperLimitPrice" type="CPriceType" description="涨停板价"/>
+			<item name="LowerLimitPrice" type="CPriceType" description="跌停板价"/>
+			<item name="PreDelta" type="CRatioType" description="昨虚实度"/>
+			<item name="CurrDelta" type="CRatioType" description="今虚实度"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="UpdateMillisec" type="CMillisecType" description="最后修改毫秒"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+		</fieldDefine>
+		<fieldDefine name="IndexData" fid="0x2408" comment="指数行情">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="LastPrice" type="CPriceType" description="最新价"/>
+			<item name="PreClosePrice" type="CPriceType" description="昨收盘"/>
+			<item name="OpenPrice" type="CPriceType" description="今开盘"/>
+			<item name="HighestPrice" type="CPriceType" description="最高价"/>
+			<item name="LowestPrice" type="CPriceType" description="最低价"/>
+			<item name="ClosePrice" type="CPriceType" description="今收盘"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="UpdateMillisec" type="CMillisecType" description="最后修改毫秒"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+		</fieldDefine>
+		<fieldDefine name="DepthMarketData" fid="0x2409" comment="深度行情">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="LastPrice" type="CPriceType" description="最新价"/>
+			<item name="PreSettlementPrice" type="CPriceType" description="昨结算"/>
+			<item name="PreClosePrice" type="CPriceType" description="昨收盘"/>
+			<item name="PreOpenInterest" type="CLargeVolumeType" description="昨持仓量"/>
+			<item name="OpenPrice" type="CPriceType" description="今开盘"/>
+			<item name="HighestPrice" type="CPriceType" description="最高价"/>
+			<item name="LowestPrice" type="CPriceType" description="最低价"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="Turnover" type="CMoneyType" description="成交金额"/>
+			<item name="OpenInterest" type="CLargeVolumeType" description="持仓量"/>
+			<item name="ClosePrice" type="CPriceType" description="今收盘"/>
+			<item name="SettlementPrice" type="CPriceType" description="今结算"/>
+			<item name="UpperLimitPrice" type="CPriceType" description="涨停板价"/>
+			<item name="LowerLimitPrice" type="CPriceType" description="跌停板价"/>
+			<item name="PreDelta" type="CRatioType" description="昨虚实度"/>
+			<item name="CurrDelta" type="CRatioType" description="今虚实度"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="UpdateMillisec" type="CMillisecType" description="最后修改毫秒"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="BidPrice1" type="CPriceType" description="申买价一"/>
+			<item name="BidVolume1" type="CVolumeType" description="申买量一"/>
+			<item name="AskPrice1" type="CPriceType" description="申卖价一"/>
+			<item name="AskVolume1" type="CVolumeType" description="申卖量一"/>
+			<item name="BidPrice2" type="CPriceType" description="申买价二"/>
+			<item name="BidVolume2" type="CVolumeType" description="申买量二"/>
+			<item name="AskPrice2" type="CPriceType" description="申卖价二"/>
+			<item name="AskVolume2" type="CVolumeType" description="申卖量二"/>
+			<item name="BidPrice3" type="CPriceType" description="申买价三"/>
+			<item name="BidVolume3" type="CVolumeType" description="申买量三"/>
+			<item name="AskPrice3" type="CPriceType" description="申卖价三"/>
+			<item name="AskVolume3" type="CVolumeType" description="申卖量三"/>
+			<item name="BidPrice4" type="CPriceType" description="申买价四"/>
+			<item name="BidVolume4" type="CVolumeType" description="申买量四"/>
+			<item name="AskPrice4" type="CPriceType" description="申卖价四"/>
+			<item name="AskVolume4" type="CVolumeType" description="申卖量四"/>
+			<item name="BidPrice5" type="CPriceType" description="申买价五"/>
+			<item name="BidVolume5" type="CVolumeType" description="申买量五"/>
+			<item name="AskPrice5" type="CPriceType" description="申卖价五"/>
+			<item name="AskVolume5" type="CVolumeType" description="申卖量五"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+		</fieldDefine>
+		<fieldDefine name="MBLMarketData" fid="0x2410" comment="分价表">
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="Direction" type="CDirectionType" description="买卖方向"/>
+			<item name="Price" type="CPriceType" description="价格"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+		</fieldDefine>
+		<fieldDefine name="AliasDefine" fid="0x2411" comment="别名定义">
+			<item name="StartPos" type="CStartPosType" description="起始位置"/>
+			<item name="Alias" type="CAliasType" description="别名"/>
+			<item name="OriginalText" type="COriginalTextType" description="原文"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataBase" fid="0x2431" comment="行情基础属性">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="PreSettlementPrice" type="CPriceType" description="昨结算"/>
+			<item name="PreClosePrice" type="CPriceType" description="昨收盘"/>
+			<item name="PreOpenInterest" type="CLargeVolumeType" description="昨持仓量"/>
+			<item name="PreDelta" type="CRatioType" description="昨虚实度"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataStatic" fid="0x2432" comment="行情静态属性">
+			<item name="OpenPrice" type="CPriceType" description="今开盘"/>
+			<item name="HighestPrice" type="CPriceType" description="最高价"/>
+			<item name="LowestPrice" type="CPriceType" description="最低价"/>
+			<item name="ClosePrice" type="CPriceType" description="今收盘"/>
+			<item name="UpperLimitPrice" type="CPriceType" description="涨停板价"/>
+			<item name="LowerLimitPrice" type="CPriceType" description="跌停板价"/>
+			<item name="SettlementPrice" type="CPriceType" description="今结算"/>
+			<item name="CurrDelta" type="CRatioType" description="今虚实度"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataLastMatch" fid="0x2433" comment="行情最新成交属性">
+			<item name="LastPrice" type="CPriceType" description="最新价"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="Turnover" type="CMoneyType" description="成交金额"/>
+			<item name="OpenInterest" type="CLargeVolumeType" description="持仓量"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataBestPrice" fid="0x2434" comment="行情最优价属性">
+			<item name="BidPrice1" type="CPriceType" description="申买价一"/>
+			<item name="BidVolume1" type="CVolumeType" description="申买量一"/>
+			<item name="AskPrice1" type="CPriceType" description="申卖价一"/>
+			<item name="AskVolume1" type="CVolumeType" description="申卖量一"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataBid23" fid="0x2435" comment="行情申买二、三属性">
+			<item name="BidPrice2" type="CPriceType" description="申买价二"/>
+			<item name="BidVolume2" type="CVolumeType" description="申买量二"/>
+			<item name="BidPrice3" type="CPriceType" description="申买价三"/>
+			<item name="BidVolume3" type="CVolumeType" description="申买量三"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataAsk23" fid="0x2436" comment="行情申卖二、三属性">
+			<item name="AskPrice2" type="CPriceType" description="申卖价二"/>
+			<item name="AskVolume2" type="CVolumeType" description="申卖量二"/>
+			<item name="AskPrice3" type="CPriceType" description="申卖价三"/>
+			<item name="AskVolume3" type="CVolumeType" description="申卖量三"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataBid45" fid="0x2437" comment="行情申买四、五属性">
+			<item name="BidPrice4" type="CPriceType" description="申买价四"/>
+			<item name="BidVolume4" type="CVolumeType" description="申买量四"/>
+			<item name="BidPrice5" type="CPriceType" description="申买价五"/>
+			<item name="BidVolume5" type="CVolumeType" description="申买量五"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataAsk45" fid="0x2438" comment="行情申卖四、五属性">
+			<item name="AskPrice4" type="CPriceType" description="申卖价四"/>
+			<item name="AskVolume4" type="CVolumeType" description="申卖量四"/>
+			<item name="AskPrice5" type="CPriceType" description="申卖价五"/>
+			<item name="AskVolume5" type="CVolumeType" description="申卖量五"/>
+		</fieldDefine>
+		<fieldDefine name="MarketDataUpdateTime" fid="0x2439" comment="行情更新时间属性">
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="UpdateMillisec" type="CMillisecType" description="最后修改毫秒"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+		</fieldDefine>
+		<fieldDefine name="BaseReserveAccount" fid="0x243A" comment="基础准备金账户">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="AccountID" type="CAccountIDType" description="资金帐号"/>
+			<item name="Reserve" type="CMoneyType" description="基本准备金"/>
+		</fieldDefine>
+		<fieldDefine name="IcmiDefine" fid="0x243B" comment="有色金属指数定义">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="IndexName" type="CIndexNameType" description="指数名称"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="指数合约代码"/>
+			<item name="IndexBaseLine" type="CDateType" description="指数基期"/>
+			<item name="IndexBaseValue" type="CIndexValueType" description="指数基点"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ProductGroupID" type="CProductGroupIDType" description="产品组代码"/>
+			<item name="IndexProductIDs" type="CProductIDsType" description="产品代码集合"/>
+		</fieldDefine>
+		<fieldDefine name="IcmiComposition" fid="0x243C" comment="有色金属指数成份合约">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="指数合约代码"/>
+			<item name="CompositionInstrument" type="CInstrumentIDType" description="成份合约代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="RollingType" type="CRollingTypeType" description="滚动类型"/>
+			<item name="RollingWeight" type="CWeightType" description="滚动权重"/>
+		</fieldDefine>
+		<fieldDefine name="IcmiWeight" fid="0x243D" comment="有色金属指数产品权重">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="指数合约代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ProductWeight" type="CWeightType" description="产品权重"/>
+		</fieldDefine>
+		<fieldDefine name="IcmiStandardConst" fid="0x243E" comment="有色金属指数标准化常数">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="指数合约代码"/>
+			<item name="StandardConst" type="CStandardConstType" description="标准化常数"/>
+		</fieldDefine>
+		<fieldDefine name="ExchangeRate" fid="0x243F" comment="外币汇率表">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="CurrencyID" type="CCurrencyIDType" description="币种代码"/>
+			<item name="RateUnit" type="CRateUnitType" description="外汇交易单位"/>
+			<item name="RatePrice" type="CExRatePriceType" description="外汇中间价"/>
+		</fieldDefine>
+		<fieldDefine name="QryExchangeRate" fid="0x2440" comment="汇率查询">
+			<item name="CurrencyID" type="CCurrencyIDType" description="币种代码"/>
+		</fieldDefine>
+		<fieldDefine name="RspExchangeRate" fid="0x2441" comment="汇率查询应答">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="CurrencyID" type="CCurrencyIDType" description="币种代码"/>
+			<item name="RateUnit" type="CRateUnitType" description="外汇交易单位"/>
+			<item name="RatePrice" type="CExRatePriceType" description="外汇中间价"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtAccountDeposit" fid="0x2800" comment="Dbmt会员资金帐户入金">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="Account" type="CAccountIDType" description="资金账号"/>
+			<item name="Deposit" type="CMoneyType" description="入金金额"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtClient" fid="0x2801" comment="Dbmt客户">
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="ClientName" type="CPartyNameType" description="客户名称"/>
+			<item name="IdentifiedCardType" type="CIdCardTypeType" description="证件类型"/>
+			<item name="IdentifiedCardNo" type="CIdentifiedCardNoType" description="证件号码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+			<item name="ClientType" type="CClientTypeType" description="客户类型"/>
+			<item name="IsActive" type="CBoolType" description="是否活跃"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtPartClient" fid="0x2802" comment="Dbmt会员客户">
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtCurrPartPosiLimitDetail" fid="0x2803" comment="Dbmt会员合约持仓限额">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="StartTotalPosition" type="CLargeVolumeType" description="限仓起点"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="LongPosLimit" type="CRatioType" description="多头限仓"/>
+			<item name="ShortPosLimit" type="CRatioType" description="空头限仓"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRole" type="CPositionTradingRoleType" description="交易角色"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtCurrClientPosiLimitDetail" fid="0x2804" comment="Dbmt客户合约持仓限额">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="StartTotalPosition" type="CLargeVolumeType" description="限仓起点"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="LongPosLimit" type="CRatioType" description="多头限仓"/>
+			<item name="ShortPosLimit" type="CRatioType" description="空头限仓"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientType" type="CClientTypeType" description="客户类型"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtCurrSpecialPosiLimitDetail" fid="0x2805" comment="Dbmt特殊客户合约持仓限额">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="StartTotalPosition" type="CLargeVolumeType" description="限仓起点"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="LongPosLimit" type="CRatioType" description="多头限仓"/>
+			<item name="ShortPosLimit" type="CRatioType" description="空头限仓"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtHedgeDetail" fid="0x2806" comment="Dbmt保值额度明细">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="HedgeQuotaSN" type="CSerialNoType" description="流水号"/>
+			<item name="OperatorID" type="COperatorIDType" description="用户代码"/>
+			<item name="Time" type="CTimeType" description="时间"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="PosiDirection" type="CPosiDirectionType" description="持仓多空方向"/>
+			<item name="TradingVolume" type="CVolumeType" description="发生额"/>
+			<item name="HedgeQuota" type="CVolumeType" description="保值额度"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtUser" fid="0x2807" comment="Dbmt用户">
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="UserType" type="CUserTypeType" description="交易用户类型"/>
+			<item name="Password" type="CPasswordType" description="密码"/>
+			<item name="IsActive" type="CUserActiveType" description="交易员权限"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+			<item name="IsDirectConnForbidden" type="CBoolType" description="交易员是否禁止直接连接前置"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtPartProductRight" fid="0x2808" comment="Dbmt会员产品权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtClientProductRight" fid="0x2809" comment="Dbmt客户产品权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtPartInstrumentRight" fid="0x280A" comment="Dbmt会员合约权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtClientInstrumentRight" fid="0x280B" comment="Dbmt客户合约权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtPartClientProductRight" fid="0x2812" comment="Dbmt会员客户产品权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtPartClientInstrumentRight" fid="0x2813" comment="Dbmt会员客户合约权限">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRight" type="CTradingRightType" description="交易权限"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtCurrMarginRateDetail" fid="0x280C" comment="Dbmt会员合约保证金率">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="LongMarginRatio" type="CRatioType" description="多头保证金率"/>
+			<item name="ShortMarginRatio" type="CRatioType" description="空头保证金率"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtMarketData" fid="0x280D" comment="Dbmt行情">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="LastPrice" type="CPriceType" description="最新价"/>
+			<item name="PreSettlementPrice" type="CPriceType" description="昨结算"/>
+			<item name="PreClosePrice" type="CPriceType" description="昨收盘"/>
+			<item name="PreOpenInterest" type="CLargeVolumeType" description="昨持仓量"/>
+			<item name="OpenPrice" type="CPriceType" description="今开盘"/>
+			<item name="HighestPrice" type="CPriceType" description="最高价"/>
+			<item name="LowestPrice" type="CPriceType" description="最低价"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="Turnover" type="CMoneyType" description="成交金额"/>
+			<item name="OpenInterest" type="CLargeVolumeType" description="持仓量"/>
+			<item name="ClosePrice" type="CPriceType" description="今收盘"/>
+			<item name="SettlementPrice" type="CPriceType" description="今结算"/>
+			<item name="UpperLimitPrice" type="CPriceType" description="涨停板价"/>
+			<item name="LowerLimitPrice" type="CPriceType" description="跌停板价"/>
+			<item name="PreDelta" type="CRatioType" description="昨虚实度"/>
+			<item name="CurrDelta" type="CRatioType" description="今虚实度"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="UpdateMillisec" type="CMillisecType" description="最后修改毫秒"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtUserIP" fid="0x280E" comment="Dbmt用户IP地址">
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="IPMask" type="CIPAddressType" description="IP地址掩码"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtCurrPriceBanding" fid="0x280F" comment="Dbmt价格绑定">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="PriceLimitType" type="CPriceLimitTypeType" description="限价类型"/>
+			<item name="ValueMode" type="CValueModeType" description="取值方式"/>
+			<item name="RoundingMode" type="CRoundingModeType" description="舍入方式"/>
+			<item name="UpperValue" type="CPriceType" description="上限"/>
+			<item name="LowerValue" type="CPriceType" description="下限"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="TradingSegmentSN" type="CTradingSegmentSNType" description="交易阶段编号"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtUpdateAllInstrumentStatus" fid="0x2810" comment="Dbmt更新所有合约状态">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentStatus" type="CInstrumentStatusType" description="合约状态"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtClockDelta" fid="0x2814" comment="Dbmt时钟差值">
+			<item name="SecondDelta" type="CTimeDeltaType" description="秒的差值(标准-系统)"/>
+			<item name="MilliSecondDelta" type="CTimeDeltaType" description="毫秒的差值"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="DbmtCurrHedge" fid="0x2815" comment="Dbmt当前保值额度">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="HedgeQuotaSN" type="CSerialNoType" description="流水号"/>
+			<item name="OperatorID" type="COperatorIDType" description="用户代码"/>
+			<item name="Time" type="CTimeType" description="时间"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="PosiDirection" type="CPosiDirectionType" description="持仓多空方向"/>
+			<item name="CurrVolume" type="CVolumeType" description="当前保值额度"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="DbmtTopicID" type="CDbmtTopicIDType" description="Dbmt主题号"/>
+			<item name="DbmtSequenceID" type="CDbmtSequenceIDType" description="Dbmt序列号"/>
+		</fieldDefine>
+		<fieldDefine name="Quote" fid="0x2506" comment="报价">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="QuoteSysID" type="CQuoteSysIDType" description="报价编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="QuoteLocalID" type="COrderLocalIDType" description="本地报价编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BidCombOffsetFlag" type="CCombOffsetFlagType" description="买方组合开平标志"/>
+			<item name="BidCombHedgeFlag" type="CCombHedgeFlagType" description="买方组合套保标志"/>
+			<item name="BidPrice" type="CPriceType" description="买方价格"/>
+			<item name="AskCombOffsetFlag" type="CCombOffsetFlagType" description="卖方组合开平标志"/>
+			<item name="AskCombHedgeFlag" type="CCombHedgeFlagType" description="卖方组合套保标志"/>
+			<item name="AskPrice" type="CPriceType" description="卖方价格"/>
+			<item name="InsertTime" type="CTimeType" description="插入时间"/>
+			<item name="CancelTime" type="CTimeType" description="撤销时间"/>
+			<item name="TradeTime" type="CTimeType" description="成交时间"/>
+			<item name="BidOrderSysID" type="COrderSysIDType" description="买方报单编号"/>
+			<item name="AskOrderSysID" type="COrderSysIDType" description="卖方报单编号"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="Trade" fid="0x2507" comment="成交">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="TradeID" type="CTradeIDType" description="成交编号"/>
+			<item name="Direction" type="CDirectionType" description="买卖方向"/>
+			<item name="OrderSysID" type="COrderSysIDType" description="报单编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="TradingRole" type="CTradingRoleType" description="交易角色"/>
+			<item name="AccountID" type="CAccountIDType" description="资金帐号"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="OffsetFlag" type="COffsetFlagType" description="开平标志"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="Price" type="CPriceType" description="价格"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="TradeTime" type="CTimeType" description="成交时间"/>
+			<item name="TradeType" type="CTradeTypeType" description="成交类型"/>
+			<item name="PriceSource" type="CPriceSourceType" description="成交价来源"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="OrderLocalID" type="COrderLocalIDType" description="本地报单编号"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+		</fieldDefine>
+		<fieldDefine name="Order" fid="0x2508" comment="报单">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="OrderSysID" type="COrderSysIDType" description="报单编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="OrderPriceType" type="COrderPriceTypeType" description="报单价格条件"/>
+			<item name="Direction" type="CDirectionType" description="买卖方向"/>
+			<item name="CombOffsetFlag" type="CCombOffsetFlagType" description="组合开平标志"/>
+			<item name="CombHedgeFlag" type="CCombHedgeFlagType" description="组合投机套保标志"/>
+			<item name="LimitPrice" type="CPriceType" description="价格"/>
+			<item name="VolumeTotalOriginal" type="CVolumeType" description="数量"/>
+			<item name="TimeCondition" type="CTimeConditionType" description="有效期类型"/>
+			<item name="GTDDate" type="CDateType" description="GTD日期"/>
+			<item name="VolumeCondition" type="CVolumeConditionType" description="成交量类型"/>
+			<item name="MinVolume" type="CVolumeType" description="最小成交量"/>
+			<item name="ContingentCondition" type="CContingentConditionType" description="触发条件"/>
+			<item name="StopPrice" type="CPriceType" description="止损价"/>
+			<item name="ForceCloseReason" type="CForceCloseReasonType" description="强平原因"/>
+			<item name="OrderLocalID" type="COrderLocalIDType" description="本地报单编号"/>
+			<item name="IsAutoSuspend" type="CBoolType" description="自动挂起标志"/>
+			<item name="OrderSource" type="COrderSourceType" description="报单来源"/>
+			<item name="OrderStatus" type="COrderStatusType" description="报单状态"/>
+			<item name="OrderType" type="COrderTypeType" description="报单类型"/>
+			<item name="VolumeTraded" type="CVolumeType" description="今成交数量"/>
+			<item name="VolumeTotal" type="CVolumeType" description="剩余数量"/>
+			<item name="InsertDate" type="CDateType" description="报单日期"/>
+			<item name="InsertTime" type="CTimeType" description="插入时间"/>
+			<item name="ActiveTime" type="CTimeType" description="激活时间"/>
+			<item name="SuspendTime" type="CTimeType" description="挂起时间"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="CancelTime" type="CTimeType" description="撤销时间"/>
+			<item name="ActiveUserID" type="CUserIDType" description="最后修改交易用户代码"/>
+			<item name="Priority" type="CPriorityType" description="优先权"/>
+			<item name="TimeSortID" type="CTimeSortIDType" description="按时间排队的序号"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="ExecOrder" fid="0x2509" comment="执行宣告">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="ExecOrderLocalID" type="COrderLocalIDType" description="本地执行宣告编号"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="OffsetFlag" type="COffsetFlagType" description="开平标志"/>
+			<item name="HedgeFlag" type="CHedgeFlagType" description="投机套保标志"/>
+			<item name="PosiDirection" type="CPosiDirectionType" description="持仓方向"/>
+			<item name="ReservePositionFlag" type="CExecOrderPositionFlagType" description="期权行权后是否保留期货头寸的标记"/>
+			<item name="CloseFlag" type="CExecOrderCloseFlagType" description="期权行权后生成的头寸是否自动平仓"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="ExecOrderSysID" type="CExecOrderSysIDType" description="执行宣告编号"/>
+			<item name="InsertDate" type="CDateType" description="报单日期"/>
+			<item name="InsertTime" type="CTimeType" description="插入时间"/>
+			<item name="CancelTime" type="CTimeType" description="撤销时间"/>
+			<item name="ExecResult" type="CExecResultType" description="执行结果"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="CombOrder" fid="0x250A" comment="组合报单">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="CombOrderSysID" type="COrderSysIDType" description="组合报单编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="UserID" type="CUserIDType" description="交易用户代码"/>
+			<item name="LimitPrice" type="CPriceType" description="价格"/>
+			<item name="VolumeTotalOriginal" type="CVolumeType" description="数量"/>
+			<item name="CombOrderLocalID" type="COrderLocalIDType" description="本地报单编号"/>
+			<item name="BusinessUnit" type="CBusinessUnitType" description="业务单元"/>
+			<item name="InstrumentID1" type="CInstrumentIDType" description="合约代码1"/>
+			<item name="Direction1" type="CDirectionType" description="买卖方向1"/>
+			<item name="LegMultiple1" type="CLegMultipleType" description="分腿乘数1"/>
+			<item name="OffsetFlag1" type="COffsetFlagType" description="开平标志1"/>
+			<item name="HedgeFlag1" type="CHedgeFlagType" description="投机套保标志1"/>
+			<item name="InstrumentID2" type="CInstrumentIDType" description="合约代码2"/>
+			<item name="Direction2" type="CDirectionType" description="买卖方向2"/>
+			<item name="LegMultiple2" type="CLegMultipleType" description="分腿乘数2"/>
+			<item name="OffsetFlag2" type="COffsetFlagType" description="开平标志2"/>
+			<item name="HedgeFlag2" type="CHedgeFlagType" description="投机套保标志2"/>
+			<item name="InstrumentID3" type="CInstrumentIDType" description="合约代码3"/>
+			<item name="Direction3" type="CDirectionType" description="买卖方向3"/>
+			<item name="LegMultiple3" type="CLegMultipleType" description="分腿乘数3"/>
+			<item name="OffsetFlag3" type="COffsetFlagType" description="开平标志3"/>
+			<item name="HedgeFlag3" type="CHedgeFlagType" description="投机套保标志3"/>
+			<item name="InstrumentID4" type="CInstrumentIDType" description="合约代码4"/>
+			<item name="Direction4" type="CDirectionType" description="买卖方向4"/>
+			<item name="LegMultiple4" type="CLegMultipleType" description="分腿乘数4"/>
+			<item name="OffsetFlag4" type="COffsetFlagType" description="开平标志4"/>
+			<item name="HedgeFlag4" type="CHedgeFlagType" description="投机套保标志4"/>
+			<item name="OrderSource" type="COrderSourceType" description="报单来源"/>
+			<item name="VolumeTraded" type="CVolumeType" description="今成交数量"/>
+			<item name="VolumeTotal" type="CVolumeType" description="剩余数量"/>
+			<item name="InsertDate" type="CDateType" description="报单日期"/>
+			<item name="InsertTime" type="CTimeType" description="插入时间"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="BusinessLocalID" type="CBusinessLocalIDType" description="本地业务标识"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="IPAddress" type="CIPAddressType" description="IP地址"/>
+			<item name="MacAddress" type="CMacAddressType" description="Mac地址"/>
+		</fieldDefine>
+		<fieldDefine name="AdminOrder" fid="0x2510" comment="管理报单">
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="AdminOrderCommand" type="CAdminOrderCommandFlagType" description="管理报单命令"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="交易会员编号"/>
+			<item name="Amount" type="CMoneyType" description="金额"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+		</fieldDefine>
+		<fieldDefine name="InputAdminOrder" fid="0x2511" comment="管理报单输入">
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="AdminOrderCommand" type="CAdminOrderCommandFlagType" description="管理报单命令"/>
+			<item name="ClearingPartID" type="CParticipantIDType" description="结算会员编号"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="交易会员编号"/>
+			<item name="Amount" type="CMoneyType" description="金额"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+		</fieldDefine>
+		<fieldDefine name="Bulletin" fid="0x2607" comment="公告">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="BulletinID" type="CBulletinIDType" description="公告编号"/>
+			<item name="SequenceNo" type="CSequenceNoType" description="序列号"/>
+			<item name="NewsType" type="CNewsTypeType" description="公告类型"/>
+			<item name="NewsUrgency" type="CNewsUrgencyType" description="紧急程度"/>
+			<item name="SendTime" type="CTimeType" description="发送时间"/>
+			<item name="Abstract" type="CAbstractType" description="消息摘要"/>
+			<item name="ComeFrom" type="CComeFromType" description="消息来源"/>
+			<item name="Content" type="CContentType" description="消息正文"/>
+			<item name="URLLink" type="CURLLinkType" description="WEB地址"/>
+			<item name="MarketID" type="CMarketIDType" description="市场代码"/>
+		</fieldDefine>
+		<fieldDefine name="ExchangeDataSyncStatus" fid="0x2701" comment="交易所数据同步状态">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="ExchangeID" type="CExchangeIDType" description="交易所代码"/>
+			<item name="ExchangeDataSyncStatus" type="CExchangeDataSyncStatusType" description="交易所数据同步状态"/>
+		</fieldDefine>
+		<fieldDefine name="SGDataSyncStatus" fid="0x2702" comment="结算组数据同步状态">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="SGDataSyncStatus" type="CSGDataSyncStatusType" description="结算组数据同步状态"/>
+		</fieldDefine>
+		<fieldDefine name="InstrumentStatus" fid="0x2703" comment="合约状态">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="InstrumentStatus" type="CInstrumentStatusType" description="合约交易状态"/>
+			<item name="TradingSegmentSN" type="CTradingSegmentSNType" description="交易阶段编号"/>
+			<item name="EnterTime" type="CTimeType" description="进入本状态时间"/>
+			<item name="EnterReason" type="CInstStatusEnterReasonType" description="进入本状态原因"/>
+			<item name="EnterDate" type="CDateType" description="进入本状态日期"/>
+		</fieldDefine>
+		<fieldDefine name="InstrumentStatusDetail" fid="0x2704" comment="合约交易状态流水">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="InstrumentStatus" type="CInstrumentStatusType" description="合约交易状态"/>
+			<item name="TradingSegmentSN" type="CTradingSegmentSNType" description="交易阶段编号"/>
+			<item name="EnterTime" type="CTimeType" description="进入本状态时间"/>
+			<item name="EnterReason" type="CInstStatusEnterReasonType" description="进入本状态原因"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="SequenceNo" type="CSequenceNoType" description="序列号"/>
+			<item name="EnterDate" type="CDateType" description="进入本状态日期"/>
+		</fieldDefine>
+		<fieldDefine name="FrontStatus" fid="0x2705" comment="前置状态">
+			<item name="FrontID" type="CFrontIDType" description="前置编号"/>
+			<item name="LastReportTime" type="CTimeType" description="上次报告时间"/>
+			<item name="IsActive" type="CBoolType" description="是否活跃"/>
+			<item name="LastReportDate" type="CDateType" description="上次报告日期"/>
+		</fieldDefine>
+		<fieldDefine name="ExchangeStatus" fid="0x2708" comment="交易所状态">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="ExchangeID" type="CExchangeIDType" description="交易所代码"/>
+			<item name="ExchangeStatus" type="CExchangeStatusType" description="交易所状态"/>
+		</fieldDefine>
+		<fieldDefine name="SettlementGroupStatus" fid="0x2709" comment="结算组状态">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="SettlementGroupStatus" type="CSettlementGroupStatusType" description="结算组状态"/>
+			<item name="EnterTime" type="CTimeType" description="进入本状态时间"/>
+			<item name="EnterDate" type="CDateType" description="进入本状态日期"/>
+		</fieldDefine>
+		<fieldDefine name="UniPressure" fid="0x2710" comment="单边市情况">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="UpperPressureStartTime" type="CTimeType" description="涨压力开始时间"/>
+			<item name="LowerPressureStartTime" type="CTimeType" description="跌压力开始时间"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+		</fieldDefine>
+		<fieldDefine name="DepthMarketDataDetail" fid="0x2711" comment="深度行情流水">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="LastPrice" type="CPriceType" description="最新价"/>
+			<item name="PreSettlementPrice" type="CPriceType" description="昨结算"/>
+			<item name="PreClosePrice" type="CPriceType" description="昨收盘"/>
+			<item name="PreOpenInterest" type="CLargeVolumeType" description="昨持仓量"/>
+			<item name="OpenPrice" type="CPriceType" description="今开盘"/>
+			<item name="HighestPrice" type="CPriceType" description="最高价"/>
+			<item name="LowestPrice" type="CPriceType" description="最低价"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="Turnover" type="CMoneyType" description="成交金额"/>
+			<item name="OpenInterest" type="CLargeVolumeType" description="持仓量"/>
+			<item name="ClosePrice" type="CPriceType" description="今收盘"/>
+			<item name="SettlementPrice" type="CPriceType" description="今结算"/>
+			<item name="UpperLimitPrice" type="CPriceType" description="涨停板价"/>
+			<item name="LowerLimitPrice" type="CPriceType" description="跌停板价"/>
+			<item name="PreDelta" type="CRatioType" description="昨虚实度"/>
+			<item name="CurrDelta" type="CRatioType" description="今虚实度"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="UpdateMillisec" type="CMillisecType" description="最后修改毫秒"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="BidPrice1" type="CPriceType" description="申买价一"/>
+			<item name="BidVolume1" type="CVolumeType" description="申买量一"/>
+			<item name="AskPrice1" type="CPriceType" description="申卖价一"/>
+			<item name="AskVolume1" type="CVolumeType" description="申卖量一"/>
+			<item name="BidPrice2" type="CPriceType" description="申买价二"/>
+			<item name="BidVolume2" type="CVolumeType" description="申买量二"/>
+			<item name="AskPrice2" type="CPriceType" description="申卖价二"/>
+			<item name="AskVolume2" type="CVolumeType" description="申卖量二"/>
+			<item name="BidPrice3" type="CPriceType" description="申买价三"/>
+			<item name="BidVolume3" type="CVolumeType" description="申买量三"/>
+			<item name="AskPrice3" type="CPriceType" description="申卖价三"/>
+			<item name="AskVolume3" type="CVolumeType" description="申卖量三"/>
+			<item name="BidPrice4" type="CPriceType" description="申买价四"/>
+			<item name="BidVolume4" type="CVolumeType" description="申买量四"/>
+			<item name="AskPrice4" type="CPriceType" description="申卖价四"/>
+			<item name="AskVolume4" type="CVolumeType" description="申卖量四"/>
+			<item name="BidPrice5" type="CPriceType" description="申买价五"/>
+			<item name="BidVolume5" type="CVolumeType" description="申买量五"/>
+			<item name="AskPrice5" type="CPriceType" description="申卖价五"/>
+			<item name="AskVolume5" type="CVolumeType" description="申卖量五"/>
+			<item name="SequenceNo" type="CSequenceNoType" description="序号"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+		</fieldDefine>
+		<fieldDefine name="CurrInstrumentOption" fid="0x2712" comment="当日期货合约期权属性">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="OptPostLimitRatio" type="CRatioType" description="同标的期权的合并持仓倍数"/>
+			<item name="UniPostLimitRatio" type="CRatioType" description="期货和同标的期权的合并持仓倍数"/>
+			<item name="MiniMargin" type="CMoneyType" description="单位（手）期权合约最小保证金"/>
+			<item name="OptHedgeLimitRatio" type="CRatioType" description="同标的期权的合并套保倍数"/>
+			<item name="UniHedgeLimitRatio" type="CRatioType" description="期货和同标的期权的联合套保倍数"/>
+			<item name="OptOpenPostLimitRatio" type="CRatioType" description="同标的期权的合并开仓倍数"/>
+			<item name="UniOpenPostLimitRatio" type="CRatioType" description="期货和同标的期权的合并开仓倍数"/>
+			<item name="OptOpenHedgeLimitRatio" type="CRatioType" description="同标的期权的合并套保开仓倍数"/>
+			<item name="UniOpenHedgeLimitRatio" type="CRatioType" description="期货和同标的期权的联合套保开仓倍数"/>
+		</fieldDefine>
+		<fieldDefine name="IndexDataDetail" fid="0x2714" comment="指数行情明细">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="LastPrice" type="CPriceType" description="最新价"/>
+			<item name="PreClosePrice" type="CPriceType" description="昨收盘"/>
+			<item name="OpenPrice" type="CPriceType" description="今开盘"/>
+			<item name="HighestPrice" type="CPriceType" description="最高价"/>
+			<item name="LowestPrice" type="CPriceType" description="最低价"/>
+			<item name="ClosePrice" type="CPriceType" description="今收盘"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="UpdateMillisec" type="CMillisecType" description="最后修改毫秒"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="SequenceNo" type="CSequenceNoType" description="序号"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="TopicID" type="CTopicIDType" description="主题代码"/>
+		</fieldDefine>
+		<fieldDefine name="CurrentTimeSnapShot" fid="0x2715" comment="当前业务时钟快照">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="CurrDate" type="CDateType" description="当前日期"/>
+			<item name="CurrTime" type="CTimeType" description="当前时间"/>
+			<item name="CurrMillisec" type="CMillisecType" description="当前时间（毫秒）"/>
+		</fieldDefine>
+		<fieldDefine name="UserMeasure" fid="0x2716" comment="用户度量配置">
+			<item name="UserID" type="CUserIDType" description="用户编号"/>
+			<item name="SessionType" type="CSessionTypeType" description="会话类型"/>
+			<item name="Msec" type="CMeasureMsecType" description="回路报文发起间隔毫秒数"/>
+		</fieldDefine>
+		<fieldDefine name="LoopMeasure" fid="0x2717" comment="回路度量">
+			<item name="UserID" type="CUserIDType" description="用户编号"/>
+			<item name="SessionType" type="CSessionTypeType" description="会话类型"/>
+			<item name="MeasureSeq" type="CSequenceNoType" description="度量序列号"/>
+			<item name="FrontID" type="CFrontIDType" description="前置编号"/>
+			<item name="SessionID" type="CSessionIDType" description="会话编号"/>
+		</fieldDefine>
+		<fieldDefine name="NodeMeasure" fid="0x2718" comment="节点度量">
+			<item name="NodeID" type="CBusinessUnitType" description="节点标记 "/>
+			<item name="PeriodID" type="CPeriodIDType" description="阶段编号"/>
+			<item name="Sec" type="CMeasureSecType" description="回路报文度量时间点"/>
+			<item name="Usec" type="CMeasureUsecType" description="回路报文度量时间点微秒值"/>
+		</fieldDefine>
+		<fieldDefine name="CurrReferenceInstrument" fid="0x2719" comment="当前参考行情合约表">
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="参考行情合约代码"/>
+			<item name="TopicID" type="CTopicIDType" description="主题代码"/>
+			<item name="UnderlyingInstrID" type="CInstrumentIDType" description="基础合约代码"/>
+			<item name="MdAlgorithm" type="CMdAlgorithmType" description="行情计算算法"/>
+			<item name="RoundingMode" type="CRoundingModeType" description="舍入方式"/>
+			<item name="MarketDataTick" type="CPriceType" description="最小变动价位"/>
+		</fieldDefine>
+		<fieldDefine name="PartClientProductGrpMargin" fid="0x271A" comment="会员客户产品组单边保证金">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="ClientID" type="CClientIDType" description="客户代码"/>
+			<item name="ParticipantID" type="CParticipantIDType" description="会员代码"/>
+			<item name="GroupName" type="CProductGroupNameType" description="可抵扣产品组名称"/>
+			<item name="CurrLongTradeMargin" type="CMoneyType" description="当前交易多头保证金额"/>
+			<item name="CurrLongFrozenMargin" type="CMoneyType" description="当前冻结多头保证金额"/>
+			<item name="CurrShortTradeMargin" type="CMoneyType" description="当前交易空头保证金额"/>
+			<item name="CurrShortFrozenMargin" type="CMoneyType" description="当前冻结空头保证金额"/>
+			<item name="CurrTradeMargin" type="CMoneyType" description="当前单向大边交易保证金额"/>
+			<item name="CurrFrozenMargin" type="CMoneyType" description="当前单向大边冻结保证金额"/>
+		</fieldDefine>
+		<fieldDefine name="ProductMarginDeductRate" fid="0x271B" comment="产品间保证金抵扣率">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="ProductID" type="CProductIDType" description="产品代码"/>
+			<item name="DeductibleRatio" type="CRatioType" description="折抵系数"/>
+			<item name="GroupName" type="CProductGroupNameType" description="可抵扣产品组名称"/>
+		</fieldDefine>
+		<fieldDefine name="TopicDepthMarketDataDetail" fid="0x271C" comment="带主题的深度行情流水">
+			<item name="TradingDay" type="CDateType" description="交易日"/>
+			<item name="SettlementGroupID" type="CSettlementGroupIDType" description="结算组代码"/>
+			<item name="SettlementID" type="CSettlementIDType" description="结算编号"/>
+			<item name="LastPrice" type="CPriceType" description="最新价"/>
+			<item name="PreSettlementPrice" type="CPriceType" description="昨结算"/>
+			<item name="PreClosePrice" type="CPriceType" description="昨收盘"/>
+			<item name="PreOpenInterest" type="CLargeVolumeType" description="昨持仓量"/>
+			<item name="OpenPrice" type="CPriceType" description="今开盘"/>
+			<item name="HighestPrice" type="CPriceType" description="最高价"/>
+			<item name="LowestPrice" type="CPriceType" description="最低价"/>
+			<item name="Volume" type="CVolumeType" description="数量"/>
+			<item name="Turnover" type="CMoneyType" description="成交金额"/>
+			<item name="OpenInterest" type="CLargeVolumeType" description="持仓量"/>
+			<item name="ClosePrice" type="CPriceType" description="今收盘"/>
+			<item name="SettlementPrice" type="CPriceType" description="今结算"/>
+			<item name="UpperLimitPrice" type="CPriceType" description="涨停板价"/>
+			<item name="LowerLimitPrice" type="CPriceType" description="跌停板价"/>
+			<item name="PreDelta" type="CRatioType" description="昨虚实度"/>
+			<item name="CurrDelta" type="CRatioType" description="今虚实度"/>
+			<item name="UpdateTime" type="CTimeType" description="最后修改时间"/>
+			<item name="UpdateMillisec" type="CMillisecType" description="最后修改毫秒"/>
+			<item name="InstrumentID" type="CInstrumentIDType" description="合约代码"/>
+			<item name="BidPrice1" type="CPriceType" description="申买价一"/>
+			<item name="BidVolume1" type="CVolumeType" description="申买量一"/>
+			<item name="AskPrice1" type="CPriceType" description="申卖价一"/>
+			<item name="AskVolume1" type="CVolumeType" description="申卖量一"/>
+			<item name="BidPrice2" type="CPriceType" description="申买价二"/>
+			<item name="BidVolume2" type="CVolumeType" description="申买量二"/>
+			<item name="AskPrice2" type="CPriceType" description="申卖价二"/>
+			<item name="AskVolume2" type="CVolumeType" description="申卖量二"/>
+			<item name="BidPrice3" type="CPriceType" description="申买价三"/>
+			<item name="BidVolume3" type="CVolumeType" description="申买量三"/>
+			<item name="AskPrice3" type="CPriceType" description="申卖价三"/>
+			<item name="AskVolume3" type="CVolumeType" description="申卖量三"/>
+			<item name="BidPrice4" type="CPriceType" description="申买价四"/>
+			<item name="BidVolume4" type="CVolumeType" description="申买量四"/>
+			<item name="AskPrice4" type="CPriceType" description="申卖价四"/>
+			<item name="AskVolume4" type="CVolumeType" description="申卖量四"/>
+			<item name="BidPrice5" type="CPriceType" description="申买价五"/>
+			<item name="BidVolume5" type="CVolumeType" description="申买量五"/>
+			<item name="AskPrice5" type="CPriceType" description="申卖价五"/>
+			<item name="AskVolume5" type="CVolumeType" description="申卖量五"/>
+			<item name="SequenceNo" type="CSequenceNoType" description="序号"/>
+			<item name="ActionDay" type="CDateType" description="业务发生日期"/>
+			<item name="TopicID" type="CTopicIDType" description="主题代码"/>
+		</fieldDefine>
+	</fields>
+	<entities/>
+</XTP>

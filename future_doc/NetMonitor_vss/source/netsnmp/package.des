@@ -1,0 +1,16 @@
+<netsnmp version="1" type="cpp" includedir="." platform="all">
+	<parameter>
+	</parameter>
+	<depend>
+	</depend>
+	<cppfile>
+	</cppfile>
+	<headfile>
+		<net_snmp.h/>
+	</headfile>
+	<libfile>
+		<libnetsnmp/>
+	</libfile>
+	<command>
+	</command>
+</netsnmp>

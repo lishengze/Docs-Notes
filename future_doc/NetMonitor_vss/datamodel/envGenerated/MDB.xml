@@ -1,0 +1,4063 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE system SYSTEM "">
+<system author="王肇东" version="1.0">
+	<tables writeTable="yes" readTable="no" comment="" desc="" foreignStrick="no" isAsc="yes" indexName="noIndex" searchUnique="yes" checkDefault="no" checkParameter="yes" hasTable="yes" manager="root" isPK="no" stableIndex="no" runLevel="0" priority="2">
+		<table name="SysInvalidateOrder" usage="无效报单">
+			<fields>
+				<field name="OrderSysID" type="COrderSysIDType" comment="报单编号"/>
+				<field name="OrderLocalID" type="COrderLocalIDType" comment="本地报单编号"/>
+				<field name="ActionDate" type="CDateType" comment="插入日期"/>
+				<field name="ActionTime" type="CTimeType" comment="插入时间"/>
+				<field name="ErrorMsg" type="CErrorMsgType" comment="错误信息"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="UserID" type="CUserIDType" comment="交易用户代码"/>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="Direction" type="CDirectionType" comment="买卖方向"/>
+				<field name="CombOffsetFlag" type="CCombOffsetFlagType" comment="组合开平标志"/>
+				<field name="CombHedgeFlag" type="CCombHedgeFlagType" comment="组合投机套保标志"/>
+				<field name="LimitPrice" type="CPriceType" comment="价格"/>
+				<field name="VolumeTotalOriginal" type="CVolumeType" comment="数量"/>
+				<field name="TimeCondition" type="CTimeConditionType" comment="有效期类型"/>
+				<field name="VolumeCondition" type="CVolumeConditionType" comment="成交量类型"/>
+				<field name="MinVolume" type="CVolumeType" comment="最小成交量"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysInsertTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysInsertTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysOrderStatus" usage="报单状态">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="OrderSysID" type="COrderSysIDType" comment="报单编号"/>
+				<field name="OrderLocalID" type="COrderLocalIDType" comment="本地报单编号"/>
+				<field name="InsertDate" type="CDateType" comment="报单日期"/>
+				<field name="InsertTime" type="CTimeType" comment="插入时间"/>
+				<field name="OrderStatus" type="COrderStatusType" comment="报单状态"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="UserID" type="CUserIDType" comment="交易用户代码"/>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="Direction" type="CDirectionType" comment="买卖方向"/>
+				<field name="CombOffsetFlag" type="CCombOffsetFlagType" comment="组合开平标志"/>
+				<field name="CombHedgeFlag" type="CCombHedgeFlagType" comment="组合投机套保标志"/>
+				<field name="LimitPrice" type="CPriceType" comment="价格"/>
+				<field name="VolumeTotalOriginal" type="CVolumeType" comment="数量"/>
+				<field name="TimeCondition" type="CTimeConditionType" comment="有效期类型"/>
+				<field name="VolumeCondition" type="CVolumeConditionType" comment="成交量类型"/>
+				<field name="MinVolume" type="CVolumeType" comment="最小成交量"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysBargainOrder" usage="报单成交">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="成交日期"/>
+				<field name="ActionTime" type="CTimeType" comment="成交时间"/>
+				<field name="TradeID" type="CTradeIDType" comment="成交编号"/>
+				<field name="OrderSysID" type="COrderSysIDType" comment="报单编号"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="Price" type="CPriceType" comment="价格"/>
+				<field name="Volume" type="CVolumeType" comment="数量"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="UserID" type="CUserIDType" comment="交易用户代码"/>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysTradeTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysTradeTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysInstProperty" usage="合约基本属性">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="SettlementGroupID" type="CSettlementGroupIDType" comment="结算组代码"/>
+				<field name="UnderlyingInstrID" type="CInstrumentIDType" comment="基础商品代码"/>
+				<field name="ProductClass" type="CProductClassType" comment="产品类型"/>
+				<field name="PositionType" type="CPositionTypeType" comment="持仓类型"/>
+				<field name="VolumeMultiple" type="CVolumeMultipleType" comment="合约数量乘数"/>
+				<field name="UnderlyingMultiple" type="CUnderlyingMultipleType" comment="合约基础商品乘数"/>
+				<field name="InstLifePhase" type="CInstLifePhaseType" comment="合约生命周期状态"/>
+				<field name="OpenDate" type="CDateType" comment="上市日"/>
+				<field name="ExpireDate" type="CDateType" comment="到期日"/>
+				<field name="StartDelivDate" type="CDateType" comment="开始交割日"/>
+				<field name="EndDelivDate" type="CDateType" comment="最后交割日"/>
+				<field name="BasisPrice" type="CPriceType" comment="挂牌基准价"/>
+				<field name="MaxMarketOrderVolume" type="CVolumeType" comment="市价单最大下单量"/>
+				<field name="MinMarketOrderVolume" type="CVolumeType" comment="市价单最小下单量"/>
+				<field name="MaxLimitOrderVolume" type="CVolumeType" comment="限价单最大下单量"/>
+				<field name="MinLimitOrderVolume" type="CVolumeType" comment="限价单最小下单量"/>
+				<field name="PriceTick" type="CPriceType" comment="最小变动价位"/>
+				<field name="AllowDelivPersonOpen" type="CMonthCountType" comment="交割月自然人开仓"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysInstrumentIDIndex" stableIndex="yes">
+					<indexKey name="InstrumentID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysInstrumentIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="InstrumentID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysInstrumentIDIndex">
+					<parameter>
+						<paraDefine name="InstrumentID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMarginRate" usage="合约保证金率">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="TradingRole" type="CTradingRoleType" comment="交易角色"/>
+				<field name="HedgeFlag" type="CHedgeFlagType" comment="投机套保标志"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="LongMarginRatio" type="CRatioType" comment="多头保证金率"/>
+				<field name="ShortMarginRatio" type="CRatioType" comment="空头保证金率"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysInstrumentIDIndex" stableIndex="yes">
+					<indexKey name="InstrumentID"/>
+					<indexKey name="ParticipantID"/>
+					<indexKey name="TradingRole"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysInstrumentIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="InstrumentID" value="&quot;&quot;"/>
+						<defaultDefine name="ParticipantID" value="&quot;&quot;"/>
+						<defaultDefine name="TradingRole" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysInstrumentIDIndex">
+					<parameter>
+						<paraDefine name="InstrumentID" desc="" checkParameter="yes"/>
+						<paraDefine name="ParticipantID" desc="" checkParameter="yes"/>
+						<paraDefine name="TradingRole" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysPriceLimit" usage="合约涨跌停板">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="RoundingMode" type="CRoundingModeType" comment="舍入方式"/>
+				<field name="UpperLimitPrice" type="CPriceType" comment="涨停板价"/>
+				<field name="LowerLimitPrice" type="CPriceType" comment="跌停板价"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysInstrumentIDIndex" stableIndex="yes">
+					<indexKey name="InstrumentID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysInstrumentIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="InstrumentID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysInstrumentIDIndex">
+					<parameter>
+						<paraDefine name="InstrumentID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysPartPosiLimit" usage="会员限仓">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="TradingRole" type="CPositionTradingRoleType" comment="交易角色"/>
+				<field name="StartTotalPosition" type="CLargeVolumeType" comment="限仓起点"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="LongPosLimit" type="CRatioType" comment="多头限仓"/>
+				<field name="ShortPosLimit" type="CRatioType" comment="空头限仓"/>
+				<field name="UpperLimitPrice" type="CPriceType" comment="涨停板价"/>
+				<field name="LowerLimitPrice" type="CPriceType" comment="跌停板价"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysInstrumentIDIndex" stableIndex="yes">
+					<indexKey name="InstrumentID"/>
+					<indexKey name="ParticipantID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysInstrumentIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="InstrumentID" value="&quot;&quot;"/>
+						<defaultDefine name="ParticipantID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysInstrumentIDIndex">
+					<parameter>
+						<paraDefine name="InstrumentID" desc="" checkParameter="yes"/>
+						<paraDefine name="ParticipantID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysClientPosiLimit" usage="客户限仓">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ClientType" type="CClientTypeType" comment="客户类型"/>
+				<field name="TradingRole" type="CPositionTradingRoleType" comment="交易角色"/>
+				<field name="StartTotalPosition" type="CLargeVolumeType" comment="限仓起点"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="LongPosLimit" type="CRatioType" comment="多头限仓"/>
+				<field name="ShortPosLimit" type="CRatioType" comment="空头限仓"/>
+				<field name="UpperLimitPrice" type="CPriceType" comment="涨停板价"/>
+				<field name="LowerLimitPrice" type="CPriceType" comment="跌停板价"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysInstrumentIDIndex" stableIndex="yes">
+					<indexKey name="InstrumentID"/>
+					<indexKey name="ClientType"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysInstrumentIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="InstrumentID" value="&quot;&quot;"/>
+						<defaultDefine name="ClientType" value="CT_Person"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysInstrumentIDIndex">
+					<parameter>
+						<paraDefine name="InstrumentID" desc="" checkParameter="yes"/>
+						<paraDefine name="ClientType" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysSpecialPosiLimit" usage="特殊客户限仓">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+				<field name="TradingRole" type="CPositionTradingRoleType" comment="交易角色"/>
+				<field name="StartTotalPosition" type="CLargeVolumeType" comment="限仓起点"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="LongPosLimit" type="CRatioType" comment="多头限仓"/>
+				<field name="ShortPosLimit" type="CRatioType" comment="空头限仓"/>
+				<field name="UpperLimitPrice" type="CPriceType" comment="涨停板价"/>
+				<field name="LowerLimitPrice" type="CPriceType" comment="跌停板价"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysInstrumentIDIndex" stableIndex="yes">
+					<indexKey name="InstrumentID"/>
+					<indexKey name="ClientID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysInstrumentIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="InstrumentID" value="&quot;&quot;"/>
+						<defaultDefine name="ClientID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysInstrumentIDIndex">
+					<parameter>
+						<paraDefine name="InstrumentID" desc="" checkParameter="yes"/>
+						<paraDefine name="ClientID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysTransactionChg" usage="账户出入金查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="BillSN" type="CSerialNoType" comment="帐户往来流水号"/>
+				<field name="ParticipantAccount" type="CAccountIDType" comment="资金账户"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="Amount" type="CMoneyType" comment="发生额"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysClientChg" usage="客户数据变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+				<field name="ClientName" type="CPartyNameType" comment="客户名称"/>
+				<field name="ClientType" type="CClientTypeType" comment="客户类型"/>
+				<field name="IsActive" type="CBoolType" comment="是否活跃"/>
+				<field name="IdentifiedCardType" type="CIdCardTypeType" comment="证件类型"/>
+				<field name="IdentifiedCardNo" type="CIdentifiedCardNoType" comment="证件号码"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysPartClientChg" usage="会员客户对照变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysPosiLimitChg" usage="限仓数据变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="TradingRole" type="CPositionTradingRoleType" comment="交易角色"/>
+				<field name="StartTotalPosition" type="CLargeVolumeType" comment="限仓起点"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="LongPosLimit" type="CRatioType" comment="多头限仓"/>
+				<field name="ShortPosLimit" type="CRatioType" comment="空头限仓"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysClientPosiLimitChg" usage="限仓数据变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ClientType" type="CClientTypeType" comment="客户类型"/>
+				<field name="TradingRole" type="CPositionTradingRoleType" comment="交易角色"/>
+				<field name="StartTotalPosition" type="CLargeVolumeType" comment="限仓起点"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="LongPosLimit" type="CRatioType" comment="多头限仓"/>
+				<field name="ShortPosLimit" type="CRatioType" comment="空头限仓"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysSpecPosiLimitChg" usage="限仓数据变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+				<field name="TradingRole" type="CPositionTradingRoleType" comment="交易角色"/>
+				<field name="StartTotalPosition" type="CLargeVolumeType" comment="限仓起点"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="LongPosLimit" type="CRatioType" comment="多头限仓"/>
+				<field name="ShortPosLimit" type="CRatioType" comment="空头限仓"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysHedgeDetailChg" usage="保值额度变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+				<field name="OperatorID" type="COperatorIDType" comment="用户代码"/>
+				<field name="Time" type="CTimeType" comment="时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="PosiDirection" type="CPosiDirectionType" comment="持仓多空方向"/>
+				<field name="TradingVolume" type="CVolumeType" comment="发生额"/>
+				<field name="HedgeQuota" type="CVolumeType" comment="保值额度"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysParticipantChg" usage="会员变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="ParticipantName" type="CParticipantNameType" comment="会员名称"/>
+				<field name="ParticipantAbbr" type="CParticipantAbbrType" comment="会员简称"/>
+				<field name="MemberType" type="CMemberTypeType" comment="会员类型"/>
+				<field name="IsActive" type="CBoolType" comment="是否活跃"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMarginRateChg" usage="保证金率变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="TradingRole" type="CTradingRoleType" comment="交易角色"/>
+				<field name="HedgeFlag" type="CHedgeFlagType" comment="投机套保标志"/>
+				<field name="ValueMode" type="CValueModeType" comment="取值方式"/>
+				<field name="LongMarginRatio" type="CRatioType" comment="多头保证金率"/>
+				<field name="ShortMarginRatio" type="CRatioType" comment="空头保证金率"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysUserIpChg" usage="IP地址变动查询">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="UserID" type="CUserIDType" comment="交易用户代码"/>
+				<field name="IPAddress" type="CIPAddressType" comment="IP地址"/>
+				<field name="IPMask" type="CIPAddressType" comment="IP地址掩码"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysActionTimeIndex" stableIndex="yes">
+					<indexKey name="ActionTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysActionTimeIndex">
+					<parameter>
+						<paraDefine name="ActionTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysPartTrade" usage="会员交易信息">
+			<fields>
+				<field name="ActionDate" type="CDateType" comment="操作日期"/>
+				<field name="ActionTime" type="CTimeType" comment="操作时间"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="TotalPositiveOrder" type="CVolumeType" comment="总报买单量"/>
+				<field name="TotalNegativeOrder" type="CVolumeType" comment="总报单卖量"/>
+				<field name="TotalPositiveTrade" type="CVolumeType" comment="买单总成交量"/>
+				<field name="TotalNegativeTrade" type="CVolumeType" comment="卖单总成交量"/>
+				<field name="TotalPositivePosi" type="CVolumeType" comment="总多头持仓量"/>
+				<field name="TotalNegativePosi" type="CVolumeType" comment="总空头持仓量"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysPartInstrumentIndex" stableIndex="yes">
+					<indexKey name="ParticipantID"/>
+					<indexKey name="InstrumentID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysPartInstrumentIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ParticipantID" value="&quot;&quot;"/>
+						<defaultDefine name="InstrumentID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysPartInstrumentIndex">
+					<parameter>
+						<paraDefine name="ParticipantID" desc="" checkParameter="yes"/>
+						<paraDefine name="InstrumentID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbObjectAttr" usage="对象状态指标">
+			<fields>
+				<field name="SubcriberID" type="CVolumeType" comment="订阅对象ID"/>
+				<field name="ObjectID" type="CVolumeType" comment="定义对象ID"/>
+				<field name="AttrType" type="CVolumeType" comment="监控指标类型ID"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="ValueType" type="CValueTypeType" comment="监控指标的值类型"/>
+				<field name="AttrValue" type="CAttrValueType" comment="监控指标的具体值"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByIDType" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+						<paraDefine name="MonDate" desc=""/>
+						<paraDefine name="MonTime" desc=""/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="SubcriberID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbSyslogInfo" usage="日志文件内容传输信息">
+			<fields>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="ObjectID" type="CVolumeType" comment="定义对象ID"/>
+				<field name="AttrType" type="CVolumeType" comment="监控指标类型ID"/>
+				<field name="ContLen" type="CTypeContLenType" comment="文件内容长度"/>
+				<field name="FileContent" type="CTypeFileContentType" comment="文件内容"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="AttrType"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="AttrType"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+						<paraDefine name="AttrType" desc=""/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+						<paraDefine name="AttrType" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysUserInfo" usage="用户信息">
+			<fields>
+				<field name="USERNAME" type="CTypeUserNameType" comment="用户名"/>
+				<field name="USERID" type="CVolumeType" comment="用户ID"/>
+				<field name="GROUPNAME" type="CTypeUserNameType" comment="用户组名"/>
+				<field name="GROUPID" type="CVolumeType" comment="用户组ID"/>
+				<field name="HOMEPATH" type="CTypeUserNameType" comment="HOME路径"/>
+				<field name="SHELL" type="CTypeUserNameType" comment="用户使用SHELL环境"/>
+				<field name="ObjectID" type="CTypeObjectIDType" comment="定义对象名"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysOnlineUserInfo" usage="在线用户信息查询应答">
+			<fields>
+				<field name="USERNAME" type="CTypeUserNameType" comment="用户名"/>
+				<field name="TIME" type="CTypeUserNameType" comment="登录时间"/>
+				<field name="TTY" type="CTypeUserNameType" comment="终端类型"/>
+				<field name="IP" type="CTypeUserNameType" comment="IP地址"/>
+				<field name="CONNECTIME" type="CTypeUserNameType" comment="连接时间"/>
+				<field name="PID" type="CVolumeType" comment="进程ID"/>
+				<field name="ObjectID" type="CTypeObjectIDType" comment="定义对象名"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysWarningEvent" usage="告警事件查询应答">
+			<fields>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="OccurDate" type="CDateType" comment="事件发生日期"/>
+				<field name="OccurTime" type="CTimeType" comment="事件发生时间"/>
+				<field name="EvendID" type="CVolumeType" comment="事件ID"/>
+				<field name="ObjectID" type="CNetAttrTypeType" comment="发生事件的对象ID指标"/>
+				<field name="IPAddress" type="CIPAddressType" comment="IP地址"/>
+				<field name="EventName" type="CTypeObjectIDType" comment="事件名"/>
+				<field name="EventNum" type="CVolumeType" comment="事件标签"/>
+				<field name="EventType" type="CVolumeType" comment="事件类型"/>
+				<field name="EventDes" type="CTypeDescriptionType" comment="事件描述"/>
+				<field name="ProcessFlag" type="CTypeProcessFlagType" comment="清除标记"/>
+				<field name="WarningLevel" type="CTypeWarningLevelType" comment="警告级别"/>
+				<field name="EventDealDes" type="CTypeObjectIDType" comment="事件处理描述"/>
+				<field name="FullEventName" type="CNetAttrTypeType" comment="事件全名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="OccurTime" isAsc="no"/>
+				</defineIndex>
+				<defineIndex name="SysEventIdIndex" stableIndex="yes">
+					<indexKey name="EvendID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByTime" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="OccurTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="OccurTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByEvendID" searchUnique="yes" indexName="SysEventIdIndex">
+					<parameter>
+						<paraDefine name="EvendID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByEvendIDs" searchUnique="no" indexName="SysEventIdIndex">
+					<parameter>
+						<paraDefine name="EvendID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysEventIdIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="EvendID" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysWarningQuery" usage="告警明细应答">
+			<fields>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="EvendID" type="CVolumeType" comment="事件ID"/>
+				<field name="DBQueryResult" type="CDBQueryResultType" comment="数据库查询结果"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+				<defineIndex name="SysEventIdIndex" stableIndex="yes">
+					<indexKey name="EvendID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByTime" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByEvendID" searchUnique="yes" indexName="SysEventIdIndex">
+					<parameter>
+						<paraDefine name="EvendID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SyslogEvent" usage="日志事件查询应答">
+			<fields>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="OccurDate" type="CDateType" comment="事件发生日期"/>
+				<field name="OccurTime" type="CTimeType" comment="事件发生时间"/>
+				<field name="EvendID" type="CVolumeType" comment="事件ID"/>
+				<field name="ObjectID" type="CNetAttrTypeType" comment="发生事件的对象ID指标"/>
+				<field name="IPAddress" type="CIPAddressType" comment="IP地址"/>
+				<field name="EventName" type="CTypeObjectIDType" comment="事件名"/>
+				<field name="EventNum" type="CVolumeType" comment="事件标签"/>
+				<field name="EventType" type="CVolumeType" comment="事件类型"/>
+				<field name="EventDes" type="CTypeDescriptionType" comment="事件描述"/>
+				<field name="ProcessFlag" type="CTypeProcessFlagType" comment="清除标记"/>
+				<field name="WarningLevel" type="CTypeWarningLevelType" comment="警告级别"/>
+				<field name="EventDealDes" type="CTypeObjectIDType" comment="事件处理描述"/>
+				<field name="FullEventName" type="CNetAttrTypeType" comment="事件全名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysTimeIndex" stableIndex="yes">
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="OccurTime" isAsc="no"/>
+				</defineIndex>
+				<defineIndex name="SysEventIdIndex" stableIndex="yes">
+					<indexKey name="EvendID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByTime" searchUnique="no" indexName="SysTimeIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="OccurTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="OccurTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="OccurTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByEvendID" searchUnique="yes" indexName="SysEventIdIndex">
+					<parameter>
+						<paraDefine name="EvendID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysEventDescrip" usage="事件描述查询">
+			<fields>
+				<field name="EventDesID" type="CEventDesIDType" comment="处理ID号"/>
+				<field name="UserName" type="CTypeObjectIDType" comment="事件处理人"/>
+				<field name="MonDate" type="CDateType" comment="事件处理日期"/>
+				<field name="MonTime" type="CTimeType" comment="事件处理时间"/>
+				<field name="EventDes" type="CDescriptionType" comment="处理描述"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysTimeIndex" stableIndex="yes">
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+				<defineIndex name="SysEventIdIndex" stableIndex="yes">
+					<indexKey name="EventDesID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByTime" searchUnique="no" indexName="SysTimeIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByEvendID" searchUnique="yes" indexName="SysEventIdIndex">
+					<parameter>
+						<paraDefine name="EventDesID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="RspQryHostEnvCommon" usage="主机环境信息">
+			<fields>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="HostModel" type="CTypeHostModelType" comment="主机型号"/>
+				<field name="MainMemory" type="CVolumeType" comment="内存大小(K)"/>
+				<field name="CPUVendor" type="CTypeHostModelType" comment="CPU厂商"/>
+				<field name="CPUModel" type="CTypeHostModelType" comment="CPU型号"/>
+				<field name="CPUMHz" type="CTypeHostModelType" comment="CPU主频"/>
+				<field name="CPUCache" type="CTypeHostModelType" comment="CPU缓存"/>
+				<field name="CPUCores" type="CVolumeType" comment="CPU内核数"/>
+				<field name="Processors" type="CVolumeType" comment="CPU个数"/>
+				<field name="OsMode" type="CVolumeType" comment="32位还是64位操作系统"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="RspQryHostEnvLan" usage="主机环境Lan信息">
+			<fields>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="LanHardwareID" type="CTypeHostModelType" comment="LanID"/>
+				<field name="LanHardwareValue" type="CTypeHostModelType" comment="Mac地址"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="RspQryHostEnvStorage" usage="主机环境存储设备信息">
+			<fields>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="StorageDev" type="CTypeHostModelType" comment="Storage Devices"/>
+				<field name="HWPath" type="CTypeHostModelType" comment="HW Path"/>
+				<field name="Interface" type="CTypeHostModelType" comment="Interface"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="RspQryHostEnvIO" usage="主机环境IO设备信息">
+			<fields>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="IoClass" type="CTypeChar10Type" comment="IO Class"/>
+				<field name="H_WPath" type="CTypeChar10Type" comment="H/W Path"/>
+				<field name="IoDriver" type="CTypeChar10Type" comment="Driver"/>
+				<field name="IoDescription" type="CTypeDescriptionType" comment="Description"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="RspQryHostEnvFS" usage="主机环境文件系统信息">
+			<fields>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="LVMDeviceFile" type="CTypeHostModelType" comment="LVM Device file"/>
+				<field name="MountPoint" type="CTypeCommandType" comment="mount point"/>
+				<field name="FSsize" type="CVolumeType" comment="size"/>
+				<field name="FSType" type="CTypeChar10Type" comment="fs type"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="RspQryHostEnvSwap" usage="主机环境交换分区信息">
+			<fields>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="type" type="CTypeChar10Type" comment="type"/>
+				<field name="size" type="CVolumeType" comment="size"/>
+				<field name="priority" type="CVolumeType" comment="priority"/>
+				<field name="location" type="CTypeHostModelType" comment="device location"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="RspQryHostEnvLanCfg" usage="主机环境网卡配置信息">
+			<fields>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="LanName" type="CTypeLanNameType" comment=""/>
+				<field name="IpAddress" type="CIPAddressType" comment=""/>
+				<field name="IpMask" type="CIPAddressType" comment=""/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbTopCpuInfo" usage="CPU资源使用信息">
+			<fields>
+				<field name="HostName" type="CVolumeType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="CPU" type="CTypeCPUIdType" comment="CPU的编号"/>
+				<field name="LOAD" type="CRatioType" comment=""/>
+				<field name="USER" type="CRatioType" comment=""/>
+				<field name="NICE" type="CRatioType" comment=""/>
+				<field name="SYS" type="CRatioType" comment=""/>
+				<field name="IDLE" type="CRatioType" comment=""/>
+				<field name="BLOCK" type="CRatioType" comment=""/>
+				<field name="SWAIT" type="CRatioType" comment=""/>
+				<field name="INTR" type="CRatioType" comment=""/>
+				<field name="SSYS" type="CRatioType" comment=""/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="HostName" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbTopMemInfo" usage="内存资源使用信息">
+			<fields>
+				<field name="HostName" type="CVolumeType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="TOTALREAL" type="CVolumeType" comment="Total Real Memory"/>
+				<field name="ACTIVEREAL" type="CVolumeType" comment="Active Real Memory"/>
+				<field name="TOTALVIRTUAL" type="CVolumeType" comment="Total Virtual Memory"/>
+				<field name="ACTIVEVIRTUAL" type="CVolumeType" comment="Active Virtual Memory"/>
+				<field name="FREE" type="CVolumeType" comment="Free Memory"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="HostName" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbTopProcessInfo" usage="进程信息">
+			<fields>
+				<field name="HostName" type="CVolumeType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="CPU" type="CTypeCPUIdType" comment="处理器号"/>
+				<field name="TTY" type="CTypeChar10Type" comment="终端名"/>
+				<field name="PID" type="CVolumeType" comment="进程号"/>
+				<field name="USERNAME" type="CTypeChar10Type" comment="用户名"/>
+				<field name="PRI" type="CVolumeType" comment="任务的优先级"/>
+				<field name="NI" type="CVolumeType" comment="任务的nice值"/>
+				<field name="SIZE" type="CVolumeType" comment="任务的代码加上数据再加上栈空间的大小"/>
+				<field name="RES" type="CVolumeType" comment="任务使用的物理内存的总数量"/>
+				<field name="STATE" type="CTypeChar10Type" comment="任务的状态"/>
+				<field name="TIME" type="CTimeType" comment="自任务开始时使用的总CPU时间"/>
+				<field name="pWCPU" type="CRatioType" comment="进程的CPU利用率权重百分比"/>
+				<field name="pCPU" type="CRatioType" comment="进程的原始的CPU利用率百分比"/>
+				<field name="COMMAND" type="CTypeCommandType" comment="启动进程的命令名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="HostName" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbFileSystemInfo" usage="文件系统信息">
+			<fields>
+				<field name="HostName" type="CVolumeType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="FILESYSTEM" type="CTypeCommandType" comment="文件系统物理名"/>
+				<field name="SIZE" type="CVolumeType" comment="空间总数"/>
+				<field name="USED" type="CVolumeType" comment="已用空间大小"/>
+				<field name="AVAIL" type="CVolumeType" comment="可用空间大小"/>
+				<field name="pUSERD" type="CRatioType" comment="已用的百分比"/>
+				<field name="ISIZE" type="CVolumeType" comment="inode总数"/>
+				<field name="IUSED" type="CVolumeType" comment="已用inode大小"/>
+				<field name="IFREE" type="CVolumeType" comment="可用inode大小"/>
+				<field name="pIUSED" type="CRatioType" comment="已用的百分比"/>
+				<field name="MountedOn" type="CTypeCommandType" comment="加载位置"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="HostName"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="HostName" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="HostName" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="HostName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbNetworkInfo" usage="网络使用信息">
+			<fields>
+				<field name="SubcriberID" type="CVolumeType" comment="订阅对象ID"/>
+				<field name="HostName" type="CVolumeType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="LANNAME" type="CTypeLanNameType" comment="网卡名"/>
+				<field name="LANSTATUS" type="CTypeLanStatusType" comment="网卡的up或down状态"/>
+				<field name="IPADDRESS" type="CIPAddressType" comment="网卡的ip地址"/>
+				<field name="RECVBYTES" type="CLargeNumberType" comment="网卡接收的流量"/>
+				<field name="RECVPACKETS" type="CLargeNumberType" comment="网卡接收的数据包"/>
+				<field name="RECVERRORPACKETS" type="CLargeNumberType" comment="网卡接收端错误数据包"/>
+				<field name="RECVDROPPACKETS" type="CLargeNumberType" comment="网卡接收端丢失数据包"/>
+				<field name="SENDBYTES" type="CLargeNumberType" comment="网卡发送的流量"/>
+				<field name="SENDPACKETS" type="CLargeNumberType" comment="网卡发送的数据包"/>
+				<field name="SENDERRORPACKETS" type="CLargeNumberType" comment="网卡发送端错误数据包"/>
+				<field name="SENDDROPPACKETS" type="CLargeNumberType" comment="网卡发送端丢失数据包"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="SubcriberID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysParticipantInit" usage="会员">
+			<fields>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="ParticipantName" type="CParticipantNameType" comment="会员名称"/>
+				<field name="ParticipantAbbr" type="CParticipantAbbrType" comment="会员简称"/>
+				<field name="MemberType" type="CMemberTypeType" comment="会员类型"/>
+				<field name="IsActive" type="CBoolType" comment="是否活跃"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysParticipantIDIndex" stableIndex="yes">
+					<indexKey name="ParticipantID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysParticipantIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ParticipantID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysParticipantIDIndex">
+					<parameter>
+						<paraDefine name="ParticipantID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysUserInit" usage="交易用户">
+			<fields>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="UserID" type="CUserIDType" comment="交易用户代码"/>
+				<field name="UserType" type="CUserTypeType" comment="交易用户类型"/>
+				<field name="Password" type="CPasswordType" comment="密码"/>
+				<field name="IsActive" type="CUserActiveType" comment="交易员权限"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysUserIDIndex" stableIndex="yes">
+					<indexKey name="UserID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysUserIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="UserID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysUserIDIndex">
+					<parameter>
+						<paraDefine name="UserID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysClientInit" usage="客户">
+			<fields>
+				<field name="ClientID" type="CClientIDType" comment="客户代码"/>
+				<field name="ClientName" type="CPartyNameType" comment="客户名称"/>
+				<field name="IdentifiedCardType" type="CIdCardTypeType" comment="证件类型"/>
+				<field name="IdentifiedCardNo" type="CIdentifiedCardNoType" comment="证件号码"/>
+				<field name="TradingRole" type="CTradingRoleType" comment="交易角色"/>
+				<field name="ClientType" type="CClientTypeType" comment="客户类型"/>
+				<field name="IsActive" type="CBoolType" comment="是否活跃"/>
+				<field name="OperationType" type="CDBOperationTypeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysClientIDIndex" stableIndex="yes">
+					<indexKey name="ClientID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysClientIDIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ClientID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysClientIDIndex">
+					<parameter>
+						<paraDefine name="ClientID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysTradeUserLoginInfo" usage="交易系统登录信息">
+			<fields>
+				<field name="ObjectID" type="CTypeObjectIDType" comment="对象ID"/>
+				<field name="UserID" type="CUserIDType" comment="交易用户代码"/>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="ProtocolInfo" type="CProtocolInfoType" comment="协议信息"/>
+				<field name="IPAddress" type="CIPAddressType" comment="IP地址"/>
+				<field name="FrontID" type="CFrontIDType" comment="前置机编号"/>
+				<field name="UserType" type="CTypeObjectIDType" comment="用户类别"/>
+				<field name="AccessType" type="CTypeObjectIDType" comment=" 接入方式"/>
+				<field name="ActionDate" type="CDateType" comment="登录或登出日期"/>
+				<field name="ActionTime" type="CTimeType" comment="登录或登出时间"/>
+				<field name="ActionFlag" type="CValueTypeType" comment="登录或登出标记"/>
+				<field name="DataCenter" type="CTypeObjectIDType" comment="数据中心名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysTradeUserLoginInfoIndex" stableIndex="yes">
+					<indexKey name="ParticipantID"/>
+					<indexKey name="UserID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysTradeUserLoginInfoIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ParticipantID" value="&quot;&quot;"/>
+						<defaultDefine name="UserID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysTradeUserLoginInfoIndex">
+					<parameter>
+						<paraDefine name="ParticipantID" desc="" checkParameter="yes"/>
+						<paraDefine name="UserID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbWebAppInfo" usage="Web应用信息">
+			<fields>
+				<field name="ObjectID" type="CVolumeType" comment="监控对象"/>
+				<field name="MonDate" type="CDateType" comment="监控日期"/>
+				<field name="MonTime" type="CTimeType" comment="监控时间"/>
+				<field name="AppName" type="CCfgNameType" comment="Web应用名称"/>
+				<field name="Status" type="CTypeObjectNameType" comment="应用运行状态"/>
+				<field name="Desc" type="CTypeDescriptionType" comment="应用描述信息"/>
+				<field name="StartTime" type="CTypeCurrentTimeType" comment="应用启动时间"/>
+				<field name="ServletNum" type="CTypeChar10Type" comment="应用servlet数量"/>
+				<field name="ProcessTime" type="CTypeCommandType" comment="应用处理总时长"/>
+				<field name="RequestNum" type="CTypeCommandType" comment="应用累计接收请求数"/>
+				<field name="ErrorNum" type="CTypeCommandType" comment="应用累计错误数"/>
+				<field name="SessionSize" type="CTypeChar10Type" comment="应用当前会话数"/>
+				<field name="TimeOut" type="CTypeChar10Type" comment="会话超时时长(秒)"/>
+				<field name="JDBCUsage" type="CTypeChar10Type" comment="应用JDBC连接使用率"/>
+				<field name="JSPNum" type="CTypeChar10Type" comment="应用JSP文件数量"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByIDType" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+						<paraDefine name="MonDate" desc=""/>
+						<paraDefine name="MonTime" desc=""/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbMemPoolInfo" usage="系统内存池信息">
+			<fields>
+				<field name="ObjectID" type="CVolumeType" comment="监控对象"/>
+				<field name="MonDate" type="CDateType" comment="监控日期"/>
+				<field name="MonTime" type="CTimeType" comment="监控时间"/>
+				<field name="PoolName" type="CCfgNameType" comment="系统属性名"/>
+				<field name="Usage" type="CTypeChar10Type" comment="系统属性名"/>
+				<field name="committedbytes" type="CTypeCommandType" comment="系统属性名"/>
+				<field name="initbytes" type="CTypeCommandType" comment="系统属性名"/>
+				<field name="maxbytes" type="CTypeCommandType" comment="系统属性名"/>
+				<field name="usedbytes" type="CTypeCommandType" comment="系统属性名"/>
+				<field name="Type" type="CTypeChar10Type" comment="系统属性名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByIDType" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+						<paraDefine name="MonDate" desc=""/>
+						<paraDefine name="MonTime" desc=""/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbConnectorInfo" usage="连接器信息">
+			<fields>
+				<field name="ObjectID" type="CVolumeType" comment="监控对象"/>
+				<field name="MonDate" type="CDateType" comment="监控日期"/>
+				<field name="MonTime" type="CTimeType" comment="监控时间"/>
+				<field name="Name" type="CTypeObjectNameType" comment="连接器名称"/>
+				<field name="ThreadsCount" type="CTypeChar10Type" comment="当前处理线程数"/>
+				<field name="BusyThreadsCount" type="CTypeChar10Type" comment="当前繁忙线程数"/>
+				<field name="MaxThreads" type="CTypeChar10Type" comment="最大线程数"/>
+				<field name="MaxSpareThreads" type="CTypeChar10Type" comment="最大空闲线程数"/>
+				<field name="MinSpareThreads" type="CTypeChar10Type" comment="最小空闲线程数"/>
+				<field name="MaxTime" type="CTypeCommandType" comment="最长连接时间"/>
+				<field name="MaxProcTime" type="CTypeCommandType" comment="最长处理时间"/>
+				<field name="RequestCount" type="CTypeCommandType" comment="累计接收请求数"/>
+				<field name="ErrorCount" type="CTypeCommandType" comment="累计错误数"/>
+				<field name="BytesReceived" type="CTypeChar10Type" comment="累计接收字节数"/>
+				<field name="BytesSent" type="CTypeChar10Type" comment="累计发送字节数"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByIDType" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+						<paraDefine name="MonDate" desc=""/>
+						<paraDefine name="MonTime" desc=""/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbDBQuery" usage="数据库查询应答">
+			<fields>
+				<field name="SubcriberID" type="CVolumeType" comment="订阅对象ID"/>
+				<field name="ObjectID" type="CVolumeType" comment="数据库实例对象ID"/>
+				<field name="AttrType" type="CVolumeType" comment="存储过程名"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="DBQueryResult" type="CDBQueryResultType" comment="数据库查询结果"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByIDType" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+						<paraDefine name="MonDate" desc=""/>
+						<paraDefine name="MonTime" desc=""/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="SubcriberID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetArea" usage="网络大区划分">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="区域中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="区域英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetSubArea" usage="网络子区">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="SysNetAreaID" type="CVolumeType" comment="SysNetArea"/>
+				<field name="CName" type="CTypeObjectIDType" comment="区域中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="区域英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetSubAreaIP" usage="网络子区IP">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="SysNetSubAreaID" type="CVolumeType" comment="SysNetSubAreaID"/>
+				<field name="IP" type="CIPAddressType" comment="ip地址"/>
+				<field name="Mask" type="CIPAddressType" comment="掩码"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetFuncArea" usage="职能区">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="SysNetSubAreaID" type="CVolumeType" comment="SysNetSubAreaID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="区域中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="区域英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetDevice" usage="网络设备">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="ObjectID" type="CNetObjectIDType" comment="监控对象"/>
+				<field name="MonitorType_ID" type="CVolumeType" comment="监控对象类型"/>
+				<field name="SysNetSubAreaID" type="CVolumeType" comment="SysNetSubAreaID"/>
+				<field name="CATEGORY_ID" type="CVolumeType" comment="分类ID  "/>
+				<field name="FuctionArea" type="CTypeObjectIDType" comment="人为划分的职能区域  "/>
+				<field name="IPADDR" type="CIPAddressType" comment="IP地址  "/>
+				<field name="IPDECODE" type="CVolumeType" comment="IP码    "/>
+				<field name="NAME" type="CNetObjectIDType" comment="设备名称 "/>
+				<field name="PORTNUMBER" type="CVolumeType" comment="             "/>
+				<field name="CONFIGFILE" type="CTypeObjectIDType" comment="          "/>
+				<field name="RCOMMUNITY" type="CTypeObjectIDType" comment="共同体名  "/>
+				<field name="SNMPVERSION" type="CVolumeType" comment="snmp版本     "/>
+				<field name="RAMSIZE" type="CVolumeType" comment="ramsize(B)   "/>
+				<field name="FLASHSIZE" type="CVolumeType" comment="falshsize(B) "/>
+				<field name="NVRAMSIZE" type="CVolumeType" comment="nvramsize(B) "/>
+				<field name="CABINET_ID" type="CVolumeType" comment="所属机柜"/>
+				<field name="ROOM_ID" type="CVolumeType" comment=""/>
+				<field name="IOSVERSION_ID" type="CVolumeType" comment="软件版本"/>
+				<field name="DESCRIPTION" type="CNetAttrTypeType" comment="系统描述"/>
+				<field name="USERNAME" type="CTypeObjectIDType" comment="登录用户名"/>
+				<field name="PASSWD" type="CNetAttrTypeType" comment="登录密码"/>
+				<field name="ENPASSWD" type="CNetAttrTypeType" comment="enable密码"/>
+				<field name="MANUFACTORY_ID" type="CVolumeType" comment="厂商类型"/>
+				<field name="CFGSAVETYPE" type="CVolumeType" comment="配置备份协议"/>
+				<field name="DEVICETYPE" type="CNetObjectIDType" comment="设备型号"/>
+				<field name="SENDSMS" type="CVolumeType" comment="是否短信告警"/>
+				<field name="ISSNMP" type="CVolumeType" comment="是否自动snmp探测"/>
+				<field name="SLOTNUM" type="CVolumeType" comment="槽位数"/>
+				<field name="ISPING" type="CVolumeType" comment="是否自动ping"/>
+				<field name="IFNUM" type="CVolumeType" comment="端口数量"/>
+				<field name="APPLICATION_ID" type="CVolumeType" comment="巡检分区"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+				<defineIndex name="SysIPDECODETypeIndex" stableIndex="yes">
+					<indexKey name="IPDECODE"/>
+				</defineIndex>
+				<defineIndex name="SysSubAreaIDTypeIndex" stableIndex="yes">
+					<indexKey name="SysNetSubAreaID"/>
+				</defineIndex>
+				<defineIndex name="SysObjectIDTypeIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByIPDECODE" searchUnique="no" indexName="SysIPDECODETypeIndex">
+					<parameter>
+						<paraDefine name="IPDECODE" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BySubAreaID" searchUnique="no" indexName="SysSubAreaIDTypeIndex">
+					<parameter>
+						<paraDefine name="SysNetSubAreaID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByObjectID" searchUnique="yes" indexName="SysObjectIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetDeviceLinked" usage="网络设备连接关系">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="NetDeviceID" type="CVolumeType" comment="设备ID"/>
+				<field name="NetPortID" type="CVolumeType" comment="设备端口ID"/>
+				<field name="NetObjectID" type="CNetObjectIDType" comment="监控对象"/>
+				<field name="NetPortType" type="CNetDevicePortTypeType" comment="监控对象端口类型"/>
+				<field name="LinkNetDeviceID" type="CVolumeType" comment="连接设备ID"/>
+				<field name="LinkNetPortID" type="CVolumeType" comment="连接设备端口ID"/>
+				<field name="LinkNetObjectID" type="CNetObjectIDType" comment="连接对象"/>
+				<field name="LinkNetPortType" type="CNetDevicePortTypeType" comment="连接对象端口类型"/>
+				<field name="LinkSource" type="CVolumeType" comment="链接来源"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+				<defineIndex name="SysNetObjectIDTypeIndex" stableIndex="yes">
+					<indexKey name="NetObjectID"/>
+				</defineIndex>
+				<defineIndex name="SysLinkObjectIDTypeIndex" stableIndex="yes">
+					<indexKey name="LinkNetObjectID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByNetObjectID" searchUnique="no" indexName="SysNetObjectIDTypeIndex">
+					<parameter>
+						<paraDefine name="NetObjectID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByLinkNetObjectID" searchUnique="no" indexName="SysLinkObjectIDTypeIndex">
+					<parameter>
+						<paraDefine name="LinkNetObjectID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetOID" usage="OID">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="Manufactory" type="CTypeObjectIDType" comment="生产商名"/>
+				<field name="DeviceType" type="CTypeObjectIDType" comment="设备型号"/>
+				<field name="CName" type="CTypeObjectIDType" comment="OID中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="OID英文名"/>
+				<field name="OID" type="CTypeObjectIDType" comment="OID"/>
+				<field name="Unit" type="CTypeObjectIDType" comment="单位"/>
+				<field name="isTheTable" type="CVolumeType" comment="是否标量标志"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetDeviceType" usage="网络设备类型">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="Manufactory" type="CTypeObjectIDType" comment="生产商名"/>
+				<field name="DeviceType" type="CTypeObjectIDType" comment="设备型号"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetTimePolicy" usage="时间策略">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="时间策略中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="时间策略英文名"/>
+				<field name="PolicyType" type="CVolumeType" comment="策略类型"/>
+				<field name="PolicyString" type="CPolicyStringTypeType" comment="策略项配置串"/>
+				<field name="TradingDay" type="CVolumeType" comment="交易日限制"/>
+				<field name="Description" type="CNetAttrTypeType" comment="策略项描述"/>
+				<field name="Operation" type="CVolumeType" comment="操作类型"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetGatherTask" usage="采集任务">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="ObjectID" type="CNetObjectIDType" comment="网络监控对象ID"/>
+				<field name="AttrType" type="CNetAttrTypeType" comment="网络监控指标类型"/>
+				<field name="PolicyTypeID" type="CVolumeType" comment="时间策略ID"/>
+				<field name="DataType" type="CVolumeType" comment="返回类型"/>
+				<field name="TypeFlag" type="CVolumeType" comment="类型标识"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+				<defineIndex name="SysNetObjectIDTypeIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByNetObjectID" searchUnique="no" indexName="SysNetObjectIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetDeviceCategory" usage="常用设备类别">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="类别中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="类别英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetManufactory" usage="设备厂商">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="厂商中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="厂商英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetCommunity" usage="设备共同体">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="IPADDR" type="CIPAddressType" comment="IP地址"/>
+				<field name="COMMUNITY" type="CTypeObjectIDType" comment="共同体名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetPortType" usage="端口类型">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="英文名"/>
+				<field name="Description" type="CTypeObjectIDType" comment="描述"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetInterface" usage="端口">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="ObjectID" type="CNetObjectIDType" comment="监控对象"/>
+				<field name="MonitorType_ID" type="CVolumeType" comment="监控对象类型"/>
+				<field name="IfType" type="CVolumeType" comment="端口类型"/>
+				<field name="EName" type="CTypeObjectIDType" comment="端口名"/>
+				<field name="IpAddress" type="CIPAddressType" comment="IP地址"/>
+				<field name="IpMask" type="CIPAddressType" comment="掩码"/>
+				<field name="IfStatus" type="CVolumeType" comment="端口状态"/>
+				<field name="MAC" type="CTypeObjectIDType" comment="物理地址"/>
+				<field name="DeviceID" type="CVolumeType" comment="所属设备ID"/>
+				<field name="DeviceObjectID" type="CNetObjectIDType" comment="所属设备ObjectID"/>
+				<field name="DeviceIndex" type="CTypeObjectNameType" comment="所属设备端口索引"/>
+				<field name="isPolling" type="CVolumeType" comment="是否轮询"/>
+				<field name="Description" type="CTypeObjectIDType" comment="描述"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+				<defineIndex name="SysDeviceIDTypeIndex" stableIndex="yes">
+					<indexKey name="DeviceID"/>
+				</defineIndex>
+				<defineIndex name="SysObjectIDTypeIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDeviceID" searchUnique="no" indexName="SysDeviceIDTypeIndex">
+					<parameter>
+						<paraDefine name="DeviceID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByObjectID" searchUnique="yes" indexName="SysObjectIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetGeneralOID" usage="通用OID">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="OID中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="OID英文名"/>
+				<field name="OID" type="CTypeObjectIDType" comment="OID"/>
+				<field name="Unit" type="CTypeObjectIDType" comment="单位"/>
+				<field name="isTheTable" type="CVolumeType" comment="是否标量标志"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorType" usage="监控对象类别">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="OID中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="OID英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorAttrScope" usage="指标统表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CNetAttrTypeType" comment="指标中文名"/>
+				<field name="EName" type="CNetAttrTypeType" comment="指标英文名"/>
+				<field name="Comments" type="CNetAttrTypeType" comment="注释"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorAttrType" usage="监控指标表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="MANUFACTORY_ID" type="CVolumeType" comment="厂商类型"/>
+				<field name="MonitorType_ID" type="CVolumeType" comment="设备类别"/>
+				<field name="AttrType_ID" type="CVolumeType" comment="网络监控指标ID"/>
+				<field name="MANUFACTORY" type="CTypeObjectIDType" comment="厂商类型"/>
+				<field name="MonitorType" type="CTypeObjectIDType" comment="设备类别"/>
+				<field name="AttrType" type="CNetAttrTypeType" comment="网络监控指标"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorCommandType" usage="监控指令表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="Manufactory_ID" type="CVolumeType" comment="厂商类型ID"/>
+				<field name="MonitorType_ID" type="CVolumeType" comment="设备类别ID"/>
+				<field name="DeviceModle_ID" type="CVolumeType" comment="设备型号ID"/>
+				<field name="ActionGroup_ID" type="CVolumeType" comment="动作族ID"/>
+				<field name="Manufactory" type="CTypeObjectIDType" comment="厂商类型"/>
+				<field name="MonitorType" type="CTypeObjectIDType" comment="设备类别"/>
+				<field name="DeviceModle" type="CTypeObjectIDType" comment="设备型号"/>
+				<field name="ActionGroup" type="CTypeObjectIDType" comment="动作族"/>
+				<field name="Command" type="CNetAttrTypeType" comment="指令码"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorActionGroup" usage="动作族表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="动作族中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="动作族英文名"/>
+				<field name="ActionType" type="CVolumeType" comment="动作类型码"/>
+				<field name="Comments" type="CNetAttrTypeType" comment="注释"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorDeviceGroup" usage="设备对象组表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="设备对象组中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="设备对象组英文名"/>
+				<field name="Condition" type="CNetString512Type" comment="设备过滤条件"/>
+				<field name="Comments" type="CNetAttrTypeType" comment="注释"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorTaskInfo" usage="任务信息表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="任务中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="任务英文名"/>
+				<field name="DeviceGroup_ID" type="CVolumeType" comment="设备对象组ID"/>
+				<field name="ManagerGroup_ID" type="CVolumeType" comment="管理人员对象组ID"/>
+				<field name="TimePolicy_ID" type="CVolumeType" comment="任务时间策略ID"/>
+				<field name="TaskPriority_ID" type="CVolumeType" comment="任务优先级ID"/>
+				<field name="OutputPolicy_ID" type="CVolumeType" comment="结果输出策略ID"/>
+				<field name="ActionGroup_ID" type="CVolumeType" comment="任务动作族ID"/>
+				<field name="EventExprStr" type="CGeneralResultType" comment="任务表达式ID联合串"/>
+				<field name="DeviceGroup" type="CTypeObjectIDType" comment="设备对象组"/>
+				<field name="ManagerGroup" type="CTypeObjectIDType" comment="管理人员对象组"/>
+				<field name="TimePolicy" type="CTypeObjectIDType" comment="任务时间策略"/>
+				<field name="TaskPriority" type="CTypeObjectIDType" comment="任务优先级"/>
+				<field name="OutputPolicy" type="CTypeObjectIDType" comment="结果输出策略"/>
+				<field name="ActionGroup" type="CTypeObjectIDType" comment="任务动作族"/>
+				<field name="ValidFlag" type="CVolumeType" comment="任务有效性标识"/>
+				<field name="TaskStatus" type="CVolumeType" comment="任务状态标识"/>
+				<field name="Comments" type="CNetAttrTypeType" comment="任务描述"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorTaskObjectSet" usage="任务对象集">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="DeviceGroup_ID" type="CVolumeType" comment="设备对象组ID"/>
+				<field name="Device_ID" type="CVolumeType" comment="设备ID"/>
+				<field name="DataCenter" type="CDataCenterFlagType" comment="DataCenter"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="DeviceGroup_ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="DeviceGroup_ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDeviceGroup_ID" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="DeviceGroup_ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorTaskResult" usage="任务结果表">
+			<fields>
+				<field name="ObjectID" type="CNetObjectIDType" comment="网络监控对象ID"/>
+				<field name="Task_ID" type="CVolumeType" comment="任务ID"/>
+				<field name="OperateTime" type="CVolumeType" comment="执行次数"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="InstructChain" type="CNetString256Type" comment="指令串"/>
+				<field name="ResultChain" type="CNetString1KType" comment="结果串"/>
+				<field name="Flag" type="CVolumeType" comment="任务执行标识"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysTaskIndex" stableIndex="yes">
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="Task_ID"/>
+					<indexKey name="ObjectID"/>
+					<indexKey name="OperateTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysTaskIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="Task_ID" value="-10"/>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+						<defaultDefine name="OperateTime" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByTask_ID" searchUnique="no" indexName="SysTaskIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="yes"/>
+						<paraDefine name="Task_ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+						<defaultDefine name="OperateTime" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOnlyDate" searchUnique="no" indexName="SysTaskIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="Task_ID" value="-10"/>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+						<defaultDefine name="OperateTime" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByIDTaskTime" searchUnique="no" indexName="SysTaskIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="yes"/>
+						<paraDefine name="Task_ID" desc="" checkParameter="yes"/>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+						<paraDefine name="OperateTime" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="SysTaskIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="yes"/>
+						<paraDefine name="Task_ID" desc="" checkParameter="yes"/>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="OperateTime" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetPartyLinkInfo" usage="会员链路信息表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="MEMBER_NO" type="CCfgNameType" comment="会员号"/>
+				<field name="MEMBER_NAME" type="CTypeObjectIDType" comment="会员名称"/>
+				<field name="REMOTE_ADDR" type="CTypeObjectIDType" comment="会员接入地点"/>
+				<field name="LOCAL_ADDR" type="CTypeObjectIDType" comment="上期所接入点"/>
+				<field name="ADDRESS" type="CNetAttrTypeType" comment="地址"/>
+				<field name="LINE_STATUS" type="CCfgNameType" comment="线路状态"/>
+				<field name="CONTACT" type="CCfgNameType" comment="联系人"/>
+				<field name="TELEPHONE" type="CTypeObjectIDType" comment="联系电话"/>
+				<field name="MOBILEPHONE" type="CTypeObjectIDType" comment="手机号"/>
+				<field name="EMAIL" type="CTypeObjectIDType" comment="EMAIL"/>
+				<field name="FAX" type="CTypeObjectIDType" comment="传真"/>
+				<field name="PROVINCE" type="CCfgNameType" comment="所属省份"/>
+				<field name="DDN_NO" type="CTypeObjectIDType" comment="线路编号"/>
+				<field name="IN_MODE" type="CTypeObjectIDType" comment="接入方式"/>
+				<field name="IP_WAN" type="CTypeObjectIDType" comment="入网IP广域"/>
+				<field name="IP_LAN" type="CTypeObjectIDType" comment="入网IP局域"/>
+				<field name="IPADDR" type="CTypeObjectIDType" comment="路由器网管IP"/>
+				<field name="Interface" type="CTypeObjectIDType" comment="路由器端口号"/>
+				<field name="INTERFACE_DATE" type="CCfgNameType" comment="接口开通日期"/>
+				<field name="SOFTWARE" type="CCfgNameType" comment="所用软件"/>
+				<field name="FEE_TYPE" type="CCfgNameType" comment="付费类型"/>
+				<field name="SERVICEPROVIDER" type="CCfgNameType" comment="运营商"/>
+				<field name="IF_ZIYING" type="CCfgNameType" comment="是否自营"/>
+				<field name="IF_TUOGUAN" type="CCfgNameType" comment="是否托管"/>
+				<field name="HASOTHER" type="CCfgNameType" comment="有无他所线路"/>
+				<field name="SEAT_NO" type="CGeneralResultType" comment="席位号"/>
+				<field name="PRO" type="CPolicyStringTypeType" comment="备注"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetDelPartyLinkInfo" usage="会员链路信息表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="MEMBER_NO" type="CCfgNameType" comment="会员号"/>
+				<field name="MEMBER_NAME" type="CTypeObjectIDType" comment="会员名称"/>
+				<field name="REMOTE_ADDR" type="CTypeObjectIDType" comment="会员接入地点"/>
+				<field name="LOCAL_ADDR" type="CTypeObjectIDType" comment="上期所接入点"/>
+				<field name="ADDRESS" type="CNetAttrTypeType" comment="地址"/>
+				<field name="LINE_STATUS" type="CCfgNameType" comment="线路状态"/>
+				<field name="CONTACT" type="CCfgNameType" comment="联系人"/>
+				<field name="TELEPHONE" type="CTypeObjectIDType" comment="联系电话"/>
+				<field name="MOBILEPHONE" type="CTypeObjectIDType" comment="手机号"/>
+				<field name="EMAIL" type="CTypeObjectIDType" comment="EMAIL"/>
+				<field name="FAX" type="CTypeObjectIDType" comment="传真"/>
+				<field name="PROVINCE" type="CCfgNameType" comment="所属省份"/>
+				<field name="DDN_NO" type="CTypeObjectIDType" comment="线路编号"/>
+				<field name="IN_MODE" type="CTypeObjectIDType" comment="接入方式"/>
+				<field name="IP_WAN" type="CTypeObjectIDType" comment="入网IP广域"/>
+				<field name="IP_LAN" type="CTypeObjectIDType" comment="入网IP局域"/>
+				<field name="IPADDR" type="CTypeObjectIDType" comment="路由器网管IP"/>
+				<field name="Interface" type="CTypeObjectIDType" comment="路由器端口号"/>
+				<field name="INTERFACE_DATE" type="CCfgNameType" comment="接口开通日期"/>
+				<field name="SOFTWARE" type="CCfgNameType" comment="所用软件"/>
+				<field name="FEE_TYPE" type="CCfgNameType" comment="付费类型"/>
+				<field name="SERVICEPROVIDER" type="CCfgNameType" comment="运营商"/>
+				<field name="IF_ZIYING" type="CCfgNameType" comment="是否自营"/>
+				<field name="IF_TUOGUAN" type="CCfgNameType" comment="是否托管"/>
+				<field name="HASOTHER" type="CCfgNameType" comment="有无他所线路"/>
+				<field name="SEAT_NO" type="CGeneralResultType" comment="席位号"/>
+				<field name="PRO" type="CPolicyStringTypeType" comment="备注"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetPartyLinkAddrChange" usage="会员链路信息表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="RelationID" type="CVolumeType" comment="ID"/>
+				<field name="OLDADDRESS" type="CNetAttrTypeType" comment="变更前地址"/>
+				<field name="NEWADDRESS" type="CNetAttrTypeType" comment="变更后地址"/>
+				<field name="OPERATOR" type="CCfgNameType" comment="操作人"/>
+				<field name="MonDate" type="CDateType" comment="修改日期"/>
+				<field name="MonTime" type="CTimeType" comment="修改时间"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorActionAttr" usage="监控动作指标对照表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="ActionGroup_ID" type="CVolumeType" comment="动作族ID"/>
+				<field name="MonitorAttr_ID" type="CVolumeType" comment="监控对象ID"/>
+				<field name="MonitorAttrName" type="CNetAttrTypeType" comment="指标英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetModule" usage="模块">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="ObjectID" type="CNetObjectIDType" comment="网络监控对象ID"/>
+				<field name="MonitorType_ID" type="CVolumeType" comment="监控对象类型"/>
+				<field name="DeviceID" type="CVolumeType" comment="所属设备ID"/>
+				<field name="DeviceObjectID" type="CNetObjectIDType" comment="所属设备ObjectID"/>
+				<field name="Name" type="CTypeObjectIDType" comment="名字"/>
+				<field name="Description" type="CNetObjectIDType" comment="描述"/>
+				<field name="ModuleIndex" type="CVolumeType" comment="模块索引"/>
+				<field name="EntPhyIndex" type="CVolumeType" comment="物理索引"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+				<defineIndex name="SysDeviceIDTypeIndex" stableIndex="yes">
+					<indexKey name="DeviceID"/>
+				</defineIndex>
+				<defineIndex name="SysObjectIDTypeIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDeviceID" searchUnique="no" indexName="SysDeviceIDTypeIndex">
+					<parameter>
+						<paraDefine name="DeviceID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByObjectID" searchUnique="yes" indexName="SysObjectIDTypeIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetEventExpr" usage="告警表达式信息表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CNAME" type="CNetObjectIDType" comment="中文事件名"/>
+				<field name="ENAME" type="CNetObjectIDType" comment="英文事件名"/>
+				<field name="WarningLEVEL" type="CCfgNameType" comment="事件级别"/>
+				<field name="EventTypeID" type="CVolumeType" comment="事件类型"/>
+				<field name="SubEventTypeID" type="CVolumeType" comment="事件子类型"/>
+				<field name="GIVEUPTIME" type="CVolumeType" comment="告警间隔时间"/>
+				<field name="CONTROL" type="CGeneralResultType" comment="控制定义项"/>
+				<field name="EXPR" type="CGeneralResultType" comment="表达式定义项"/>
+				<field name="BRIEF" type="CTypeObjectIDType" comment="事件简述"/>
+				<field name="DISCRIPTION" type="CNetAttrTypeType" comment="事件描述项"/>
+				<field name="MSGGROUP_ID" type="CVolumeType" comment="消息组ID"/>
+				<field name="ADMINGROUP_ID" type="CVolumeType" comment="管理员组ID"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetEventType" usage="事件类型">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="事件类型中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="事件类型英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetSubEventType" usage="事件子类型">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="事件子类型中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="事件子类型英文名"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetEventLevel" usage="事件级别">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="CName" type="CTypeObjectIDType" comment="事件级别中文名"/>
+				<field name="EName" type="CTypeObjectIDType" comment="事件级别英文名"/>
+				<field name="DISCRIPTION" type="CNetAttrTypeType" comment="事件级别描述项"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorDeviceTask" usage="任务结果规则分析表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="ObjectID" type="CNetObjectIDType" comment="网络监控对象ID"/>
+				<field name="IPAddress" type="CIPAddressType" comment="IP地址"/>
+				<field name="Manufactory_ID" type="CVolumeType" comment="网络设备产商ID"/>
+				<field name="InstructChain" type="CNetString256Type" comment="指令"/>
+				<field name="InstructAlias" type="CNetString128Type" comment="指令别名"/>
+				<field name="InstructArgs" type="CNetString256Type" comment="指令参数串"/>
+				<field name="DefParamChain" type="CNetString2KType" comment="指标阀值串"/>
+				<field name="Flag" type="CVolumeType" comment="结束标志"/>
+				<field name="SecondID" type="CVolumeType" comment="PrimID"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+					<indexKey name="SecondID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+						<defaultDefine name="SecondID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByID" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default>
+						<defaultDefine name="SecondID" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMonitorTaskInstAttrs" usage="任务指令指标集表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="Manufactory_ID" type="CVolumeType" comment="网络设备产商ID"/>
+				<field name="InstructAlias" type="CNetString128Type" comment="指令别名"/>
+				<field name="DEVICETYPE" type="CNetString128Type" comment="设备型号"/>
+				<field name="AttrsChain" type="CNetString256Type" comment="指标串"/>
+				<field name="DefRegularChain" type="CNetString512Type" comment="指标规则串"/>
+				<field name="DefParamChain" type="CNetString2KType" comment="指标阀值串"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetBaseLine" usage="基线表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="MANUFACTORY_ID" type="CVolumeType" comment="厂商类型"/>
+				<field name="Name" type="CNetObjectIDType" comment="基线名"/>
+				<field name="SerialUsed" type="CNetObjectIDType" comment="设备型号"/>
+				<field name="data" type="CbaseCommentType" comment="文件内容"/>
+				<field name="memo" type="CNetAttrTypeType" comment="备注"/>
+				<field name="Flag" type="CVolumeType" comment="结束标志"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByID" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetBaseLineTask" usage="基线任务表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="Name" type="CNetObjectIDType" comment="基线任务名"/>
+				<field name="BaseLineIDList" type="CGeneralResultType" comment="基线ID列表"/>
+				<field name="DeviceIDList" type="CGeneralResultType" comment="设备ID列表"/>
+				<field name="GenDate" type="CDateType" comment="生成日期"/>
+				<field name="GenTime" type="CTimeType" comment="生成时间"/>
+				<field name="GenUser" type="CTypeUserNameType" comment="生成者"/>
+				<field name="memo" type="CNetAttrTypeType" comment="备注"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbNetPartyLinkStatusInfo" usage="会员链路状态信息表">
+			<fields>
+				<field name="SubcriberID" type="CVolumeType" comment="订阅对象ID"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="SEAT_NO" type="CCfgNameType" comment="席位号"/>
+				<field name="IPADDR" type="CTypeObjectIDType" comment="路由器网管IP"/>
+				<field name="Interface" type="CTypeObjectIDType" comment="路由器端口号"/>
+				<field name="status" type="CTypeObjectIDType" comment="链路状态"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysDateTimeIndex" stableIndex="yes">
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByTime" searchUnique="no" indexName="SysDateTimeIndex">
+					<parameter>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysDateTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetMemberSDHLineInfo" usage="会员SDH线路明细表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="SeqNo" type="CVolumeType" comment="序列号"/>
+				<field name="MemContractNo" type="CContractSeqNoType" comment="合同号"/>
+				<field name="ApplyPerson" type="CApplyPersonType" comment="申请人"/>
+				<field name="MonthlyRental" type="CLongVolumeType" comment="月租费用"/>
+				<field name="MemberNo" type="CPartyIDType" comment="会员号"/>
+				<field name="ParticipantName" type="CParticipantNameType" comment="会员名称"/>
+				<field name="ClientManager" type="CNetString128Type" comment="客户经理"/>
+				<field name="Bandwidth" type="CNetString128Type" comment="带宽"/>
+				<field name="InterfaceType" type="CNetString128Type" comment="接口类"/>
+				<field name="RemoteCircuit" type="CNetString128Type" comment="长途电路编码"/>
+				<field name="LocalCircuit" type="CNetString128Type" comment="本地电路编码"/>
+				<field name="Remark" type="CNetString128Type" comment="备注"/>
+				<field name="EndALineAddress" type="CNetString512Type" comment="A端接入地址"/>
+				<field name="EndAContact" type="CNetString128Type" comment="A端联系人"/>
+				<field name="EndZLineAddress" type="CNetString512Type" comment="Z端接入地址"/>
+				<field name="ContactName" type="CIndividualNameType" comment="联系人"/>
+				<field name="TELEPHONE" type="CTypeObjectIDType" comment="联系电话"/>
+				<field name="MOBILEPHONE" type="CTypeObjectIDType" comment="手机号"/>
+				<field name="IPADDR" type="CTypeObjectIDType" comment="路由器网管IP"/>
+				<field name="Interface" type="CTypeObjectIDType" comment="路由器端口号"/>
+				<field name="PROVINCE" type="CCfgNameType" comment="所属省份"/>
+				<field name="StartPortID" type="CNetString256Type" comment="起始设备端口"/>
+				<field name="StartJump" type="CNetString128Type" comment="起始设备跳接端"/>
+				<field name="LINE_STATUS" type="CCfgNameType" comment="线路状态"/>
+				<field name="DataCenterID" type="CDataCenterIDType" comment="数据中心代码"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetDDNLinkInfo" usage="DDN链路信息表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="ClientName" type="CPartyNameType" comment="客户名称"/>
+				<field name="DDN_NO" type="CTypeObjectIDType" comment="线路编号"/>
+				<field name="BusinessUnit" type="CBusinessUnitType" comment="业务单元"/>
+				<field name="Bandwidth" type="CNetString128Type" comment="速率"/>
+				<field name="EndAAddress" type="CAddressType" comment="甲端地址"/>
+				<field name="EndAContactName" type="CIndividualNameType" comment="甲端联系人"/>
+				<field name="EndZAddress" type="CAddressType" comment="乙端地址"/>
+				<field name="EndZContactName" type="CIndividualNameType" comment="乙端联系人"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetPseudMemberLinkInfo" usage="非会员线路使用信息">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="SeqNo" type="CVolumeType" comment="序列号"/>
+				<field name="MemContractNo" type="CContractSeqNoType" comment="合同号"/>
+				<field name="LineUsage" type="CNetString128Type" comment="线路用途"/>
+				<field name="LocalCircuit" type="CNetString128Type" comment="本地电路编码"/>
+				<field name="RemoteCircuit" type="CNetString128Type" comment="长途电路编码"/>
+				<field name="BusinessUnit" type="CBusinessUnitType" comment="业务"/>
+				<field name="Bandwidth" type="CNetString128Type" comment="速率"/>
+				<field name="ApplyPerson" type="CApplyPersonType" comment="申请人"/>
+				<field name="MonthlyRental" type="CLongVolumeType" comment="月租费用"/>
+				<field name="EndAAddress" type="CAddressType" comment="甲端地址"/>
+				<field name="EndAContactName" type="CIndividualNameType" comment="甲端联系人"/>
+				<field name="EndZAddress" type="CAddressType" comment="乙端地址"/>
+				<field name="EndZContactName" type="CIndividualNameType" comment="乙端联系人"/>
+				<field name="Telephone" type="CTelephoneType" comment="乙端电话号码"/>
+				<field name="LineInfo" type="CTypeObjectIDType" comment="线路信息"/>
+				<field name="IPADDR" type="CTypeObjectIDType" comment="路由器网管IP"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetOuterDeviceInfo" usage="远端设备信息">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="IPADDR" type="CIPAddressType" comment="IP地址  "/>
+				<field name="NAME" type="CNetObjectIDType" comment="设备名称 "/>
+				<field name="memo" type="CNetAttrTypeType" comment="备注"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysLocalPingResultInfo" usage="本地ping结果">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="SouIPADDR" type="CIPAddressType" comment="源IP地址  "/>
+				<field name="SouNAME" type="CNetObjectIDType" comment="源设备名称 "/>
+				<field name="TarIPADDR" type="CIPAddressType" comment="目的IP地址  "/>
+				<field name="TarNAME" type="CNetObjectIDType" comment="目的设备名称 "/>
+				<field name="PDateSta" type="CDateType" comment="生成日期"/>
+				<field name="PTimeSta" type="CTimeType" comment="时间戳"/>
+				<field name="ConnRate" type="CVolumeType" comment="连通率"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByIDType" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysRomotePingResultInfo" usage="远程ping结果">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="SouIPADDR" type="CIPAddressType" comment="源IP地址  "/>
+				<field name="SouNAME" type="CNetObjectIDType" comment="源设备名称 "/>
+				<field name="TarIPADDR" type="CIPAddressType" comment="目的IP地址  "/>
+				<field name="TarNAME" type="CNetObjectIDType" comment="目的设备名称 "/>
+				<field name="PDateSta" type="CDateType" comment="生成日期"/>
+				<field name="PTimeSta" type="CTimeType" comment="时间戳"/>
+				<field name="ConnRate" type="CVolumeType" comment="连通率"/>
+				<field name="TimeDlyMin" type="CNetString128Type" comment="最小时延"/>
+				<field name="TimeDlyMax" type="CNetString128Type" comment="最大时延"/>
+				<field name="TimeDlyAvg" type="CNetString128Type" comment="平均时延"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByIDType" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysParticTradeOrderStates" usage="会员席位交易状态">
+			<fields>
+				<field name="ParticipantID" type="CParticipantIDType" comment="会员代码"/>
+				<field name="UserID" type="CUserIDType" comment="交易用户代码"/>
+				<field name="MonDate" type="CDateType" comment="报单统计日期"/>
+				<field name="MonTime" type="CTimeType" comment="报单统计时间"/>
+				<field name="StaticWidth" type="CVolumeType" comment="统计时长(sec)"/>
+				<field name="FrontID" type="CVolumeType" comment="前置ID"/>
+				<field name="OrderCount" type="CVolumeType" comment="报单数"/>
+				<field name="CancleCount" type="CVolumeType" comment="撤单数"/>
+				<field name="QueryCount" type="CVolumeType" comment="查询数"/>
+				<field name="TradeCount" type="CVolumeType" comment="成交数"/>
+				<field name="TradeMoney" type="CVolumeType" comment="成交金额"/>
+				<field name="OrderCntMax" type="CVolumeType" comment="最大报单数"/>
+				<field name="CancleCntMax" type="CVolumeType" comment="最大撤单数"/>
+				<field name="QueryCntMax" type="CVolumeType" comment="最大查询数"/>
+				<field name="TradeCntMax" type="CVolumeType" comment="最大成交数"/>
+				<field name="TradeMoneyMax" type="CVolumeType" comment="最大成交金额"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="MemUsrIndex" stableIndex="yes">
+					<indexKey name="ParticipantID"/>
+					<indexKey name="UserID"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="MemUsrIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ParticipantID" value="&quot;&quot;"/>
+						<defaultDefine name="UserID" value="&quot;&quot;"/>
+						<defaultDefine name="MonDate" value="&quot;&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="MemUsrIndex">
+					<parameter>
+						<paraDefine name="ParticipantID" desc=""/>
+						<paraDefine name="UserID" desc=""/>
+						<paraDefine name="MonDate" desc=""/>
+						<paraDefine name="MonTime" desc=""/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByUserID" searchUnique="no" indexName="MemUsrIndex">
+					<parameter>
+						<paraDefine name="ParticipantID" desc="" checkParameter="yes"/>
+						<paraDefine name="UserID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbRouterInfo" usage="系统路由信息">
+			<fields>
+				<field name="SubcriberID" type="CVolumeType" comment="订阅对象ID"/>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="Dev" type="CTypeCommandType" comment="设备接口名"/>
+				<field name="Destination" type="CIPAddressType" comment="目标网段ip地址"/>
+				<field name="Gateway" type="CIPAddressType" comment="网关ip地址"/>
+				<field name="Mask" type="CIPAddressType" comment="掩码ip地址"/>
+				<field name="Flag" type="CTypeLanStatusType" comment="网络状态"/>
+				<field name="RefCnt" type="CVolumeType" comment="关联计数"/>
+				<field name="Use" type="CVolumeType" comment="使用计数"/>
+				<field name="Metric" type="CVolumeType" comment="metric值"/>
+				<field name="Mtu" type="CVolumeType" comment="mtu值"/>
+				<field name="Win" type="CVolumeType" comment="win值"/>
+				<field name="Rtt" type="CVolumeType" comment="rtt值"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="SubcriberID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbDiskIO" usage="磁盘I/O信息">
+			<fields>
+				<field name="SubcriberID" type="CVolumeType" comment="订阅对象ID"/>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="PartName" type="CTypeCommandType" comment="分区名"/>
+				<field name="ReadMerges" type="CPriceType" comment="每秒ReadMerge数"/>
+				<field name="WriteMerges" type="CPriceType" comment="每秒WriteMerge数"/>
+				<field name="ReadIOs" type="CPriceType" comment="每秒ReadIO数"/>
+				<field name="WriteIOs" type="CPriceType" comment="每秒WriteIO数"/>
+				<field name="ReadKBs" type="CPriceType" comment="每秒Read字节数"/>
+				<field name="WriteKBs" type="CPriceType" comment="每秒Write字节数"/>
+				<field name="SizeVal" type="CPriceType" comment="Size值"/>
+				<field name="QueueVal" type="CPriceType" comment="Queue值"/>
+				<field name="Svc_t" type="CPriceType" comment="Svc_t值"/>
+				<field name="Busy" type="CRatioType" comment="繁忙百分率"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="SubcriberID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbStatInfo" usage="系统状态信息">
+			<fields>
+				<field name="SubcriberID" type="CVolumeType" comment="订阅对象ID"/>
+				<field name="HostName" type="CTypeObjectIDType" comment="主机名称"/>
+				<field name="MonDate" type="CDateType" comment="采集的日期"/>
+				<field name="MonTime" type="CTimeType" comment="采集的时间"/>
+				<field name="ProcRun" type="CVolumeType" comment="活跃进程数"/>
+				<field name="ProcBlk" type="CVolumeType" comment="阻塞进程数"/>
+				<field name="SwapIn" type="CVolumeType" comment="每秒由磁盘进入Swap的页面数"/>
+				<field name="SwapOut" type="CVolumeType" comment="每秒由Swap进入磁盘的页面数"/>
+				<field name="BlockIn" type="CVolumeType" comment="每秒从块设备读入的Block数"/>
+				<field name="BlockOut" type="CVolumeType" comment="每秒向块设备写入的Block数"/>
+				<field name="Inter" type="CVolumeType" comment="每秒设备中段次数"/>
+				<field name="Context" type="CVolumeType" comment="每秒上下文切换次数"/>
+				<field name="CPUUser" type="CRatioType" comment="用户态CPU百分率"/>
+				<field name="CPUSys" type="CRatioType" comment="系统态CPU百分率"/>
+				<field name="CPUIdle" type="CRatioType" comment="空闲态CPU百分率"/>
+				<field name="CPUIOWait" type="CRatioType" comment="IO等待态CPU百分率"/>
+				<field name="CPUSteal" type="CRatioType" comment="窃取态CPU百分率"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByHostName" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="SubcriberID" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByDataDelete" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonDate" desc="" checkParameter="no"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMdbTradeFrontOrderRttStat" usage="交易系统前置报单响应信息">
+			<fields>
+				<field name="SubcriberID" type="CVolumeType" comment="订阅对象ID"/>
+				<field name="MonDate" type="CDateType" comment="报单日期"/>
+				<field name="MonTime" type="CTimeType" comment="报单时间"/>
+				<field name="ObjectID" type="CTypeObjectIDType" comment="前置对象"/>
+				<field name="OrderCount" type="CLargeNumberType" comment="报单量"/>
+				<field name="OrderRttSum" type="CLargeNumberType" comment="报单响应时间和"/>
+				<field name="OrderMaxRtt" type="CVolumeType" comment="最大报单响应时间"/>
+				<field name="OrderMinRtt" type="CVolumeType" comment="最小报单响应时间"/>
+				<field name="OrderRttSqu" type="CVolumeType" comment="1秒内响应时间均差"/>
+				<field name="OrderRttCutDistrib" type="CNumberListsType" comment="1秒内响应时间分布"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysHostNameIndex" stableIndex="yes">
+					<indexKey name="ObjectID"/>
+					<indexKey name="MonTime"/>
+				</defineIndex>
+				<defineIndex name="DecIndex" stableIndex="yes">
+					<indexKey name="SubcriberID"/>
+					<indexKey name="MonDate" isAsc="no"/>
+					<indexKey name="MonTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByFrontIndex" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc="" checkParameter="yes"/>
+						<paraDefine name="MonTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByDsc" searchUnique="no" indexName="DecIndex">
+					<parameter>
+						<paraDefine name="SubcriberID" desc=""/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonDate" value="&quot;zzzzzzzz&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;zzzzzzzz&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysHostNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ObjectID" value="&quot;&quot;"/>
+						<defaultDefine name="MonTime" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByTheOne" searchUnique="yes" indexName="SysHostNameIndex">
+					<parameter>
+						<paraDefine name="ObjectID" desc=""/>
+						<paraDefine name="MonTime" desc=""/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysInstrumentStatus" usage="合约状态切换">
+			<fields>
+				<field name="SettlementGroupID" type="CSettlementGroupIDType" comment="结算组代码"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="InstrumentStatus" type="CInstrumentStatusType" comment="合约交易状态"/>
+				<field name="TradingSegmentSN" type="CTradingSegmentSNType" comment="交易阶段编号"/>
+				<field name="EnterTime" type="CTimeType" comment="进入本状态时间"/>
+				<field name="EnterReason" type="CInstStatusEnterReasonType" comment="进入本状态原因"/>
+				<field name="EnterDate" type="CDateType" comment="进入本状态日期"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysTradeTimeIndex" stableIndex="yes">
+					<indexKey name="EnterTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysTradeTimeIndex">
+					<parameter>
+						<paraDefine name="EnterTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysTradeTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="EnterTime" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysCurrTradingSegmentAttr" usage="合约交易节信息">
+			<fields>
+				<field name="SettlementGroupID" type="CSettlementGroupIDType" comment="结算组代码"/>
+				<field name="TradingSegmentSN" type="CTradingSegmentSNType" comment="交易阶段编号"/>
+				<field name="TradingSegmentName" type="CTradingSegmentNameType" comment="交易阶段名称"/>
+				<field name="StartTime" type="CTimeType" comment="起始时间"/>
+				<field name="InstrumentStatus" type="CInstrumentStatusType" comment="合约交易状态"/>
+				<field name="InstrumentID" type="CInstrumentIDType" comment="合约代码"/>
+				<field name="AdvanceDays" type="CAdvanceDaysType" comment="提前天数"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysTradeTimeIndex" stableIndex="yes">
+					<indexKey name="StartTime"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByActionTime" searchUnique="no" indexName="SysTradeTimeIndex">
+					<parameter>
+						<paraDefine name="StartTime" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysTradeTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="StartTime" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysMemberLinkCost" usage="会员链路费用表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="ParticipantName" type="CParticipantNameType" comment="会员名称"/>
+				<field name="DDN_NO" type="CTypeObjectIDType" comment="线路编号"/>
+				<field name="ServiceProvider" type="CCfgNameType" comment="运营商"/>
+				<field name="Pay_Date" type="CCfgNameType" comment="付款日期"/>
+				<field name="B_Pay_Date" type="CCfgNameType" comment="账期起始日期"/>
+				<field name="D_Pay_Date" type="CCfgNameType" comment="账期终止日期"/>
+				<field name="Charge" type="CVolumeType" comment="金额"/>
+				<field name="Fee_Type" type="CCfgNameType" comment="费用类型"/>
+				<field name="Pro" type="CPolicyStringTypeType" comment="备注"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysPayTimeIndex" stableIndex="yes">
+					<indexKey name="Pay_Date"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByPayTime" searchUnique="no" indexName="SysPayTimeIndex">
+					<parameter>
+						<paraDefine name="Pay_Date" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysPayTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="Pay_Date" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysPayTimeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="Pay_Date" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetPartylinkMonthlyRent" usage="会员链路月租表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="LineName" type="CParticipantNameType" comment="线路名称"/>
+				<field name="DDN_NO" type="CTypeObjectIDType" comment="线路编号"/>
+				<field name="ServiceProvider" type="CCfgNameType" comment="运营商"/>
+				<field name="MonthlyRental" type="CLongVolumeType" comment="月租费用"/>
+				<field name="Remark" type="CNetString128Type" comment="备注"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysLineNameIndex" stableIndex="yes">
+					<indexKey name="LineName"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByLineName" searchUnique="no" indexName="SysLineNameIndex">
+					<parameter>
+						<paraDefine name="LineName" desc="" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="BytheAll" searchUnique="no" indexName="SysLineNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="LineName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysLineNameIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="LineName" value="&quot;&quot;"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="SysNetNonPartyLinkInfo" usage="会员链路月租表">
+			<fields>
+				<field name="ID" type="CVolumeType" comment="ID"/>
+				<field name="MEMBER_NO" type="CCfgNameType" comment="会员号"/>
+				<field name="MEMBER_NAME" type="CTypeObjectIDType" comment="会员名称"/>
+				<field name="REMOTE_ADDR" type="CTypeObjectIDType" comment="会员接入地点"/>
+				<field name="LOCAL_ADDR" type="CTypeObjectIDType" comment="上期所接入点"/>
+				<field name="ADDRESS" type="CNetAttrTypeType" comment="地址"/>
+				<field name="LINE_STATUS" type="CCfgNameType" comment="线路状态"/>
+				<field name="CONTACT" type="CCfgNameType" comment="联系人"/>
+				<field name="TELEPHONE" type="CTypeObjectIDType" comment="联系电话"/>
+				<field name="MOBILEPHONE" type="CTypeObjectIDType" comment="手机号"/>
+				<field name="EMAIL" type="CTypeObjectIDType" comment="EMAIL"/>
+				<field name="FAX" type="CTypeObjectIDType" comment="传真"/>
+				<field name="PROVINCE" type="CCfgNameType" comment="所属省份"/>
+				<field name="DDN_NO" type="CTypeObjectIDType" comment="线路编号"/>
+				<field name="IN_MODE" type="CTypeObjectIDType" comment="接入方式"/>
+				<field name="IP_WAN" type="CTypeObjectIDType" comment="入网IP广域"/>
+				<field name="IP_LAN" type="CTypeObjectIDType" comment="入网IP局域"/>
+				<field name="IPADDR" type="CTypeObjectIDType" comment="路由器网管IP"/>
+				<field name="Interface" type="CTypeObjectIDType" comment="路由器端口号"/>
+				<field name="INTERFACE_DATE" type="CCfgNameType" comment="接口开通日期"/>
+				<field name="SOFTWARE" type="CCfgNameType" comment="所用软件"/>
+				<field name="FEE_TYPE" type="CCfgNameType" comment="付费类型"/>
+				<field name="SERVICEPROVIDER" type="CCfgNameType" comment="运营商"/>
+				<field name="IF_ZIYING" type="CCfgNameType" comment="是否自营"/>
+				<field name="IF_TUOGUAN" type="CCfgNameType" comment="是否托管"/>
+				<field name="HASOTHER" type="CCfgNameType" comment="有无他所线路"/>
+				<field name="SEAT_NO" type="CGeneralResultType" comment="席位号"/>
+				<field name="PRO" type="CPolicyStringTypeType" comment="备注"/>
+			</fields>
+			<foreigns/>
+			<index>
+				<defineIndex name="SysIDTypeIndex" stableIndex="yes">
+					<indexKey name="ID"/>
+				</defineIndex>
+			</index>
+			<search>
+				<defineSearch name="ByAll" searchUnique="no" indexName="SysIDTypeIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="ID" value="0"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByOne" searchUnique="yes" indexName="SysIDTypeIndex">
+					<parameter>
+						<paraDefine name="ID" desc="" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+	</tables>
+	<entities/>
+</system>

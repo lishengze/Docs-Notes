@@ -1,0 +1,748 @@
+<? xml version="1.0" ?>
+<!--condition表示正则表达式，isloop表示是否循环过滤(0/1)，ismatchsingle表示过滤项是否当做一行(0/1), ignorecase表示是否忽略大小写 -->
+<!--attrname表示匹配成功时生成的指标名，notmatchattrname表示匹配失败时生成的指标名 -->
+<!--regex_next_input_value 关键字，表示提取项为下一次过滤的输入内容 -->
+<regexconfig>
+		<regexinfos>
+		     <regexinfo command="CPUUsageInfo" manufactory_id="1">
+		            <conditionnode condition="^[\r\n ]*CPU utilization for five seconds: [0-9]*%/[0-9]*%;[ ]*one minute: ([0-9]*)%;[ ]*five minutes: ([0-9]*)%$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="cpmCPUTotal1minRev"></attrnode>
+				<attrnode attrname="cpmCPUTotal5minRev"></attrnode>	   
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="CPUUsageInfo" manufactory_id="4">
+		            <conditionnode condition="^.*Average System Utilization:[ ]*([0-9]*)%.*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="averusageInfo"></attrnode>   
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="MEMUsageInfo" manufactory_id="1">
+		            <conditionnode condition="^.*?Pool Total:[ ]*([0-9]*) Used:[ ]*[0-9]* Free:[ ]*([0-9]*)[\r\n ]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="memoryPoolTotal"></attrnode>
+				<attrnode attrname="memoryPoolFree"></attrnode>
+				<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="MEMUsageInfo" manufactory_id="4">
+		            <conditionnode condition="^[\r\n ]*Memory: allocated[ ]*([^ ]*), left[ ]*([^ ]*), frag[ ]*[^ ]*.*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="allocated"></attrnode>
+				<attrnode attrname="left"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="MEMUsageInfo" manufactory_id="3">
+		            <conditionnode condition="^.*Total = ([^ ]*)[ ]*.*Used = ([^ ]*)[ ]*.*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="total"></attrnode>
+				<attrnode attrname="used"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="Ping" manufactory_id="1">
+		            <conditionnode condition="^.*Success rate is ([0-9]*).*min/avg/max = ([0-9]*)/([0-9]*)/([0-9]*).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="con_rate"></attrnode>
+				<attrnode attrname="min_delay"></attrnode>
+				<attrnode attrname="avg_delay"></attrnode>
+				<attrnode attrname="max_delay"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="NTPStatus" manufactory_id="1">
+		            <conditionnode condition="^[\r\n ]*(Clock is synchronized).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="ntp"></attrnode>   
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="NTPStatus" manufactory_id="4">
+		            <conditionnode condition="^.*(NTP is Enabled).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="ntp"></attrnode>   
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="CrashStatus" manufactory_id="1">
+		            <conditionnode condition="^.*(crash).*$" isloop="0" ismatchsingle="0" ignorecase="1" notmatchattrname="crashstatus">
+				<attrnode attrname="crashstatus"></attrnode> 
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="Etherchannel" manufactory_id="1">
+		            <conditionnode condition="^.*------[\r\n]+[\r\n ]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="eth"></attrnode>
+		            </conditionnode>				
+		     </regexinfo> 
+		     <regexinfo command="Fabricchanel" manufactory_id="1">
+		            <conditionnode condition="^[ ]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="fabric_channel"></attrnode>
+		            </conditionnode>							
+		     </regexinfo> 		     
+		     <!--
+		     <regexinfo command="Fabricchanel" manufactory_id="1">
+		            <conditionnode condition="^.*lbusDrops[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*[0-9]*[ ]*[0-9]*[ ]*([0-9]*)[ ]*([0-9]*)[ ]*([0-9]*)[ ]*([0-9]*)[ ]*[ \r\n]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="rxerror"></attrnode>
+		            	<attrnode attrname="txerror"></attrnode>
+		            	<attrnode attrname="txdrop"></attrnode>
+		            	<attrnode attrname="lbusdrop"></attrnode>
+									<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo> 
+		     -->
+		     <regexinfo command="ModuleState" manufactory_id="1">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="mod_status"></attrnode>
+		            </conditionnode>								
+		     </regexinfo> 
+		     <regexinfo command="PlatformState" manufactory_id="1">
+		            <conditionnode condition="^.*?Status[ ]*Insertion time.*?---[\r\n]+(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*[0-9,]+[ ]*([^ ]*[ ]?[^ ]*[ ]?[^ ]*)[ ]*([^ ]*).*?[\r\n]+(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="type"></attrnode>
+		            	<attrnode attrname="state"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo> 
+		     <regexinfo command="ATMPVCState" manufactory_id="1">
+		            <conditionnode condition="^.*Cells[ ]+Sts[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*[^ ]*[ ]*[^ ]*[ ]*[^ ]*[ ]*[^ ]*[ ]*[^ ]*[ ]*[^ ]*[ ]*[^ ]*[ ]*[^ ]*[ ]*([^\r\n ]*)(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="pvcst"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo> 
+		     <regexinfo command="IfsCRC" manufactory_id="1">
+		            <conditionnode condition="^.*[ ]*([0-9]+) input errors,.*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="crc"></attrnode>
+		            </conditionnode>							
+		     </regexinfo> 
+		     <regexinfo command="CDPInfo" manufactory_id="1">
+		            <conditionnode condition="^.*Port ID[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*([^ \t\r\n]+)[ \t\r\n]*([^ ]*[ ][^ ]*)[ ]*[0-9]*[ ]*[R|T|B|S|H|I|r|P ]*[^ ]*[ ]*([^ /]*[ /][^ \r\n]*)[\r\n ]*(.*)$" isloop="1" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="dev"></attrnode>
+		            	<attrnode attrname="local"></attrnode>
+		            	<attrnode attrname="port"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo>     	
+		     <regexinfo command="OSPFNeighor" manufactory_id="1">
+		            <conditionnode condition="^.*Interface[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*([^ ]*)[ ]*([^ ]*)[ ]*([^ ]*)[- ]*[^ ]*[ ]*([^ ]*)[ ]*([^ \r\n]*)[ \r\n]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="Neighbor"></attrnode>
+		            	<attrnode attrname="pri"></attrnode>
+		            	<attrnode attrname="state"></attrnode>
+				<attrnode attrname="Address"></attrnode>
+		            	<attrnode attrname="ifs"></attrnode>
+				<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo>   
+		     <regexinfo command="IfsInfo" manufactory_id="1">
+		            <conditionnode condition="^.*Protocol[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*([^ ]*)[ ]*[^ ]*[ ]*[^ ]*[ ]*[^ ]*[ ]*([^ ]*[ ]?[^ ]*)[ ]*([^ \r\n]*)[\r\n ]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="ifs"></attrnode>
+		            	<attrnode attrname="status"></attrnode>
+		            	<attrnode attrname="pro"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo>  
+		     <regexinfo command="IfsInfo" manufactory_id="4">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="ifsinfo"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>  
+		     <regexinfo command="Vlan" manufactory_id="1">
+		            <conditionnode condition="^.*----[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n ]*([0-9]*)[ ]*[^ ]*[ ]*([^ ]*)[ ]*([^\r\n]*)[\r\n]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="vlan"></attrnode>
+		            	<attrnode attrname="status"></attrnode>
+		            	<attrnode attrname="port"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo>
+		     <!-- 
+		     <regexinfo command="Spantree" manufactory_id="1">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^.*?(VLAN[0-9]*).*?Address[ \t]*([^\r\n]*)[\r\n ]*?[\r\n]{2}(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="vlan"></attrnode>
+		            	<attrnode attrname="rootaddress"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo>
+		     -->
+		     <regexinfo command="Spantree" manufactory_id="1">
+		            <conditionnode condition="^[\r\n ]*(.*)[\r\n ]*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="spantree"></attrnode>
+		            </conditionnode>							
+		     </regexinfo> 	
+		     <regexinfo command="Trunk" manufactory_id="1">
+		            <conditionnode condition="^[\t\r\n ]*(.*?)[\r\n\t ]*Port[ ]+Vlans.*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="trunk"></attrnode>
+		            </conditionnode>					
+		     </regexinfo>  
+		     <regexinfo command="ISDNState" manufactory_id="1">
+		            <conditionnode condition="^.*(MULTIPLE_FRAME_ESTABLISHED).*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="isdnstate"></attrnode>
+		            </conditionnode>					
+		     </regexinfo>  
+		     <regexinfo command="HSRP" manufactory_id="1">
+		            <conditionnode condition="^.* Virtual IP[\r\n ]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="hsrp"></attrnode>
+		            </conditionnode>					
+		     </regexinfo>  
+		     <regexinfo command="Redundancy" manufactory_id="1">
+		            <conditionnode condition="^[ \r\n]*(.*[\r\n]{4}.*)[\r\n]{4}.*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="mystate"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>  
+				 <regexinfo command="NexusRedundancy" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="redundancy"></attrnode>
+						</conditionnode>
+				 </regexinfo>		     
+		     <regexinfo command="BgpSum" manufactory_id="1">
+		            <conditionnode condition="^.*State/PfxRcd[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*([^ \t\r\n]+)[\r\n\t ]*([^ \t\r\n]+)[\r\n\t ]*([^ \t\r\n]+)[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*([^ \t\r\n]+)(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="neighbor"></attrnode>
+		            	<attrnode attrname="v"></attrnode>
+		            	<attrnode attrname="as"></attrnode>
+		            	<attrnode attrname="st_pfxrcd"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>  		
+		     <regexinfo command="RouteStatic" manufactory_id="1">
+		            <conditionnode condition="^.*?[\r\n]*([\t ]*S.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*([^ \t]*)[\t ]*([^\r\n]*)[\r\n]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="routetype"></attrnode>
+		            	<attrnode attrname="routestatic"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>  	
+		     <regexinfo command="OSPFInterface" manufactory_id="1">
+		            <conditionnode condition="^[\r\n]*(.*)[\r\n]*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="ospf_in"></attrnode>
+		            </conditionnode>							
+		     </regexinfo> 	
+		     <regexinfo command="SDHState" manufactory_id="1">
+		            <conditionnode condition="^[\r\n]*([^\r\n]*).*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="state"></attrnode>
+		            </conditionnode>							
+		     </regexinfo> 	
+		     <regexinfo command="RunTime" manufactory_id="1">
+		            <conditionnode condition="^.*?[\r\n]{2}.*?[\r\n]{2}.*?uptime is ([^\r\n]*).*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="runtime"></attrnode>
+		            </conditionnode>							
+		     </regexinfo> 		     
+		     <regexinfo command="NewSession" manufactory_id="4">
+		            <conditionnode condition="^[\r\n ]*Last 1 minute:[ ]*([^,]*).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="newsession_per_second"></attrnode>   
+		            </conditionnode>				  
+		     </regexinfo>		 
+		     <!-- Cisco设备的Session数 -->
+		     <regexinfo command="Session" manufactory_id="1">
+						<conditionnode condition="^.*?[\r\n]VRF Global Action Block[\r\n]\s+Total Sessions:[\r\n]\s+max limit:\s+[0-9]*,\s+current count:[ ]*([0-9]*).*[\r\n]Box Action Block\s+Total Sessions:[\r\n]\s+current count:[ ]*([0-9]*).*[\r\n].*$" isloop="0" ismatchsingle="0" ignorecase="0">
+								<attrnode attrname="VRF_totalsession_curr"></attrnode>   
+								<attrnode attrname="Box_totalsession_curr"></attrnode> 
+						</conditionnode>				  
+		     </regexinfo>		    
+		     <regexinfo command="Session" manufactory_id="4">
+		            <conditionnode condition="^[\r\n ]*alloc ([^/]*)/max ([^,]*).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="alloc_session"></attrnode>   
+				<attrnode attrname="max_session"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="HAState" manufactory_id="4">
+		            <conditionnode condition="^.*(group priority preempt.*)[ ]+[^ ]+;[0-2][0-9]:[0-5][0-9]:[0-5][0-9].*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="nsrp"></attrnode>   
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="ClusterStatus" manufactory_id="4">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="clustatus"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>			     		     
+		     <regexinfo command="EnvInfo" manufactory_id="4">
+		            <conditionnode condition="^.*Power Supply: ([^\r\n]*)[\r\n]+[ \t]*Fan Status: ([^\r\n]*)[\r\n]+[ \t]*CPU Temperature:[ ]*([0-9]*).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="power"></attrnode>   
+				<attrnode attrname="fan"></attrnode>
+				<attrnode attrname="cpu_tem"></attrnode>
+			    </conditionnode>				  
+		     </regexinfo>
+				<regexinfo command="EnvInfo_SRX" manufactory_id="4">
+					<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+						<attrnode attrname="envinfo"></attrnode>
+					</conditionnode>
+				</regexinfo>
+		     <regexinfo command="EnvInfo_3560" manufactory_id="1">
+		            <conditionnode condition="^[\r\n ]*FAN is ([^\r\n ]*)[\r\n ]*TEMPERATURE is ([^\r\n ]*).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="fan"></attrnode>   
+				<attrnode attrname="temperature"></attrnode>
+			    </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_3750" manufactory_id="1">
+		            <conditionnode condition="^[\r\n ]*FAN is ([^\r\n ]*)[\r\n ]*TEMPERATURE is ([^\r\n ]*).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="fan"></attrnode>   
+				<attrnode attrname="temperature"></attrnode>
+			    </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_ASR1004" manufactory_id="1">
+		            <conditionnode condition="^[\r\n ]*Number of Critical alarms:[ ]*([^\r\n ]*)[\r\n ]*Number of Major alarms:[ ]*([^\r\n ]*)[\r\n ]*Number of Minor alarms:[ ]*([^\r\n ]*).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="cri_alarms"></attrnode>   
+				<attrnode attrname="major_alarms"></attrnode>
+				<attrnode attrname="minor_alarms"></attrnode>
+			    </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_ASR1006" manufactory_id="1">
+		            <conditionnode condition="^[\r\n ]*Number of Critical alarms:[ ]*([^\r\n ]*)[\r\n ]*Number of Major alarms:[ ]*([^\r\n ]*)[\r\n ]*Number of Minor alarms:[ ]*([^\r\n ]*).*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="cri_alarms"></attrnode>   
+				<attrnode attrname="major_alarms"></attrnode>
+				<attrnode attrname="minor_alarms"></attrnode>
+			    </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_3725" manufactory_id="1">
+		            <conditionnode condition="^[ \r\n\t]*(.*?)[ \r\n\t]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="status"></attrnode>   
+			    </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_4503" manufactory_id="1">
+		            <conditionnode condition="^[ \r\n\t]*(.*?)[ \r\n\t]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="status"></attrnode>   
+			    </conditionnode>			  
+		     </regexinfo>
+                     <regexinfo command="EnvInfo_4948" manufactory_id="1">
+                            <conditionnode condition="^[ \r\n\t]*(.*?)[ \r\n\t]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+                                <attrnode attrname="status"></attrnode>
+                            </conditionnode>
+                     </regexinfo>
+		     <regexinfo command="EnvInfo_6504" manufactory_id="1">
+		            <conditionnode condition="^[ \r\n\t]*(.*?)[ \r\n\t]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="status"></attrnode>   
+			    </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_6506" manufactory_id="1">
+		            <conditionnode condition="^[ \r\n\t]*(.*?)[ \r\n\t]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="status"></attrnode>   
+			    </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_7201" manufactory_id="1">
+		            <conditionnode condition="^[ \r\n\t]*(.*?)[ \r\n\t]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="status"></attrnode>   
+			    </conditionnode>			  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_7206" manufactory_id="1">
+		            <conditionnode condition="^[ \r\n\t]*(.*?)[ \r\n\t]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="status"></attrnode>   
+			    </conditionnode>			  
+		     </regexinfo>
+		     <regexinfo command="EnvInfo_7606" manufactory_id="1">
+		            <conditionnode condition="^[ \r\n\t]*(.*?)[ \r\n\t]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="status"></attrnode>   
+			    </conditionnode>			  
+		     </regexinfo>
+		     <!-- 匹配第一行 -->
+		     <regexinfo command="AlarmStatus" manufactory_id="1">
+		            <conditionnode condition="^(.*?)[\r\n]+?.*$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="alarm"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>
+		     <!-- 完全匹配 -->
+		     <regexinfo command="HWmoduleVersio" manufactory_id="1">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="hd_version"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>
+		     <!-- 完全匹配 -->
+		     <regexinfo command="SPAError" manufactory_id="1">
+		            <conditionnode condition="^[ ]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="spaerror"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>	
+		     <!-- 完全匹配 -->
+		     <regexinfo command="SIPPacket" manufactory_id="1">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="sip_lost_packet"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>	
+		     <!-- 完全匹配 -->
+		     <regexinfo command="ESPPacket" manufactory_id="1">
+		            <conditionnode condition="^[ ]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="esp_lost_packet"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>	
+		     <!-- 完全匹配 -->
+		     <regexinfo command="QFPBQSPacket" manufactory_id="1">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="qfpbqs_lost_packet"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>	
+		     <!-- 完全匹配特定行 -->
+		     <regexinfo command="QFPTCAMUsage" manufactory_id="1">
+		            <conditionnode condition="^.*(Threshold status.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="qfptcamusage"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>	
+		     <!-- 完全匹配 -->
+		     <regexinfo command="QFPPacket" manufactory_id="1">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="qfp_lost_packet"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>			     	
+		     <regexinfo command="RouteInfo" manufactory_id="4">
+		            <conditionnode condition="^.*Vsys.*[-]+(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n]*[* ]*[\t ]*[^ \t]*[\t ]*([^\r\n]*)[\r\n]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="route"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>
+				 <regexinfo command="SRXRouter" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="router"></attrnode>
+						</conditionnode>
+				 </regexinfo>		     		
+		     <regexinfo command="DeviceStatus" manufactory_id="3">
+		            <conditionnode condition="^$" isloop="0" ismatchsingle="0" ignorecase="0">
+									<attrnode attrname="temp"></attrnode>
+									<attrnode attrname="status"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="HDiskVolume" manufactory_id="3">
+		            <conditionnode condition="^.*Mounted on[\r\n ]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>		     
+		            <conditionnode condition="^[\r\n\t ]*([^ \t\r\n]+)[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*[^ \t\r\n]+[\r\n\t ]*([0-9]+)%[^\r\n]*[\r\n]+(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		              <attrnode attrname="item"></attrnode>
+									<attrnode attrname="used"></attrnode>
+									<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <!-- 完全一致 -->
+		     <regexinfo command="SoftwareVersion" manufactory_id="3">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="0" ignorecase="0">
+									<attrnode attrname="softversion"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <!-- FAILOVER状态未变化且持续时间超过阀值-->
+		     <regexinfo command="HAState" manufactory_id="3">
+		            <conditionnode condition="^FAILOVER ([a-z]+) for (.*)[\r\n]*$" isloop="0" ismatchsingle="0" ignorecase="0">
+									<attrnode attrname="failover"></attrnode>
+									<attrnode attrname="timestamp"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <regexinfo command="IfsState" manufactory_id="3">
+		     	    <conditionnode condition="^.*in[ ]+out[ ]*[\r\n]+(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>
+		            <conditionnode condition="^[\r\n ]*([^ \t]*)[ \t]*([^ \t]*)[ \t]*([^ \t]*)[ \t]*([^ \t]*)[^\r\n]*[ ]+([0-9]+)[ ]*[\r\n](.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="itno"></attrnode>
+				<attrnode attrname="ins"></attrnode>
+				<attrnode attrname="speed"></attrnode>
+				<attrnode attrname="spds"></attrnode>
+				<attrnode attrname="error"></attrnode>
+				<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>
+		     <!-- 特定行一致 "VIRTUAL ADDRESS"或"+->"为首的行 -->
+		     <regexinfo command="VSInfo" manufactory_id="3">
+		            <conditionnode condition="^$" isloop="0" ismatchsingle="0" ignorecase="0">
+									<attrnode attrname="vs_status"></attrnode>
+		            </conditionnode>				  
+		     </regexinfo>	
+		     <regexinfo command="Vlan" manufactory_id="3">				
+		            <conditionnode condition="^[\r\n\t ]*.*?(VLAN.*?)\(pkts(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="vlan"></attrnode>
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>								
+		     </regexinfo> 
+		     <regexinfo command="DeviceStatus" manufactory_id="3">				
+		            <conditionnode condition="^.*CPU 0.*Temp: ([0-9]*)degC.* CHASSIS FAN(.*)\+-> LICENSE Local.*$" isloop="0" ismatchsingle="0" ignorecase="0">
+				<attrnode attrname="temp"></attrnode>
+		            	<attrnode attrname="status"></attrnode>
+		            </conditionnode>								
+		     </regexinfo>	
+         <regexinfo command="SoftwareStatus" manufactory_id="1">
+                <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+                    <attrnode attrname="status"></attrnode>
+                </conditionnode>
+         </regexinfo>		      
+		     <regexinfo command="InterfaceLostPkg" manufactory_id="1">
+		            <conditionnode condition="^.*----[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n]*[* ]*[\t ]*([^ ]+)[\t ]+([0-9]+)[\t ]+([0-9]+)[\t ]+([0-9]+)[\t ]+([0-9]+)[^\r\n]*[\r\n]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="ifs"></attrnode>
+		            	<attrnode attrname="IHQ"></attrnode>
+		            	<attrnode attrname="IDQ"></attrnode>
+		            	<attrnode attrname="OHQ"></attrnode>
+		            	<attrnode attrname="ODQ"></attrnode>
+									<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo>  
+		     <regexinfo command="InterfaceCounter" manufactory_id="1">
+		            <conditionnode condition="^.*(Port       Tx-Drops-Queue-1.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="couter"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>
+		     <regexinfo command="AsrPlatformDiag" manufactory_id="1">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="platformstatus"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>	
+		     <regexinfo command="NexusPower" manufactory_id="1">
+		     		<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexpower"></attrnode>
+						</conditionnode>
+					</regexinfo>
+		     <regexinfo command="NexusPower_3548" manufactory_id="1">
+		     		<conditionnode condition="^.*(Power Supply:.*?)\r\n\r\n.*$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexpower"></attrnode>
+						</conditionnode>
+					</regexinfo>					
+					<regexinfo command="NexusFan" manufactory_id="1">
+						<conditionnode condition="^(.*)Fan Zone Speed:.*$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexfan"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusFan_3548" manufactory_id="1">
+						<conditionnode condition="^(.*$)" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexfan"></attrnode>
+						</conditionnode>
+					</regexinfo>					
+					<regexinfo command="NexusTemp" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nextemp"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusTemp_3548" manufactory_id="1">
+						<conditionnode condition="^.*(Monitor Temperature.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nextemp"></attrnode>
+						</conditionnode>
+					</regexinfo>					
+					<regexinfo command="VdcStatus" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="vdcstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusFabricStatus" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexfabstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusNtpStatus" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexntpstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusUptime" manufactory_id="1">
+						<conditionnode condition="(.*?)[\r\n]+?.*$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexuptime"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusMemoryStatus" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexmemstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusConnStatus" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexconstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusUpStatus" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexupstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="VPCStatus" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="vpcstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NEXUSPortchannelStatus" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexportstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusIntBrief" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="nexintbrief"></attrnode>
+						</conditionnode>
+					</regexinfo>					
+					<regexinfo command="RateLimiter" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="ratelim"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="InterfaceDrop" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="ifdrop"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="InterfaceDrop_3548" manufactory_id="1">
+						<conditionnode condition="^.*Last sampled at:[^\r\n]*?[\r\n]+(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="ifqueuedrop"></attrnode>
+						</conditionnode>						
+					</regexinfo>
+					<regexinfo command="InterfaceError" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="iferror"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="VOQBufferDrop" manufactory_id="1">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="voqbufdrop"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusMemShared" manufactory_id="1">
+						<conditionnode condition="^.*(Shared memory.*?)[\r\n].*$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="memshared"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="NexusIfsBufferStatus" manufactory_id="1">
+						<conditionnode condition="^.*Brief CLI issued[^\r\n]*?[\r\n]+(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="ifbufstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>															
+		     <regexinfo command="HardWareStatus" manufactory_id="4">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="hdstatus"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>
+				 <regexinfo command="HardWareAlarm" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="hdalarm"></attrnode>
+						</conditionnode>
+				 </regexinfo>	
+		     <regexinfo command="IfsState" manufactory_id="4">
+		            <conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="ifsstate"></attrnode>
+		            </conditionnode>							
+		     </regexinfo>
+					<regexinfo command="REUsage" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="reusage"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="ConSessions" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="consessions"></attrnode>
+							<attrnode attrname="Unicast-sessions"></attrnode>
+						</conditionnode>
+					</regexinfo>	
+					<regexinfo command="AlarmStatus" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="alarmStatus"></attrnode>
+						</conditionnode>
+					</regexinfo>	
+					<regexinfo command="EnvFan" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="envfan"></attrnode>
+						</conditionnode>
+					</regexinfo>	
+					<regexinfo command="EthernetSwitch" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="ethswitch"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="PicStatus" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="picstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="FpcStatus" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="fpcstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>	
+					<regexinfo command="EnvPower" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="envpower"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="SRXUptime" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="srxtime"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="CraftIntNode1" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="crafenode1"></attrnode>
+						</conditionnode>
+					</regexinfo>	
+					<regexinfo command="CraftIntNode0" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="crafenode0"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="FabricFpc" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="fabricfpc"></attrnode>
+						</conditionnode>
+					</regexinfo>	
+					<regexinfo command="FabricPlane" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="fabricpla"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="SRXClusterInt" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="srxclus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+					<regexinfo command="CoreDumpFile" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="corefile"></attrnode>
+						</conditionnode>
+					</regexinfo>
+				<!-- 
+					<regexinfo command="LACPPDUSRPacket" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="pdupacket"></attrnode>
+						</conditionnode>
+				-->
+		     <regexinfo command="LACPPDUSRPacket" manufactory_id="4">
+		            <conditionnode condition="^.*Illegal Rx[\r\n]*(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+		            	<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		            <conditionnode condition="^[\r\n\t ]*([^ ]*)[ ]*([0-9]*)[ ]*([0-9]*)[ ]*[ \r\n]*(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+		            	<attrnode attrname="lacp"></attrnode>
+		            	<attrnode attrname="lacp_rx"></attrnode>
+		            	<attrnode attrname="lacp_tx"></attrnode>
+									<attrnode attrname="regex_next_input_value"></attrnode>
+		            </conditionnode>				
+		     </regexinfo>						
+					<regexinfo command="RETHLACPStatus" manufactory_id="4">
+						<conditionnode condition="^(.*)$" isloop="0" ismatchsingle="1" ignorecase="0">
+							<attrnode attrname="lacpstatus"></attrnode>
+						</conditionnode>
+					</regexinfo>
+		     <regexinfo command="NSPUSession" manufactory_id="4">			
+            <conditionnode condition="^.*?[0-9]:[ ]+([0-9]*)(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+            	<attrnode attrname="spusesspers"></attrnode>
+							<attrnode attrname="regex_next_input_value"></attrnode>
+            </conditionnode>
+		     </regexinfo>
+		     <regexinfo command="SPCStateZero" manufactory_id="4">			
+            <conditionnode condition="^.*?CPU utilization[ ]*:[ ]*([0-9]*)[ ]%.*?Memory utilization[ ]*:[ ]*([0-9]*)[ ]*%(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+            	<attrnode attrname="cpu_util"></attrnode>
+            	<attrnode attrname="mem_util"></attrnode>
+							<attrnode attrname="regex_next_input_value"></attrnode>
+            </conditionnode>
+		     </regexinfo>
+		     <regexinfo command="SPCStateOne" manufactory_id="4">			
+            <conditionnode condition="^.*?CPU utilization[ ]*:[ ]*([0-9]*)[ ]%.*?Memory utilization[ ]*:[ ]*([0-9]*)[ ]*%(.*)$" isloop="1" ismatchsingle="0" ignorecase="0">
+            	<attrnode attrname="cpu_util"></attrnode>
+            	<attrnode attrname="mem_util"></attrnode>
+							<attrnode attrname="regex_next_input_value"></attrnode>
+            </conditionnode>
+		     </regexinfo>		     
+		</regexinfos>
+</regexconfig>

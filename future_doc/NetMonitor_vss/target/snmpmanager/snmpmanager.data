@@ -1,0 +1,46 @@
+###################################################################################################
+#设备ip objectid表 (以!标识一条记录)
+#ip objectid 
+###################################################################################################
+! 255.255.255.255 ZhangJ.JY.test-255-255-255-255
+#! 172.1.37.101 zhangjiang.access.ZJ-OAW3825-ZJH1-2N507
+#! 172.1.37.102 zhangjiang.access.ZJ-OAW3560-ZJH2-ECC
+#! 172.1.37.151 zhangjiang.access.ZJ-OAW3825-ZJH1-2N507
+#! 172.1.37.152 zhangjiang.access.ZJ-OAW3560-ZJH2-ECC
+#! 172.1.37.105 zhangjiang.access.ZJ-OAW3750-C5-2N509
+#! 172.1.37.106 zhangjiang.access.ZJ-OAW3750-C6-2N509
+#! 172.1.37.3 zhangjiang.access.ZJ-OAW4506-C1-2N504
+#! 172.1.37.4 zhangjiang.access.ZJ-OAW4506-C2-2N504
+#! 172.1.37.102 zhangjiang.access.ZJ-OAW3560-C2-B1-2F
+#! 172.1.37.107 zhangjiang.access.ZJ-OAW3560-C7-B2-3-FCZS
+#! 172.1.37.104 zhangjiang.access.ZJ-OAW3560-C4-A1-5F
+#! 172.1.37.103 zhangjiang.access.ZJ-OAW3560-C3-A2-4F
+#! 172.1.37.101 zhangjiang.access.ZJ-OAW3560-C1-ECC
+#! 172.1.33.44 ZhangJ.JY.ZJ-JY7304-C4-2N804
+
+###################################################################################################
+#增加设备采集指标，格式：(以$标识一条记录)
+#ip comm oid attrtype pSeps name 
+###################################################################################################
+#$172.1.128.6 thbczh2005 1.3.6.1.4.1.9.9.109.1.1.1.1.7.1 cpmCPUTotal1minRev 08:00:00-22:00:00.20
+
+###################################################################################################
+#增加模拟产生的数据信息，格式：(以@标识一条记录)
+#A ip attrtype valuetype(1表示int,2表示string,3表示bool) value name  //A表示增加的指标值
+#W ip eventname eventtype(1--8分别表示端口、流量、网络设备、设备连通、路由、性能、安全、其它类) Flag information
+##                     //W表示增加的告警
+###################################################################################################
+#@A 172.1.37.101 ifOperStatus 2 2 GabitEthernet4/8
+#@A 172.1.37.102 ifOperStatus 2 2 GabitEthernet4/4
+#@A 172.1.37.101 ifOperStatus 2 1 GabitEthernet4/8
+#@A 172.1.37.102 ifOperStatus 2 1 GabitEthernet4/4
+
+#@W 172.1.37.101 portdown 1 N GabitEthernet4/8 Interface down
+#@W 172.1.37.101 portdown 1 N GabitEthernet4/8 Interface down
+#@W 172.1.37.101 portdown 1 N GabitEthernet4/8 Interface up
+#@W 172.1.37.102 portdown 1 N GabitEthernet4/4 Interface down
+#@W 172.1.37.102 portdown 1 N GabitEthernet4/4 Interface down
+#@W 172.1.37.102 portdown 1 N GabitEthernet4/4 Interface up
+#@W 172.1.37.102 portdown 1 N GabitEthernet4/4 Interface down
+#@W 172.1.37.102 portdown 1 N GabitEthernet4/4 Interface up
+

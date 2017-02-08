@@ -1,0 +1,43 @@
+<sysfibclient version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+	<depend>
+		<platform version="1"/>
+		<base version="1"/>
+		<probelogger version="1"/>
+		<utility version="1"/>
+		<datastruct version="1"/>
+		<event version="1"/>
+		<network version="1"/>
+		<tcpnetwork version="1"/>
+		<protocol version="1"/>
+		<channelprotocol version="1"/>
+		<scpprotocol version="1"/>
+		<xmpprotocol version="1"/>
+		<xtpprotocol version="1"/>
+		<ftdprotocol version="1"/>
+		<xtpfield version="1"/>
+		<ftdfield version="1"/>
+		<customDataType version="1"/>
+		<fib version="1"/>
+		<xml version="1"/>
+		<fibproxyfield version="1"/>
+		<version version="1"/>
+	</depend>
+	<cppfile>
+		<sysfibclient.cpp/>
+		<FibClientServer.cpp/>
+		<CFPPSubscriber.cpp/>
+		<CFibClient.cpp/>
+		<EventConnect.cpp/>
+		<CFibClient2.cpp/>
+	</cppfile>
+	<headfile>
+		<FibClientServer.h/>
+		<CFPPSubscriber.h/>
+		<CFibClient.h/>
+		<EventConnect.h/>
+		<CFibClient2.h/>
+	</headfile>
+	<command>
+	</command>
+</sysfibclient>

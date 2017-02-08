@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE SystemConfig SYSTEM "">
+<SystemConfig>
+	<System>
+		<object id="0001" name="DATABASE" alias="数据库"/>
+		<object id="0002" name="AUTHCENTER" alias="认证中心"/>
+		<object id="0003" name="BECK" alias="资金管理"/>
+		<object id="0004" name="DELIVERY" alias="交割管理"/>
+		<object id="0005" name="BNS_INET" alias="外网BNS"/>
+		<object id="0006" name="DNS" alias="域名服务"/>
+		<object id="0007" name="ECA" alias="仓单UsbKey"/>
+		<object id="0008" name="EWARRANT" alias="仓单管理"/>
+		<object id="0009" name="MS" alias="会员服务"/>
+		<object id="0010" name="OFFWITHRULE" alias="规则平仓"/>
+		<object id="0011" name="PARTY" alias="会员客户"/>
+		<object id="0012" name="PCM" alias="诚信档案"/>
+		<object id="0013" name="PORTAL" alias="所内门户"/>
+		<object id="0014" name="SIP" alias="?????"/>
+		<object id="0015" name="RISKEVAL" alias="风险测算"/>
+		<object id="0016" name="SETTLEMENT" alias="结算业务管理"/>
+		<object id="0017" name="EXADMIN" alias="交易业务管理"/>
+		<object id="0018" name="DBSYNC" alias="????????"/>
+		<object id="0019" name="WWW" alias="网站监控"/>
+		<object id="0020" name="TRADELOG" alias="交易日志"/>
+		<object id="0021" name="UAO" alias="??????"/>
+		<object id="0022" name="NBU" alias="网络备份"/>
+		<object id="0023" name="MSGCENTER" alias="消息分发"/>
+		<object id="0024" name="TRADE" alias="交易系统"/>
+		<object id="0025" name="BMS" alias="?????????"/>
+		<object id="0026" name="CLEAR" alias="清算系统"/>
+		<object id="0027" name="MD4" alias="互联网行情"/>
+	</System>
+</SystemConfig>

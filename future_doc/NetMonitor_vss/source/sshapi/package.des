@@ -1,0 +1,21 @@
+<sshapi version="1" type="cpp" includedir="" platform="all">
+	<parameter>
+	</parameter>
+	<depend>
+	</depend>
+	<cppfile>
+	</cppfile>
+	<headfile>
+		<libssh.h>
+		<ssh_threads.h/>
+	</headfile>
+	<libfile>
+		<libssh/>
+		<libssl/>
+		<libz/>
+		<libssh_threads>
+	</libfile>
+	<command>
+	</command>
+</sshapi>
+

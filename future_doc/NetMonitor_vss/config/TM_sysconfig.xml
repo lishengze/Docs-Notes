@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE root SYSTEM "">
+<root>
+	<ConnectionString>
+		<Realtime>
+			<item name="front1.PD" value="tcp://192.168.85.13:18840"/>
+			<item name="front2.PD" value="tcp://192.168.85.12:18841"/>
+			<item name="front1.ZJ" value="tcp://172.18.33.191:18840"/>
+			<item name="front2.ZJ" value="tcp://172.18.33.192:18841"/>
+			<item name="front1.BJ" value="tcp://172.23.35.13:18840"/>
+			<item name="front2.BJ" value="tcp://172.23.35.12:18841"/>
+			<item name="front1.TEST" value="tcp://192.168.88.78:18840"/>
+			<item name="front2.TEST" value="tcp://192.168.88.77:18841"/>
+		</Realtime>
+		<Unrealtime>
+			<item name="front1.PD" value="tcp://192.168.85.23:18840"/>
+			<item name="front2.PD" value="tcp://192.168.85.22:18841"/>
+			<item name="front1.ZJ" value="tcp://172.18.33.183:18840"/>
+			<item name="front2.ZJ" value="tcp://172.18.33.182:18841"/>
+			<item name="front1.BJ" value="tcp://172.23.35.23:18840"/>
+			<item name="front2.BJ" value="tcp://172.23.35.22:18841"/>
+		</Unrealtime>
+		<Whole>
+			<item name="front1.PD" value="tcp://192.168.85.23:18840"/>
+			<item name="front2.PD" value="tcp://192.168.85.22:18841"/>
+			<item name="front1.ZJ" value="tcp://172.18.33.183:18840"/>
+			<item name="front2.ZJ" value="tcp://172.18.33.182:18841"/>
+			<item name="front1.BJ" value="tcp://172.23.35.23:18840"/>
+			<item name="front2.BJ" value="tcp://172.23.35.22:18841"/>
+		</Whole>
+	</ConnectionString>
+	<UserInfo Server="4" UserID="BJ_admin1" SavePwd="True" Password="123456"/>
+	<ClientHabit>
+		<item name="objectsub" subtime="08:00:00" size="-1"/>
+		<item name="syslogeventsub" subtime="00:00:00" size=""/>
+	</ClientHabit>
+	<AuthCenter>
+		<item IP="http://127.0.0.1:8080/authcenter/services" SystemIndex="9999" AuthUserID="tmadmin" AuthPassword="111111"/>
+	</AuthCenter>
+	<ReportColor>
+		<item name="info" R="255" G="255" B="255"/>
+		<item name="Warning" R="170" G="0" B="0"/>
+		<item name="Error" R="0" G="0" B="170"/>
+		<item name="Fatal" R="0" G="0" B="255"/>
+		<item name="debug" R="255" G="0" B="0"/>
+		<item name="unknown" R="0" G="255" B="0"/>
+	</ReportColor>
+	<ClientInfo Version="1.6.3.5" clientType="Realtime"/>
+	<WarningEvent SoundNotify="true" NotifyInterval="3"/>
+	<ToolBarItem>
+		<Realtime>
+			<item Des="管理平台" Hotkey="2" Icon="1" Path="CMonitorManagerView"/>
+			<item Des="树型视图" Hotkey="3" Icon="3" Path="CObjectMonitorView"/>
+			<item Des="交易系统逻辑图" Hotkey="4" Icon="4" Path="CLogicMonitorView;Logic.TRADE.TopView"/>
+			<item Des="深度行情逻辑图" Hotkey="5" Icon="5" Path="CLogicMonitorView;Logic.MD2.TopView"/>
+			<item Des="风险监控逻辑图" Hotkey="6" Icon="6" Path="CLogicMonitorView;Logic.RISK.TopView"/>
+			<item Des="交易系统PD部署图" Hotkey="7" Icon="8" Path="CPhysicsMonitorView;TRADE.PuDian.os.DeployView"/>
+		</Realtime>
+		<Unrealtime>
+			<item Des="业务全景图" Hotkey="2" Icon="2" Path="CLogicMonitorView;*PuDian*pd*ZhangJ*zj*Logic.TopView"/>
+			<item Des="树型视图" Hotkey="3" Icon="3" Path="CObjectMonitorView"/>
+			<item Des="流程视图" Hotkey="4" Icon="7" Path="CLogicMonitorView;SystemFlow"/>
+			<item Des="TOMCAT视图" Hotkey="5" Icon="9" Path="CLogicMonitorView;.TomcatView"/>
+			<item Des="数据库视图" Hotkey="6" Icon="10" Path="CLogicMonitorView;DatabaseView"/>
+			<item Des="网站视图" Hotkey="7" Icon="11" Path="CLogicMonitorView;WebsiteView"/>
+		</Unrealtime>
+		<Whole>
+			<item Des="管理平台" Hotkey="2" Icon="1" Path="CMonitorManagerView"/>
+			<item Des="业务全景图" Hotkey="3" Icon="2" Path="CLogicMonitorView;*PuDian*pd*ZhangJ*zj*Logic.TopView"/>
+			<item Des="树型视图" Hotkey="4" Icon="3" Path="CObjectMonitorView"/>
+			<item Des="交易系统逻辑图" Hotkey="5" Icon="4" Path="CLogicMonitorView;*TRADE*Logic.TRADE.TopView"/>
+			<item Des="深度行情逻辑图" Hotkey="6" Icon="5" Path="CLogicMonitorView;*MD2*Logic.MD2.TopView"/>
+			<item Des="风险监控逻辑图" Hotkey="7" Icon="6" Path="CLogicMonitorView;*RISK*Logic.RISK.TopView"/>
+			<item Des="流程视图" Hotkey="8" Icon="7" Path="CLogicMonitorView;SystemFlow"/>
+			<item Des="交易系统PD部署图" Hotkey="9" Icon="8" Path="CPhysicsMonitorView;*TRADE.PuDian.os*.TRADE.PuDian.os.DeployView"/>
+			<item Des="TOMCAT视图" Hotkey="10" Icon="10" Path="CLogicMonitorView;*PuDian*ZhangJ*.TomcatView"/>
+			<item Des="网站视图" Hotkey="11" Icon="11" Path="CLogicMonitorView;WebsiteView"/>
+		</Whole>
+	</ToolBarItem>
+</root>

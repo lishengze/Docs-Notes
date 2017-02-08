@@ -1,0 +1,12 @@
+chmod +w ../source/version/versionValue.h
+echo const char *version=\"`date +%Y%m%d.%H:%M:%S`\"\; > ../source/version/versionValue.h
+for project in sysprobe sysagent syseventcounter sysquery sysfibclient sysfront
+do 
+    echo make $project
+    cd $project 
+    amake $project.prj
+    make clean
+    make pump
+    make
+    cd ..
+done 

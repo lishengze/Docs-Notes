@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<packageDefine name="probe" version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+        <depend/>
+	<cppfile>
+		<file name="probe.cpp"/>
+		<file name="TcpMServer.cpp"/>
+		<file name="CProbe.cpp"/>
+		<file name="configmanager.cpp"/>
+		<file name="CSysLogReader.cpp"/>
+	</cppfile>
+	<headfile>
+		<file name="probe.h"/>
+		<file name="TcpMServer.h"/>
+		<file name="CProbe.h"/>
+		<file name="configmanager.h"/>
+		<file name="CSysLogReader.h"/>
+	</headfile>
+	<command/>
+</packageDefine>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE MemberSeatData SYSTEM "">
+<MemberSeatData>
+	<DataDetail name="MemberSizeTotal_D" Date="20121024" Time="09:08:21" Count="183"/>
+	<DataDetail name="UserSessionSizeTotal_D" Date="20121024" Time="09:09:36" Count="679"/>
+	<DataDetail name="MemberSizeTotal_N" Date="" Time="" Count=""/>
+	<DataDetail name="UserSessionSizeTotal_N" Date="" Time="" Count=""/>
+</MemberSeatData>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT ENTER_NAME_OF_ROOT_ELEMENT_HERE EMPTY>
+<!ELEMENT SystemConfig ((Topics, HostConfig, PhysicsDataCenterRack, PhysicsDeploy, Configurations, AttrDefine, SessionIpConfig, Events, DataCenters))>
+<!ELEMENT Topics ((Topic+))>
+<!ELEMENT Topic EMPTY>
+<!ATTLIST Topic
+	id CDATA #REQUIRED
+	name CDATA #REQUIRED
+	type CDATA #REQUIRED
+>
+<!ELEMENT HostConfig ((Common?, Agent*, Host+))>
+<!ELEMENT Common ((Timers?, ConfigFiles?, AppSyslogs?, SystemLog?, KeyFile?, SessionLog?, RecSizeLog?, Databases?, Attrs?))>
+<!ELEMENT Timers ((Object*))>
+<!ELEMENT Object EMPTY>
+<!ATTLIST Object
+	comment CDATA #IMPLIED
+	item CDATA #IMPLIED
+	name CDATA #REQUIRED
+	path CDATA #IMPLIED
+	root CDATA #IMPLIED
+	seps CDATA #IMPLIED
+>
+<!ELEMENT ConfigFiles ((Object*))>
+<!ELEMENT AppSyslogs ((Object*))>
+<!ELEMENT SystemLog ((Object*))>
+<!ELEMENT KeyFile ((Object*))>
+<!ELEMENT SessionLog ((Object*))>
+<!ELEMENT RecSizeLog ((Object*))>
+<!ELEMENT Databases ((Database+))>
+<!ELEMENT Database EMPTY>
+<!ATTLIST Database
+	dbname CDATA #REQUIRED
+	ip CDATA #REQUIRED
+	name CDATA #REQUIRED
+	password CDATA #REQUIRED
+	port CDATA #REQUIRED
+	username CDATA #REQUIRED
+>
+<!ELEMENT Attrs ((Attr+))>
+<!ELEMENT Attr ((Table+ | app+ | ipconfig+)?)>
+<!ATTLIST Attr
+	comment CDATA #IMPLIED
+	interval CDATA #IMPLIED
+	name CDATA #REQUIRED
+	valueType CDATA #IMPLIED
+>
+<!ELEMENT Table EMPTY>
+<!ATTLIST Table
+	database CDATA #REQUIRED
+	name CDATA #REQUIRED
+>
+<!ELEMENT app EMPTY>
+<!ATTLIST app
+	comment CDATA #IMPLIED
+	item CDATA #IMPLIED
+	name CDATA #REQUIRED
+>
+<!ELEMENT ipconfig EMPTY>
+<!ATTLIST ipconfig
+	value CDATA #REQUIRED
+>
+<!ELEMENT Agent EMPTY>
+<!ATTLIST Agent
+	address CDATA #REQUIRED
+	name CDATA #REQUIRED
+>
+<!ELEMENT Host ((Timers?, ConfigFiles?, AppSyslogs?, SystemLog?, KeyFile?, SessionLog?, RecSizeLog?, Databases?, Attrs?))>
+<!ATTLIST Host
+	address CDATA #REQUIRED
+	alias CDATA #REQUIRED
+	comment CDATA #IMPLIED
+	datacenter (ZhangJ | PuDian | BeiJing) #REQUIRED
+	hostname CDATA #REQUIRED
+	hostrack CDATA #IMPLIED
+	name CDATA #REQUIRED
+	position (7 | 6 | 5 | 4 | 3 | 2 | 1) #IMPLIED
+	process CDATA #REQUIRED
+>
+<!ELEMENT PhysicsDataCenterRack ((OriginalWidth, OriginalHeight, TopSpace, LeftSpace, BottomSpace, RightSpace, ItemInnerSpace, TextFont))>
+<!ELEMENT OriginalWidth (#PCDATA)>
+<!ELEMENT OriginalHeight (#PCDATA)>
+<!ELEMENT TopSpace (#PCDATA)>
+<!ELEMENT LeftSpace (#PCDATA)>
+<!ELEMENT BottomSpace (#PCDATA)>
+<!ELEMENT RightSpace (#PCDATA)>
+<!ELEMENT ItemInnerSpace (#PCDATA)>
+<!ELEMENT TextFont (#PCDATA)>
+<!ELEMENT PhysicsDeploy ((OriginalWidth, OriginalHeight, ItemWidth, ItemHeight, ItemInnerSpace, LineWidth, TextFont, FirstLineStartY, SecondLineStartY, PuDian_Gateway+, ZhangJ_Gateway+))>
+<!ELEMENT ItemWidth (#PCDATA)>
+<!ELEMENT ItemHeight (#PCDATA)>
+<!ELEMENT LineWidth (#PCDATA)>
+<!ELEMENT FirstLineStartY (#PCDATA)>
+<!ELEMENT SecondLineStartY (#PCDATA)>
+<!ELEMENT PuDian_Gateway ((address, Name, Left, Top, Width))>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Left (#PCDATA)>
+<!ELEMENT Top (#PCDATA)>
+<!ELEMENT Width (#PCDATA)>
+<!ELEMENT ZhangJ_Gateway ((address, Name, Left, Top, Width))>
+<!ELEMENT Configurations ((Configuration+))>
+<!ELEMENT Configuration EMPTY>
+<!ATTLIST Configuration
+	name CDATA #REQUIRED
+	remark CDATA #IMPLIED
+	srcPath CDATA #REQUIRED
+	type CDATA #REQUIRED
+	version CDATA #REQUIRED
+>
+<!ELEMENT AttrDefine ((Attr+))>
+<!ELEMENT SessionIpConfig ((Attr+))>
+<!ELEMENT Events ((Event+))>
+<!ELEMENT Event EMPTY>
+<!ATTLIST Event
+	Comment CDATA #REQUIRED
+	Control CDATA #REQUIRED
+	Expr CDATA #REQUIRED
+	FullName CDATA #REQUIRED
+	GiveupTime CDATA #REQUIRED
+	ObjectAttr CDATA #IMPLIED
+	ObjectId CDATA #IMPLIED
+	level (warning | notify | fatal | error) #REQUIRED
+	name CDATA #REQUIRED
+	type (os | app) #REQUIRED
+>
+<!ELEMENT DataCenters ((DataCenter+))>
+<!ELEMENT DataCenter ((app+))>
+<!ATTLIST DataCenter
+	alias CDATA #REQUIRED
+	comment (浦电路数据中心 | 张江数据中心) #IMPLIED
+	id (3 | 2 | 1) #REQUIRED
+	name (BeiJing | ZhangJ | PuDian) #REQUIRED
+>
+
+
+
+
+
+

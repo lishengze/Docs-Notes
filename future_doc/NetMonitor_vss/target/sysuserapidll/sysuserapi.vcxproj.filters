@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="platform">
+      <UniqueIdentifier>{cb3e5cb2-1d13-4217-b07a-20afd2be0acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{f98903c6-b156-4d25-918c-6cbe31c1b324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{6020d465-96d8-4b9a-a87a-06606b03b396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="probelogger">
+      <UniqueIdentifier>{b9e1be8b-f1dc-48e9-a7bc-ddf9cdd4a063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="datastruct">
+      <UniqueIdentifier>{fdb8f7de-4a5f-4715-b106-538450bf0bed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="event">
+      <UniqueIdentifier>{223977df-6de6-49c2-9e3b-517340bf5753}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{a20ddd9c-190a-4b63-91cc-47e5aea7c132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tcpnetwork">
+      <UniqueIdentifier>{83c27bc3-0153-461b-acd1-2af6904ae85d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol">
+      <UniqueIdentifier>{083f37c4-5d24-4c1d-9db0-edb597acdb57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="channelprotocol">
+      <UniqueIdentifier>{ac1abacd-1875-4cd8-88d8-434adf46fb1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xmpprotocol">
+      <UniqueIdentifier>{112e7e9a-5de1-4b34-9b3b-97efb2ca31e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compressprotocol">
+      <UniqueIdentifier>{6629b6a5-e64d-4dcf-be19-30dd6b054e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ftdprotocol">
+      <UniqueIdentifier>{44b795c5-0029-45e9-9379-2b263b4f1a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="customDataType">
+      <UniqueIdentifier>{92c60780-1136-47af-8cfe-35549e53cd40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ftdfield">
+      <UniqueIdentifier>{e971a78b-0d88-4128-ac3a-36ba0b819099}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UFCopy">
+      <UniqueIdentifier>{8e3001f4-e4f2-4de1-8640-8d0b710e32a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sysuserapi">
+      <UniqueIdentifier>{4058d81f-d2b1-4ad9-ad6c-0de11f9bdf48}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\platform\system.cpp">
+      <Filter>platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platform\platform.cpp">
+      <Filter>platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platform\mpath.cpp">
+      <Filter>platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\CBaseObject.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\DesignError.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\RuntimeError.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\CLogger.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\CProbeLogger.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\monitorIndex.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\utility\CTimeMeter.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\utility\utility.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\utility\Config.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\probelogger\CSyslogService.cpp">
+      <Filter>probelogger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\probelogger\CFilelogService.cpp">
+      <Filter>probelogger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CConfig.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CFixMem.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CAVLTree.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CTransaction.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CMemory.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CFiniteState.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CacheList.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\FieldDescribe.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\FieldSet.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\Index.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\Package.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\Flow.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\ReadOnlyFlow.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\FlowReader.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\OrderingQ.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CachedFileFlow.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CachedFlow.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\FileFlow.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\IndexPackageFlow.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CSVParser.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CSequenceInterface.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CMemorySequence.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CErrorEngine.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CDate.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\Allocator.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CHashIndex.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\PtrList.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\ObjAllocator.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\EventHandler.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\EventQueue.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\EventDispatcher.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\Reactor.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\Semaphore.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\Thread.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\SelectReactor.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\TimerHeap.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\EpollReactor.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\Channel.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\Client.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\ListenCtrl.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\NetworkFactory.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\Server.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\ServiceName.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\SocketInit.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tcpnetwork\TcpChannel.cpp">
+      <Filter>tcpnetwork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tcpnetwork\TcpClient.cpp">
+      <Filter>tcpnetwork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tcpnetwork\TcpServer.cpp">
+      <Filter>tcpnetwork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tcpnetwork\TcpNetworkFactory.cpp">
+      <Filter>tcpnetwork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\protocol\Protocol.cpp">
+      <Filter>protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\channelprotocol\ChannelProtocol.cpp">
+      <Filter>channelprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\channelprotocol\ChannelPackage.cpp">
+      <Filter>channelprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\channelprotocol\Session.cpp">
+      <Filter>channelprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\channelprotocol\SessionFactory.cpp">
+      <Filter>channelprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xmpprotocol\XMPPackage.cpp">
+      <Filter>xmpprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xmpprotocol\XMPSession.cpp">
+      <Filter>xmpprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xmpprotocol\XMPProtocol.cpp">
+      <Filter>xmpprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\compressprotocol\CompressPackage.cpp">
+      <Filter>compressprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\compressprotocol\CompressProtocol.cpp">
+      <Filter>compressprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\compressprotocol\CompressUtil.cpp">
+      <Filter>compressprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCPackage.cpp">
+      <Filter>ftdprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCProtocol.cpp">
+      <Filter>ftdprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCSession.cpp">
+      <Filter>ftdprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCPubEndPoint.cpp">
+      <Filter>ftdprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCSubEndPoint.cpp">
+      <Filter>ftdprotocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdfield\FtdData.cpp">
+      <Filter>ftdfield</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdfield\FtdPackageDesc.cpp">
+      <Filter>ftdfield</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysuserapi\FtdcSysUserApiImpl.cpp">
+      <Filter>sysuserapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysuserapi\FtdcSysUserApiImplBase.cpp">
+      <Filter>sysuserapi</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\platform\system.h">
+      <Filter>platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platform.h">
+      <Filter>platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\mpath.h">
+      <Filter>platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\base\CBaseObject.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\base\DesignError.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\base\RuntimeError.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\base\CLogger.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\base\CProbeLogger.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\base\monitorIndex.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\base\public.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\utility\CTimeMeter.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\utility\utility.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\utility\Config.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\probelogger\CSyslogService.h">
+      <Filter>probelogger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\probelogger\CFilelogService.h">
+      <Filter>probelogger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CachedFileFlow.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CachedFlow.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\IndexPackageFlow.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\FileFlow.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CConfig.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CFixMem.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CAVLTree.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CResource.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CTransaction.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CMemory.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CFiniteState.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CacheList.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\FieldDescribe.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\FieldSet.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\Index.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\Package.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\HashMap.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\Flow.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\ReadOnlyFlow.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\FlowReader.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\PersistentState.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\OrderingQ.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\UFDataType.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CSVParser.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CSequenceInterface.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CMemorySequence.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CErrorEngine.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CDate.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\Allocator.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\MemoryStack.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\ThreadSafeFlow.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\CHashIndex.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\PtrList.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\datastruct\ObjAllocator.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\EventHandler.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\EventQueue.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\Reactor.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\Semaphore.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\Thread.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\Mutex.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\SelectReactor.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\TimerHeap.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\TimerQueue.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\EventDispatcher.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\event\EpollReactor.h">
+      <Filter>event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\network\Channel.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\network\Client.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\network\ListenCtrl.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\network\NetworkFactory.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\network\Server.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\network\ServiceName.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\network\SocketInit.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\tcpnetwork\TcpChannel.h">
+      <Filter>tcpnetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\tcpnetwork\TcpClient.h">
+      <Filter>tcpnetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\tcpnetwork\TcpServer.h">
+      <Filter>tcpnetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\tcpnetwork\TcpNetworkFactory.h">
+      <Filter>tcpnetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\protocol\Protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\channelprotocol\ChannelProtocol.h">
+      <Filter>channelprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\channelprotocol\ChannelPackage.h">
+      <Filter>channelprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\channelprotocol\Session.h">
+      <Filter>channelprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\channelprotocol\SessionFactory.h">
+      <Filter>channelprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xmpprotocol\XMPPackage.h">
+      <Filter>xmpprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xmpprotocol\XMPSession.h">
+      <Filter>xmpprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xmpprotocol\XMPProtocol.h">
+      <Filter>xmpprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\compressprotocol\CompressPackage.h">
+      <Filter>compressprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\compressprotocol\CompressProtocol.h">
+      <Filter>compressprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\compressprotocol\CompressUtil.h">
+      <Filter>compressprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCPackage.h">
+      <Filter>ftdprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCProtocol.h">
+      <Filter>ftdprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCSession.h">
+      <Filter>ftdprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCPubEndPoint.h">
+      <Filter>ftdprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCSubEndPoint.h">
+      <Filter>ftdprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCSubscriber.h">
+      <Filter>ftdprotocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\customDataType\customDataType.h">
+      <Filter>customDataType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ftdfield\FtdData.h">
+      <Filter>ftdfield</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ftdfield\FtdPackageDesc.h">
+      <Filter>ftdfield</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\UFCopy\UFCopy.h">
+      <Filter>UFCopy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\UFCopy\UFEntityCopy.h">
+      <Filter>UFCopy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\UFCopy\MDBCopy.h">
+      <Filter>UFCopy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\UFCopy\XTPCopy.h">
+      <Filter>UFCopy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\UFCopy\FTDCopy.h">
+      <Filter>UFCopy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\sysuserapi\FtdcSysUserApi.h">
+      <Filter>sysuserapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\sysuserapi\FtdcSysUserApiImpl.h">
+      <Filter>sysuserapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\sysuserapi\FtdcSysUserApiImplBase.h">
+      <Filter>sysuserapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\sysuserapi\FtdcSysUserApiDataType.h">
+      <Filter>sysuserapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\sysuserapi\FtdcSysUserApiStruct.h">
+      <Filter>sysuserapi</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

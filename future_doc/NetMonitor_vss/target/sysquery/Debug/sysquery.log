@@ -1,0 +1,173 @@
+﻿生成启动时间为 2014/9/4 16:53:00。
+     1>项目“C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysquery\sysquery.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“.\Debug\sysquery.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\source\platform\. /I..\..\source\base\. /I..\..\source\utility\. /I..\..\source\datastruct\. /I..\..\source\event\. /I..\..\source\network\. /I..\..\source\tcpnetwork\. /I..\..\source\udpnetwork\. /I..\..\source\protocol\. /I..\..\source\channelprotocol\. /I..\..\source\scpprotocol\. /I..\..\source\xmpprotocol\. /I..\..\source\compressprotocol\. /I..\..\source\ofpprotocol\. /I..\..\source\ftdprotocol\. /I..\..\source\xml\. /I..\..\source\probelogger\. /I..\..\source\version\. /I..\..\source\refobject\. /I..\..\source\sqlapi\. /I..\..\source\ofpfield\. /I..\..\source\UFCopy\. /I..\..\source\customDataType\. /I..\..\source\ftdfield\. /I..\..\source\sysutility\. /I..\..\source\sysdbutility\. /I..\..\source\sysquery\. /Zi /nologo /W3 /WX- /Od /Oy- /D DEBUG /D DEBUG_LOG /D WINDOWS /D MSVC /D _VC80_UPGRADE=0x0600 /Gm- /EHsc /MTd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\source\sysquery\CStatusSubscriber.cpp  -EHsc   -EHsc 
+         CStatusSubscriber.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\sysutility\systools.h(1938): warning C4355: “this”: 用于基成员初始值设定项列表
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(297): warning C4101: “buffer”: 未引用的局部变量
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(413): warning C4101: “buffer”: 未引用的局部变量
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(916): warning C4244: “参数”: 从“const double”转换到“const long”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1371): warning C4244: “参数”: 从“time_t”转换到“const int”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1382): warning C4244: “参数”: 从“time_t”转换到“const int”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1906): warning C4244: “参数”: 从“QWORD”转换到“double”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1907): warning C4244: “参数”: 从“QWORD”转换到“double”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1908): warning C4244: “参数”: 从“QWORD”转换到“double”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1909): warning C4244: “参数”: 从“QWORD”转换到“double”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1910): warning C4244: “参数”: 从“QWORD”转换到“double”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1911): warning C4244: “参数”: 从“QWORD”转换到“double”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1912): warning C4244: “参数”: 从“QWORD”转换到“double”，可能丢失数据
+     1>..\..\source\sysquery\CStatusSubscriber.cpp(1913): warning C4244: “参数”: 从“QWORD”转换到“double”，可能丢失数据
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\sysquery.exe" /INCREMENTAL /NOLOGO odbc32.lib odbccp32.lib wsock32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:".\Debug\sysquery.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysquery\Debug\sysquery.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\sysquery.lib" /MACHINE:X86 .\Debug\sysquery.exe.embed.manifest.res
+         .\Debug\system.obj
+         .\Debug\platform.obj
+         .\Debug\mpath.obj
+         .\Debug\CBaseObject.obj
+         .\Debug\DesignError.obj
+         .\Debug\RuntimeError.obj
+         .\Debug\CLogger.obj
+         .\Debug\CProbeLogger.obj
+         .\Debug\monitorIndex.obj
+         .\Debug\CTimeMeter.obj
+         .\Debug\utility.obj
+         .\Debug\Config.obj
+         .\Debug\CConfig.obj
+         .\Debug\CFixMem.obj
+         .\Debug\CAVLTree.obj
+         .\Debug\CTransaction.obj
+         .\Debug\CMemory.obj
+         .\Debug\CFiniteState.obj
+         .\Debug\CacheList.obj
+         .\Debug\FieldDescribe.obj
+         .\Debug\FieldSet.obj
+         .\Debug\Index.obj
+         .\Debug\Package.obj
+         .\Debug\Flow.obj
+         .\Debug\ReadOnlyFlow.obj
+         .\Debug\FlowReader.obj
+         .\Debug\OrderingQ.obj
+         .\Debug\CachedFileFlow.obj
+         .\Debug\CachedFlow.obj
+         .\Debug\FileFlow.obj
+         .\Debug\IndexPackageFlow.obj
+         .\Debug\CSVParser.obj
+         .\Debug\CSequenceInterface.obj
+         .\Debug\CMemorySequence.obj
+         .\Debug\CErrorEngine.obj
+         .\Debug\CDate.obj
+         .\Debug\Allocator.obj
+         .\Debug\CHashIndex.obj
+         .\Debug\PtrList.obj
+         .\Debug\ObjAllocator.obj
+         .\Debug\EventHandler.obj
+         .\Debug\EventQueue.obj
+         .\Debug\EventDispatcher.obj
+         .\Debug\Reactor.obj
+         .\Debug\Semaphore.obj
+         .\Debug\Thread.obj
+         .\Debug\SelectReactor.obj
+         .\Debug\TimerHeap.obj
+         .\Debug\EpollReactor.obj
+         .\Debug\Channel.obj
+         .\Debug\Client.obj
+         .\Debug\ListenCtrl.obj
+         .\Debug\NetworkFactory.obj
+         .\Debug\Server.obj
+         .\Debug\ServiceName.obj
+         .\Debug\SocketInit.obj
+         .\Debug\TcpChannel.obj
+         .\Debug\TcpClient.obj
+         .\Debug\TcpServer.obj
+         .\Debug\TcpNetworkFactory.obj
+         .\Debug\UdpChannel.obj
+         .\Debug\UdpClient.obj
+         .\Debug\UdpServer.obj
+         .\Debug\UdpNetworkFactory.obj
+         .\Debug\Protocol.obj
+         .\Debug\ChannelProtocol.obj
+         .\Debug\ChannelPackage.obj
+         .\Debug\Session.obj
+         .\Debug\SessionFactory.obj
+         .\Debug\SCPPackage.obj
+         .\Debug\SCPPackageDesc.obj
+         .\Debug\SCPProtocol.obj
+         .\Debug\XMPPackage.obj
+         .\Debug\XMPSession.obj
+         .\Debug\XMPProtocol.obj
+         .\Debug\CompressPackage.obj
+         .\Debug\CompressProtocol.obj
+         .\Debug\CompressUtil.obj
+         .\Debug\OFPPackage.obj
+         .\Debug\OFPProtocol.obj
+         .\Debug\OFPSession.obj
+         .\Debug\OFPPubEndPoint.obj
+         .\Debug\FTDCPackage.obj
+         .\Debug\FTDCProtocol.obj
+         .\Debug\FTDCSession.obj
+         .\Debug\FTDCPubEndPoint.obj
+         .\Debug\FTDCSubEndPoint.obj
+         .\Debug\CXML.obj
+         .\Debug\XMLAction.obj
+         .\Debug\CSyslogService.obj
+         .\Debug\CFilelogService.obj
+         .\Debug\version.obj
+         .\Debug\RefString.obj
+         .\Debug\OfpData.obj
+         .\Debug\FtdData.obj
+         .\Debug\FtdPackageDesc.obj
+         .\Debug\systools.obj
+         .\Debug\xmlcfg.obj
+         .\Debug\FileRecordFinder.obj
+         .\Debug\md5Handler.obj
+         .\Debug\CTimePolicy.obj
+         .\Debug\ThreadPool.obj
+         .\Debug\StringUtil.obj
+         .\Debug\CDeployConfig.obj
+         .\Debug\PrjCommon.obj
+         .\Debug\CCalendar.obj
+         .\Debug\CSysInternalTopology.obj
+         .\Debug\FTDDataWrapper.obj
+         .\Debug\DBOperator.obj
+         .\Debug\sysquery.obj
+         .\Debug\CounterConnector.obj
+         .\Debug\CStatusSubscriber.obj
+         .\Debug\CQueryServer.obj
+         .\Debug\CPackageFilter.obj
+         .\Debug\CDumpSession.obj
+         .\Debug\CSlogConnection.obj
+         .\Debug\COrderRttManager.obj
+         .\Debug\slogparser.obj
+         .\Debug\SessionProxy.obj
+         .\Debug\TradeLogCodec.obj
+         ..\..\source\sqlapi\sqlapi.lib  /FIXED:NO  /WARN:2
+     1>LINK : warning LNK4044: 无法识别的选项“/WARN:2”；已忽略
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\sysquery.exe.embed.manifest" /manifest .\Debug\sysquery.exe.intermediate.manifest
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         sysquery.vcxproj -> C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysquery\.\Debug\sysquery.exe
+       FinalizeBuildStatus:
+         正在删除文件“.\Debug\sysquery.unsuccessfulbuild”。
+         正在对“.\Debug\sysquery.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysquery\sysquery.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.17

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE packageDefine SYSTEM "C:\amake\package.dtd">
+<packageDefine name="expr" version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+	<depend>
+		<package name="platform" version="1"/>
+		<package name="refobject" version="1"/>
+		<package name="base" version="1"/>
+		<package name="datastruct" version="1"/>
+		<package name="utility" version="1"/>
+	</depend>
+	<cppfile>
+		<file name="inputStream.cpp"/>
+		<file name="inputToken.cpp"/>
+		<file name="CExprException.cpp"/>
+		<file name="charSet.cpp"/>
+	</cppfile>
+	<headfile>
+		<file name="inputStream.h"/>
+		<file name="inputToken.h"/>
+		<file name="CExprException.h"/>
+		<file name="charSet.h"/>
+		<file name="CBaseValue.h"/>
+		<file name="CBaseContext.h"/>
+		<file name="CExprNode.h"/>
+		<file name="CExprParser.h"/>
+	</headfile>
+	<command/>
+</packageDefine>

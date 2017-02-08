@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT OFP (packages)>
+<!ATTLIST OFP
+	author CDATA #REQUIRED
+	version CDATA #REQUIRED
+	head (OFP) #REQUIRED
+	comment CDATA #REQUIRED
+	isUp (no) #REQUIRED
+	isDown (no) #REQUIRED
+	isPrivate (no) #REQUIRED
+	isPublic (no) #REQUIRED
+	multifield (no) #REQUIRED
+	v1use (yes) #REQUIRED
+	v2use (yes) #REQUIRED
+	NGESuse (yes) #REQUIRED
+	XTPPackage (notDefined) #REQUIRED
+	OFPRequest (notDefined) #REQUIRED
+>
+<!ELEMENT packages (package*)>
+<!ELEMENT package (field*)>
+<!ATTLIST package
+	name CDATA #REQUIRED
+	comm CDATA #REQUIRED
+	vary CDATA #REQUIRED
+	isUp (yes) #IMPLIED
+	isDown (yes) #IMPLIED
+	isPrivate (yes) #IMPLIED
+	isPublic (yes) #IMPLIED
+	comment CDATA #REQUIRED
+	multifield (yes) #IMPLIED
+	v1use (no) #IMPLIED
+	v2use (no) #IMPLIED
+	NGESuse (no) #IMPLIED
+	XTPPackage CDATA #IMPLIED
+	OFPRequest CDATA #IMPLIED
+>
+<!ELEMENT field EMPTY>
+<!ATTLIST field
+	name CDATA #REQUIRED
+	type (String|Number|Char|Float|Word) #REQUIRED
+	length CDATA #IMPLIED
+	comment CDATA #REQUIRED
+>

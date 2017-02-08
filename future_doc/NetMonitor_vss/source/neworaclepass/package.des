@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE packageDefine SYSTEM "C:\wsh\package.dtd">
+<packageDefine name="neworaclepass" version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+	<depend/>
+	<cppfile>
+		<file name="CDes.cpp"/>
+		<file name="DBUser.cpp"/>
+		<file name="GetOpt.cpp"/>
+		<file name="OraclePass.cpp"/>
+		<file name="SocketInit.cpp"/>
+		<file name="TcpServer.cpp"/>
+		<file name="ServiceName.cpp"/>
+	</cppfile>
+	<headfile>
+		<file name="CDes.h"/>
+		<file name="CCrypto.h"/>
+		<file name="CFileLogger.h"/>
+		<file name="DBUser.h"/>
+		<file name="GetOpt.h"/>
+		<file name="OraclePass.h"/>
+		<file name="SocketInit.h"/>
+		<file name="TcpServer.h"/>
+		<file name="ServiceName.h"/>
+	</headfile>
+	<command/>
+</packageDefine>

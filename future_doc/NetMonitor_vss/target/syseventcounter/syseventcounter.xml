@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by Henchi (HuaLang) -->
+<Config>
+	<Message path="./" sender="Monitor" maxretry="3" retryspan="300" >
+		<Users>
+			<Object name="yan.hc" cname="YHC"  mobile="13402025432" />
+			<Object name="zhou.jj" cname="ZJJ" mobile="15618980008" />
+			<Object name="jia.ps" cname="JPS" mobile="12345678910" />
+			<Object name="cao.n" cname="CN" mobile="11111111111" />
+		</Users>
+		<Subjects>
+			<Subject name="TEST" cname="测试组">
+				<Object name="yan.hc" />
+				<Object name="zhou.jj" />
+				<Object name="jia.ps" />
+			</Subject>
+			<!-- 是否启用扩展，启用扩展后，不仅会生成个人推送消息，还会生成主题推送消息 -->
+			<!--
+			<Subject name="NetMonitor" cname="NM组" extend="enable">
+				<Object name="cao.n" />
+			</Subject>
+			-->
+			<Subject name="NetMonitorBackSys" cname="NM系统内部组" extend="enable">
+				<Object name="cao.n" />
+			</Subject>
+			<Subject name="TradeMonitor" cname="TMS组">
+				<Object name="yan.hc" />
+				<Object name="zhou.jj" />
+			</Subject>
+		</Subjects>
+		<EventConfig merge="3" >
+			<ObjectGroups>
+				<Group name="All">
+				</Group>
+				<Group name="Trade">
+					<Object prefix="TRADE"/>
+					<Object prefix="RISK"/>
+					<Object prefix="TANA"/>
+					<Object prefix="MD2"/>
+				</Group>
+				<Group name="Net">
+					<Object prefix="!TM_"/>
+					<Object prefix="!NM_"/>
+				</Group>
+				<Group name="BackSys">
+					<Object prefix="TM_"/>
+					<Object prefix="NM_"/>
+				</Group>
+				<Group name="Business">
+					<Object prefix="!TRADE"/>
+					<Object prefix="!RISK"/>
+					<Object prefix="!TANA"/>
+					<Object prefix="!MD2"/>
+					<Object prefix="!PuDian"/>
+					<Object prefix="!ZhangJ"/>
+					<Object prefix="!BeiJing"/>
+				</Group>
+			</ObjectGroups>
+			<LevelGroups>
+				<Group name="All">
+				</Group>
+				<Group name="Level1">
+					<Object level="Level1"/>
+				</Group>
+				<Group name="Level2">
+					<Object level="Level2"/>
+				</Group>
+				<Group name="Level3">
+					<Object level="Level3"/>
+				</Group>
+				<Group name="Level4">
+					<Object level="Level4"/>
+				</Group>
+				<Group name="Level5">
+					<Object level="Level5"/>
+				</Group>
+				<Group name="Above3">
+					<Object level="Level1"/>
+					<Object level="Level2"/>
+					<Object level="Level3"/>
+				</Group>
+			</LevelGroups>
+			<MsgGroups>
+				<Group name="NM_sub" subject="NM_All" time="1-7.07:00:00-19:00:00;" type="1" send_gap="1800" format="1" level="9" comment="每600秒内向TEST组最多推送一次"/>
+				<Group name="Test_sub" subject="TEST" time="1-7.00:00:00-15:53:00,15:55:00-23:59:59" type="1" send_gap="120" format="1" level="9" comment="每1800秒内向TEST组最多推送一次"/>
+				<Group name="NM_sub" subject="NetMonitor" time="1-5.07:00:00-19:00:00;" type="1" send_gap="600" format="1" level="9" comment="每600秒内向TEST组最多推送一次"/>
+				<Group name="NMBack_sub" subject="NetMonitorBackSys" time="1-7.00:00:00-23:59:59" type="1" send_gap="600" format="1" level="9" comment="每600秒内向TEST组最多推送一次"/>
+				<Group name="BM_sub" subject="BusinessMonitor" time="1-7.00:00:00-23:59:59" type="0" send_gap="1800" format="0" level="9" comment="每1800秒内向TEST组最多推送一次"/>
+				<Group name="TM_sub" subject="TradeMonitor" time="1-7.00:00:00-23:59:59" type="0" send_gap="3600" format="0" level="9" comment="每1800秒内向TEST组最多推送一次"/>
+				<Group name="TRADE_sub" subject="TRADE" time="1.07:00:00-23:59:59;2-4.00:00:00-23:59:59;5.00:00:00-17:00:00" type="0" send_gap="1800" format="0" level="9" comment="每3600秒内向TEST组最多推送一次"/>
+				<Group name="SYS_sub" subject="$SYSTEM" time="1-7.00:00:00-23:59:59" type="0" send_gap="1800" format="0" level="9" comment="每1800秒内向TEST组最多推送一次"/>
+				<!-- 用于整点报时的Group 
+				  现在修改为使用AttrConfig对整点信息进行配置
+				<Group name="PerH_sub" subject="NetMonitor" time="1-5.08:59:59-16:59:59" type="0" send_gap="1800" format="0" level="9" comment="每1800秒内向TEST组最多推送一次"/>
+				-->
+			</MsgGroups>
+			<Filters>
+				<!--
+				<Filter name="AllEvents" object="All" level="All" timeout="" comment="所有事件">
+					<Object name="Test_sub"/>
+				</Filter>
+				-->
+				<Filter name="N_Above3" object="Net" level="All" timeout="3600" comment="所有事件">
+					<Object name="NM_sub"/>
+				</Filter>
+				<Filter name="NB_Above3" object="BackSys" level="Above3" timeout="3600" comment="所有事件">
+					<Object name="NMBack_sub"/>
+				</Filter>
+				<Filter name="B_Above3" object="Business" level="Above3" timeout="3600" comment="所有事件">
+					<Object name="BM_sub"/>
+				</Filter>
+				<!--
+				<Filter name="T_All" object="Trade" level="All" timeout="1800"comment="所有事件">
+					<Object name="TM_sub"/>
+					<Object name="SYS_sub"/>
+				</Filter>
+				-->
+			</Filters>
+		</EventConfig>
+		<AttrConfig>
+			<!--
+			<AttrList name="TradeInfo1" seps="1-5.09:30:15-11:32:00/60,15:00:15-19:02:00/10" subject="TradeMonitor;TradeInfo" comment="当前成交汇总">
+				<Object object="TRADE.PuDian.app.tkernel.1" attr="OrderSize"   comment="总报单数"/>
+				<Object object="TRADE.PuDian.app.tkernel.1" attr="TradeSize"   comment="成交单数"/>
+				<Object object="TRADE.PuDian.app.tkernel.1" attr="TotalVolume" comment="成交手数"/>
+				<Object object="TRADE.PuDian.app.tkernel.1" attr="TotalAmount" comment="成交金额"/>
+			</AttrList>
+			<AttrList name="TradeInfo2" seps="1-5.15:00:15-19:02:00/30" subject="TradeMonitor;TradeInfo" comment="本日成交汇总">
+				<Object object="TRADE.PuDian.app.tkernel.1" attr="OrderSize"   comment="总报单数"/>
+				<Object object="TRADE.PuDian.app.tkernel.1" attr="TradeSize"   comment="成交单数"/>
+				<Object object="TRADE.PuDian.app.tkernel.1" attr="TotalVolume" comment="成交手数"/>
+				<Object object="TRADE.PuDian.app.tkernel.1" attr="TotalAmount" comment="成交金额"/>
+			</AttrList>
+			-->
+			<AttrList name="System_Timer" seps="1-5.09:00:00-17:00:00/3600" subject="NetMonitor" comment="短信通道验证消息">
+			</AttrList>
+		</AttrConfig>
+		<!-- 端口Pollingdown时间的聚合通知，maxcount为一条通知中携带的最大告警信息数量
+			starttime为产生通知时间，sendcount为在starttime之后的补充发送次数，两次时间间隔为10分钟 -->
+		<LinkPollingDownMsg maxcount="10">
+			<OneMsg starttime="06:10:00" sendcount="6"/>
+			<OneMsg starttime="18:10:00" sendcount="6"/>
+		</LinkPollingDownMsg>
+	</Message>
+	<AttrConfig>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="OrderSize"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="TradeSize"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="TotalAmount"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="TotalVolume"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="UserSessionSize"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="tresultLen"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.2" Attr="OrderSize"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.2" Attr="TradeSize"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.2" Attr="TotalAmount"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.2" Attr="TotalVolume"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.2" Attr="UserSessionSize"/>
+		<Object ObjectId="TRADE.PuDian.app.tkernel.2" Attr="tresultLen"/>
+		<Object ObjectId="MD2.PuDian.app.md2kernel.1" Attr="tresultLen"/>
+		<Object ObjectId="MD2.PuDian.app.md2kernel.2" Attr="tresultLen"/>
+		<Object ObjectId="RISK.PuDian.app.riskproxy.1" Attr="tresultLen"/>
+		<Object ObjectId="RISK.PuDian.app.riskproxy.2" Attr="tresultLen"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="OrderSize"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="TradeSize"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="TotalAmount"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="TotalVolume"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="UserSessionSize"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="tresultLen"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="OrderSize"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="TradeSize"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="TotalAmount"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="TotalVolume"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="UserSessionSize"/>
+		<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="tresultLen"/>
+		<Object ObjectId="MD2.ZhangJ.app.md2kernel.1" Attr="tresultLen"/>
+		<Object ObjectId="MD2.ZhangJ.app.md2kernel.2" Attr="tresultLen"/>
+		<Object ObjectId="MD2.ZhangJ.app.md2kernel.3" Attr="tresultLen"/>
+		<Object ObjectId="MD2.ZhangJ.app.md2kernel.4" Attr="tresultLen"/>
+		<Object ObjectId="RISK.ZhangJ.app.riskproxy.1" Attr="tresultLen"/>
+		<Object ObjectId="RISK.ZhangJ.app.riskproxy.2" Attr="tresultLen"/>
+	</AttrConfig>
+	<TradingSetionStat>
+		<TradingSetions>
+			<Object name="SectionN1" comment="夜市竞价阶段"    left="20:55:00" left_drift="0"   right="21:00:00" right_drift="60"/>
+			<Object name="SectionN2" comment="夜市交易节阶段"  left="21:00:00" left_drift="0"   right="09:00:00" right_drift="60"/>
+			<Object name="Section0"  comment="集合竞价阶段"    left="08:55:00" left_drift="0"   right="09:00:00" right_drift="60"/>
+			<Object name="Section1"  comment="第一交易节阶段"  left="09:00:00" left_drift="0"   right="10:15:00" right_drift="60"/>
+			<Object name="Section2"  comment="第一交易节阶段"  left="10:30:00" left_drift="-60" right="11:30:00" right_drift="60"/>
+			<Object name="Section3"  comment="第一交易节阶段"  left="13:30:00" left_drift="-60" right="15:00:00" right_drift="60"/>
+		</TradingSetions>
+		<ObjectAttr>
+			<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="CPUUsage"/>
+			<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="MemoryUsage"/>
+			<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="HandleOrderInsert"/>
+			<Object ObjectId="TRADE.ZhangJ.app.tkernel.1" Attr="UserSessionSize"/>
+			<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="CPUUsage"/>
+			<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="MemoryUsage"/>
+			<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="HandleOrderInsert"/>
+			<Object ObjectId="TRADE.ZhangJ.app.tkernel.2" Attr="UserSessionSize"/>
+		</ObjectAttr>
+	</TradingSetionStat>
+	<IPList>
+	</IPList>
+	<!-- 在非工作时间段内，来自以下IP地址，且包含以下关键字的端口事件应当过滤掉 -->
+	<IgnoreIPList Enable="1">
+		<OneNode IP="172.1.1.1" IgnoreAttr="Serial4/0.1"></OneNode>
+		<OneNode IP="172.1.1.2" IgnoreAttr="Serial4/0.2"></OneNode>
+		<OneNode IP="172.1.1.3" IgnoreAttr="Serial4/0.2"></OneNode>
+		<OneNode IP="172.1.1.3" IgnoreAttr="GigabitEthernet1/0/1"></OneNode>
+		<OneNode IP="172.1.1.4" IgnoreAttr="Serial4/0.1,Serial4/0.2"></OneNode>
+		<OneNode IP="172.1.1.5" IgnoreAttr="Serial4/0.1,Serial4/0.2,GigabitEthernet1/0/1"></OneNode>
+		<OneNode IP="172.1.1.43" IgnoreAttr="Serial4/0.1"></OneNode>
+		<OneNode IP="172.1.32.10" IgnoreAttr="GigabitEthernet1"></OneNode>
+	</IgnoreIPList>
+	<NoTradingDays>
+		<Object day="20140101"/>
+		<Object day="20140131"/>
+		<Object day="20140203"/>
+		<Object day="20140204"/>
+		<Object day="20140205"/>
+		<Object day="20140206"/>
+		<Object day="20140407"/>
+		<Object day="20140501"/>
+		<Object day="20140502"/>
+		<Object day="20140601"/>
+		<Object day="20140908"/>
+		<Object day="20141001"/>
+		<Object day="20141002"/>
+		<Object day="20141003"/>
+		<Object day="20141006"/>
+		<Object day="20141007"/>			
+	</NoTradingDays>
+	<NoNightTradingDays>
+		<Object day="20140102"/>
+		<Object day="20140207"/>
+		<Object day="20140408"/>
+		<Object day="20140505"/>
+		<Object day="20140603"/>
+		<Object day="20140909"/>
+		<Object day="20141008"/>		
+	</NoNightTradingDays>
+	<!-- 行情登陆告警 -->
+	<MdLoginWarningEvents objectid="TRADE.PuDian.app.tkernel.1">
+		<!--
+		 定义：在interval秒之内若某行情的登陆次数超过threshold则发送eventname类型的告警
+		 登陆次数会在交易日切换时重置，因此将interval设置为大于24小时，即可表示整个交易日的登陆次数
+		 warningap制定了两次告警之间的最小时间间隔
+		 -->
+		 <!-- state字段表示登录状态，Success/Failure两种，可以使用All表示所有状态 -->
+		<event eventname="MdSuc_TotalLoginWarning" state="Success" interval="86400" threshold="10" warninggap="60"/>
+		<event eventname="MdSuc_IntervalLoginWarning" state="Success" interval="120" threshold="5" warninggap="60"/>
+		<event eventname="MdFal_TotalLoginWarning" state="Failure" interval="86400" threshold="10" warninggap="60"/>
+		<event eventname="MdFal_IntervalLoginWarning" state="Failure" interval="120" threshold="5" warninggap="60"/>
+		<event eventname="MdAll_TotalLoginWarning" state="All" interval="86400" threshold="10" warninggap="60"/>
+		<event eventname="MdAll_IntervalLoginWarning" state="All" interval="120" threshold="5" warninggap="60"/>
+	</MdLoginWarningEvents>
+</Config>

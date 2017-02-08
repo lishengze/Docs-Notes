@@ -1,0 +1,92 @@
+﻿生成启动时间为 2016/11/16 10:31:44。
+     1>项目“C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\sysuserapi.vcxproj”在节点 2 上(Build 个目标)。
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\x64\Debug\sysuserapi.dll" /NOLOGO odbc32.lib odbccp32.lib wsock32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\x64\Debug\sysuserapi.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\x64\Debug\sysuserapi.lib" /MACHINE:X64 /DLL x64\Debug\system.obj
+         x64\Debug\platform.obj
+         x64\Debug\mpath.obj
+         x64\Debug\CBaseObject.obj
+         x64\Debug\DesignError.obj
+         x64\Debug\RuntimeError.obj
+         x64\Debug\CLogger.obj
+         x64\Debug\CProbeLogger.obj
+         x64\Debug\monitorIndex.obj
+         x64\Debug\CTimeMeter.obj
+         x64\Debug\utility.obj
+         x64\Debug\Config.obj
+         x64\Debug\CSyslogService.obj
+         x64\Debug\CFilelogService.obj
+         x64\Debug\CConfig.obj
+         x64\Debug\CFixMem.obj
+         x64\Debug\CAVLTree.obj
+         x64\Debug\CTransaction.obj
+         x64\Debug\CMemory.obj
+         x64\Debug\CFiniteState.obj
+         x64\Debug\CacheList.obj
+         x64\Debug\FieldDescribe.obj
+         x64\Debug\FieldSet.obj
+         x64\Debug\Index.obj
+         x64\Debug\Package.obj
+         x64\Debug\Flow.obj
+         x64\Debug\ReadOnlyFlow.obj
+         x64\Debug\FlowReader.obj
+         x64\Debug\OrderingQ.obj
+         x64\Debug\CachedFileFlow.obj
+         x64\Debug\CachedFlow.obj
+         x64\Debug\FileFlow.obj
+         x64\Debug\IndexPackageFlow.obj
+         x64\Debug\CSVParser.obj
+         x64\Debug\CSequenceInterface.obj
+         x64\Debug\CMemorySequence.obj
+         x64\Debug\CErrorEngine.obj
+         x64\Debug\CDate.obj
+         x64\Debug\Allocator.obj
+         x64\Debug\CHashIndex.obj
+         x64\Debug\PtrList.obj
+         x64\Debug\ObjAllocator.obj
+         x64\Debug\EventHandler.obj
+         x64\Debug\EventQueue.obj
+         x64\Debug\EventDispatcher.obj
+         x64\Debug\Reactor.obj
+         x64\Debug\Semaphore.obj
+         x64\Debug\Thread.obj
+         x64\Debug\SelectReactor.obj
+         x64\Debug\TimerHeap.obj
+         x64\Debug\EpollReactor.obj
+         x64\Debug\Channel.obj
+         x64\Debug\Client.obj
+         x64\Debug\ListenCtrl.obj
+         x64\Debug\NetworkFactory.obj
+         x64\Debug\Server.obj
+         x64\Debug\ServiceName.obj
+         x64\Debug\SocketInit.obj
+         x64\Debug\TcpChannel.obj
+         x64\Debug\TcpClient.obj
+         x64\Debug\TcpServer.obj
+         x64\Debug\TcpNetworkFactory.obj
+         x64\Debug\Protocol.obj
+         x64\Debug\ChannelProtocol.obj
+         x64\Debug\ChannelPackage.obj
+         x64\Debug\Session.obj
+         x64\Debug\SessionFactory.obj
+         x64\Debug\XMPPackage.obj
+         x64\Debug\XMPSession.obj
+         x64\Debug\XMPProtocol.obj
+         x64\Debug\CompressPackage.obj
+         x64\Debug\CompressProtocol.obj
+         x64\Debug\CompressUtil.obj
+         x64\Debug\FTDCPackage.obj
+         x64\Debug\FTDCProtocol.obj
+         x64\Debug\FTDCSession.obj
+         x64\Debug\FTDCPubEndPoint.obj
+         x64\Debug\FTDCSubEndPoint.obj
+         x64\Debug\FtdData.obj
+         x64\Debug\FtdPackageDesc.obj
+         x64\Debug\FtdcSysUserApiImpl.obj
+         x64\Debug\FtdcSysUserApiImplBase.obj
+            正在创建库 C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\x64\Debug\sysuserapi.lib 和对象 C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\x64\Debug\sysuserapi.exp
+         sysuserapi.vcxproj -> C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\x64\Debug\sysuserapi.dll
+     1>已完成生成项目“C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\sysuserapi.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.89

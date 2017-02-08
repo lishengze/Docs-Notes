@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<fibplay author="" version="1.0" comment="流播放器配置文件">
+	<flow type="tseries" timer="1" path="./flow/" name="00001003" subject="4099" address="udp://127.255.255.255:88803">
+		<speed begintime="09:00:00" endtime="17:00:00" value="500"/>
+	</flow>
+<!--
+	<flow type="tresult" timer="1" path="/home/PTrade/streamfile" name="00001001" subject="4097" address="udp://127.255.255.255:88802">
+		<speed/>
+		<speed begintime="09:00:00" endtime="10:00:00" value="603"/>
+		<speed begintime="10:00:00" endtime="11:00:00" value="1004"/>
+	</flow>
+-->
+</fibplay>

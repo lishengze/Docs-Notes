@@ -1,0 +1,665 @@
+﻿生成启动时间为 2016/2/16 23:11:10。
+     1>项目“C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysfront\sysfront.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\source\platform\. /I..\..\source\base\. /I..\..\source\utility\. /I..\..\source\datastruct\. /I..\..\source\event\. /I..\..\source\network\. /I..\..\source\tcpnetwork\. /I..\..\source\udpnetwork\. /I..\..\source\protocol\. /I..\..\source\channelprotocol\. /I..\..\source\scpprotocol\. /I..\..\source\xmpprotocol\. /I..\..\source\compressprotocol\. /I..\..\source\ftdprotocol\. /I..\..\source\xml\. /I..\..\source\probelogger\. /I..\..\source\oraclepass\. /I..\..\source\version\. /I..\..\source\refobject\. /I..\..\source\customDataType\. /I..\..\source\ftdfield\. /I..\..\source\MDB_FRONT\. /I..\..\source\UFCopy\. /I..\..\source\sysutility\. /I..\..\source\sysfront\. /Zi /nologo /W3 /WX- /O2 /Oy- /D WINDOWS /D MSVC /D _VC80_UPGRADE=0x0600 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release\\" /Fd".\Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt  -EHsc   -EHsc ..\..\source\platform\system.cpp ..\..\source\platform\platform.cpp ..\..\source\platform\mpath.cpp ..\..\source\base\CBaseObject.cpp ..\..\source\base\DesignError.cpp ..\..\source\base\RuntimeError.cpp ..\..\source\base\CLogger.cpp ..\..\source\base\CProbeLogger.cpp ..\..\source\base\monitorIndex.cpp ..\..\source\utility\CTimeMeter.cpp ..\..\source\utility\utility.cpp ..\..\source\utility\Config.cpp ..\..\source\datastruct\CConfig.cpp ..\..\source\datastruct\CFixMem.cpp ..\..\source\datastruct\CAVLTree.cpp ..\..\source\datastruct\CTransaction.cpp ..\..\source\datastruct\CMemory.cpp ..\..\source\datastruct\CFiniteState.cpp ..\..\source\datastruct\CacheList.cpp ..\..\source\datastruct\FieldDescribe.cpp ..\..\source\datastruct\FieldSet.cpp ..\..\source\datastruct\Index.cpp ..\..\source\datastruct\Package.cpp ..\..\source\datastruct\Flow.cpp ..\..\source\datastruct\ReadOnlyFlow.cpp ..\..\source\datastruct\FlowReader.cpp ..\..\source\datastruct\OrderingQ.cpp ..\..\source\datastruct\CachedFileFlow.cpp ..\..\source\datastruct\CachedFlow.cpp ..\..\source\datastruct\FileFlow.cpp ..\..\source\datastruct\IndexPackageFlow.cpp ..\..\source\datastruct\CSVParser.cpp ..\..\source\datastruct\CSequenceInterface.cpp ..\..\source\datastruct\CMemorySequence.cpp ..\..\source\datastruct\CErrorEngine.cpp ..\..\source\datastruct\CDate.cpp ..\..\source\datastruct\Allocator.cpp ..\..\source\datastruct\CHashIndex.cpp ..\..\source\datastruct\PtrList.cpp ..\..\source\datastruct\ObjAllocator.cpp ..\..\source\event\EventHandler.cpp ..\..\source\event\EventQueue.cpp ..\..\source\event\EventDispatcher.cpp ..\..\source\event\Reactor.cpp ..\..\source\event\Semaphore.cpp ..\..\source\event\Thread.cpp ..\..\source\event\SelectReactor.cpp ..\..\source\event\TimerHeap.cpp ..\..\source\event\EpollReactor.cpp ..\..\source\network\Channel.cpp ..\..\source\network\Client.cpp ..\..\source\network\ListenCtrl.cpp ..\..\source\network\NetworkFactory.cpp ..\..\source\network\Server.cpp ..\..\source\network\ServiceName.cpp ..\..\source\network\SocketInit.cpp ..\..\source\tcpnetwork\TcpChannel.cpp ..\..\source\tcpnetwork\TcpClient.cpp ..\..\source\tcpnetwork\TcpServer.cpp ..\..\source\tcpnetwork\TcpNetworkFactory.cpp ..\..\source\udpnetwork\UdpChannel.cpp ..\..\source\udpnetwork\UdpClient.cpp ..\..\source\udpnetwork\UdpServer.cpp ..\..\source\udpnetwork\UdpNetworkFactory.cpp ..\..\source\protocol\Protocol.cpp ..\..\source\channelprotocol\ChannelProtocol.cpp ..\..\source\channelprotocol\ChannelPackage.cpp ..\..\source\channelprotocol\Session.cpp ..\..\source\channelprotocol\SessionFactory.cpp ..\..\source\scpprotocol\SCPPackage.cpp ..\..\source\scpprotocol\SCPPackageDesc.cpp ..\..\source\scpprotocol\SCPProtocol.cpp ..\..\source\xmpprotocol\XMPPackage.cpp ..\..\source\xmpprotocol\XMPSession.cpp ..\..\source\xmpprotocol\XMPProtocol.cpp ..\..\source\compressprotocol\CompressPackage.cpp ..\..\source\compressprotocol\CompressProtocol.cpp ..\..\source\compressprotocol\CompressUtil.cpp ..\..\source\ftdprotocol\FTDCPackage.cpp ..\..\source\ftdprotocol\FTDCProtocol.cpp ..\..\source\ftdprotocol\FTDCSession.cpp ..\..\source\ftdprotocol\FTDCPubEndPoint.cpp ..\..\source\ftdprotocol\FTDCSubEndPoint.cpp ..\..\source\xml\CXML.cpp ..\..\source\xml\XMLAction.cpp ..\..\source\probelogger\CSyslogService.cpp ..\..\source\probelogger\CFilelogService.cpp ..\..\source\oraclepass\CDes.cpp ..\..\source\version\version.cpp ..\..\source\refobject\RefString.cpp ..\..\source\ftdfield\FtdData.cpp ..\..\source\ftdfield\FtdPackageDesc.cpp ..\..\source\MDB_FRONT\CDatabaseDataFactory.cpp ..\..\source\MDB_FRONT\CDatabaseResource.cpp ..\..\source\MDB_FRONT\BaseDataStruct.cpp ..\..\source\MDB_FRONT\databaseResources.cpp ..\..\source\MDB_FRONT\databaseFactories.cpp ..\..\source\MDB_FRONT\databaseFactorySearchs.cpp ..\..\source\MDB_FRONT\databaseIterators.cpp ..\..\source\MDB_FRONT\CMemoryDB.cpp ..\..\source\MDB_FRONT\CDumpLog.cpp ..\..\source\MDB_FRONT\databaseGroupActions.cpp ..\..\source\MDB_FRONT\databaseIteratorRepository.cpp ..\..\source\sysutility\systools.cpp ..\..\source\sysutility\xmlcfg.cpp ..\..\source\sysutility\FileRecordFinder.cpp ..\..\source\sysutility\md5Handler.cpp ..\..\source\sysutility\CTimePolicy.cpp ..\..\source\sysutility\ThreadPool.cpp ..\..\source\sysutility\StringUtil.cpp ..\..\source\sysutility\CDeployConfig.cpp ..\..\source\sysutility\PrjCommon.cpp ..\..\source\sysutility\CCalendar.cpp ..\..\source\sysutility\CSysInternalTopology.cpp ..\..\source\sysfront\sysfront.cpp ..\..\source\sysfront\FrontServer.cpp ..\..\source\sysfront\FrontServerBusiness.cpp ..\..\source\sysfront\CountConnector.cpp ..\..\source\sysfront\FlowConnector.cpp ..\..\source\sysfront\CStatusSubscriber.cpp ..\..\source\sysfront\CStatusSubscriber2.cpp ..\..\source\sysfront\CResultSubscriber.cpp ..\..\source\sysfront\CListSession.cpp ..\..\source\sysfront\CQueryAgent.cpp ..\..\source\sysfront\CSlogAgent.cpp ..\..\source\sysfront\CSynConnector.cpp ..\..\source\sysfront\CPerformanceAnalyze.cpp
+         system.cpp
+         platform.cpp
+         mpath.cpp
+         CBaseObject.cpp
+         DesignError.cpp
+         RuntimeError.cpp
+         CLogger.cpp
+         CProbeLogger.cpp
+         monitorIndex.cpp
+     1>..\..\source\base\monitorIndex.cpp(427): warning C4018: “<”: 有符号/无符号不匹配
+         CTimeMeter.cpp
+         utility.cpp
+     1>..\..\source\utility\utility.cpp(41): warning C4244: “return”: 从“time_t”转换到“int”，可能丢失数据
+         Config.cpp
+         CConfig.cpp
+     1>..\..\source\datastruct\CConfig.cpp(53): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\datastruct\CConfig.cpp(77): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\datastruct\CConfig.cpp(97): warning C4018: “<”: 有符号/无符号不匹配
+         CFixMem.cpp
+         CAVLTree.cpp
+         CTransaction.cpp
+         CMemory.cpp
+         CFiniteState.cpp
+         CacheList.cpp
+         FieldDescribe.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         正在生成代码...
+         正在编译...
+         FieldSet.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         Index.cpp
+         Package.cpp
+         Flow.cpp
+     1>..\..\source\datastruct\Flow.cpp(52): warning C4018: “<”: 有符号/无符号不匹配
+         ReadOnlyFlow.cpp
+         FlowReader.cpp
+         OrderingQ.cpp
+         CachedFileFlow.cpp
+         CachedFlow.cpp
+         FileFlow.cpp
+     1>..\..\source\datastruct\FileFlow.cpp(144): warning C4018: “>”: 有符号/无符号不匹配
+     1>..\..\source\datastruct\FileFlow.cpp(381): warning C4244: “参数”: 从“fpos_t”转换到“long”，可能丢失数据
+         IndexPackageFlow.cpp
+     1>..\..\source\datastruct\IndexPackageFlow.cpp(55): warning C4244: “return”: 从“DWORD”转换到“WORD”，可能丢失数据
+         CSVParser.cpp
+         CSequenceInterface.cpp
+         CMemorySequence.cpp
+         CErrorEngine.cpp
+         CDate.cpp
+     1>..\..\source\datastruct\CDate.cpp(92): warning C4018: “>”: 有符号/无符号不匹配
+     1>..\..\source\datastruct\CDate.cpp(98): warning C4018: “>”: 有符号/无符号不匹配
+     1>..\..\source\datastruct\CDate.cpp(291): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+         Allocator.cpp
+     1>..\..\source\datastruct\Allocator.cpp(60): warning C4307: “*”: 整型常量溢出
+     1>..\..\source\datastruct\Allocator.cpp(111): warning C4018: “>=”: 有符号/无符号不匹配
+     1>..\..\source\datastruct\Allocator.cpp(140): warning C4018: “>=”: 有符号/无符号不匹配
+     1>..\..\source\datastruct\Allocator.cpp(189): warning C4018: “<”: 有符号/无符号不匹配
+         CHashIndex.cpp
+     1>..\..\source\datastruct\CHashIndex.cpp(18): warning C4018: “>=”: 有符号/无符号不匹配
+         PtrList.cpp
+         ObjAllocator.cpp
+         正在生成代码...
+         正在编译...
+         EventHandler.cpp
+         EventQueue.cpp
+         EventDispatcher.cpp
+         Reactor.cpp
+         Semaphore.cpp
+         Thread.cpp
+         SelectReactor.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+         TimerHeap.cpp
+     1>..\..\source\event\TimerHeap.cpp(38): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\event\TimerHeap.cpp(107): warning C4018: “<”: 有符号/无符号不匹配
+         EpollReactor.cpp
+         Channel.cpp
+         Client.cpp
+         ListenCtrl.cpp
+         NetworkFactory.cpp
+         Server.cpp
+         ServiceName.cpp
+         SocketInit.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+         TcpChannel.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+         TcpClient.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+         TcpServer.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+         TcpNetworkFactory.cpp
+         正在生成代码...
+         正在编译...
+         UdpChannel.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+         UdpClient.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+         UdpServer.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+         UdpNetworkFactory.cpp
+         Protocol.cpp
+         ChannelProtocol.cpp
+         ChannelPackage.cpp
+         Session.cpp
+     1>..\..\source\channelprotocol\Session.cpp(18): warning C4244: “=”: 从“time_t”转换到“DWORD”，可能丢失数据
+         SessionFactory.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\channelprotocol\SessionFactory.cpp(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\channelprotocol\SessionFactory.cpp(132): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\channelprotocol\SessionFactory.cpp(176): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\channelprotocol\SessionFactory.cpp(247): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>..\..\source\channelprotocol\SessionFactory.cpp(259): warning C4018: “<”: 有符号/无符号不匹配
+         SCPPackage.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         SCPPackageDesc.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         SCPProtocol.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         XMPPackage.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         XMPSession.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         XMPProtocol.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CompressPackage.cpp
+         CompressProtocol.cpp
+     1>..\..\source\compressprotocol\CompressProtocol.cpp(87): warning C4018: “>=”: 有符号/无符号不匹配
+         CompressUtil.cpp
+     1>..\..\source\compressprotocol\CompressUtil.cpp(52): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\compressprotocol\CompressUtil.cpp(54): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\compressprotocol\CompressUtil.cpp(70): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\compressprotocol\CompressUtil.cpp(125): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\compressprotocol\CompressUtil.cpp(129): warning C4018: “<”: 有符号/无符号不匹配
+         FTDCPackage.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         FTDCProtocol.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         正在生成代码...
+         正在编译...
+         FTDCSession.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         FTDCPubEndPoint.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         FTDCSubEndPoint.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CXML.cpp
+     1>..\..\source\xml\CXML.cpp(267): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\xml\CXML.cpp(311): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\xml\CXML.cpp(370): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\xml\CXML.cpp(620): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\xml\CXML.cpp(643): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\xml\CXML.cpp(658): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\xml\CXML.cpp(670): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\xml\CXML.cpp(942): warning C4018: “>=”: 有符号/无符号不匹配
+         XMLAction.cpp
+     1>..\..\source\xml\XMLAction.cpp(32): warning C4018: “<”: 有符号/无符号不匹配
+         CSyslogService.cpp
+         CFilelogService.cpp
+         CDes.cpp
+     1>..\..\source\oraclepass\CDes.cpp(373): warning C4554: “<<”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>..\..\source\oraclepass\CDes.cpp(374): warning C4554: “<<”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>..\..\source\oraclepass\CDes.cpp(375): warning C4554: “<<”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>..\..\source\oraclepass\CDes.cpp(376): warning C4554: “<<”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>..\..\source\oraclepass\CDes.cpp(377): warning C4554: “<<”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>..\..\source\oraclepass\CDes.cpp(378): warning C4554: “<<”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>..\..\source\oraclepass\CDes.cpp(379): warning C4554: “<<”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>..\..\source\oraclepass\CDes.cpp(380): warning C4554: “<<”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+         version.cpp
+         RefString.cpp
+         FtdData.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         FtdPackageDesc.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CDatabaseDataFactory.cpp
+         CDatabaseResource.cpp
+         BaseDataStruct.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         databaseResources.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         databaseFactories.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         databaseFactorySearchs.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         databaseIterators.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CMemoryDB.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         正在生成代码...
+         正在编译...
+         CDumpLog.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         databaseGroupActions.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         databaseIteratorRepository.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         systools.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         xmlcfg.cpp
+     1>..\..\source\sysutility\xmlcfg.cpp(278): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(349): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(360): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(400): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(437): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(506): warning C4554: “|”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>..\..\source\sysutility\xmlcfg.cpp(518): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(540): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(617): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(628): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(688): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(747): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(781): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(789): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(865): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(902): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(1051): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(1223): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(1283): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(1504): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(1540): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\xmlcfg.cpp(1607): warning C4805: “&=”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1607): warning C4805: “&”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1607): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>..\..\source\sysutility\xmlcfg.cpp(1610): warning C4805: “&=”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1610): warning C4805: “&”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1610): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>..\..\source\sysutility\xmlcfg.cpp(1612): warning C4805: “&=”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1612): warning C4805: “&”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1612): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>..\..\source\sysutility\xmlcfg.cpp(1615): warning C4805: “&=”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1615): warning C4805: “&”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1615): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>..\..\source\sysutility\xmlcfg.cpp(1618): warning C4805: “&=”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1618): warning C4805: “&”: 在操作中将类型“bool”与类型“int”混合不安全
+     1>..\..\source\sysutility\xmlcfg.cpp(1618): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+         FileRecordFinder.cpp
+     1>..\..\source\sysutility\FileRecordFinder.cpp(272): warning C4018: “>”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\FileRecordFinder.cpp(289): warning C4018: “>”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\FileRecordFinder.cpp(542): warning C4101: “cur”: 未引用的局部变量
+     1>..\..\source\sysutility\FileRecordFinder.cpp(548): warning C4101: “rec”: 未引用的局部变量
+     1>..\..\source\sysutility\FileRecordFinder.cpp(544): warning C4101: “buf”: 未引用的局部变量
+     1>..\..\source\sysutility\FileRecordFinder.cpp(816): warning C4101: “cur”: 未引用的局部变量
+     1>..\..\source\sysutility\FileRecordFinder.cpp(822): warning C4101: “rec”: 未引用的局部变量
+     1>..\..\source\sysutility\FileRecordFinder.cpp(818): warning C4101: “buf”: 未引用的局部变量
+         md5Handler.cpp
+     1>..\..\source\sysutility\md5Handler.cpp(138): warning C4018: “>=”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\md5Handler.cpp(143): warning C4018: “<”: 有符号/无符号不匹配
+         CTimePolicy.cpp
+     1>..\..\source\sysutility\CTimePolicy.cpp(809): warning C4018: “<”: 有符号/无符号不匹配
+         ThreadPool.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+         StringUtil.cpp
+         CDeployConfig.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+         PrjCommon.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+         CCalendar.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\sysutility\CCalendar.h(191): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\sysutility\CCalendar.h(294): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\sysutility\CCalendar.h(295): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(204) : 参见“strtok”的声明
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\sysutility\CCalendar.h(296): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(204) : 参见“strtok”的声明
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\sysutility\CCalendar.h(297): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(204) : 参见“strtok”的声明
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\sysutility\CCalendar.h(315): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(204) : 参见“strtok”的声明
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\sysutility\CCalendar.h(319): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(204) : 参见“strtok”的声明
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\sysutility\CCalendar.h(314): warning C4101: “szTmp”: 未引用的局部变量
+     1>..\..\source\sysutility\CCalendar.cpp(472): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysutility\CCalendar.cpp(511): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>..\..\source\sysutility\CCalendar.cpp(592): warning C4390: “;”: 找到空的受控语句；这是否是有意的?
+     1>..\..\source\sysutility\CCalendar.cpp(772): warning C4244: “=”: 从“long”转换到“short”，可能丢失数据
+     1>..\..\source\sysutility\CCalendar.cpp(915): warning C4172: 返回局部变量或临时变量的地址
+     1>..\..\source\sysutility\CCalendar.cpp(933): warning C4172: 返回局部变量或临时变量的地址
+         CSysInternalTopology.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         sysfront.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+         FrontServer.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         FrontServerBusiness.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CountConnector.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         FlowConnector.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CStatusSubscriber.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         正在生成代码...
+         正在编译...
+         CStatusSubscriber2.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CResultSubscriber.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CListSession.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CQueryAgent.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CSlogAgent.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CSynConnector.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+         CPerformanceAnalyze.cpp
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\network\SocketInit.h(48): warning C4005: “EWOULDBLOCK”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h(132) : 参见“EWOULDBLOCK”的前一个定义
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(81): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(96): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(109): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(122): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(136): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(149): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(337): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(379): warning C4018: “<”: 有符号/无符号不匹配
+     1>C:\Users\liu.bo.SFIT\NetMonitor_vss\source\event\SelectReactor.h(398): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\UFDataType.h(1431): warning C4244: “初始化”: 从“const QWORD”转换到“unsigned long”，可能丢失数据
+     1>..\..\source\sysfront\CPerformanceAnalyze.cpp(101): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>..\..\source\sysfront\CPerformanceAnalyze.cpp(369): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysfront\CPerformanceAnalyze.cpp(375): warning C4018: “>”: 有符号/无符号不匹配
+     1>..\..\source\sysfront\CPerformanceAnalyze.cpp(742): warning C4018: “<”: 有符号/无符号不匹配
+     1>..\..\source\sysfront\CPerformanceAnalyze.cpp(892): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\sysfront.exe" /INCREMENTAL:NO /NOLOGO odbc32.lib odbccp32.lib wsock32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\Release\sysfront.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Release\sysfront.lib" /MACHINE:X86 /SAFESEH  /FIXED:NO  /WARN:2 .\Release\system.obj
+         .\Release\platform.obj
+         .\Release\mpath.obj
+         .\Release\CBaseObject.obj
+         .\Release\DesignError.obj
+         .\Release\RuntimeError.obj
+         .\Release\CLogger.obj
+         .\Release\CProbeLogger.obj
+         .\Release\monitorIndex.obj
+         .\Release\CTimeMeter.obj
+         .\Release\utility.obj
+         .\Release\Config.obj
+         .\Release\CConfig.obj
+         .\Release\CFixMem.obj
+         .\Release\CAVLTree.obj
+         .\Release\CTransaction.obj
+         .\Release\CMemory.obj
+         .\Release\CFiniteState.obj
+         .\Release\CacheList.obj
+         .\Release\FieldDescribe.obj
+         .\Release\FieldSet.obj
+         .\Release\Index.obj
+         .\Release\Package.obj
+         .\Release\Flow.obj
+         .\Release\ReadOnlyFlow.obj
+         .\Release\FlowReader.obj
+         .\Release\OrderingQ.obj
+         .\Release\CachedFileFlow.obj
+         .\Release\CachedFlow.obj
+         .\Release\FileFlow.obj
+         .\Release\IndexPackageFlow.obj
+         .\Release\CSVParser.obj
+         .\Release\CSequenceInterface.obj
+         .\Release\CMemorySequence.obj
+         .\Release\CErrorEngine.obj
+         .\Release\CDate.obj
+         .\Release\Allocator.obj
+         .\Release\CHashIndex.obj
+         .\Release\PtrList.obj
+         .\Release\ObjAllocator.obj
+         .\Release\EventHandler.obj
+         .\Release\EventQueue.obj
+         .\Release\EventDispatcher.obj
+         .\Release\Reactor.obj
+         .\Release\Semaphore.obj
+         .\Release\Thread.obj
+         .\Release\SelectReactor.obj
+         .\Release\TimerHeap.obj
+         .\Release\EpollReactor.obj
+         .\Release\Channel.obj
+         .\Release\Client.obj
+         .\Release\ListenCtrl.obj
+         .\Release\NetworkFactory.obj
+         .\Release\Server.obj
+         .\Release\ServiceName.obj
+         .\Release\SocketInit.obj
+         .\Release\TcpChannel.obj
+         .\Release\TcpClient.obj
+         .\Release\TcpServer.obj
+         .\Release\TcpNetworkFactory.obj
+         .\Release\UdpChannel.obj
+         .\Release\UdpClient.obj
+         .\Release\UdpServer.obj
+         .\Release\UdpNetworkFactory.obj
+         .\Release\Protocol.obj
+         .\Release\ChannelProtocol.obj
+         .\Release\ChannelPackage.obj
+         .\Release\Session.obj
+         .\Release\SessionFactory.obj
+         .\Release\SCPPackage.obj
+         .\Release\SCPPackageDesc.obj
+         .\Release\SCPProtocol.obj
+         .\Release\XMPPackage.obj
+         .\Release\XMPSession.obj
+         .\Release\XMPProtocol.obj
+         .\Release\CompressPackage.obj
+         .\Release\CompressProtocol.obj
+         .\Release\CompressUtil.obj
+         .\Release\FTDCPackage.obj
+         .\Release\FTDCProtocol.obj
+         .\Release\FTDCSession.obj
+         .\Release\FTDCPubEndPoint.obj
+         .\Release\FTDCSubEndPoint.obj
+         .\Release\CXML.obj
+         .\Release\XMLAction.obj
+         .\Release\CSyslogService.obj
+         .\Release\CFilelogService.obj
+         .\Release\CDes.obj
+         .\Release\version.obj
+         .\Release\RefString.obj
+         .\Release\FtdData.obj
+         .\Release\FtdPackageDesc.obj
+         .\Release\CDatabaseDataFactory.obj
+         .\Release\CDatabaseResource.obj
+         .\Release\BaseDataStruct.obj
+         .\Release\databaseResources.obj
+         .\Release\databaseFactories.obj
+         .\Release\databaseFactorySearchs.obj
+         .\Release\databaseIterators.obj
+         .\Release\CMemoryDB.obj
+         .\Release\CDumpLog.obj
+         .\Release\databaseGroupActions.obj
+         .\Release\databaseIteratorRepository.obj
+         .\Release\systools.obj
+         .\Release\xmlcfg.obj
+         .\Release\FileRecordFinder.obj
+         .\Release\md5Handler.obj
+         .\Release\CTimePolicy.obj
+         .\Release\ThreadPool.obj
+         .\Release\StringUtil.obj
+         .\Release\CDeployConfig.obj
+         .\Release\PrjCommon.obj
+         .\Release\CCalendar.obj
+         .\Release\CSysInternalTopology.obj
+         .\Release\sysfront.obj
+         .\Release\FrontServer.obj
+         .\Release\FrontServerBusiness.obj
+         .\Release\CountConnector.obj
+         .\Release\FlowConnector.obj
+         .\Release\CStatusSubscriber.obj
+         .\Release\CStatusSubscriber2.obj
+         .\Release\CResultSubscriber.obj
+         .\Release\CListSession.obj
+         .\Release\CQueryAgent.obj
+         .\Release\CSlogAgent.obj
+         .\Release\CSynConnector.obj
+         .\Release\CPerformanceAnalyze.obj
+     1>LINK : warning LNK4044: 无法识别的选项“/WARN:2”；已忽略
+         sysfront.vcxproj -> C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysfront\.\Release\sysfront.exe
+     1>已完成生成项目“C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysfront\sysfront.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:02:45.53

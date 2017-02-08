@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE SystemConfig SYSTEM "">
+<SystemConfig>
+	<Timers comment="采样定时器配置项">
+		<Object name="CPU" seps="5" comment="主机CPU信息采样定时器"/>
+		<Object name="Network" seps="5" comment="主机网络信息采样定时器"/>
+		<Object name="Process" seps="5" comment="主机进程信息采样定时器"/>
+	</Timers>
+	<AttrDefine>
+		<Attr name="HandleOrderInsert" valueType="int" interval="1" displayType="1" comment=" 本次处理的报单插入数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleFTDRequest" valueType="int" interval="5" displayType="1" comment=" 本次处理的FTD请求数量(周期:5秒) ">
+			<app name="front"/>
+		</Attr>
+	</AttrDefine>
+</SystemConfig>

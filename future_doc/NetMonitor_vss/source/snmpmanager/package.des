@@ -1,0 +1,71 @@
+<snmpmanager version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+	<depend>
+		<platform version="1"/>
+		<base version="1"/>
+		<probelogger version="1"/>
+		<utility version="1"/>
+		<datastruct version="1"/>
+		<event version="1"/>
+		<network version="1"/>
+		<tcpnetwork version="1"/>
+		<protocol version="1"/>
+		<channelprotocol version="1"/>
+		<scpprotocol version="1"/>
+		<xmpprotocol version="1"/>
+		<ftdprotocol version="1"/>
+		<ftdfield version="1"/>
+		<xml version="1"/>
+		<netsnmp version="1"/>
+		<telnet version="1"/>
+	</depend>
+	<cppfile>
+		<snmpmanager.cpp/>
+		<ping_common.cpp/>
+		<CAsyncGetDevices.cpp/>
+		<CAsyncGetThread.cpp/>
+		<CSnmpManager.cpp/>
+		<CSnmptrap.cpp/>
+		<CGetDeviceInfo.cpp/>
+		<CGetDeviceCdp.cpp/>
+		<Snmptrap_auth.cpp/>
+		<Snmptrap_handler.cpp/>
+		<Pdutostr.cpp/>
+		<CSynConnector.cpp/>
+		<CFrontConnector.cpp/>
+		<CTrapLogReader.cpp/>
+		<CSysLogReader.cpp/>
+		<CNetTop.cpp/>
+		<CSnmpWrapper.cpp/>
+		<CSysLogConfig.cpp/>
+		<CConnTaskThread.cpp/>
+		<CTaskManager.cpp/>
+		<test_wei.cpp/>
+		<CGetTransFiberDevice.cpp/>
+	</cppfile>
+	<headfile>
+		<ping_common.h/>
+		<CAsyncGetDevices.h/>
+		<CAsyncGetThread.h/>
+		<CSnmpManager.h/>
+		<CSnmptrap.h/>
+		<CGetDeviceInfo.h/>
+		<CGetDeviceCdp.h/>
+		<Snmptrap_auth.h/>
+		<Snmptrap_handler.h/>
+		<Pdutostr.h/>		
+		<CSynConnector.h/>
+		<CFrontConnector.h/>
+		<CTrapLogReader.h/>
+		<CSysLogReader.h/>
+		<CNetTop.h/>
+		<CSnmpWrapper.h/>
+		<COidInfo.h/>
+		<CSysLogConfig.h/>
+		<CConnTaskThread.h/>
+		<CTaskManager.h/>
+		<CGetTransFiberDevice.h/>
+	</headfile>
+	<command>
+	</command>
+</snmpmanager>

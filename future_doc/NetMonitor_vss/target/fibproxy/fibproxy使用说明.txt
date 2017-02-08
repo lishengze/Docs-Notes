@@ -1,0 +1,46 @@
+fibproxy使用说明
+
+一、简介
+    fibproxy是一个消息转发程序。它可以通过FIB订阅若干个主题，并通过TCP/IP连接
+将这些主题发布出去。它的主要功能包括：
+    1.通过FIB订阅主题。
+    2.接收客户端的TCP连接，处理客户端的登录请求。
+    3.处理客户端的订阅请求，向客户端发布其订阅的主题。
+ 
+二、安装
+    将fibproxy拷贝到目标目录，配置好配置文件即可。
+    
+    fibproxy使用fibproxy.ini做为配置文件，配置文件必须存在于运行程序的当前目录。
+    
+    配置项说明：
+    1.fibproxy节点：
+        flowpath     转发的主题流文件使用的目录，必须在运行前就创建好
+        listenaddr   供客户端连接的TCP监听端口
+    
+    2.topic节点: 从属于fibproxy节点，说明订阅/发布的主题信息，可以配置多个
+        id           订阅/发布使用的主题代码
+    
+    3.subscribe节点：从属于topic节点，说明主题的来源，可以配置多个
+        address      FIB订阅使用的网络地址
+        
+    4.user节点：说明可以登录本系统的用户,可以配置多个
+    	userid       用户名
+    	password     口令
+    
+    配置项举例：  
+	<?xml version="1.0" encoding="GB2312"?>
+	<!DOCTYPE fibproxy SYSTEM "fibproxy.dtd">
+	<fibproxy flowpath="flow/" listenaddr="tcp://127.0.0.1:10001">
+		<topic id="4099">
+			<subscribe address="udp://172.16.255.255:11101"/>
+		</topic>
+		<topic id="4097">
+			<subscribe address="udp://172.16.255.255:11201"/>
+		</topic>
+		<user userid="fibclient" password="1"/>
+		<user userid="user1" password="000000"/>
+	</fibproxy>
+	
+三、运行
+    执行fibproxy，无命令行参数。
+    	

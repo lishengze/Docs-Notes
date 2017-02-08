@@ -1,0 +1,1343 @@
+log file is created!connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SQL(select * from t_SysNetSubAreaIP) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetSubAreaIP) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetInterface) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetInterface) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysMemberLinkCost) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysMemberLinkCost) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetEventLevel) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetEventLevel) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetGatherTask) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetGatherTask) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorAttrType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorAttrType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetDelPartyLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetDelPartyLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetBaseLine) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetBaseLine) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorCommandType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorCommandType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorDeviceTask) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorDeviceTask) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorActionAttr) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorActionAttr) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorActionGroup) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorActionGroup) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetTimePolicy) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetTimePolicy) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetDevice) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetDevice) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetOuterDeviceInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetOuterDeviceInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetGeneralOID) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetGeneralOID) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorAttrScope) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorAttrScope) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetCommunity) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetCommunity) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetSubEventType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetSubEventType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetPartyLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetPartyLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetBaseLineTask) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetBaseLineTask) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorTaskInstAttrs) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorTaskInstAttrs) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetManufactory) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetManufactory) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetDeviceType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetDeviceType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetDDNLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetDDNLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetDeviceLinked) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetDeviceLinked) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorDeviceGroup) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorDeviceGroup) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetPartylinkMonthlyRent) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetPartylinkMonthlyRent) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetPseudMemberLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetPseudMemberLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetModule) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetModule) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMemberSDHLineInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMemberSDHLineInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetArea) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetArea) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetNonPartyLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetNonPartyLinkInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetPartyLinkAddrChange) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetPartyLinkAddrChange) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetEventExpr) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetEventExpr) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetDeviceCategory) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetDeviceCategory) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetSubArea) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetSubArea) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetEventType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetEventType) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetOID) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetOID) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetMonitorTaskInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetMonitorTaskInfo) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select * from t_SysNetFuncArea) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+SQL(select NVL(max(ID), 0) from t_SysNetFuncArea) 
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+SearchRecord raise exception: (Can't not connect server)
+CFrontServer connect DB:	connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+CManagerServer connect DB:	connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+CSyncServer connect DB:	connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+
+synconfig is initialized ! Tue Jan 06 13:06:35 2015
+synconfig is ready for connection ! Tue Jan 06 13:06:41 2015
+13:06:37 :Error arise when select test data from DB : API client not set
+13:06:42 :Error arise when select test data from DB : API client not set
+13:06:47 :Error arise when select test data from DB : API client not set
+13:06:52 :Error arise when select test data from DB : API client not set
+13:06:57 :Error arise when select test data from DB : API client not set
+13:07:02 :Error arise when select test data from DB : API client not set
+13:07:07 :Error arise when select test data from DB : API client not set
+13:07:12 :Error arise when select test data from DB : API client not set
+13:07:17 :Error arise when select test data from DB : API client not set
+13:07:22 :Error arise when select test data from DB : API client not set
+13:07:28 :Error arise when select test data from DB : API client not set
+13:07:33 :Error arise when select test data from DB : API client not set
+13:07:38 :Error arise when select test data from DB : API client not set
+13:07:43 :Error arise when select test data from DB : API client not set
+13:07:48 :Error arise when select test data from DB : API client not set

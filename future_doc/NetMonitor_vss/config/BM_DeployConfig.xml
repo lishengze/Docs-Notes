@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by Henchi (HuaLang) -->
+<DeployConfig>
+	<Services>
+		<sysfront comment="前置服务端口">
+			<Service item="1" address="tcp://127.0.0.1:18840"/>
+			<Service item="2" address="tcp://127.0.0.1:18841"/>
+		</sysfront>
+		<sysquery comment="查询侦听端口">
+			<Service address="tcp://10.0.0.25:18830"/>
+		</sysquery>
+		<syseventcounter comment="事件计数器侦听端口">
+			<Service type="sysagent" address="tcp://10.0.0.26:18815"/>
+			<Service type="sysfront" address="tcp://10.0.0.26:18820"/>
+			<Service type="sysprobe" address="tcp://10.0.0.26:18825"/>
+		</syseventcounter>
+		<fibproxy comment="业务报单流服务端">
+			<Service address="tcp://192.168.87.35:10001"/>
+			<Service address="tcp://172.18.38.45:10001"/>
+		</fibproxy>
+		<sysfibclient comment="业务报单流客户端">
+			<Service type="sysfront" address=""/>
+		</sysfibclient>
+	</Services>
+	<Databases>
+		<Database name="sysquery" dbname="jk2" ip="10.0.0.24" port="1521" username="monitor" password="monitor"/>
+	</Databases>
+</DeployConfig>

@@ -1,0 +1,66 @@
+<synconfig version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+	<depend>
+		<platform version="1"/>
+		<base version="1"/>
+		<probelogger version="1"/>
+		<utility version="1"/>
+		<datastruct version="1"/>
+		<event version="1"/>
+		<network version="1"/>
+		<tcpnetwork version="1"/>
+		<protocol version="1"/>
+		<channelprotocol version="1"/>
+		<scpprotocol version="1"/>
+		<xmpprotocol version="1"/>
+		<ftdprotocol version="1"/>
+		<ftdfield version="1"/>
+		<xml version="1"/>
+		<sysdbutility version="1"/>
+	</depend>
+	<cppfile>
+		<CMsgGenerator.cpp/>
+		<synconfig.cpp/>
+		<CSynconfig.cpp/>
+		<CFrontServer.cpp/>
+		<CManagerServer.cpp/>
+		<CEventServer.cpp/>		
+		<CSyncServer.cpp/>
+		<CommonFTDMsg.cpp/>
+		<GeneralOperation.cpp/>
+		<ConfigInfo.cpp/>
+		<SessionProxy.cpp/>
+	</cppfile>
+	<headfile>
+		<CMsgGenerator.h/>
+		<CSynconfig.h/>
+		<CFrontServer.h/>
+		<CManagerServer.h/>
+		<CEventServer.h/>
+		<CSyncServer.h/>
+		<CSyncServer_internal.h/>
+		<CommonFTDMsg.h/>
+		<MemoryDBInitFunc_internal.h/>
+		<GeneralOperationTables_internal.h/>
+		<GeneralOperation.h/>
+		<ConfigInfo.h/>
+		<SessionProxy.h/>		
+	</headfile>
+	<command>
+		<lua> 
+			<target type="file" value="MemoryDBInitFunc_internal.h"/>
+			<template type="file" value="MemoryDBInitFunc_internal.h.lua"/>
+			<env type="file" value="MemoryDBInitFunc.xml"/>		
+		</lua>
+		<lua> 
+			<target type="file" value="GeneralOperationTables_internal.h"/>
+			<template type="file" value="GeneralOperationTables_internal.h.lua"/>
+			<env type="file" value="MemoryDBInitFunc.xml"/>		
+		</lua>
+		<lua> 
+			<target type="file" value="CSyncServer_internal.h"/>
+			<template type="file" value="CSyncServer_internal.h.lua"/>
+			<env type="file" value="MemoryDBInitFunc.xml"/>		
+		</lua>		
+	</command>
+</synconfig>

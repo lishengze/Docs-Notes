@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT FTD (flows,packages,fields,entities,types?)>
+<!ATTLIST FTD
+	author CDATA #REQUIRED
+	version CDATA #REQUIRED
+	head (FTD) #REQUIRED
+	comment CDATA #REQUIRED
+>
+<!ELEMENT flows (flow*)>
+<!ELEMENT flow EMPTY>
+<!ATTLIST flow
+	name CDATA #REQUIRED
+	seqseries CDATA #REQUIRED
+	comment CDATA #REQUIRED
+>
+<!ELEMENT packages (package*)>
+<!ELEMENT package (field+)>
+<!ATTLIST package
+	name CDATA #REQUIRED
+	tid CDATA #REQUIRED
+	comment CDATA #REQUIRED
+	version CDATA #IMPLIED
+>
+<!ELEMENT field EMPTY>
+<!ATTLIST field
+	name CDATA #REQUIRED
+	minOccur CDATA #REQUIRED
+	maxOccur CDATA #REQUIRED
+>
+<!ELEMENT fields (fieldDefine*)>
+<!ELEMENT fieldDefine (item*)>
+<!ATTLIST fieldDefine
+	ref CDATA #IMPLIED
+	name CDATA #REQUIRED
+	fid CDATA #REQUIRED
+	comment CDATA #REQUIRED
+	version CDATA #IMPLIED
+>
+<!ELEMENT item EMPTY>
+<!ATTLIST item
+	name CDATA #REQUIRED
+	type CDATA #REQUIRED
+	description CDATA #REQUIRED
+>
+<!ELEMENT Entity ((Field | Ref)*)>
+<!ATTLIST Entity
+	name CDATA #REQUIRED
+	title CDATA #REQUIRED
+	description CDATA #REQUIRED
+>
+<!ELEMENT entities (Entity*)>
+<!ELEMENT Field EMPTY>
+<!ATTLIST Field
+	name CDATA #REQUIRED
+	type CDATA #REQUIRED
+	label CDATA #REQUIRED
+	description CDATA #IMPLIED
+	notnull (no | yes) #IMPLIED
+	iskey (no | yes) #IMPLIED
+>
+<!ELEMENT Ref EMPTY>
+<!ATTLIST Ref
+	entity CDATA #REQUIRED
+	iskey (yes|no) #IMPLIED
+>
+<!ELEMENT types (Char|String|Int|Float|Word|EnumChar|RangeInt|VString|Array|FixNumber)*>
+<!ELEMENT Char EMPTY>
+<!ELEMENT String EMPTY>
+<!ELEMENT Int EMPTY>
+<!ELEMENT Float EMPTY>
+<!ELEMENT Word EMPTY>
+<!ELEMENT EnumChar (enum*)>
+<!ELEMENT RangeInt EMPTY>
+<!ELEMENT VString EMPTY>
+<!ELEMENT Array EMPTY>
+<!ELEMENT FixNumber EMPTY>
+<!ATTLIST Char
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+>
+<!ATTLIST String
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+	length CDATA #REQUIRED
+>
+<!ATTLIST Int
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+	length CDATA #REQUIRED
+>
+<!ATTLIST Float
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+	length CDATA #REQUIRED
+	precision CDATA #REQUIRED
+>
+<!ATTLIST Word
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+>
+<!ATTLIST EnumChar
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+	prefix CDATA #REQUIRED
+>
+<!ATTLIST RangeInt
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+	length CDATA #REQUIRED
+	from CDATA #REQUIRED
+	to CDATA #REQUIRED
+>
+<!ATTLIST VString
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+	length CDATA #REQUIRED
+>
+<!ATTLIST Array
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+	length CDATA #REQUIRED
+	element CDATA #REQUIRED
+>
+<!ATTLIST FixNumber
+	typename CDATA #REQUIRED
+	label CDATA #REQUIRED
+	length CDATA #REQUIRED
+	precision CDATA #REQUIRED
+>
+<!ELEMENT enum EMPTY>
+<!ATTLIST enum
+	name CDATA #REQUIRED
+	value CDATA #REQUIRED
+	label CDATA #REQUIRED
+>

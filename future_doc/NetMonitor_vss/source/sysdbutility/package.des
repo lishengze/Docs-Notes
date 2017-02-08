@@ -1,0 +1,21 @@
+<sysdbutility version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+	<depend>
+		<platform version="1"/>
+		<base version="1"/>
+		<utility version="1"/>
+		<datastruct version="1"/>
+		<customDataType version="1"/>
+		<ftdfield version="1"/>
+	</depend>
+	<cppfile>
+		<FTDDataWrapper.cpp/>
+		<DBOperator.cpp/>		
+	</cppfile>
+	<headfile>
+		<FTDDataWrapper.h/>
+		<DBOperator.h/>
+	</headfile>
+	<command>
+	</command>
+</sysdbutility>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysuserapi author="zhoujianjun" version="1.0" comment="sysuserapi中用到的各种FTD报文">
+	<ftdpackage name="ReqQryTopCpuInfoTopic"/>
+	<ftdpackage name="RspQryTopCpuInfoTopic"/>
+	<ftdpackage name="RtnTopCpuInfoTopic" sysTag="2"/>
+	<ftdpackage name="ReqQryTopMemInfoTopic"/>
+	<ftdpackage name="RspQryTopMemInfoTopic"/>
+	<ftdpackage name="RtnTopMemInfoTopic" sysTag="2"/>
+	<ftdpackage name="ReqQryTopProcessInfoTopic"/>
+	<ftdpackage name="RspQryTopProcessInfoTopic"/>
+	<ftdpackage name="RtnTopProcessInfoTopic" sysTag="2"/>
+	<ftdpackage name="ReqQryFileSystemInfoTopic"/>
+	<ftdpackage name="RspQryFileSystemInfoTopic"/>
+	<ftdpackage name="RtnFileSystemInfoTopic" sysTag="2"/>
+	<ftdpackage name="ReqQryNetworkInfoTopic"/>
+	<ftdpackage name="RspQryNetworkInfoTopic"/>
+	<ftdpackage name="RtnNetworkInfoTopic" sysTag="2"/>
+	<ftdpackage name="ReqQryHostEnvTopic"/>
+	<ftdpackage name="RspQryHostEnvTopic"/>
+	<ftdpackage name="RtnHostEnvTopic" sysTag="2"/>
+
+	<ftdpackage name="ReqQryMonitorObjectTopic"/>
+	<ftdpackage name="RspQryMonitorObjectTopic"/>
+	<ftdpackage name="RtnMonitorObjectTopic" sysTag="1"/>
+	<ftdpackage name="ReqQryObjectRationalTopic"/>
+	<ftdpackage name="RspQryObjectRationalTopic"/>
+	<ftdpackage name="RtnObjectRationalTopic" sysTag="1"/>
+	<ftdpackage name="ReqQrySyslogInfoTopic"/>
+	<ftdpackage name="RspQrySyslogInfoTopic"/>
+	<ftdpackage name="RtnSyslogInfoTopic" sysTag="1"/>
+	<ftdpackage name="ReqQrySubscriberTopic"/>
+	<ftdpackage name="RspQrySubscriberTopic"/>
+	
+	<ftdpackage name="ReqQryOidRelationTopic"/>
+	<ftdpackage name="RspQryOidRelationTopic"/>
+	<ftdpackage name="RtnOidRelationTopic" sysTag="1"/>	
+	<ftdpackage name="ReqQryUserInfoTopic"/>
+	<ftdpackage name="RspQryUserInfoTopic"/>
+	<ftdpackage name="RtnUserInfoTopic" sysTag="1"/>
+	<ftdpackage name="ReqQryOnlineUserInfoTopic"/>
+	<ftdpackage name="RspQryOnlineUserInfoTopic"/>
+	<ftdpackage name="RtnOnlineUserInfoTopic" sysTag="1"/>
+	
+	<ftdpackage name="ReqQryWarningEventTopic"/>
+	<ftdpackage name="RspQryWarningEventTopic"/>
+	<ftdpackage name="RtnWarningEventTopic" sysTag="3"/>
+	<ftdpackage name="ReqQrySyslogEventTopic"/>
+	<ftdpackage name="RspQrySyslogEventTopic"/>
+	<ftdpackage name="RtnSyslogEventTopic" sysTag="0"/>
+	<ftdpackage name="ReqQrySyslogEventSubcriberTopic"/>
+	
+	<ftdpackage name="ReqQryObjectAttrTopic"/>
+	<ftdpackage name="RspQryObjectAttrTopic"/>
+	<ftdpackage name="RtnObjectAttrTopic" sysTag="1"/>
+	
+	<ftdpackage name="ReqQryInvalidateOrderTopic"/>
+	<ftdpackage name="RspQryInvalidateOrderTopic"/>
+	<ftdpackage name="RtnInvalidateOrderTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryOrderStatusTopic"/>
+	<ftdpackage name="RspQryOrderStatusTopic"/>
+	<ftdpackage name="RtnOrderStatusTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryBargainOrderTopic"/>
+	<ftdpackage name="RspQryBargainOrderTopic"/>
+	<ftdpackage name="RtnBargainOrderTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryInstPropertyTopic"/>
+	<ftdpackage name="RspQryInstPropertyTopic"/>
+	<ftdpackage name="RtnInstPropertyTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryMarginRateTopic"/>
+	<ftdpackage name="RspQryMarginRateTopic"/>
+	<ftdpackage name="RtnMarginRateTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryPriceLimitTopic"/>
+	<ftdpackage name="RspQryPriceLimitTopic"/>
+	<ftdpackage name="RtnPriceLimitTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryPartPosiLimitTopic"/>
+	<ftdpackage name="RspQryPartPosiLimitTopic"/>
+	<ftdpackage name="RtnPartPosiLimitTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryClientPosiLimitTopic"/>
+	<ftdpackage name="RspQryClientPosiLimitTopic"/>
+	<ftdpackage name="RtnClientPosiLimitTopic" sysTag="4"/>
+	<ftdpackage name="ReqQrySpecialPosiLimitTopic"/>
+	<ftdpackage name="RspQrySpecialPosiLimitTopic"/>
+	<ftdpackage name="RtnSpecialPosiLimitTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryTransactionChgTopic"/>
+	<ftdpackage name="RspQryTransactionChgTopic"/>
+	<ftdpackage name="RtnTransactionChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryClientChgTopic"/>
+	<ftdpackage name="RspQryClientChgTopic"/>
+	<ftdpackage name="RtnClientChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryPartClientChgTopic"/>
+	<ftdpackage name="RspQryPartClientChgTopic"/>
+	<ftdpackage name="RtnPartClientChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryPosiLimitChgTopic"/>
+	<ftdpackage name="RspQryPosiLimitChgTopic"/>
+	<ftdpackage name="RtnPosiLimitChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryClientPosiLimitChgTopic"/>
+	<ftdpackage name="RspQryClientPosiLimitChgTopic"/>
+	<ftdpackage name="RtnClientPosiLimitChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQrySpecPosiLimitChgTopic"/>
+	<ftdpackage name="RspQrySpecPosiLimitChgTopic"/>
+	<ftdpackage name="RtnSpecPosiLimitChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryHedgeDetailChgTopic"/>
+	<ftdpackage name="RspQryHedgeDetailChgTopic"/>
+	<ftdpackage name="RtnHedgeDetailChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryParticipantChgTopic"/>
+	<ftdpackage name="RspQryParticipantChgTopic"/>
+	<ftdpackage name="RtnParticipantChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryMarginRateChgTopic"/>
+	<ftdpackage name="RspQryMarginRateChgTopic"/>
+	<ftdpackage name="RtnMarginRateChgTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryUserIpChgTopic"/>
+	<ftdpackage name="RspQryUserIpChgTopic"/>
+	<ftdpackage name="RtnUserIpChgTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryHistoryObjectAttrTopic"/>
+	<ftdpackage name="RspQryHistoryObjectAttrTopic"/>
+	<ftdpackage name="RtnHistoryObjectAttrTopic" sysTag="1"/>
+	<ftdpackage name="ReqQryFrontInfoTopic"/>
+	<ftdpackage name="RspQryFrontInfoTopic"/>
+	<ftdpackage name="RtnFrontInfoTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQrySysUserLoginTopic"/>
+	<ftdpackage name="RspQrySysUserLoginTopic"/>
+	<ftdpackage name="ReqQrySysUserLogoutTopic"/>
+	<ftdpackage name="RspQrySysUserLogoutTopic"/>
+	<ftdpackage name="ReqQrySysUserPasswordUpdateTopic"/>
+	<ftdpackage name="RspQrySysUserPasswordUpdateTopic"/>
+	<ftdpackage name="ReqQrySysUserRegisterTopic"/>
+	<ftdpackage name="RspQrySysUserRegisterTopic"/>
+	<ftdpackage name="ReqQrySysUserDeleteTopic"/>
+	<ftdpackage name="RspQrySysUserDeleteTopic"/>
+	
+	<ftdpackage name="ReqQryTradeLogTopic"/>
+	<ftdpackage name="RspQryTradeLogTopic"/>
+	<ftdpackage name="RtnTradeLogTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryParticipantInitTopic"/>
+	<ftdpackage name="ReqQryUserInitTopic"/>
+	<ftdpackage name="RspQryParticipantInitTopic"/>
+	<ftdpackage name="RtnParticipantInitTopic" sysTag="4"/>
+	<ftdpackage name="RspQryUserInitTopic"/>
+	<ftdpackage name="RtnUserInitTopic" sysTag="4"/>
+	<ftdpackage name="RspQryClientInitTopic"/>
+	<ftdpackage name="RtnClientInitTopic" sysTag="4"/>
+	
+	
+	<ftdpackage name="ReqQryWarningEventUpdateTopic"/>
+	<ftdpackage name="ReqQryTradeUserLoginInfoTopic"/>
+	<ftdpackage name="RspQryTradeUserLoginInfoTopic"/>
+	<ftdpackage name="RtnTradeUserLoginInfoTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryPartTradeTopic"/>
+	<ftdpackage name="RspQryPartTradeTopic"/>
+	<ftdpackage name="ReqQryTradepeakTopic"/>
+	<ftdpackage name="RspQryTradepeakTopic"/>
+	<ftdpackage name="RtnUpdateSysConfigTopic" sysTag="3"/>
+	
+	<ftdpackage name="RtnSysUser" sysTag="3"/>
+	
+	<ftdpackage name="ReqQryHistoryCpuInfoTopic"/>
+	<ftdpackage name="RspQryHistoryCpuInfoTopic"/>
+	<ftdpackage name="ReqQryHistoryMemInfoTopic"/>
+	<ftdpackage name="RspQryHistoryMemInfoTopic"/>
+	<ftdpackage name="ReqQryHistoryNetworkInfoTopic"/>
+	<ftdpackage name="RspQryHistoryNetworkInfoTopic"/>
+	
+	<ftdpackage name="ReqQryMonitorOnlineUser"/>
+	<ftdpackage name="RspQryMonitorOnlineUser"/>
+	<ftdpackage name="ReqQryFrontStat"/>
+	<ftdpackage name="RspQryFrontStat"/>
+	
+	<ftdpackage name="RtnSysTimeSyncTopic" sysTag="3"/>
+	<ftdpackage name="RtnDataCenterChgTopic" sysTag="3"/>
+	
+	<ftdpackage name="ReqQryHistoryTradePeakTopic"/>
+	<ftdpackage name="RspQryHistoryTradePeakTopic"/>
+	
+	<ftdpackage name="ReqQryTomcatInfoTopic"/>
+	<ftdpackage name="RspQryJDBCInfoTopic"/>
+	<ftdpackage name="RspQryThreadInfoTopic"/>
+	<ftdpackage name="RspQrySessionInfoTopic"/>
+	<ftdpackage name="RspQryServletInfoTopic"/>
+	<ftdpackage name="RspQryFileInfoTopic"/>
+	<ftdpackage name="RspQryWebAppInfoTopic"/>
+	
+	<ftdpackage name="RspQryVMInfoTopic"/>
+	<ftdpackage name="RspQryPropertyInfoTopic"/>
+	<ftdpackage name="RspQryMemPoolInfoTopic"/>
+	<ftdpackage name="RspQryFileContentInfoTopic"/>
+	<ftdpackage name="RspQryConnectionInfoTopic"/>
+	<ftdpackage name="RspQryConnectorInfoTopic"/>
+	
+	<ftdpackage name="RtnVMInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnPropertyInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnMemPoolInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnFileContentInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnConnectionInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnConnectorInfoTopic" sysTag="1"/>
+	
+	<ftdpackage name="RtnTomcatInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnJDBCInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnThreadInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnSessionInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnServletInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnFileInfoTopic" sysTag="1"/>
+	<ftdpackage name="RtnWebAppInfoTopic" sysTag="1"/>
+	
+	<ftdpackage name="ReqQryDBQueryTopic"/>
+	<ftdpackage name="RspQryDBQueryTopic"/>
+	<ftdpackage name="RtnDBQueryTopic" sysTag="1"/>
+	<ftdpackage name="RspQryGeneralFieldTopic"/>
+	<ftdpackage name="RtnGeneralFieldTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryGetFileTopic"/>
+	<ftdpackage name="RspQryGetFileTopic"/>
+	<ftdpackage name="ReqQrySyslogEventUpdateTopic"/>
+	<ftdpackage name="ReqQryWarningQueryTopic"/>
+	<ftdpackage name="RspQryWarningQueryTopic"/>
+	<ftdpackage name="ReqQryWebVisitTopic"/>
+
+	<ftdpackage name="ReqQryWarningActiveChange"/>
+	<ftdpackage name="RtnWarningActiveChange" sysTag="3"/>
+	
+	<ftdpackage name="ReqQryTradeUserLoginStatTopic"/>
+	<ftdpackage name="RspQryTradeUserLoginStatTopic"/>
+	
+	<ftdpackage name="ReqQryGeneralOperateTopic"/>
+	<ftdpackage name="RspQryGeneralOperateTopic"/>
+	<ftdpackage name="RtnGeneralOperateTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetDeviceLinkedTopic"/>
+	<ftdpackage name="RspQryNetDeviceLinkedTopic"/>
+	<ftdpackage name="RtnNetDeviceLinkedTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryRealTimeNetObjectAttrTopic"/>
+	
+	<ftdpackage name="ReqQryNetAreaTopic"/>
+	<ftdpackage name="RspQryNetAreaTopic"/>
+	<ftdpackage name="RtnNetAreaTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetSubAreaTopic"/>
+	<ftdpackage name="RspQryNetSubAreaTopic"/>
+	<ftdpackage name="RtnNetSubAreaTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetSubAreaIPTopic"/>
+	<ftdpackage name="RspQryNetSubAreaIPTopic"/>
+	<ftdpackage name="RtnNetSubAreaIPTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetDeviceDetectTopic"/>
+	<ftdpackage name="RspQryNetDeviceDetectTopic"/>
+	<ftdpackage name="ReqQryNetDeviceRequestTopic"/>
+	<ftdpackage name="RtnNetDeviceTopic" sysTag="4"/>
+	<ftdpackage name="RspQryNetDeviceTopic"/>
+	
+	<ftdpackage name="ReqQryNetBuildingTopic"/>
+	<ftdpackage name="RspQryNetBuildingTopic"/>
+	<ftdpackage name="RtnNetBuildingTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetRoomTopic"/>
+	<ftdpackage name="RspQryNetRoomTopic"/>
+	<ftdpackage name="RtnNetRoomTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetCabinetsTopic"/>
+	<ftdpackage name="RspQryNetCabinetsTopic"/>
+	<ftdpackage name="RtnNetCabinetsTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetOIDTopic"/>
+	<ftdpackage name="RspQryNetOIDTopic"/>
+	<ftdpackage name="RtnNetOIDTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetTimePolicyTopic"/>
+	<ftdpackage name="RspQryNetTimePolicyTopic"/>
+	<ftdpackage name="RtnNetTimePolicyTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetGatherTaskTopic"/>
+	<ftdpackage name="RspQryNetGatherTaskTopic"/>
+	<ftdpackage name="RtnNetGatherTaskTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetDeviceChgTopic"/>
+	<ftdpackage name="RspQryNetDeviceChgTopic"/>
+	<ftdpackage name="RtnNetDeviceChgTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetDeviceTypeTopic"/>
+	<ftdpackage name="RspQryNetDeviceTypeTopic"/>
+	<ftdpackage name="RtnNetDeviceTypeTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetDeviceCategoryTopic"/>
+	<ftdpackage name="RspQryNetDeviceCategoryTopic"/>
+	<ftdpackage name="RtnNetDeviceCategoryTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetManufactoryTopic"/>
+	<ftdpackage name="RspQryNetManufactoryTopic"/>
+	<ftdpackage name="RtnNetManufactoryTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetCommunityTopic"/>
+	<ftdpackage name="RspQryNetCommunityTopic"/>
+	<ftdpackage name="RtnNetCommunityTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetPortTypeTopic"/>
+	<ftdpackage name="RspQryNetPortTypeTopic"/>
+	<ftdpackage name="RtnNetPortTypeTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetPartAccessSpotTopic"/>
+	<ftdpackage name="RspQryNetPartAccessSpotTopic"/>
+	<ftdpackage name="RtnNetPartAccessSpotTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetInterfaceTopic"/>
+	<ftdpackage name="RspQryNetInterfaceTopic"/>
+	<ftdpackage name="RtnNetInterfaceTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetGeneralOIDTopic"/>
+	<ftdpackage name="RspQryNetGeneralOIDTopic"/>
+	<ftdpackage name="RtnNetGeneralOIDTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetMonitorTypeTopic"/>
+	<ftdpackage name="RspQryNetMonitorTypeTopic"/>
+	<ftdpackage name="RtnNetMonitorTypeTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetMonitorAttrScopeTopic"/>
+	<ftdpackage name="RspQryNetMonitorAttrScopeTopic"/>
+	<ftdpackage name="RtnNetMonitorAttrScopeTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetMonitorAttrTypeTopic"/>
+	<ftdpackage name="RspQryNetMonitorAttrTypeTopic"/>
+	<ftdpackage name="RtnNetMonitorAttrTypeTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetMonitorObjectAttrTopic"/>
+	<ftdpackage name="RspQryNetMonitorObjectAttrTopic"/>
+	<ftdpackage name="RtnNetMonitorObjectAttrTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetMonitorTaskResultTopic"/>
+	<ftdpackage name="RspQryNetMonitorTaskResultTopic"/>
+	<ftdpackage name="RtnNetMonitorTaskResultTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetMonitorDeviceGroupTopic"/>
+	<ftdpackage name="RspQryNetMonitorDeviceGroupTopic"/>
+	<ftdpackage name="RtnNetMonitorDeviceGroupTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetMonitorTaskObjectSetTopic"/>
+	<ftdpackage name="RspQryNetMonitorTaskObjectSetTopic"/>
+	<ftdpackage name="RtnNetMonitorTaskObjectSetTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetMonitorTaskInfoTopic"/>
+	<ftdpackage name="RspQryNetMonitorTaskInfoTopic"/>
+	<ftdpackage name="RtnNetMonitorTaskInfoTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetPartyLinkInfoTopic"/>
+	<ftdpackage name="RspQryNetPartyLinkInfoTopic"/>
+	<ftdpackage name="RtnNetPartyLinkInfoTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetMonitorActionAttrTopic"/>
+	<ftdpackage name="RspQryNetMonitorActionAttrTopic"/>
+	<ftdpackage name="RspQryNetMonitorActionAttrTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryHistoryNetObjectAttrTopic"/>
+	<ftdpackage name="RspQryHistoryNetObjectAttrTopic"/>
+	<ftdpackage name="RtnHistoryNetObjectAttrTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetModuleTopic"/>
+	<ftdpackage name="RspQryNetModuleTopic"/>
+	<ftdpackage name="RtnNetModuleTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetMonitorTaskStatusResultTopic"/>
+	<ftdpackage name="RspQryNetMonitorTaskStatusResultTopic"/>
+	<ftdpackage name="RtnNetMonitorTaskStatusResultTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetCfgFileTopic"/>
+	<ftdpackage name="RspQryNetCfgFileTopic"/>
+	<ftdpackage name="RtnNetCfgFileTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryFileGeneralOperTopic"/>
+	<ftdpackage name="RspQryFileGeneralOperTopic"/>
+	<ftdpackage name="RtnFileGeneralOperTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetPartyLinkStatusInfoTopic"/>
+	<ftdpackage name="RspQryNetPartyLinkStatusInfoTopic"/>
+	<ftdpackage name="RtnNetPartyLinkStatusInfoTopic" sysTag="4"/>
+	<ftdpackage name="ReqQryNetBaseLineTopic"/>
+	<ftdpackage name="RspQryNetBaseLineTopic"/>
+	<ftdpackage name="RtnNetBaseLineTopic" sysTag="4"/>
+
+	<ftdpackage name="ReqQryNetBaseLineResultTopic"/>
+	<ftdpackage name="RspQryNetBaseLineResultTopic"/>
+	<ftdpackage name="RtnNetBaseLineResultTopic" sysTag="4"/>
+
+	<ftdpackage name="ReqQryNetMonitorDeviceTaskTopic"/>
+	<ftdpackage name="RspQryNetMonitorDeviceTaskTopic"/>
+	<ftdpackage name="RtnNetMonitorDeviceTaskTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryOuterDeviceInfoTopic"/>
+	<ftdpackage name="RspQryOuterDeviceInfoTopic"/>
+	<ftdpackage name="RtnOuterDeviceInfoTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetLocalPingResultInfoTopic"/>
+	<ftdpackage name="RspQryNetLocalPingResultInfoTopic"/>
+	<ftdpackage name="RtnNetLocalPingResultInfoTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetRomotePingResultInfoTopic"/>
+	<ftdpackage name="RspQryNetRomotePingResultInfoTopic"/>
+	<ftdpackage name="RtnNetRomotePingResultInfoTopic" sysTag="4"/>
+
+	<ftdpackage name="ReqQryTradeFrontOrderRttStatTopic"/>
+	<ftdpackage name="RspQryTradeFrontOrderRttStatTopic"/>
+	<ftdpackage name="RtnTradeFrontOrderRttStatTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryDiskIOTopic"/>
+	<ftdpackage name="RspQryDiskIOTopic"/>
+	<ftdpackage name="RtnDiskIOTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryRouterInfoTopic"/>
+	<ftdpackage name="RspQryRouterInfoTopic"/>
+	<ftdpackage name="RtnRouterInfoTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryStatInfoTopic"/>
+	<ftdpackage name="RspQryStatInfoTopic"/>
+	<ftdpackage name="RtnStatInfoTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryClientInfoTopic"/>
+	<ftdpackage name="RspQryClientInfoTopic"/>
+	<ftdpackage name="RtnClientInfoTopic" sysTag="4"/>
+
+	<ftdpackage name="ReqQryParticTradeOrderStatesTopic"/>
+	<ftdpackage name="RspQryParticTradeOrderStatesTopic"/>
+	<ftdpackage name="RtnParticTradeOrderStatesTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryTradeOrderRttCutLineTopic"/>
+	<ftdpackage name="RspQryTradeOrderRttCutLineTopic"/>
+	<ftdpackage name="RtnTradeOrderRttCutLineTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryEventDescriptionTopic"/>
+	<ftdpackage name="RspQryEventDescriptionTopic"/>
+	<ftdpackage name="RtnEventDescriptionTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryFrontUniqueIDTopic"/>
+	<ftdpackage name="RspQryFrontUniqueIDTopic"/>
+	<ftdpackage name="RtnFrontUniqueIDTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetPartyLinkAddrChangeTopic"/>
+	<ftdpackage name="RspQryNetPartyLinkAddrChangeTopic"/>
+	<ftdpackage name="RtnNetPartyLinkAddrChangeTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetDelPartyLinkInfoTopic"/>
+	<ftdpackage name="RspQryNetDelPartyLinkInfoTopic"/>
+	<ftdpackage name="RtnNetDelPartyLinkInfoTopic" sysTag="4"/>
+
+	<ftdpackage name="ReqQryInstrumentStatusTopic"/>
+	<ftdpackage name="RspQryInstrumentStatusTopic"/>
+	<ftdpackage name="RtnInstrumentStatusTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryCurrTradingSegmentAttrTopic"/>
+	<ftdpackage name="RspQryCurrTradingSegmentAttrTopic"/>
+	<ftdpackage name="RtnCurrTradingSegmentAttrTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryPerformanceTopTopic"/>
+	<ftdpackage name="RspQryPerformanceTopTopic"/>
+	<ftdpackage name="RtnPerformanceTopTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryMemberLinkCostTopTopic"/>
+	<ftdpackage name="RspQryMemberLinkCostTopic"/>
+	<ftdpackage name="RtnMemberLinkCostTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQrySysNetPartylinkMonthlyRentTopTopic"/>
+	<ftdpackage name="RspQrySysNetPartylinkMonthlyRentTopic"/>
+	<ftdpackage name="RtnSysNetPartylinkMonthlyRentTopic" sysTag="4"/>
+	
+	<ftdpackage name="ReqQryNetNonPartyLinkInfoTopic"/>
+	<ftdpackage name="RspQryNetNonPartyLinkInfoTopic"/>
+	<ftdpackage name="RtnNetNonPartyLinkInfoTopic" sysTag="4"/>
+	
+</sysuserapi>

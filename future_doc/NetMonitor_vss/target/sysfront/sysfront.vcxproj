@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{33069C2D-D1E5-4257-BAA5-F5FCECF60013}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\source\platform\.;..\..\source\base\.;..\..\source\utility\.;..\..\source\datastruct\.;..\..\source\event\.;..\..\source\network\.;..\..\source\tcpnetwork\.;..\..\source\udpnetwork\.;..\..\source\protocol\.;..\..\source\channelprotocol\.;..\..\source\scpprotocol\.;..\..\source\xmpprotocol\.;..\..\source\compressprotocol\.;..\..\source\ftdprotocol\.;..\..\source\xml\.;..\..\source\probelogger\.;..\..\source\oraclepass\.;..\..\source\version\.;..\..\source\refobject\.;..\..\source\customDataType\.;..\..\source\ftdfield\.;..\..\source\MDB_FRONT\.;..\..\source\UFCopy\.;..\..\source\sysutility\.;..\..\source\sysfront\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;DEBUG_LOG;WINDOWS;MSVC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\sysfront.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <AdditionalOptions> -EHsc </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\sysfront.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\sysfront.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>.\Debug\sysfront.exe</OutputFile>
+      <AdditionalOptions> /FIXED:NO  /WARN:2</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\source\platform\.;..\..\source\base\.;..\..\source\utility\.;..\..\source\datastruct\.;..\..\source\event\.;..\..\source\network\.;..\..\source\tcpnetwork\.;..\..\source\udpnetwork\.;..\..\source\protocol\.;..\..\source\channelprotocol\.;..\..\source\scpprotocol\.;..\..\source\xmpprotocol\.;..\..\source\compressprotocol\.;..\..\source\ftdprotocol\.;..\..\source\xml\.;..\..\source\probelogger\.;..\..\source\oraclepass\.;..\..\source\version\.;..\..\source\refobject\.;..\..\source\customDataType\.;..\..\source\ftdfield\.;..\..\source\MDB_FRONT\.;..\..\source\UFCopy\.;..\..\source\sysutility\.;..\..\source\sysfront\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINDOWS;MSVC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\sysfront.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalOptions> -EHsc </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\sysfront.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\sysfront.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <OutputFile>.\Release\sysfront.exe</OutputFile>
+      <AdditionalOptions> /FIXED:NO  /WARN:2</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\platform\system.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platform\platform.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platform\mpath.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\CBaseObject.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\DesignError.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\RuntimeError.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\CLogger.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\CProbeLogger.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\base\monitorIndex.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\utility\CTimeMeter.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\utility\utility.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\utility\Config.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CConfig.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CFixMem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CAVLTree.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CTransaction.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CMemory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CFiniteState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CacheList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\FieldDescribe.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\FieldSet.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\Index.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\Package.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\Flow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\ReadOnlyFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\FlowReader.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\OrderingQ.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CachedFileFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CachedFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\FileFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\IndexPackageFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CSVParser.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CSequenceInterface.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CMemorySequence.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CErrorEngine.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CDate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\Allocator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\CHashIndex.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\PtrList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datastruct\ObjAllocator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\EventHandler.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\EventQueue.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\EventDispatcher.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\Reactor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\Semaphore.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\Thread.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\SelectReactor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\TimerHeap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event\EpollReactor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\Channel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\Client.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\ListenCtrl.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\NetworkFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\Server.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\ServiceName.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\network\SocketInit.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tcpnetwork\TcpChannel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tcpnetwork\TcpClient.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tcpnetwork\TcpServer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tcpnetwork\TcpNetworkFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\udpnetwork\UdpChannel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\udpnetwork\UdpClient.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\udpnetwork\UdpServer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\udpnetwork\UdpNetworkFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\protocol\Protocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\channelprotocol\ChannelProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\channelprotocol\ChannelPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\channelprotocol\Session.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\channelprotocol\SessionFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\scpprotocol\SCPPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\scpprotocol\SCPPackageDesc.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\scpprotocol\SCPProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xmpprotocol\XMPPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xmpprotocol\XMPSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xmpprotocol\XMPProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\compressprotocol\CompressPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\compressprotocol\CompressProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\compressprotocol\CompressUtil.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCPubEndPoint.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdprotocol\FTDCSubEndPoint.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xml\CXML.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xml\XMLAction.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\probelogger\CSyslogService.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\probelogger\CFilelogService.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\oraclepass\CDes.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\version\version.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\refobject\RefString.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdfield\FtdData.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ftdfield\FtdPackageDesc.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\CDatabaseDataFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\CDatabaseResource.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\BaseDataStruct.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\databaseResources.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\databaseFactories.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\databaseFactorySearchs.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\databaseIterators.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\CMemoryDB.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\CDumpLog.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\databaseGroupActions.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MDB_FRONT\databaseIteratorRepository.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\systools.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\xmlcfg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\FileRecordFinder.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\md5Handler.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\CTimePolicy.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\ThreadPool.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\StringUtil.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\CDeployConfig.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\PrjCommon.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\CCalendar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysutility\CSysInternalTopology.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\sysfront.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\FrontServer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\FrontServerBusiness.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CountConnector.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\FlowConnector.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CStatusSubscriber.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CStatusSubscriber2.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CResultSubscriber.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CListSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CQueryAgent.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CSlogAgent.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CSynConnector.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sysfront\CPerformanceAnalyze.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\platform\system.h" />
+    <ClInclude Include="..\..\source\platform\platform.h" />
+    <ClInclude Include="..\..\source\platform\mpath.h" />
+    <ClInclude Include="..\..\source\base\CBaseObject.h" />
+    <ClInclude Include="..\..\source\base\DesignError.h" />
+    <ClInclude Include="..\..\source\base\RuntimeError.h" />
+    <ClInclude Include="..\..\source\base\CLogger.h" />
+    <ClInclude Include="..\..\source\base\CProbeLogger.h" />
+    <ClInclude Include="..\..\source\base\monitorIndex.h" />
+    <ClInclude Include="..\..\source\base\public.h" />
+    <ClInclude Include="..\..\source\utility\CTimeMeter.h" />
+    <ClInclude Include="..\..\source\utility\utility.h" />
+    <ClInclude Include="..\..\source\utility\Config.h" />
+    <ClInclude Include="..\..\source\datastruct\CachedFileFlow.h" />
+    <ClInclude Include="..\..\source\datastruct\CachedFlow.h" />
+    <ClInclude Include="..\..\source\datastruct\IndexPackageFlow.h" />
+    <ClInclude Include="..\..\source\datastruct\FileFlow.h" />
+    <ClInclude Include="..\..\source\datastruct\CConfig.h" />
+    <ClInclude Include="..\..\source\datastruct\CFixMem.h" />
+    <ClInclude Include="..\..\source\datastruct\CAVLTree.h" />
+    <ClInclude Include="..\..\source\datastruct\CResource.h" />
+    <ClInclude Include="..\..\source\datastruct\CTransaction.h" />
+    <ClInclude Include="..\..\source\datastruct\CMemory.h" />
+    <ClInclude Include="..\..\source\datastruct\CFiniteState.h" />
+    <ClInclude Include="..\..\source\datastruct\CacheList.h" />
+    <ClInclude Include="..\..\source\datastruct\FieldDescribe.h" />
+    <ClInclude Include="..\..\source\datastruct\FieldSet.h" />
+    <ClInclude Include="..\..\source\datastruct\Index.h" />
+    <ClInclude Include="..\..\source\datastruct\Package.h" />
+    <ClInclude Include="..\..\source\datastruct\HashMap.h" />
+    <ClInclude Include="..\..\source\datastruct\Flow.h" />
+    <ClInclude Include="..\..\source\datastruct\ReadOnlyFlow.h" />
+    <ClInclude Include="..\..\source\datastruct\FlowReader.h" />
+    <ClInclude Include="..\..\source\datastruct\PersistentState.h" />
+    <ClInclude Include="..\..\source\datastruct\OrderingQ.h" />
+    <ClInclude Include="..\..\source\datastruct\UFDataType.h" />
+    <ClInclude Include="..\..\source\datastruct\CSVParser.h" />
+    <ClInclude Include="..\..\source\datastruct\CSequenceInterface.h" />
+    <ClInclude Include="..\..\source\datastruct\CMemorySequence.h" />
+    <ClInclude Include="..\..\source\datastruct\CErrorEngine.h" />
+    <ClInclude Include="..\..\source\datastruct\CDate.h" />
+    <ClInclude Include="..\..\source\datastruct\Allocator.h" />
+    <ClInclude Include="..\..\source\datastruct\MemoryStack.h" />
+    <ClInclude Include="..\..\source\datastruct\ThreadSafeFlow.h" />
+    <ClInclude Include="..\..\source\datastruct\CHashIndex.h" />
+    <ClInclude Include="..\..\source\datastruct\PtrList.h" />
+    <ClInclude Include="..\..\source\datastruct\ObjAllocator.h" />
+    <ClInclude Include="..\..\source\event\EventHandler.h" />
+    <ClInclude Include="..\..\source\event\EventQueue.h" />
+    <ClInclude Include="..\..\source\event\Reactor.h" />
+    <ClInclude Include="..\..\source\event\Semaphore.h" />
+    <ClInclude Include="..\..\source\event\Thread.h" />
+    <ClInclude Include="..\..\source\event\Mutex.h" />
+    <ClInclude Include="..\..\source\event\SelectReactor.h" />
+    <ClInclude Include="..\..\source\event\TimerHeap.h" />
+    <ClInclude Include="..\..\source\event\TimerQueue.h" />
+    <ClInclude Include="..\..\source\event\EventDispatcher.h" />
+    <ClInclude Include="..\..\source\event\EpollReactor.h" />
+    <ClInclude Include="..\..\source\network\Channel.h" />
+    <ClInclude Include="..\..\source\network\Client.h" />
+    <ClInclude Include="..\..\source\network\ListenCtrl.h" />
+    <ClInclude Include="..\..\source\network\NetworkFactory.h" />
+    <ClInclude Include="..\..\source\network\Server.h" />
+    <ClInclude Include="..\..\source\network\ServiceName.h" />
+    <ClInclude Include="..\..\source\network\SocketInit.h" />
+    <ClInclude Include="..\..\source\tcpnetwork\TcpChannel.h" />
+    <ClInclude Include="..\..\source\tcpnetwork\TcpClient.h" />
+    <ClInclude Include="..\..\source\tcpnetwork\TcpServer.h" />
+    <ClInclude Include="..\..\source\tcpnetwork\TcpNetworkFactory.h" />
+    <ClInclude Include="..\..\source\udpnetwork\UdpChannel.h" />
+    <ClInclude Include="..\..\source\udpnetwork\UdpClient.h" />
+    <ClInclude Include="..\..\source\udpnetwork\UdpServer.h" />
+    <ClInclude Include="..\..\source\udpnetwork\UdpNetworkFactory.h" />
+    <ClInclude Include="..\..\source\protocol\Protocol.h" />
+    <ClInclude Include="..\..\source\channelprotocol\ChannelProtocol.h" />
+    <ClInclude Include="..\..\source\channelprotocol\ChannelPackage.h" />
+    <ClInclude Include="..\..\source\channelprotocol\Session.h" />
+    <ClInclude Include="..\..\source\channelprotocol\SessionFactory.h" />
+    <ClInclude Include="..\..\source\scpprotocol\SCPPackage.h" />
+    <ClInclude Include="..\..\source\scpprotocol\SCPPackageDesc.h" />
+    <ClInclude Include="..\..\source\scpprotocol\SCPProtocol.h" />
+    <ClInclude Include="..\..\source\xmpprotocol\XMPPackage.h" />
+    <ClInclude Include="..\..\source\xmpprotocol\XMPSession.h" />
+    <ClInclude Include="..\..\source\xmpprotocol\XMPProtocol.h" />
+    <ClInclude Include="..\..\source\compressprotocol\CompressPackage.h" />
+    <ClInclude Include="..\..\source\compressprotocol\CompressProtocol.h" />
+    <ClInclude Include="..\..\source\compressprotocol\CompressUtil.h" />
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCPackage.h" />
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCProtocol.h" />
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCSession.h" />
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCPubEndPoint.h" />
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCSubEndPoint.h" />
+    <ClInclude Include="..\..\source\ftdprotocol\FTDCSubscriber.h" />
+    <ClInclude Include="..\..\source\xml\CXML.h" />
+    <ClInclude Include="..\..\source\xml\XMLAction.h" />
+    <ClInclude Include="..\..\source\probelogger\CSyslogService.h" />
+    <ClInclude Include="..\..\source\probelogger\CFilelogService.h" />
+    <ClInclude Include="..\..\source\oraclepass\CDes.h" />
+    <ClInclude Include="..\..\source\oraclepass\CCrypto.h" />
+    <ClInclude Include="..\..\source\version\version.h" />
+    <ClInclude Include="..\..\source\version\versionValue.h" />
+    <ClInclude Include="..\..\source\refobject\RefObject.h" />
+    <ClInclude Include="..\..\source\refobject\RefString.h" />
+    <ClInclude Include="..\..\source\customDataType\customDataType.h" />
+    <ClInclude Include="..\..\source\ftdfield\FtdData.h" />
+    <ClInclude Include="..\..\source\ftdfield\FtdPackageDesc.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\CDatabaseDataFactory.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\CDatabaseResource.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\BaseDataStruct.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\databaseResources.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\databaseFactories.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\databaseIterators.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\CMemoryDB.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\CDumpLog.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\databaseGroupActions.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\databaseIteratorRepository.h" />
+    <ClInclude Include="..\..\source\MDB_FRONT\databaseData.h" />
+    <ClInclude Include="..\..\source\UFCopy\UFCopy.h" />
+    <ClInclude Include="..\..\source\UFCopy\UFEntityCopy.h" />
+    <ClInclude Include="..\..\source\UFCopy\MDBCopy.h" />
+    <ClInclude Include="..\..\source\UFCopy\XTPCopy.h" />
+    <ClInclude Include="..\..\source\UFCopy\FTDCopy.h" />
+    <ClInclude Include="..\..\source\sysutility\systools.h" />
+    <ClInclude Include="..\..\source\sysutility\xmlcfg.h" />
+    <ClInclude Include="..\..\source\sysutility\FileRecordFinder.h" />
+    <ClInclude Include="..\..\source\sysutility\md5Handler.h" />
+    <ClInclude Include="..\..\source\sysutility\CTimePolicy.h" />
+    <ClInclude Include="..\..\source\sysutility\FTDDataHelper.h" />
+    <ClInclude Include="..\..\source\sysutility\ThreadPool.h" />
+    <ClInclude Include="..\..\source\sysutility\SyncEvent.h" />
+    <ClInclude Include="..\..\source\sysutility\SyncEvent_Platform.h" />
+    <ClInclude Include="..\..\source\sysutility\ScopedLock.h" />
+    <ClInclude Include="..\..\source\sysutility\PrjCommon.h" />
+    <ClInclude Include="..\..\source\sysutility\StringUtil.h" />
+    <ClInclude Include="..\..\source\sysutility\CDeployConfig.h" />
+    <ClInclude Include="..\..\source\sysutility\CCalendar.h" />
+    <ClInclude Include="..\..\source\sysutility\CSysInternalTopology.h" />
+    <ClInclude Include="..\..\source\sysfront\FrontServer.h" />
+    <ClInclude Include="..\..\source\sysfront\CountConnector.h" />
+    <ClInclude Include="..\..\source\sysfront\FlowConnector.h" />
+    <ClInclude Include="..\..\source\sysfront\CStatusSubscriber.h" />
+    <ClInclude Include="..\..\source\sysfront\CResultSubscriber.h" />
+    <ClInclude Include="..\..\source\sysfront\CListSession.h" />
+    <ClInclude Include="..\..\source\sysfront\CQueryAgent.h" />
+    <ClInclude Include="..\..\source\sysfront\CSlogAgent.h" />
+    <ClInclude Include="..\..\source\sysfront\CSynConnector.h" />
+    <ClInclude Include="..\..\source\sysfront\CPerformanceAnalyze.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

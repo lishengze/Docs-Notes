@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE packageDefine SYSTEM "C:\wsh\package.dtd">
+<packageDefine name="oraclepass" version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+	<depend/>
+	<cppfile>
+		<file name="CDes.cpp"/>
+	</cppfile>
+	<headfile>
+		<file name="CDes.h"/>
+		<file name="CCrypto.h"/>
+	</headfile>
+	<command/>
+</packageDefine>

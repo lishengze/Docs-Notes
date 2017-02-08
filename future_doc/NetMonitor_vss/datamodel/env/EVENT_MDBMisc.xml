@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by  () -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by wangzhaodong (ORiON) -->
+<system author="王肇东" version="1.0">
+	<tables writeTable="yes" readTable="no" comment="" desc="" foreignStrick="no" 
+	isAsc="yes" indexName="noIndex" searchUnique="yes" checkDefault="no" checkParameter="yes" 
+	hasTable="yes" manager="root" isPK="no" stableIndex="no" runLevel="0" priority="1">
+		<table name="MonitorEntity" usage="监控实体">
+			<fields ref="MonitorEntity"/>
+			<foreigns/>
+			<index>
+				<defineIndex name="KeyIndex">
+					<indexKey name="MonitorObject"/>
+					<indexKey name="MonitorItem"/>
+					<indexKey name="MonitorTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<hashindex/>
+			<search>
+				<defineSearch name="ByKey" indexName="KeyIndex">
+					<parameter>
+						<paraDefine name="MonitorObject" desc="监控对象"/>
+						<paraDefine name="MonitorItem" desc="监控指标项"/>
+						<paraDefine name="MonitorTime" desc="监控时间" checkParameter="yes"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByTime" indexName="KeyIndex" searchUnique="no">
+					<parameter>
+						<paraDefine name="MonitorObject" desc="监控对象"/>
+						<paraDefine name="MonitorItem" desc="监控指标项"/>
+						<paraDefine name="MonitorTime" desc="监控时间" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByKey1" indexName="KeyIndex">
+					<parameter>
+						<paraDefine name="MonitorObject" desc="监控对象"/>
+						<paraDefine name="MonitorItem" desc="监控指标项"/>
+					</parameter>
+					<default>
+						<defaultDefine name="MonitorTime" value="0" desc="监控时间"/>
+					</default>
+				</defineSearch>
+				<defineSearch name="ByAll" searchUnique="no" indexName="KeyIndex">
+					<parameter/>
+					<default>
+						<defaultDefine name="MonitorObject" value="0" desc="监控对象"/>
+					</default>
+				</defineSearch>
+			</search>
+		</table>
+		<table name="EventEntity" usage="事件实体">
+			<fields ref="EventEntity"/>
+			<foreigns/>
+			<index>
+				<defineIndex name="KeyIndex">
+					<indexKey name="EventName"/>
+					<indexKey name="MonitorTime" isAsc="no"/>
+				</defineIndex>
+				<defineIndex name="KeyObject">
+					<indexKey name="MonitorObject"/>
+					<indexKey name="EventName"/>
+					<indexKey name="MonitorTime" isAsc="no"/>
+				</defineIndex>
+			</index>
+			<hashindex/>
+			<search>
+				<defineSearch name="ByKey" indexName="KeyIndex" searchUnique="no">
+					<parameter>
+						<paraDefine name="EventName" desc="事件名"/>
+						<paraDefine name="MonitorTime" desc="监控时间" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+				<defineSearch name="ByObject" indexName="KeyObject" searchUnique="no">
+					<parameter>
+						<paraDefine name="MonitorObject" desc="对象名"/>
+						<paraDefine name="EventName" desc="事件名"/>
+						<paraDefine name="MonitorTime" desc="监控时间" checkParameter="no"/>
+					</parameter>
+					<default/>
+				</defineSearch>
+			</search>
+		</table>
+	</tables>
+	<entities/>
+</system>

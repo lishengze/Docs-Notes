@@ -1,0 +1,13 @@
+connectDB failed: 
+
+DBMS API Library 'ociw32.dll' loading fails
+This library is a part of DBMS client installation, not SQLAPI++
+Make sure DBMS client is installed and
+this required library is available for dynamic loading
+
+Win32:
+1) The directory from which the application loaded
+2) The current directory
+3) The Windows, Windows system or 32-bit Windows system directory
+4) The directories in the PATH environment variable
+

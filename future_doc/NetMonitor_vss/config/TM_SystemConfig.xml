@@ -1,0 +1,2873 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2006 U (http://www.altova.com) by xucheng (sfit) -->
+<SystemConfig>
+	<Topics>
+		<Topic name="tseries" type="tseries" id="0x00001003"/>
+		<Topic name="tresult" type="tresult" id="0x00001001"/>
+	</Topics>
+	<BNSs>
+		<BNS ip="192.168.84.131" port="9001"/>
+		<BNS ip="192.168.84.136" port="9001"/>
+		<BNS ip="172.18.34.131" port="9001"/>
+		<BNS ip="172.18.34.136" port="9001"/>
+		<BNS ip="172.23.34.131" port="9001"/>
+		<BNS ip="172.23.34.136" port="9001"/>
+	</BNSs>
+	<Databases>
+		<Database alias="TM_BDB_PD" env="PRODUCT" dbname="TBDB01_PD" racname="TBDB" servicename="TBDB" ip="192.168.84.131" port="1521" username="monitor" password="backwards#97"/>
+		<Database alias="TM_BDB_ZJ" env="PRODUCT" dbname="TBDB01_ZJ" racname="TBDB" servicename="TBDB1" ip="172.18.34.131" port="1521" username="monitor" password="backwards#97"/>
+		<Database alias="TM_BDB_BJ" env="PRODUCT" dbname="TBDB01_BJ" racname="TBDB" servicename="TBDB1" ip="172.23.34.131" port="1521" username="monitor" password="backwards#97"/>
+		<Database alias="BDB02_PD" env="PRODUCT" dbname="TBDB02_PD" racname="TBDB" servicename="TBDB2" ip="192.168.84.136" port="1521" username="monitor" password="backwards#97"/>
+	</Databases>
+	<Agents>
+		<!--顶层采集代理-->
+		<Agent name="31" comment="顶层采集代理">
+			<object name="PD-Agent01" type="sysagent"/>
+		</Agent>
+		<Agent name="32" comment="顶层采集代理">
+			<object name="PD-Agent02" type="sysagent"/>
+		</Agent>
+		<Agent name="33" comment="顶层采集代理">
+			<object name="PD-Agent03" type="sysagent"/>
+		</Agent>
+		<Agent name="34" comment="顶层采集代理">
+			<object name="PD-Agent04" type="sysagent"/>
+		</Agent>
+		<Agent name="35" comment="顶层采集代理">
+			<object name="PD-Agent05" type="sysagent"/>
+		</Agent>
+		<Agent name="36" comment="顶层采集代理">
+			<object name="PD-Agent06" type="sysagent"/>
+		</Agent>
+		<Agent name="37" comment="顶层采集代理">
+			<object name="PD-Agent07" type="sysagent"/>
+		</Agent>
+		<Agent name="38" comment="顶层采集代理">
+			<object name="PD-Agent08" type="sysagent"/>
+		</Agent>
+		<Agent name="39" comment="顶层采集代理">
+			<object name="PD-Agent09" type="sysagent"/>
+		</Agent>
+		<Agent name="40" comment="顶层采集代理">
+			<object name="MD2-PD-PD" type="sysagent"/>
+			<object name="MD2-ZJ-PD" type="sysagent"/>
+			<object name="MD2-BJ-PD" type="sysagent"/>
+			<object name="RISK-PD-PD" type="sysagent"/>
+			<object name="RISK-ZJ-PD" type="sysagent"/>
+			<object name="RISK-BJ-PD" type="sysagent"/>
+			<object name="EXCHANGE-PD37" type="sysprobe" comment="交易所管理系统 同步数据"/>
+		</Agent>
+		<Agent name="41" comment="顶层采集代理">
+			<object name="ZJ-Agent01" type="sysagent"/>
+		</Agent>
+		<Agent name="42" comment="顶层采集代理">
+			<object name="ZJ-Agent02" type="sysagent"/>
+		</Agent>
+		<Agent name="43" comment="顶层采集代理">
+			<object name="ZJ-Agent03" type="sysagent"/>
+		</Agent>
+		<Agent name="44" comment="顶层采集代理">
+			<object name="ZJ-Agent04" type="sysagent"/>
+		</Agent>
+		<Agent name="45" comment="顶层采集代理">
+			<object name="ZJ-Agent05" type="sysagent"/>
+		</Agent>
+		<Agent name="46" comment="顶层采集代理">
+			<object name="ZJ-Agent06" type="sysagent"/>
+		</Agent>
+		<Agent name="47" comment="顶层采集代理">
+			<object name="ZJ-Agent07" type="sysagent"/>
+		</Agent>
+		<Agent name="48" comment="顶层采集代理">
+			<object name="ZJ-Agent08" type="sysagent"/>
+		</Agent>
+		<Agent name="49" comment="顶层采集代理">
+			<object name="ZJ-Agent09" type="sysagent"/>
+		</Agent>
+		<Agent name="50" comment="顶层采集代理">
+			<object name="MD2-PD-ZJ" type="sysagent"/>
+			<object name="MD2-ZJ-ZJ" type="sysagent"/>
+			<object name="MD2-BJ-ZJ" type="sysagent"/>
+			<object name="RISK-PD-ZJ" type="sysagent"/>
+			<object name="RISK-ZJ-ZJ" type="sysagent"/>
+			<object name="RISK-BJ-ZJ" type="sysagent"/>
+			<object name="EXCHANGE-PD37" type="sysprobe" comment="交易所管理系统 同步数据"/>
+		</Agent>
+		<Agent name="51" comment="顶层采集代理">
+			<object name="BJ-Agent01" type="sysagent"/>
+		</Agent>
+		<Agent name="52" comment="顶层采集代理">
+			<object name="BJ-Agent02" type="sysagent"/>
+		</Agent>
+		<Agent name="53" comment="顶层采集代理">
+			<object name="BJ-Agent03" type="sysagent"/>
+		</Agent>
+		<Agent name="54" comment="顶层采集代理">
+			<object name="BJ-Agent04" type="sysagent"/>
+		</Agent>
+		<Agent name="55" comment="顶层采集代理">
+			<object name="BJ-Agent05" type="sysagent"/>
+		</Agent>
+		<Agent name="56" comment="顶层采集代理">
+			<object name="BJ-Agent06" type="sysagent"/>
+		</Agent>
+		<Agent name="57" comment="顶层采集代理">
+			<object name="BJ-Agent07" type="sysagent"/>
+		</Agent>
+		<Agent name="58" comment="顶层采集代理">
+			<object name="BJ-Agent08" type="sysagent"/>
+		</Agent>
+		<Agent name="59" comment="顶层采集代理">
+			<object name="BJ-Agent09" type="sysagent"/>
+		</Agent>
+		<Agent name="60" comment="顶层采集代理">
+			<object name="MD2-PD-BJ" type="sysagent"/>
+			<object name="MD2-ZJ-BJ" type="sysagent"/>
+			<object name="MD2-BJ-BJ" type="sysagent"/>
+			<object name="RISK-PD-BJ" type="sysagent"/>
+			<object name="RISK-ZJ-BJ" type="sysagent"/>
+			<object name="RISK-BJ-BJ" type="sysagent"/>
+			<object name="EXCHANGE-PD37" type="sysprobe" comment="交易所管理系统 同步数据"/>
+		</Agent>
+		<!--中转采集代理 TRADE-->
+		<Agent name="BJ-PD-Agent" address="tcp://192.168.77.35:18809">
+			<object name="TRADE-BJ01" type="sysprobe" comment="BJ"/>
+			<object name="TRADE-BJ02" type="sysprobe" comment="BJ"/>
+		</Agent>
+		<Agent name="BJ-ZJ-Agent" address="tcp://172.18.38.45:18809">
+			<object name="TRADE-BJ01" type="sysprobe" comment="BJ"/>
+			<object name="TRADE-BJ02" type="sysprobe" comment="BJ"/>
+		</Agent>
+		<Agent name="BJ-BJ-Agent" address="tcp://172.18.38.45:18810">
+			<object name="TRADE-BJ01" type="sysprobe" comment="BJ"/>
+			<object name="TRADE-BJ02" type="sysprobe" comment="BJ"/>
+		</Agent>
+		<Agent name="PD-Agent01" address="tcp://192.168.77.51:18801">
+			<object name="TRADE-PD10" type="sysprobe" comment="A-BE03:arb"/>
+			<object name="TRADE-PD11" type="sysprobe" comment="A-BA01:comp1 fiblogger1"/>
+			<object name="TRADE-PD12" type="sysprobe" comment="A-BC01:comp2 fiblogger2"/>
+			<object name="TRADE-PD13" type="sysprobe" comment="A-BA02:tkernel1"/>
+			<object name="TRADE-PD14" type="sysprobe" comment="A-BC02:tkernel2"/>
+			<object name="TRADE-PD15" type="sysprobe" comment="A-BA03:qkernel1"/>
+			<object name="TRADE-PD16" type="sysprobe" comment="A-BC03:qkernel2"/>
+			<object name="TRADE-PD51" type="sysprobe" comment="A-BE01:config"/>
+			<object name="TRADE-PD52" type="sysprobe" comment="A-BE02:monitor"/>
+			<object name="TRADE-PD58" type="sysprobe" comment="A-BA04:tmdb"/>
+			<object name="TRADE-PD59" type="sysprobe" comment="A-BC04:tinit"/>
+			<!--
+			&lt;object name=&quot;BJ-PD-Agent&quot; type=&quot;sysagent&quot; comment=&quot;中转采集代理&quot;/&gt;
+-->
+		</Agent>
+		<Agent name="PD-Agent02" address="tcp://192.168.77.51:18802">
+			<object name="TRADE-PD31" type="sysprobe" comment="A-BD02:front1 mdkernel1 fens1 ofpmd1"/>
+			<object name="TRADE-PD32" type="sysprobe" comment="A-BB03:front2 mdkernel2 fens2"/>
+			<object name="TRADE-PD33" type="sysprobe" comment="A-BD03:front3 mdkernel3 fens3 ofpmd2"/>
+			<object name="TRADE-PD34" type="sysprobe" comment="A-BB04:front4 mdkernel4 fens4"/>
+		</Agent>
+		<Agent name="PD-Agent03" address="tcp://192.168.77.51:18803">
+			<object name="TRADE-PD35" type="sysprobe" comment="A-BB01:front5 mdkernel5 fens5 ofpmd3 fibproxy3"/>
+			<object name="TRADE-PD36" type="sysprobe" comment="A-BD04:front6 mdkernel6"/>
+			<object name="TRADE-PD37" type="sysprobe" comment="A-BD01:front7 mdkernel7 fibproxy1"/>
+			<object name="TRADE-PD38" type="sysprobe" comment="A-BB02:front8 mdkernel8 fibproxy2"/>
+		</Agent>
+		<Agent name="PD-Agent04" address="tcp://192.168.77.51:18804">
+			<object name="TRADE-ZJ20" type="sysprobe" comment="B-AG03:arb"/>
+			<object name="TRADE-ZJ21" type="sysprobe" comment="B-AC01:comp1 fiblogger1"/>
+			<object name="TRADE-ZJ22" type="sysprobe" comment="B-AE01:comp2 fiblogger2"/>
+			<object name="TRADE-ZJ23" type="sysprobe" comment="B-AC02:tkernel1"/>
+			<object name="TRADE-ZJ24" type="sysprobe" comment="B-AE02:tkernel2"/>
+			<object name="TRADE-ZJ25" type="sysprobe" comment="B-AC03:qkernel1"/>
+			<object name="TRADE-ZJ26" type="sysprobe" comment="B-AE03:qkernel2"/>
+			<object name="TRADE-ZJ61" type="sysprobe" comment="B-AG01:config"/>
+			<object name="TRADE-ZJ62" type="sysprobe" comment="B-AG02:monitor"/>
+			<object name="TRADE-ZJ68" type="sysprobe" comment="B-AC04:tmdb"/>
+			<object name="TRADE-ZJ69" type="sysprobe" comment="B-AE04:tinit"/>
+		</Agent>
+		<Agent name="PD-Agent05" address="tcp://192.168.77.51:18805">
+			<object name="TRADE-ZJ41" type="sysprobe" comment="B-AF02:front1 mdkernel1 fens1 ofpmd1"/>
+			<object name="TRADE-ZJ42" type="sysprobe" comment="B-AD03:front2 mdkernel2 fens2"/>
+			<object name="TRADE-ZJ43" type="sysprobe" comment="B-AF03:front3 mdkernel3"/>
+			<object name="TRADE-ZJ44" type="sysprobe" comment="B-AD04:front4 mdkernel4"/>
+		</Agent>
+		<Agent name="PD-Agent06" address="tcp://192.168.77.51:18806">
+			<object name="TRADE-ZJ45" type="sysprobe" comment="B-AD01:front5 mdkernel5 fens3 ofpmd2 fibproxy3"/>
+			<object name="TRADE-ZJ46" type="sysprobe" comment="B-AF04:front6 mdkernel6"/>
+			<object name="TRADE-ZJ47" type="sysprobe" comment="B-AF01:front7 mdkernel7 fibproxy1"/>
+			<object name="TRADE-ZJ48" type="sysprobe" comment="B-AD02:front8 mdkernel8 fibproxy2"/>
+		</Agent>
+		<Agent name="PD-Agent07" address="tcp://192.168.77.51:18807">
+			<object name="TRADE-BJ10" type="sysprobe"/>
+			<object name="TRADE-BJ11" type="sysprobe"/>
+			<object name="TRADE-BJ12" type="sysprobe"/>
+			<object name="TRADE-BJ13" type="sysprobe"/>
+			<object name="TRADE-BJ14" type="sysprobe"/>
+			<object name="TRADE-BJ15" type="sysprobe"/>
+			<object name="TRADE-BJ16" type="sysprobe"/>
+			<object name="TRADE-BJ17" type="sysprobe"/>
+			<object name="TRADE-BJ18" type="sysprobe"/>
+			<object name="TRADE-BJ51" type="sysprobe"/>
+			<object name="TRADE-BJ52" type="sysprobe"/>
+			<object name="TRADE-BJ58" type="sysprobe"/>
+			<object name="TRADE-BJ59" type="sysprobe"/>
+		</Agent>
+		<Agent name="PD-Agent08" address="tcp://192.168.77.51:18808">
+			<object name="TRADE-BJ31" type="sysprobe"/>
+			<object name="TRADE-BJ32" type="sysprobe"/>
+			<object name="TRADE-BJ33" type="sysprobe"/>
+			<object name="TRADE-BJ34" type="sysprobe"/>
+		</Agent>
+		<Agent name="PD-Agent09" address="tcp://192.168.77.51:18809">
+			<object name="TRADE-BJ35" type="sysprobe"/>
+			<object name="TRADE-BJ36" type="sysprobe"/>
+			<object name="TRADE-BJ37" type="sysprobe"/>
+			<object name="TRADE-BJ38" type="sysprobe"/>
+		</Agent>
+		<Agent name="ZJ-Agent01" address="tcp://172.18.38.61:18801">
+			<object name="TRADE-PD10" type="sysprobe" comment="A-BE03:arb"/>
+			<object name="TRADE-PD11" type="sysprobe" comment="A-BA01:comp1 fiblogger1"/>
+			<object name="TRADE-PD12" type="sysprobe" comment="A-BC01:comp2 fiblogger2"/>
+			<object name="TRADE-PD13" type="sysprobe" comment="A-BA02:tkernel1"/>
+			<object name="TRADE-PD14" type="sysprobe" comment="A-BC02:tkernel2"/>
+			<object name="TRADE-PD15" type="sysprobe" comment="A-BA03:qkernel1"/>
+			<object name="TRADE-PD16" type="sysprobe" comment="A-BC03:qkernel2"/>
+			<object name="TRADE-PD51" type="sysprobe" comment="A-BE01:config"/>
+			<object name="TRADE-PD52" type="sysprobe" comment="A-BE02:monitor"/>
+			<object name="TRADE-PD58" type="sysprobe" comment="A-BA04:tmdb"/>
+			<object name="TRADE-PD59" type="sysprobe" comment="A-BC04:tinit"/>
+			<!--
+			&lt;object name=&quot;BJ-ZJ-Agent&quot; type=&quot;sysagent&quot; comment=&quot;中转采集代理&quot;/&gt;
+-->
+		</Agent>
+		<Agent name="ZJ-Agent02" address="tcp://172.18.38.61:18802">
+			<object name="TRADE-PD31" type="sysprobe" comment="A-BD02:front1 mdkernel1 fens1 ofpmd1"/>
+			<object name="TRADE-PD32" type="sysprobe" comment="A-BB03:front2 mdkernel2 fens2"/>
+			<object name="TRADE-PD33" type="sysprobe" comment="A-BD03:front3 mdkernel3 fens3 ofpmd2"/>
+			<object name="TRADE-PD34" type="sysprobe" comment="A-BB04:front4 mdkernel4 fens4"/>
+		</Agent>
+		<Agent name="ZJ-Agent03" address="tcp://172.18.38.61:18803">
+			<object name="TRADE-PD35" type="sysprobe" comment="A-BB01:front5 mdkernel5 fens5 ofpmd3 fibproxy3"/>
+			<object name="TRADE-PD36" type="sysprobe" comment="A-BD04:front6 mdkernel6"/>
+			<object name="TRADE-PD37" type="sysprobe" comment="A-BD01:front7 mdkernel7 fibproxy1"/>
+			<object name="TRADE-PD38" type="sysprobe" comment="A-BB02:front8 mdkernel8 fibproxy2"/>
+		</Agent>
+		<Agent name="ZJ-Agent04" address="tcp://172.18.38.61:18804">
+			<object name="TRADE-ZJ20" type="sysprobe" comment="B-AG03:arb"/>
+			<object name="TRADE-ZJ21" type="sysprobe" comment="B-AC01:comp1 fiblogger1"/>
+			<object name="TRADE-ZJ22" type="sysprobe" comment="B-AE01:comp2 fiblogger2"/>
+			<object name="TRADE-ZJ23" type="sysprobe" comment="B-AC02:tkernel1"/>
+			<object name="TRADE-ZJ24" type="sysprobe" comment="B-AE02:tkernel2"/>
+			<object name="TRADE-ZJ25" type="sysprobe" comment="B-AC03:qkernel1"/>
+			<object name="TRADE-ZJ26" type="sysprobe" comment="B-AE03:qkernel2"/>
+			<object name="TRADE-ZJ61" type="sysprobe" comment="B-AG01:config"/>
+			<object name="TRADE-ZJ62" type="sysprobe" comment="B-AG02:monitor"/>
+			<object name="TRADE-ZJ68" type="sysprobe" comment="B-AC04:tmdb"/>
+			<object name="TRADE-ZJ69" type="sysprobe" comment="B-AE04:tinit"/>
+		</Agent>
+		<Agent name="ZJ-Agent05" address="tcp://172.18.38.61:18805">
+			<object name="TRADE-ZJ41" type="sysprobe" comment="B-AF02:front1 mdkernel1 fens1 ofpmd1"/>
+			<object name="TRADE-ZJ42" type="sysprobe" comment="B-AD03:front2 mdkernel2 fens2"/>
+			<object name="TRADE-ZJ43" type="sysprobe" comment="B-AF03:front3 mdkernel3"/>
+			<object name="TRADE-ZJ44" type="sysprobe" comment="B-AD04:front4 mdkernel4"/>
+		</Agent>
+		<Agent name="ZJ-Agent06" address="tcp://172.18.38.61:18806">
+			<object name="TRADE-ZJ45" type="sysprobe" comment="B-AD01:front5 mdkernel5 fens3 ofpmd2 fibproxy3"/>
+			<object name="TRADE-ZJ46" type="sysprobe" comment="B-AF04:front6 mdkernel6"/>
+			<object name="TRADE-ZJ47" type="sysprobe" comment="B-AF01:front7 mdkernel7 fibproxy1"/>
+			<object name="TRADE-ZJ48" type="sysprobe" comment="B-AD02:front8 mdkernel8 fibproxy2"/>
+		</Agent>
+		<Agent name="ZJ-Agent07" address="tcp://172.18.38.61:18807">
+			<object name="TRADE-BJ10" type="sysprobe"/>
+			<object name="TRADE-BJ11" type="sysprobe"/>
+			<object name="TRADE-BJ12" type="sysprobe"/>
+			<object name="TRADE-BJ13" type="sysprobe"/>
+			<object name="TRADE-BJ14" type="sysprobe"/>
+			<object name="TRADE-BJ15" type="sysprobe"/>
+			<object name="TRADE-BJ16" type="sysprobe"/>
+			<object name="TRADE-BJ17" type="sysprobe"/>
+			<object name="TRADE-BJ18" type="sysprobe"/>
+			<object name="TRADE-BJ51" type="sysprobe"/>
+			<object name="TRADE-BJ52" type="sysprobe"/>
+			<object name="TRADE-BJ58" type="sysprobe"/>
+			<object name="TRADE-BJ59" type="sysprobe"/>
+		</Agent>
+		<Agent name="ZJ-Agent08" address="tcp://172.18.38.61:18808">
+			<object name="TRADE-BJ31" type="sysprobe"/>
+			<object name="TRADE-BJ32" type="sysprobe"/>
+			<object name="TRADE-BJ33" type="sysprobe"/>
+			<object name="TRADE-BJ34" type="sysprobe"/>
+		</Agent>
+		<Agent name="ZJ-Agent09" address="tcp://172.18.38.61:18809">
+			<object name="TRADE-BJ35" type="sysprobe"/>
+			<object name="TRADE-BJ36" type="sysprobe"/>
+			<object name="TRADE-BJ37" type="sysprobe"/>
+			<object name="TRADE-BJ38" type="sysprobe"/>
+		</Agent>
+		<Agent name="BJ-Agent01" address="tcp://172.23.38.51:18801">
+			<object name="TRADE-PD10" type="sysprobe" comment="A-BE03:arb"/>
+			<object name="TRADE-PD11" type="sysprobe" comment="A-BA01:comp1 fiblogger1"/>
+			<object name="TRADE-PD12" type="sysprobe" comment="A-BC01:comp2 fiblogger2"/>
+			<object name="TRADE-PD13" type="sysprobe" comment="A-BA02:tkernel1"/>
+			<object name="TRADE-PD14" type="sysprobe" comment="A-BC02:tkernel2"/>
+			<object name="TRADE-PD15" type="sysprobe" comment="A-BA03:qkernel1"/>
+			<object name="TRADE-PD16" type="sysprobe" comment="A-BC03:qkernel2"/>
+			<object name="TRADE-PD51" type="sysprobe" comment="A-BE01:config"/>
+			<object name="TRADE-PD52" type="sysprobe" comment="A-BE02:monitor"/>
+			<object name="TRADE-PD58" type="sysprobe" comment="A-BA04:tmdb"/>
+			<object name="TRADE-PD59" type="sysprobe" comment="A-BC04:tinit"/>
+			<!--
+			&lt;object name=&quot;BJ-BJ-Agent&quot; type=&quot;sysagent&quot; comment=&quot;中转采集代理&quot;/&gt;
+-->
+		</Agent>
+		<Agent name="BJ-Agent02" address="tcp://172.23.38.51:18802">
+			<object name="TRADE-PD31" type="sysprobe" comment="A-BD02:front1 mdkernel1 fens1 ofpmd1"/>
+			<object name="TRADE-PD32" type="sysprobe" comment="A-BB03:front2 mdkernel2 fens2"/>
+			<object name="TRADE-PD33" type="sysprobe" comment="A-BD03:front3 mdkernel3 fens3 ofpmd2"/>
+			<object name="TRADE-PD34" type="sysprobe" comment="A-BB04:front4 mdkernel4 fens4"/>
+		</Agent>
+		<Agent name="BJ-Agent03" address="tcp://172.23.38.51:18803">
+			<object name="TRADE-PD35" type="sysprobe" comment="A-BB01:front5 mdkernel5 fens5 ofpmd3 fibproxy3"/>
+			<object name="TRADE-PD36" type="sysprobe" comment="A-BD04:front6 mdkernel6"/>
+			<object name="TRADE-PD37" type="sysprobe" comment="A-BD01:front7 mdkernel7 fibproxy1"/>
+			<object name="TRADE-PD38" type="sysprobe" comment="A-BB02:front8 mdkernel8 fibproxy2"/>
+		</Agent>
+		<Agent name="BJ-Agent04" address="tcp://172.23.38.51:18804">
+			<object name="TRADE-ZJ20" type="sysprobe" comment="B-AG03:arb"/>
+			<object name="TRADE-ZJ21" type="sysprobe" comment="B-AC01:comp1 fiblogger1"/>
+			<object name="TRADE-ZJ22" type="sysprobe" comment="B-AE01:comp2 fiblogger2"/>
+			<object name="TRADE-ZJ23" type="sysprobe" comment="B-AC02:tkernel1"/>
+			<object name="TRADE-ZJ24" type="sysprobe" comment="B-AE02:tkernel2"/>
+			<object name="TRADE-ZJ25" type="sysprobe" comment="B-AC03:qkernel1"/>
+			<object name="TRADE-ZJ26" type="sysprobe" comment="B-AE03:qkernel2"/>
+			<object name="TRADE-ZJ61" type="sysprobe" comment="B-AG01:config"/>
+			<object name="TRADE-ZJ62" type="sysprobe" comment="B-AG02:monitor"/>
+			<object name="TRADE-ZJ68" type="sysprobe" comment="B-AC04:tmdb"/>
+			<object name="TRADE-ZJ69" type="sysprobe" comment="B-AE04:tinit"/>
+		</Agent>
+		<Agent name="BJ-Agent05" address="tcp://172.23.38.51:18805">
+			<object name="TRADE-ZJ41" type="sysprobe" comment="B-AF02:front1 mdkernel1 fens1 ofpmd1"/>
+			<object name="TRADE-ZJ42" type="sysprobe" comment="B-AD03:front2 mdkernel2 fens2"/>
+			<object name="TRADE-ZJ43" type="sysprobe" comment="B-AF03:front3 mdkernel3"/>
+			<object name="TRADE-ZJ44" type="sysprobe" comment="B-AD04:front4 mdkernel4"/>
+		</Agent>
+		<Agent name="BJ-Agent06" address="tcp://172.23.38.51:18806">
+			<object name="TRADE-ZJ45" type="sysprobe" comment="B-AD01:front5 mdkernel5 fens3 ofpmd2 fibproxy3"/>
+			<object name="TRADE-ZJ46" type="sysprobe" comment="B-AF04:front6 mdkernel6"/>
+			<object name="TRADE-ZJ47" type="sysprobe" comment="B-AF01:front7 mdkernel7 fibproxy1"/>
+			<object name="TRADE-ZJ48" type="sysprobe" comment="B-AD02:front8 mdkernel8 fibproxy2"/>
+		</Agent>
+		<Agent name="BJ-Agent07" address="tcp://172.23.38.51:18807">
+			<object name="TRADE-BJ10" type="sysprobe"/>
+			<object name="TRADE-BJ11" type="sysprobe"/>
+			<object name="TRADE-BJ12" type="sysprobe"/>
+			<object name="TRADE-BJ13" type="sysprobe"/>
+			<object name="TRADE-BJ14" type="sysprobe"/>
+			<object name="TRADE-BJ15" type="sysprobe"/>
+			<object name="TRADE-BJ16" type="sysprobe"/>
+			<object name="TRADE-BJ17" type="sysprobe"/>
+			<object name="TRADE-BJ18" type="sysprobe"/>
+			<object name="TRADE-BJ51" type="sysprobe"/>
+			<object name="TRADE-BJ52" type="sysprobe"/>
+			<object name="TRADE-BJ58" type="sysprobe"/>
+			<object name="TRADE-BJ59" type="sysprobe"/>
+		</Agent>
+		<Agent name="BJ-Agent08" address="tcp://172.23.38.51:18808">
+			<object name="TRADE-BJ31" type="sysprobe"/>
+			<object name="TRADE-BJ32" type="sysprobe"/>
+			<object name="TRADE-BJ33" type="sysprobe"/>
+			<object name="TRADE-BJ34" type="sysprobe"/>
+		</Agent>
+		<Agent name="BJ-Agent09" address="tcp://172.23.38.51:18809">
+			<object name="TRADE-BJ35" type="sysprobe"/>
+			<object name="TRADE-BJ36" type="sysprobe"/>
+			<object name="TRADE-BJ37" type="sysprobe"/>
+			<object name="TRADE-BJ38" type="sysprobe"/>
+		</Agent>
+		<!--中转采集代理 MD2  -->
+		<Agent name="MD2-PD-PD" address="tcp://192.168.83.162:18801">
+			<object name="MD2-PD-MDF1" type="sysprobe"/>
+			<object name="MD2-PD-MDF2" type="sysprobe"/>
+			<object name="MD2-PD-MDM1" type="sysprobe"/>
+			<object name="MD2-PD-MDM2" type="sysprobe"/>
+		</Agent>
+		<Agent name="MD2-PD-ZJ" address="tcp://192.168.83.162:18802">
+			<object name="MD2-PD-MDF1" type="sysprobe"/>
+			<object name="MD2-PD-MDF2" type="sysprobe"/>
+			<object name="MD2-PD-MDM1" type="sysprobe"/>
+			<object name="MD2-PD-MDM2" type="sysprobe"/>
+		</Agent>
+		<Agent name="MD2-PD-BJ" address="tcp://192.168.83.162:18803">
+			<object name="MD2-PD-MDF1" type="sysprobe"/>
+			<object name="MD2-PD-MDF2" type="sysprobe"/>
+			<object name="MD2-PD-MDM1" type="sysprobe"/>
+			<object name="MD2-PD-MDM2" type="sysprobe"/>
+		</Agent>
+		<Agent name="MD2-ZJ-PD" address="tcp://172.18.33.81:18801">
+			<object name="MD2-ZJ-MDF1" type="sysprobe"/>
+			<object name="MD2-ZJ-MDF2" type="sysprobe"/>
+			<object name="MD2-ZJ-MDM1" type="sysprobe"/>
+			<object name="MD2-ZJ-MDM2" type="sysprobe"/>
+		</Agent>
+		<Agent name="MD2-ZJ-ZJ" address="tcp://172.18.33.81:18802">
+			<object name="MD2-ZJ-MDF1" type="sysprobe"/>
+			<object name="MD2-ZJ-MDF2" type="sysprobe"/>
+			<object name="MD2-ZJ-MDM1" type="sysprobe"/>
+			<object name="MD2-ZJ-MDM2" type="sysprobe"/>
+		</Agent>
+		<Agent name="MD2-ZJ-BJ" address="tcp://172.18.33.81:18803">
+			<object name="MD2-ZJ-MDF1" type="sysprobe"/>
+			<object name="MD2-ZJ-MDF2" type="sysprobe"/>
+			<object name="MD2-ZJ-MDM1" type="sysprobe"/>
+			<object name="MD2-ZJ-MDM2" type="sysprobe"/>
+		</Agent>
+		<Agent name="MD2-BJ-PD" address="tcp://172.23.33.161:18801">
+			<object name="MD2-BJ-MDF1" type="sysprobe"/>
+			<object name="MD2-BJ-MDF2" type="sysprobe"/>
+			<object name="MD2-BJ-MDM1" type="sysprobe"/>
+			<object name="MD2-BJ-MDM2" type="sysprobe"/>
+		</Agent>
+		<Agent name="MD2-BJ-ZJ" address="tcp://172.23.33.161:18802">
+			<object name="MD2-BJ-MDF1" type="sysprobe"/>
+			<object name="MD2-BJ-MDF2" type="sysprobe"/>
+			<object name="MD2-BJ-MDM1" type="sysprobe"/>
+			<object name="MD2-BJ-MDM2" type="sysprobe"/>
+		</Agent>
+		<Agent name="MD2-BJ-BJ" address="tcp://172.23.33.161:18803">
+			<object name="MD2-BJ-MDF1" type="sysprobe"/>
+			<object name="MD2-BJ-MDF2" type="sysprobe"/>
+			<object name="MD2-BJ-MDM1" type="sysprobe"/>
+			<object name="MD2-BJ-MDM2" type="sysprobe"/>
+		</Agent>
+		<!--中转采集代理 RISK -->
+		<Agent name="RISK-PD-PD" address="tcp://192.168.85.151:18801">
+			<object name="RISK-PD-RA" type="sysprobe"/>
+			<object name="RISK-PD-RC1" type="sysprobe"/>
+			<object name="RISK-PD-RC2" type="sysprobe"/>
+			<object name="RISK-PD-RE1" type="sysprobe"/>
+			<object name="RISK-PD-RE2" type="sysprobe"/>
+			<object name="RISK-PD-RF1" type="sysprobe"/>
+			<object name="RISK-PD-RF2" type="sysprobe"/>
+			<object name="RISK-PD-CFG" type="sysprobe"/>
+			<object name="RISK-PD-DBF" type="sysprobe"/>
+			<object name="RISK-PD-RDB1" type="sysprobe"/>
+			<object name="RISK-PD-RDB2" type="sysprobe"/>
+		</Agent>
+		<Agent name="RISK-PD-ZJ" address="tcp://192.168.85.151:18802">
+			<object name="RISK-PD-RA" type="sysprobe"/>
+			<object name="RISK-PD-RC1" type="sysprobe"/>
+			<object name="RISK-PD-RC2" type="sysprobe"/>
+			<object name="RISK-PD-RE1" type="sysprobe"/>
+			<object name="RISK-PD-RE2" type="sysprobe"/>
+			<object name="RISK-PD-RF1" type="sysprobe"/>
+			<object name="RISK-PD-RF2" type="sysprobe"/>
+			<object name="RISK-PD-CFG" type="sysprobe"/>
+			<object name="RISK-PD-DBF" type="sysprobe"/>
+			<object name="RISK-PD-RDB1" type="sysprobe"/>
+			<object name="RISK-PD-RDB2" type="sysprobe"/>
+		</Agent>
+		<Agent name="RISK-PD-BJ" address="tcp://192.168.85.151:18803">
+			<object name="RISK-PD-RA" type="sysprobe"/>
+			<object name="RISK-PD-RC1" type="sysprobe"/>
+			<object name="RISK-PD-RC2" type="sysprobe"/>
+			<object name="RISK-PD-RE1" type="sysprobe"/>
+			<object name="RISK-PD-RE2" type="sysprobe"/>
+			<object name="RISK-PD-RF1" type="sysprobe"/>
+			<object name="RISK-PD-RF2" type="sysprobe"/>
+			<object name="RISK-PD-CFG" type="sysprobe"/>
+			<object name="RISK-PD-DBF" type="sysprobe"/>
+			<object name="RISK-PD-RDB1" type="sysprobe"/>
+			<object name="RISK-PD-RDB2" type="sysprobe"/>
+		</Agent>
+		<Agent name="RISK-ZJ-PD" address="tcp://172.18.44.51:18801">
+			<object name="RISK-ZJ-RA" type="sysprobe"/>
+			<object name="RISK-ZJ-RC1" type="sysprobe"/>
+			<object name="RISK-ZJ-RC2" type="sysprobe"/>
+			<object name="RISK-ZJ-RE1" type="sysprobe"/>
+			<object name="RISK-ZJ-RE2" type="sysprobe"/>
+			<object name="RISK-ZJ-RTE1" type="sysprobe"/>
+			<object name="RISK-ZJ-RTE2" type="sysprobe"/>
+			<object name="RISK-ZJ-RF1" type="sysprobe"/>
+			<object name="RISK-ZJ-RF2" type="sysprobe"/>
+			<object name="RISK-ZJ-CFG" type="sysprobe"/>
+			<object name="RISK-ZJ-DBF" type="sysprobe"/>
+			<object name="RISK-ZJ-RDB1" type="sysprobe"/>
+			<object name="RISK-ZJ-RDB2" type="sysprobe"/>
+		</Agent>
+		<Agent name="RISK-ZJ-ZJ" address="tcp://172.18.44.51:18802">
+			<object name="RISK-ZJ-RA" type="sysprobe"/>
+			<object name="RISK-ZJ-RC1" type="sysprobe"/>
+			<object name="RISK-ZJ-RC2" type="sysprobe"/>
+			<object name="RISK-ZJ-RE1" type="sysprobe"/>
+			<object name="RISK-ZJ-RE2" type="sysprobe"/>
+			<object name="RISK-ZJ-RTE1" type="sysprobe"/>
+			<object name="RISK-ZJ-RTE2" type="sysprobe"/>
+			<object name="RISK-ZJ-RF1" type="sysprobe"/>
+			<object name="RISK-ZJ-RF2" type="sysprobe"/>
+			<object name="RISK-ZJ-CFG" type="sysprobe"/>
+			<object name="RISK-ZJ-DBF" type="sysprobe"/>
+			<object name="RISK-ZJ-RDB1" type="sysprobe"/>
+			<object name="RISK-ZJ-RDB2" type="sysprobe"/>
+		</Agent>
+		<Agent name="RISK-ZJ-BJ" address="tcp://172.18.44.51:18803">
+			<object name="RISK-ZJ-RA" type="sysprobe"/>
+			<object name="RISK-ZJ-RC1" type="sysprobe"/>
+			<object name="RISK-ZJ-RC2" type="sysprobe"/>
+			<object name="RISK-ZJ-RE1" type="sysprobe"/>
+			<object name="RISK-ZJ-RE2" type="sysprobe"/>
+			<object name="RISK-ZJ-RTE1" type="sysprobe"/>
+			<object name="RISK-ZJ-RTE2" type="sysprobe"/>
+			<object name="RISK-ZJ-RF1" type="sysprobe"/>
+			<object name="RISK-ZJ-RF2" type="sysprobe"/>
+			<object name="RISK-ZJ-CFG" type="sysprobe"/>
+			<object name="RISK-ZJ-DBF" type="sysprobe"/>
+			<object name="RISK-ZJ-RDB1" type="sysprobe"/>
+			<object name="RISK-ZJ-RDB2" type="sysprobe"/>
+		</Agent>
+		<Agent name="RISK-BJ-PD" address="tcp://172.23.44.30:18801">
+			<object name="RISK-BJ-RA" type="sysprobe"/>
+			<object name="RISK-BJ-RF1" type="sysprobe"/>
+			<object name="RISK-BJ-RF2" type="sysprobe"/>
+			<object name="RISK-BJ-RE1" type="sysprobe"/>
+			<object name="RISK-BJ-RE2" type="sysprobe"/>
+			<object name="RISK-BJ-RTE1" type="sysprobe"/>
+			<object name="RISK-BJ-RTE2" type="sysprobe"/>
+			<object name="RISK-BJ-RC1" type="sysprobe"/>
+			<object name="RISK-BJ-RC2" type="sysprobe"/>
+			<object name="RISK-BJ-CFG" type="sysprobe"/>
+			<object name="RISK-BJ-DBF" type="sysprobe"/>
+			<object name="RISK-BJ-RDB1" type="sysprobe"/>
+			<object name="RISK-BJ-RDB2" type="sysprobe"/>
+		</Agent>
+		<Agent name="RISK-BJ-ZJ" address="tcp://172.23.44.30:18802">
+			<object name="RISK-BJ-RA" type="sysprobe"/>
+			<object name="RISK-BJ-RF1" type="sysprobe"/>
+			<object name="RISK-BJ-RF2" type="sysprobe"/>
+			<object name="RISK-BJ-RE1" type="sysprobe"/>
+			<object name="RISK-BJ-RE2" type="sysprobe"/>
+			<object name="RISK-BJ-RTE1" type="sysprobe"/>
+			<object name="RISK-BJ-RTE2" type="sysprobe"/>
+			<object name="RISK-BJ-RC1" type="sysprobe"/>
+			<object name="RISK-BJ-RC2" type="sysprobe"/>
+			<object name="RISK-BJ-CFG" type="sysprobe"/>
+			<object name="RISK-BJ-DBF" type="sysprobe"/>
+			<object name="RISK-BJ-RDB1" type="sysprobe"/>
+			<object name="RISK-BJ-RDB2" type="sysprobe"/>
+		</Agent>
+		<Agent name="RISK-BJ-BJ" address="tcp://172.23.44.30:18803">
+			<object name="RISK-BJ-RA" type="sysprobe"/>
+			<object name="RISK-BJ-RF1" type="sysprobe"/>
+			<object name="RISK-BJ-RF2" type="sysprobe"/>
+			<object name="RISK-BJ-RE1" type="sysprobe"/>
+			<object name="RISK-BJ-RE2" type="sysprobe"/>
+			<object name="RISK-BJ-RTE1" type="sysprobe"/>
+			<object name="RISK-BJ-RTE2" type="sysprobe"/>
+			<object name="RISK-BJ-RC1" type="sysprobe"/>
+			<object name="RISK-BJ-RC2" type="sysprobe"/>
+			<object name="RISK-BJ-CFG" type="sysprobe"/>
+			<object name="RISK-BJ-DBF" type="sysprobe"/>
+			<object name="RISK-BJ-RDB1" type="sysprobe"/>
+			<object name="RISK-BJ-RDB2" type="sysprobe"/>
+		</Agent>
+		<!--中转采集代理 MONITOR -->
+		<Agent name="PD-EventAgent" address="tcp://192.168.85.11:18809" comment="用于非实时业务监控系统">
+			<object name="Event-PD" type="sysprobe" comment=""/>
+		</Agent>
+		<Agent name="ZJ-EventAgent" address="tcp://172.18.33.193:18809" comment="用于非实时业务监控系统">
+			<object name="Event-ZJ" type="sysprobe" comment=""/>
+		</Agent>
+		<Agent name="BJ-EventAgent" address="tcp://172.23.35.11:18809" comment="用于非实时业务监控系统">
+			<object name="Event-BJ" type="sysprobe" comment=""/>
+		</Agent>
+	</Agents>
+	<HostConfig>
+		<Common>
+			<Timers>
+				<Object name="HostEnv" seps="10" comment="主机环境信息采样定时器"/>
+				<Object name="CPU" seps="3" comment="主机CPU信息采样定时器"/>
+				<Object name="Memory" seps="10" comment="主机内存信息采样定时器"/>
+				<Object name="Disk" seps="10" comment="主机硬盘信息采样定时器"/>
+				<Object name="User" seps="10" comment="主机用户信息采样定时器"/>
+				<Object name="Network" seps="3" comment="主机网络信息采样定时器"/>
+				<Object name="Process" seps="3" comment="主机进程信息采样定时器"/>
+				<Object name="SystemLog" seps="1" comment="系统日志信息采样定时器"/>
+				<Object name="AppSyslog" seps="1" comment="业务进程日志信息采样定时器"/>
+			</Timers>
+		</Common>
+		<System name="TRADE" alias="交易系统">
+			<Common>
+				<Timers>
+					<Object name="SessionLog" seps="1" comment="会话日志信息采样定时器"/>
+					<Object name="KeyFile" seps="1" comment="关键文件信息采样定时器"/>
+					<Object name="DfmtLog" seps="5" comment="DFMT文件信息采样定时器"/>
+					<Object name="Database" seps="120" comment="数据库表信息采样定时器"/>
+				</Timers>
+				<ConfigFiles>
+					<Object name="hostenv" path="/var/opt/ignite/local/manifest/manifest" comment="主机环境变量配置文件路径"/>
+					<Object name="netconf" path="/etc/rc.config.d/netconf" comment="主机IP地址配置文件路径"/>
+				</ConfigFiles>
+				<SystemLog>
+					<Object name="syslog.log" path="/var/adm/syslog/syslog.log" comment="主机系统的日志文件"/>
+				</SystemLog>
+			</Common>
+			<Host name="Event-PD" address="tcp://10.0.1.16:18825" hostname="jk_event_pd" datacenter="PuDian" comment="syseventcounter" alias="event.pd" process="主要进程:
+syseventcounter" treeview="false"/>
+			<Host name="Event-ZJ" address="tcp://10.0.1.16:18825" hostname="jk_event_zj" datacenter="ZhangJ" comment="syseventcounter" alias="event.zj" process="主要进程:
+syseventcounter" treeview="false"/>
+			<Host name="Event-BJ" address="tcp://10.0.1.16:18825" hostname="jk_event_bj" datacenter="BeiJing" comment="syseventcounter" alias="event.bj" process="主要进程:
+syseventcounter" treeview="false"/>
+			<Host name="TRADE-PD10" address="tcp://192.168.77.10:18800" hostname="arb_pd" datacenter="PuDian" comment="arb" hostrack="BE" position="3" alias="arb" process="主要进程:
+arb">
+				<AppSyslogs>
+					<Object name="arb" item="0" path="/home/PTrade/arb1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-PD11" address="tcp://192.168.77.11:18800" hostname="compositor1_pd" datacenter="PuDian" comment="compositor1 fiblogger1" hostrack="BA" position="1" alias="comp1" process="主要进程:
+comp1
+fiblogger1">
+				<AppSyslogs>
+					<Object name="compositor" item="1" path="/home/PTrade/compositor1/dump/Syslog.log" root="/home"/>
+					<Object name="fiblogger" item="1" path="/home/PTrade/fiblogger1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-PD12" address="tcp://192.168.77.12:18800" hostname="compositor2_pd" datacenter="PuDian" comment="compositor2 fiblogger2" hostrack="BC" position="1" alias="comp2" process="主要进程:
+comp2
+fiblogger2">
+				<AppSyslogs>
+					<Object name="compositor" item="2" path="/home/PTrade/compositor2/dump/Syslog.log" root="/home"/>
+					<Object name="fiblogger" item="2" path="/home/PTrade/fiblogger2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-PD13" address="tcp://192.168.77.13:18800" hostname="tkernel1_pd" datacenter="PuDian" comment="tkernel1" hostrack="BA" position="2" alias="tkernel1" process="主要进程:
+tkernel1">
+				<AppSyslogs>
+					<Object name="tkernel" item="1" path="/home/PTrade/tkernel1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<KeyFile>
+					<Object name="check.txt" path="/home/PTrade/tkernel1/dump/check.txt" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+			<Host name="TRADE-PD14" address="tcp://192.168.77.14:18800" hostname="tkernel2_pd" datacenter="PuDian" comment="tkernel2" hostrack="BC" position="2" alias="tkernel2" process="主要进程:
+tkernel2">
+				<AppSyslogs>
+					<Object name="tkernel" item="2" path="/home/PTrade/tkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<KeyFile>
+					<Object name="check.txt" path="/home/PTrade/tkernel2/dump/check.txt" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+			<Host name="TRADE-PD15" address="tcp://192.168.77.15:18800" hostname="qkernel1_pd" datacenter="PuDian" comment="qkernel1" hostrack="BA" position="3" alias="qkernel1" process="主要进程:
+qkernel1">
+				<AppSyslogs>
+					<Object name="qkernel" item="1" path="/home/PTrade/qkernel1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-PD16" address="tcp://192.168.77.16:18800" hostname="qkernel2_pd" datacenter="PuDian" comment="qkernel2" hostrack="BC" position="3" alias="qkernel2" process="主要进程:
+qkernel2">
+				<AppSyslogs>
+					<Object name="qkernel" item="2" path="/home/PTrade/qkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-PD31" address="tcp://192.168.77.31:18800" hostname="front1_pd" datacenter="PuDian" comment="front1 mdkernel1 fens1" hostrack="BD" position="2" alias="front1" process="主要进程:
+front1
+mdkernel1
+fens1">
+				<AppSyslogs>
+					<Object name="front" item="1" path="/home/PTrade/front1/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="1" path="/home/PTrade/mdkernel1/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="1" path="/home/PTrade/fens1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="1ftd_00000000.slog" path="/home/PTrade/front1/flow/1ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="1ofp_00000000.slog" path="/home/PTrade/front1/flow/1ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="1ofp2_00000000.slog" path="/home/PTrade/front1/flow/1ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ftd_00000000.slog" path="/home/PTrade/front1/flow/11ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ofp_00000000.slog" path="/home/PTrade/front1/flow/11ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ofp2_00000000.slog" path="/home/PTrade/front1/flow/11ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-PD32" address="tcp://192.168.77.32:18800" hostname="front2_pd" datacenter="PuDian" comment="front2 mdkernel2 fens2" hostrack="BB" position="3" alias="front2" process="主要进程:
+front2
+mdkernel2
+fens2">
+				<AppSyslogs>
+					<Object name="front" item="2" path="/home/PTrade/front2/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="2" path="/home/PTrade/mdkernel2/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="2" path="/home/PTrade/fens2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="2ftd_00000000.slog" path="/home/PTrade/front2/flow/2ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="2ofp_00000000.slog" path="/home/PTrade/front2/flow/2ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="2ofp2_00000000.slog" path="/home/PTrade/front2/flow/2ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ftd_00000000.slog" path="/home/PTrade/front2/flow/12ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ofp_00000000.slog" path="/home/PTrade/front2/flow/12ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ofp2_00000000.slog" path="/home/PTrade/front2/flow/12ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-PD33" address="tcp://192.168.77.33:18800" hostname="front3_pd" datacenter="PuDian" comment="front3 mdkernel3 ofpmd3 fens4" hostrack="BD" position="3" alias="front3" process="主要进程:
+front3
+mdkernel3
+ofpmd2
+fens3">
+				<AppSyslogs>
+					<Object name="front" item="3" path="/home/PTrade/front3/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="3" path="/home/PTrade/mdkernel3/dump/Syslog.log" root="/home"/>
+					<!--
+					&lt;Object name=&quot;ofpmd&quot; item=&quot;3&quot; path=&quot;/home/PTrade/ofpmd3/dump/Syslog.log&quot; root=&quot;/home&quot;/&gt;
+-->
+					<Object name="fens" item="4" path="/home/PTrade/fens4/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="3ftd_00000000.slog" path="/home/PTrade/front3/flow/3ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="3ofp_00000000.slog" path="/home/PTrade/front3/flow/3ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="3ofp2_00000000.slog" path="/home/PTrade/front3/flow/3ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ftd_00000000.slog" path="/home/PTrade/front3/flow/13ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ofp_00000000.slog" path="/home/PTrade/front3/flow/13ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ofp2_00000000.slog" path="/home/PTrade/front3/flow/13ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-PD34" address="tcp://192.168.77.34:18800" hostname="front4_pd" datacenter="PuDian" comment="front4 mdkernel4 fens5" hostrack="BB" position="4" alias="front4" process="主要进程:
+front4
+mdkernel4
+fens4">
+				<AppSyslogs>
+					<Object name="front" item="4" path="/home/PTrade/front4/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="4" path="/home/PTrade/mdkernel4/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="5" path="/home/PTrade/fens5/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="4ftd_00000000.slog" path="/home/PTrade/front4/flow/4ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="4ofp_00000000.slog" path="/home/PTrade/front4/flow/4ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="4ofp2_00000000.slog" path="/home/PTrade/front4/flow/4ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ftd_00000000.slog" path="/home/PTrade/front4/flow/14ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ofp_00000000.slog" path="/home/PTrade/front4/flow/14ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ofp2_00000000.slog" path="/home/PTrade/front4/flow/14ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-PD35" address="tcp://192.168.77.35:18800" hostname="front5_pd" datacenter="PuDian" comment="front5 mdkernel5 ofpmd2 fens3 fibproxy3" hostrack="BB" position="1" alias="front5" process="主要进程:
+front5
+mdkernel5
+ofpmd3
+fens5
+fibproxy3">
+				<AppSyslogs>
+					<Object name="front" item="5" path="/home/PTrade/front5/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="5" path="/home/PTrade/mdkernel5/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="3" path="/home/PTrade/fens3/dump/Syslog.log" root="/home"/>
+					<Object name="ofpmd" item="2" path="/home/PTrade/ofpmd2/dump/Syslog.log" root="/home"/>
+					<Object name="fibproxy" item="3" path="/home/PTrade/fibproxy3/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="5ftd_00000000.slog" path="/home/PTrade/front5/flow/5ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="5ofp_00000000.slog" path="/home/PTrade/front5/flow/5ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="5ofp2_00000000.slog" path="/home/PTrade/front5/flow/5ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ftd_00000000.slog" path="/home/PTrade/front5/flow/15ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ofp_00000000.slog" path="/home/PTrade/front5/flow/15ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ofp2_00000000.slog" path="/home/PTrade/front5/flow/15ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-PD36" address="tcp://192.168.77.36:18800" hostname="front6_pd" datacenter="PuDian" comment="front6 mdkernel6" hostrack="BD" position="4" alias="front6" process="主要进程:
+front6
+mdkernel6">
+				<AppSyslogs>
+					<Object name="front" item="6" path="/home/PTrade/front6/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="6" path="/home/PTrade/mdkernel6/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="6ftd_00000000.slog" path="/home/PTrade/front6/flow/6ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="6ofp_00000000.slog" path="/home/PTrade/front6/flow/6ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="6ofp2_00000000.slog" path="/home/PTrade/front6/flow/6ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ftd_00000000.slog" path="/home/PTrade/front6/flow/16ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ofp_00000000.slog" path="/home/PTrade/front6/flow/16ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ofp2_00000000.slog" path="/home/PTrade/front6/flow/16ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-PD37" address="tcp://192.168.77.37:18800" hostname="front7_pd" datacenter="PuDian" comment="front7 mdkernel7 fibproxy1" hostrack="BD" position="1" alias="front7" process="主要进程:
+front7
+mdkernel7
+fibproxy1">
+				<AppSyslogs>
+					<Object name="front" item="7" path="/home/PTrade/front7/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="7" path="/home/PTrade/mdkernel7/dump/Syslog.log" root="/home"/>
+					<Object name="fibproxy" item="1" path="/home/PTrade/fibproxy1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="7ftd_00000000.slog" path="/home/PTrade/front7/flow/7ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="7ofp_00000000.slog" path="/home/PTrade/front7/flow/7ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="7ofp2_00000000.slog" path="/home/PTrade/front7/flow/7ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ftd_00000000.slog" path="/home/PTrade/front7/flow/17ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ofp_00000000.slog" path="/home/PTrade/front7/flow/17ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ofp2_00000000.slog" path="/home/PTrade/front7/flow/17ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-PD38" address="tcp://192.168.77.38:18800" hostname="front8_pd" datacenter="PuDian" comment="front8 mdkernel8 ofpmd1 fibproxy2" hostrack="BB" position="2" alias="front8" process="主要进程:
+front8
+mdkernel8
+ofpmd1
+fibproxy2">
+				<AppSyslogs>
+					<Object name="front" item="8" path="/home/PTrade/front8/dump/Syslog.log" root="/home"/>
+					<!--
+					&lt;Object name=&quot;ofpmd&quot; item=&quot;1&quot; path=&quot;/home/PTrade/ofpmd1/dump/Syslog.log&quot; root=&quot;/home&quot;/&gt;
+-->
+					<Object name="mdkernel" item="8" path="/home/PTrade/mdkernel8/dump/Syslog.log" root="/home"/>
+					<Object name="fibproxy" item="2" path="/home/PTrade/fibproxy2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="8ftd_00000000.slog" path="/home/PTrade/front8/flow/8ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="8ofp_00000000.slog" path="/home/PTrade/front8/flow/8ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="8ofp2_00000000.slog" path="/home/PTrade/front8/flow/8ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ftd_00000000.slog" path="/home/PTrade/front8/flow/18ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ofp_00000000.slog" path="/home/PTrade/front8/flow/18ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ofp2_00000000.slog" path="/home/PTrade/front8/flow/18ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-PD51" address="tcp://192.168.77.51:18800" hostname="config_pd" datacenter="PuDian" comment="config" hostrack="BE" position="1" alias="config" process="主要进程:
+config">
+				<Attrs>
+					<Attr name="tinit.DbOrderSize" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="数据库表大小属性">
+						<Table name="currsgoperation.t_order" database="TM_BDB_PD"/>
+					</Attr>
+					<Attr name="tinit.DbTradeSize" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="数据库表大小属性">
+						<Table name="currsgoperation.t_trade" database="TM_BDB_PD"/>
+					</Attr>
+					<Attr name="tinit.DbTotalVolume" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="SUM">
+						<Table name="currsgoperation.t_trade" database="TM_BDB_PD"/>
+					</Attr>
+					<Attr name="tinit.DbTotalAmount" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="">
+						<Table name="00:00:00-23:59:59" database="TM_BDB_PD"/>
+						<!--
+						&lt;Table name=&quot;currsgoperation.t_trade&quot;         database=&quot;TM_BDB_PD&quot; /&gt;
+						&lt;Table name=&quot;sync.t_Instrument&quot;                 database=&quot;TM_BDB_PD&quot; /&gt;
+						-->
+					</Attr>
+					<Attr name="tinit.dbmtDbLen" seps="07:30:00-20:20:00.120" comment="数据库表大小属性">
+						<Table name="sync.t_tbcommand" database="TM_BDB_PD"/>
+					</Attr>
+					<Attr name="tinit.tinitDbLen" seps="07:30:00-20:20:00.120" comment="数据库表大小属性">
+						<Table name="sync.t_Exchange" database="TM_BDB_PD"/>
+						<Table name="sync.t_SettlementGroup" database="TM_BDB_PD"/>
+						<Table name="sync.t_Market" database="TM_BDB_PD"/>
+						<Table name="sync.t_MarketProduct" database="TM_BDB_PD"/>
+						<Table name="sync.t_MarketProductGroup" database="TM_BDB_PD"/>
+						<Table name="sync.t_MarketDataTopic" database="TM_BDB_PD"/>
+						<Table name="sync.t_PartTopicSubscribe" database="TM_BDB_PD"/>
+						<Table name="sync.t_Participant" database="TM_BDB_PD"/>
+						<Table name="sync.t_User" database="TM_BDB_PD"/>
+						<Table name="sync.t_Client" database="TM_BDB_PD"/>
+						<Table name="sync.t_PartClient" database="TM_BDB_PD"/>
+						<Table name="sync.t_UserIP" database="TM_BDB_PD"/>
+						<Table name="sync.t_MdPubStatus" database="TM_BDB_PD"/>
+						<Table name="sync.t_AliasDefine" database="TM_BDB_PD"/>
+						<Table name="sync.t_ClearingTradingPart" database="TM_BDB_PD"/>
+						<Table name="sync.t_UserFunctionRight" database="TM_BDB_PD"/>
+						<Table name="sync.t_Account" database="TM_BDB_PD"/>
+						<Table name="sync.t_UserCommFlux" database="TM_BDB_PD"/>
+						<Table name="sync.t_Instrument" database="TM_BDB_PD"/>
+						<Table name="sync.t_CombinationLeg" database="TM_BDB_PD"/>
+						<Table name="sync.t_PartRoleAccount" database="TM_BDB_PD"/>
+						<Table name="sync.t_PartProductRole" database="TM_BDB_PD"/>
+						<Table name="sync.t_PartProductRight" database="TM_BDB_PD"/>
+						<Table name="sync.t_PartInstrumentRight" database="TM_BDB_PD"/>
+						<Table name="sync.t_ClientProductRight" database="TM_BDB_PD"/>
+						<Table name="sync.t_ClientInstrumentRight" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrProductProperty" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrInstrumentProperty" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrPriceBanding" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrMarginRate" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrMarginRateDetail" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrPartPosiLimit" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrPartPosiLimitDetail" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrClientPosiLimit" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrClientPosiLimitDetail" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrSpecialPosiLimit" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrSpecialPosiLimitDetail" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrHedgeRule" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrTradingSegmentAttr" database="TM_BDB_PD"/>
+						<Table name="sync.t_CurrFuse" database="TM_BDB_PD"/>
+						<Table name="sync.t_TradingAccount" database="TM_BDB_PD"/>
+						<Table name="sync.t_PartPosition" database="TM_BDB_PD"/>
+						<Table name="sync.t_ClientPosition" database="TM_BDB_PD"/>
+						<Table name="sync.t_HedgeVolume" database="TM_BDB_PD"/>
+						<Table name="sync.t_MarketData" database="TM_BDB_PD"/>
+						<Table name="sync.t_BaseReserveAccount" database="TM_BDB_PD"/>
+						<Table name="sync.t_RemainOrder" database="TM_BDB_PD"/>
+					</Attr>
+				</Attrs>
+			</Host>
+			<Host name="TRADE-PD58" address="tcp://192.168.77.58:18800" hostname="tmdb_pd" datacenter="PuDian" comment="tmdb" hostrack="BA" position="4" alias="tmdb" process="主要进程:
+tmdb">
+				<AppSyslogs>
+					<Object name="tmdb" item="0" path="/home/PTrade/tmdb1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-PD59" address="tcp://192.168.77.59:18800" hostname="tinit_pd" datacenter="PuDian" comment="tinit" hostrack="BC" position="4" alias="tinit" process="主要进程:
+tinit">
+				<AppSyslogs>
+					<Object name="tinit" item="0" path="/home/PTrade/tinit1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<RecSizeLog>
+					<Object name="tinit.dfmtFSLen" path="/home/PTrade/tinit1/bin/TBCommand.dat" comment="DFMT文件"/>
+				</RecSizeLog>
+				<KeyFile>
+					<Object name="TBCommand.dat" path="/home/PTrade/tinit1/bin/TBCommand.dat" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+			<Host name="TRADE-ZJ20" address="tcp://172.18.38.20:18800" hostname="arb_zj" datacenter="ZhangJ" comment="arb" hostrack="AG" position="3" alias="arb" process="主要进程:
+arb">
+				<AppSyslogs>
+					<Object name="arb" item="0" path="/home/PTrade/arb1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-ZJ21" address="tcp://172.18.38.21:18800" hostname="compositor1_zj" datacenter="ZhangJ" comment="compositor1 fiblogger1" hostrack="AC" position="1" alias="comp1" process="主要进程:
+comp1
+fiblogger1">
+				<AppSyslogs>
+					<Object name="compositor" item="1" path="/home/PTrade/compositor1/dump/Syslog.log" root="/home"/>
+					<Object name="fiblogger" item="1" path="/home/PTrade/fiblogger1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-ZJ22" address="tcp://172.18.38.22:18800" hostname="compositor2_zj" datacenter="ZhangJ" comment="compositor2 fiblogger2" hostrack="AE" position="1" alias="comp2" process="主要进程:
+comp2
+fiblogger2">
+				<AppSyslogs>
+					<Object name="compositor" item="2" path="/home/PTrade/compositor2/dump/Syslog.log" root="/home"/>
+					<Object name="fiblogger" item="2" path="/home/PTrade/fiblogger2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-ZJ23" address="tcp://172.18.38.23:18800" hostname="tkernel1_zj" datacenter="ZhangJ" comment="tkernel1" hostrack="AC" position="2" alias="tkernel1" process="主要进程:
+tkernel1">
+				<AppSyslogs>
+					<Object name="tkernel" item="1" path="/home/PTrade/tkernel1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<KeyFile>
+					<Object name="check.txt" path="/home/PTrade/tkernel1/dump/check.txt" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+			<Host name="TRADE-ZJ24" address="tcp://172.18.38.24:18800" hostname="tkernel2_zj" datacenter="ZhangJ" comment="tkernel2" hostrack="AE" position="2" alias="tkernel2" process="主要进程:
+tkernel2">
+				<AppSyslogs>
+					<Object name="tkernel" item="2" path="/home/PTrade/tkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<KeyFile>
+					<Object name="check.txt" path="/home/PTrade/tkernel2/dump/check.txt" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+			<Host name="TRADE-ZJ25" address="tcp://172.18.38.25:18800" hostname="qkernel1_zj" datacenter="ZhangJ" comment="qkernel1" hostrack="AC" position="3" alias="qkernel1" process="主要进程:
+qkernel1">
+				<AppSyslogs>
+					<Object name="qkernel" item="1" path="/home/PTrade/qkernel1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-ZJ26" address="tcp://172.18.38.26:18800" hostname="qkernel2_zj" datacenter="ZhangJ" comment="qkernel2" hostrack="AE" position="3" alias="qkernel2" process="主要进程:
+qkernel2">
+				<AppSyslogs>
+					<Object name="qkernel" item="2" path="/home/PTrade/qkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-ZJ41" address="tcp://172.18.38.41:18800" hostname="front1_zj" datacenter="ZhangJ" comment="front11 mdkernel1 fens1" hostrack="AF" position="2" alias="front11" process="主要进程:
+front11
+mdkernel1
+fens1">
+				<AppSyslogs>
+					<Object name="front" item="11" path="/home/PTrade/front1/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="1" path="/home/PTrade/mdkernel1/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="1" path="/home/PTrade/fens1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="1ftd_00000000.slog" path="/home/PTrade/front1/flow/1ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="1ofp_00000000.slog" path="/home/PTrade/front1/flow/1ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="1ofp2_00000000.slog" path="/home/PTrade/front1/flow/1ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ftd_00000000.slog" path="/home/PTrade/front1/flow/11ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ofp_00000000.slog" path="/home/PTrade/front1/flow/11ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ofp2_00000000.slog" path="/home/PTrade/front1/flow/11ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-ZJ42" address="tcp://172.18.38.42:18800" hostname="front2_zj" datacenter="ZhangJ" comment="front12 mdkernel2 fens2" hostrack="AD" position="3" alias="front12" process="主要进程:
+front12
+mdkernel2
+fens2">
+				<AppSyslogs>
+					<Object name="front" item="12" path="/home/PTrade/front2/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="2" path="/home/PTrade/mdkernel2/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="2" path="/home/PTrade/fens2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="2ftd_00000000.slog" path="/home/PTrade/front2/flow/2ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="2ofp_00000000.slog" path="/home/PTrade/front2/flow/2ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="2ofp2_00000000.slog" path="/home/PTrade/front2/flow/2ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ftd_00000000.slog" path="/home/PTrade/front2/flow/12ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ofp_00000000.slog" path="/home/PTrade/front2/flow/12ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ofp2_00000000.slog" path="/home/PTrade/front2/flow/12ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-ZJ43" address="tcp://172.18.38.43:18800" hostname="front3_zj" datacenter="ZhangJ" comment="front13 mdkernel3" hostrack="AF" position="3" alias="front13" process="主要进程:
+front13
+mdkernel3">
+				<AppSyslogs>
+					<Object name="front" item="13" path="/home/PTrade/front3/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="3" path="/home/PTrade/mdkernel3/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="3ftd_00000000.slog" path="/home/PTrade/front3/flow/3ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="3ofp_00000000.slog" path="/home/PTrade/front3/flow/3ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="3ofp2_00000000.slog" path="/home/PTrade/front3/flow/3ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ftd_00000000.slog" path="/home/PTrade/front3/flow/13ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ofp_00000000.slog" path="/home/PTrade/front3/flow/13ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ofp2_00000000.slog" path="/home/PTrade/front3/flow/13ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-ZJ44" address="tcp://172.18.38.44:18800" hostname="front4_zj" datacenter="ZhangJ" comment="front14 mdkernel4" hostrack="AD" position="4" alias="front14" process="主要进程:
+front14
+mdkernel4">
+				<AppSyslogs>
+					<Object name="front" item="14" path="/home/PTrade/front4/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="4" path="/home/PTrade/mdkernel4/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="4ftd_00000000.slog" path="/home/PTrade/front4/flow/4ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="4ofp_00000000.slog" path="/home/PTrade/front4/flow/4ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="4ofp2_00000000.slog" path="/home/PTrade/front4/flow/4ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ftd_00000000.slog" path="/home/PTrade/front4/flow/14ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ofp_00000000.slog" path="/home/PTrade/front4/flow/14ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ofp2_00000000.slog" path="/home/PTrade/front4/flow/14ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-ZJ45" address="tcp://172.18.38.45:18800" hostname="front5_zj" datacenter="ZhangJ" comment="front15 mdkernel5 ofpmd2 fens3 fibproxy3" hostrack="AD" position="1" alias="front15" process="主要进程:
+front15
+mdkernel5
+ofpmd2
+fens3
+fibproxy3">
+				<AppSyslogs>
+					<Object name="front" item="15" path="/home/PTrade/front5/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="5" path="/home/PTrade/mdkernel5/dump/Syslog.log" root="/home"/>
+					<Object name="ofpmd" item="2" path="/home/PTrade/ofpmd2/dump/Syslog.log" root="/home"/>
+					<Object name="fibproxy" item="3" path="/home/PTrade/fibproxy3/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="5ftd_00000000.slog" path="/home/PTrade/front5/flow/5ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="5ofp_00000000.slog" path="/home/PTrade/front5/flow/5ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="5ofp2_00000000.slog" path="/home/PTrade/front5/flow/5ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ftd_00000000.slog" path="/home/PTrade/front5/flow/15ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ofp_00000000.slog" path="/home/PTrade/front5/flow/15ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ofp2_00000000.slog" path="/home/PTrade/front5/flow/15ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-ZJ46" address="tcp://172.18.38.46:18800" hostname="front6_zj" datacenter="ZhangJ" comment="front16 mdkernel6" hostrack="AF" position="4" alias="front16" process="主要进程:
+front16
+mdkernel6">
+				<AppSyslogs>
+					<Object name="front" item="16" path="/home/PTrade/front6/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="6" path="/home/PTrade/mdkernel6/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="6ftd_00000000.slog" path="/home/PTrade/front6/flow/6ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="6ofp_00000000.slog" path="/home/PTrade/front6/flow/6ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="6ofp2_00000000.slog" path="/home/PTrade/front6/flow/6ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ftd_00000000.slog" path="/home/PTrade/front6/flow/16ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ofp_00000000.slog" path="/home/PTrade/front6/flow/16ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ofp2_00000000.slog" path="/home/PTrade/front6/flow/16ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-ZJ47" address="tcp://172.18.38.47:18800" hostname="front7_zj" datacenter="ZhangJ" comment="front17 mdkernel7 fibproxy1" hostrack="AF" position="1" alias="front17" process="主要进程:
+front17
+mdkernel7
+fibproxy1">
+				<AppSyslogs>
+					<Object name="front" item="17" path="/home/PTrade/front7/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="7" path="/home/PTrade/mdkernel7/dump/Syslog.log" root="/home"/>
+					<!--
+					&lt;Object name=&quot;fibproxy&quot; item=&quot;1&quot; path=&quot;/home/PTrade/fibproxy1/dump/Syslog.log&quot; root=&quot;/home&quot;/&gt;
+					-->
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="7ftd_00000000.slog" path="/home/PTrade/front7/flow/7ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="7ofp_00000000.slog" path="/home/PTrade/front7/flow/7ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="7ofp2_00000000.slog" path="/home/PTrade/front7/flow/7ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ftd_00000000.slog" path="/home/PTrade/front7/flow/17ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ofp_00000000.slog" path="/home/PTrade/front7/flow/17ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ofp2_00000000.slog" path="/home/PTrade/front7/flow/17ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-ZJ48" address="tcp://172.18.38.48:18800" hostname="front8_zj" datacenter="ZhangJ" comment="front18 mdkernel8 ofpmd1 fibproxy2" hostrack="AD" position="2" alias="front18" process="主要进程:
+front18
+mdkernel8
+ofpmd1
+fibproxy2">
+				<AppSyslogs>
+					<Object name="front" item="18" path="/home/PTrade/front8/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="8" path="/home/PTrade/mdkernel8/dump/Syslog.log" root="/home"/>
+					<!--
+					&lt;Object name=&quot;ofpmd&quot; item=&quot;1&quot; path=&quot;/home/PTrade/ofpmd1/dump/Syslog.log&quot; root=&quot;/home&quot;/&gt;
+					&lt;Object name=&quot;fibproxy&quot; item=&quot;2&quot; path=&quot;/home/PTrade/fibproxy2/dump/Syslog.log&quot; root=&quot;/home&quot;/&gt;
+-->
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="8ftd_00000000.slog" path="/home/PTrade/front8/flow/8ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="8ofp_00000000.slog" path="/home/PTrade/front8/flow/8ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="8ofp2_00000000.slog" path="/home/PTrade/front8/flow/8ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ftd_00000000.slog" path="/home/PTrade/front8/flow/18ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ofp_00000000.slog" path="/home/PTrade/front8/flow/18ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ofp2_00000000.slog" path="/home/PTrade/front8/flow/18ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-ZJ61" address="tcp://172.18.38.61:18800" hostname="config_zj" datacenter="ZhangJ" comment="config" hostrack="AG" position="1" alias="config" process="主要进程:
+config">
+				<Attrs>
+					<Attr name="tinit.DbOrderSize" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="数据库表大小属性">
+						<Table name="currsgoperation.t_order" database="TM_BDB_ZJ"/>
+					</Attr>
+					<Attr name="tinit.DbTradeSize" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="数据库表大小属性">
+						<Table name="currsgoperation.t_trade" database="TM_BDB_ZJ"/>
+					</Attr>
+					<Attr name="tinit.DbTotalVolume" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="SUM">
+						<Table name="currsgoperation.t_trade" database="TM_BDB_ZJ"/>
+					</Attr>
+					<Attr name="tinit.DbTotalAmount" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="">
+						<Table name="00:00:00-23:59:59" database="TM_BDB_ZJ"/>
+						<!--
+						&lt;Table name=&quot;currsgoperation.t_trade&quot;         database=&quot;TM_BDB_ZJ&quot; /&gt;
+						&lt;Table name=&quot;sync.t_Instrument&quot;                 database=&quot;TM_BDB_ZJ&quot; /&gt;
+						-->
+					</Attr>
+					<Attr name="tinit.dbmtDbLen" seps="07:30:00-20:20:00.120" comment="数据库表大小属性">
+						<Table name="sync.t_tbcommand" database="TM_BDB_ZJ"/>
+					</Attr>
+					<Attr name="tinit.tinitDbLen" seps="07:30:00-20:20:00.120" comment="数据库表大小属性">
+						<Table name="sync.t_Exchange" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_SettlementGroup" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_Market" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_MarketProduct" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_MarketProductGroup" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_MarketDataTopic" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_PartTopicSubscribe" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_Participant" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_User" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_Client" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_PartClient" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_UserIP" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_MdPubStatus" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_AliasDefine" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_ClearingTradingPart" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_UserFunctionRight" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_Account" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_UserCommFlux" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_Instrument" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CombinationLeg" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_PartRoleAccount" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_PartProductRole" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_PartProductRight" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_PartInstrumentRight" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_ClientProductRight" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_ClientInstrumentRight" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrProductProperty" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrInstrumentProperty" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrPriceBanding" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrMarginRate" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrMarginRateDetail" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrPartPosiLimit" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrPartPosiLimitDetail" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrClientPosiLimit" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrClientPosiLimitDetail" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrSpecialPosiLimit" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrSpecialPosiLimitDetail" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrHedgeRule" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrTradingSegmentAttr" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_CurrFuse" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_TradingAccount" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_PartPosition" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_ClientPosition" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_HedgeVolume" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_MarketData" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_BaseReserveAccount" database="TM_BDB_ZJ"/>
+						<Table name="sync.t_RemainOrder" database="TM_BDB_ZJ"/>
+					</Attr>
+				</Attrs>
+			</Host>
+			<Host name="TRADE-ZJ68" address="tcp://172.18.38.68:18800" hostname="tmdb_zj" datacenter="ZhangJ" comment="tmdb" hostrack="AC" position="4" alias="tmdb" process="主要进程:
+tmdb">
+				<AppSyslogs>
+					<Object name="tmdb" item="0" path="/home/PTrade/tmdb1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-ZJ69" address="tcp://172.18.38.69:18800" hostname="tinit_zj" datacenter="ZhangJ" comment="tinit" hostrack="AE" position="4" alias="tinit" process="主要进程:
+tinit">
+				<AppSyslogs>
+					<Object name="tinit" item="0" path="/home/PTrade/tinit1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<RecSizeLog>
+					<Object name="tinit.dfmtFSLen" path="/home/PTrade/tinit1/bin/TBCommand.dat" comment="DFMT文件"/>
+				</RecSizeLog>
+				<KeyFile>
+					<Object name="TBCommand.dat" path="/home/PTrade/tinit1/bin/TBCommand.dat" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+			<Host name="TRADE-BJ10" address="tcp://172.23.38.10:18800" hostname="arb_bj" datacenter="BeiJing" comment="arb" hostrack="BE" position="3" alias="arb" process="主要进程:
+arb">
+				<AppSyslogs>
+					<Object name="arb" item="0" path="/home/PTrade/arb1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-BJ11" address="tcp://172.23.38.11:18800" hostname="compositor1_bj" datacenter="BeiJing" comment="compositor1 fiblogger1" hostrack="BA" position="1" alias="comp1" process="主要进程:
+comp1
+fiblogger1">
+				<AppSyslogs>
+					<Object name="compositor" item="1" path="/home/PTrade/compositor1/dump/Syslog.log" root="/home"/>
+					<Object name="fiblogger" item="1" path="/home/PTrade/fiblogger1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-BJ12" address="tcp://172.23.38.12:18800" hostname="compositor2_bj" datacenter="BeiJing" comment="compositor2 fiblogger2" hostrack="BC" position="1" alias="comp2" process="主要进程:
+comp2
+fiblogger2">
+				<AppSyslogs>
+					<Object name="compositor" item="2" path="/home/PTrade/compositor2/dump/Syslog.log" root="/home"/>
+					<Object name="fiblogger" item="2" path="/home/PTrade/fiblogger2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-BJ13" address="tcp://172.23.38.13:18800" hostname="tkernel1_bj" datacenter="BeiJing" comment="tkernel1" hostrack="BA" position="2" alias="tkernel1" process="主要进程:
+tkernel1">
+				<AppSyslogs>
+					<Object name="tkernel" item="1" path="/home/PTrade/tkernel1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<KeyFile>
+					<Object name="check.txt" path="/home/PTrade/tkernel1/dump/check.txt" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+			<Host name="TRADE-BJ14" address="tcp://172.23.38.14:18800" hostname="tkernel2_bj" datacenter="BeiJing" comment="tkernel2" hostrack="BC" position="2" alias="tkernel2" process="主要进程:
+tkernel2">
+				<AppSyslogs>
+					<Object name="tkernel" item="2" path="/home/PTrade/tkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<KeyFile>
+					<Object name="check.txt" path="/home/PTrade/tkernel2/dump/check.txt" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+			<Host name="TRADE-BJ15" address="tcp://172.23.38.15:18800" hostname="qkernel1_bj" datacenter="BeiJing" comment="qkernel1" hostrack="BA" position="3" alias="qkernel1" process="主要进程:
+qkernel1">
+				<AppSyslogs>
+					<Object name="qkernel" item="1" path="/home/PTrade/qkernel1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-BJ16" address="tcp://172.23.38.16:18800" hostname="qkernel2_bj" datacenter="BeiJing" comment="qkernel2" hostrack="BC" position="3" alias="qkernel2" process="主要进程:
+qkernel2">
+				<AppSyslogs>
+					<Object name="qkernel" item="2" path="/home/PTrade/qkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-BJ17" address="tcp://172.23.38.17:18800" hostname="fibclient1_bj" datacenter="BeiJing" comment="fibclient1" hostrack="BA" position="3" alias="fibclient1" process="主要进程:
+fibclient1">
+				<AppSyslogs>
+					<Object name="fibplay" item="1" path="/home/PTrade/fibplay1/dump/Syslog.log" root="/home"/>
+					<Object name="fibclient" item="1" path="/home/PTrade/fibclient1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-BJ18" address="tcp://172.23.38.18:18800" hostname="fibclient2_bj" datacenter="BeiJing" comment="fibclient2" hostrack="BC" position="3" alias="fibclient2" process="主要进程:
+fibclient2">
+				<AppSyslogs>
+					<Object name="fibplay" item="2" path="/home/PTrade/fibplay2/dump/Syslog.log" root="/home"/>
+					<Object name="fibclient" item="2" path="/home/PTrade/fibclient2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-BJ31" address="tcp://172.23.38.31:18800" hostname="front1_bj" datacenter="BeiJing" comment="front1 mdkernel1 fens1" hostrack="BD" position="2" alias="front1" process="主要进程:
+front1
+mdkernel1
+fens1">
+				<AppSyslogs>
+					<Object name="front" item="1" path="/home/PTrade/front1/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="1" path="/home/PTrade/mdkernel1/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="1" path="/home/PTrade/fens1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="1ftd_00000000.slog" path="/home/PTrade/front1/flow/1ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="1ofp_00000000.slog" path="/home/PTrade/front1/flow/1ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="1ofp2_00000000.slog" path="/home/PTrade/front1/flow/1ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ftd_00000000.slog" path="/home/PTrade/front1/flow/11ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ofp_00000000.slog" path="/home/PTrade/front1/flow/11ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="11ofp2_00000000.slog" path="/home/PTrade/front1/flow/11ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-BJ32" address="tcp://172.23.38.32:18800" hostname="front2_bj" datacenter="BeiJing" comment="front2 mdkernel2 fens2" hostrack="BB" position="3" alias="front2" process="主要进程:
+front2
+mdkernel2
+fens2">
+				<AppSyslogs>
+					<Object name="front" item="2" path="/home/PTrade/front2/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="2" path="/home/PTrade/mdkernel2/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="2" path="/home/PTrade/fens2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="2ftd_00000000.slog" path="/home/PTrade/front2/flow/2ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="2ofp_00000000.slog" path="/home/PTrade/front2/flow/2ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="2ofp2_00000000.slog" path="/home/PTrade/front2/flow/2ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ftd_00000000.slog" path="/home/PTrade/front2/flow/12ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ofp_00000000.slog" path="/home/PTrade/front2/flow/12ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="12ofp2_00000000.slog" path="/home/PTrade/front2/flow/12ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-BJ33" address="tcp://172.23.38.33:18800" hostname="front3_bj" datacenter="BeiJing" comment="front3 mdkernel3 ofpmd3 fens4" hostrack="BD" position="3" alias="front3" process="主要进程:
+front3
+mdkernel3
+ofpmd2
+fens3">
+				<AppSyslogs>
+					<Object name="front" item="3" path="/home/PTrade/front3/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="3" path="/home/PTrade/mdkernel3/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="3ftd_00000000.slog" path="/home/PTrade/front3/flow/3ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="3ofp_00000000.slog" path="/home/PTrade/front3/flow/3ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="3ofp2_00000000.slog" path="/home/PTrade/front3/flow/3ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ftd_00000000.slog" path="/home/PTrade/front3/flow/13ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ofp_00000000.slog" path="/home/PTrade/front3/flow/13ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="13ofp2_00000000.slog" path="/home/PTrade/front3/flow/13ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-BJ34" address="tcp://172.23.38.34:18800" hostname="front4_bj" datacenter="BeiJing" comment="front4 mdkernel4 fens5" hostrack="BB" position="4" alias="front4" process="主要进程:
+front4
+mdkernel4
+fens4">
+				<AppSyslogs>
+					<Object name="front" item="4" path="/home/PTrade/front4/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="4" path="/home/PTrade/mdkernel4/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="4ftd_00000000.slog" path="/home/PTrade/front4/flow/4ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="4ofp_00000000.slog" path="/home/PTrade/front4/flow/4ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="4ofp2_00000000.slog" path="/home/PTrade/front4/flow/4ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ftd_00000000.slog" path="/home/PTrade/front4/flow/14ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ofp_00000000.slog" path="/home/PTrade/front4/flow/14ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="14ofp2_00000000.slog" path="/home/PTrade/front4/flow/14ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-BJ35" address="tcp://172.23.38.35:18800" hostname="front5_bj" datacenter="BeiJing" comment="front5 mdkernel5 ofpmd2 fens3 fibproxy3" hostrack="BB" position="1" alias="front5" process="主要进程:
+front5
+mdkernel5
+ofpmd3
+fens5
+fibproxy3">
+				<AppSyslogs>
+					<Object name="front" item="5" path="/home/PTrade/front5/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="5" path="/home/PTrade/mdkernel5/dump/Syslog.log" root="/home"/>
+					<Object name="fens" item="3" path="/home/PTrade/fens3/dump/Syslog.log" root="/home"/>
+					<Object name="fibproxy" item="3" path="/home/PTrade/fibproxy3/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="5ftd_00000000.slog" path="/home/PTrade/front5/flow/5ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="5ofp_00000000.slog" path="/home/PTrade/front5/flow/5ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="5ofp2_00000000.slog" path="/home/PTrade/front5/flow/5ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ftd_00000000.slog" path="/home/PTrade/front5/flow/15ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ofp_00000000.slog" path="/home/PTrade/front5/flow/15ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="15ofp2_00000000.slog" path="/home/PTrade/front5/flow/15ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-BJ36" address="tcp://172.23.38.36:18800" hostname="front6_bj" datacenter="BeiJing" comment="front6 mdkernel6" hostrack="BD" position="4" alias="front6" process="主要进程:
+front6
+mdkernel6">
+				<AppSyslogs>
+					<Object name="front" item="6" path="/home/PTrade/front6/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="6" path="/home/PTrade/mdkernel6/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="6ftd_00000000.slog" path="/home/PTrade/front6/flow/6ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="6ofp_00000000.slog" path="/home/PTrade/front6/flow/6ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="6ofp2_00000000.slog" path="/home/PTrade/front6/flow/6ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ftd_00000000.slog" path="/home/PTrade/front6/flow/16ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ofp_00000000.slog" path="/home/PTrade/front6/flow/16ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="16ofp2_00000000.slog" path="/home/PTrade/front6/flow/16ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-BJ37" address="tcp://172.23.38.37:18800" hostname="front7_bj" datacenter="BeiJing" comment="front7 mdkernel7 fibproxy1" hostrack="BD" position="1" alias="front7" process="主要进程:
+front7
+mdkernel7
+fibproxy1">
+				<AppSyslogs>
+					<Object name="front" item="7" path="/home/PTrade/front7/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="7" path="/home/PTrade/mdkernel7/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="7ftd_00000000.slog" path="/home/PTrade/front7/flow/7ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="7ofp_00000000.slog" path="/home/PTrade/front7/flow/7ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="7ofp2_00000000.slog" path="/home/PTrade/front7/flow/7ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ftd_00000000.slog" path="/home/PTrade/front7/flow/17ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ofp_00000000.slog" path="/home/PTrade/front7/flow/17ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="17ofp2_00000000.slog" path="/home/PTrade/front7/flow/17ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-BJ38" address="tcp://172.23.38.38:18800" hostname="front8_bj" datacenter="BeiJing" comment="front8 mdkernel8 ofpmd1 fibproxy2" hostrack="BB" position="2" alias="front8" process="主要进程:
+front8
+mdkernel8
+ofpmd1
+fibproxy2">
+				<AppSyslogs>
+					<Object name="front" item="8" path="/home/PTrade/front8/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="8" path="/home/PTrade/mdkernel8/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="8ftd_00000000.slog" path="/home/PTrade/front8/flow/8ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="8ofp_00000000.slog" path="/home/PTrade/front8/flow/8ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="8ofp2_00000000.slog" path="/home/PTrade/front8/flow/8ofp2_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ftd_00000000.slog" path="/home/PTrade/front8/flow/18ftd_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ofp_00000000.slog" path="/home/PTrade/front8/flow/18ofp_00000000.slog" comment="前置的会话日志"/>
+					<Object name="18ofp2_00000000.slog" path="/home/PTrade/front8/flow/18ofp2_00000000.slog" comment="前置的会话日志"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE-BJ51" address="tcp://172.23.38.51:18800" hostname="config_bj" datacenter="BeiJing" comment="config" hostrack="BE" position="1" alias="config" process="主要进程:
+config">
+				<Attrs>
+					<Attr name="tinit.DbOrderSize" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="数据库表大小属性">
+						<Table name="currsgoperation.t_order" database="TM_BDB_BJ"/>
+					</Attr>
+					<Attr name="tinit.DbTradeSize" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="数据库表大小属性">
+						<Table name="currsgoperation.t_trade" database="TM_BDB_BJ"/>
+					</Attr>
+					<Attr name="tinit.DbTotalVolume" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="SUM">
+						<Table name="currsgoperation.t_trade" database="TM_BDB_BJ"/>
+					</Attr>
+					<Attr name="tinit.DbTotalAmount" seps="07:30:00-14:59:00.120,15:00:00-15:10:00.10,15:10:01-20:20:00.120" comment="">
+						<Table name="00:00:00-23:59:59" database="TM_BDB_BJ"/>
+						<!--
+						&lt;Table name=&quot;currsgoperation.t_trade&quot;         database=&quot;TM_BDB_BJ&quot; /&gt;
+						&lt;Table name=&quot;sync.t_Instrument&quot;                 database=&quot;TM_BDB_BJ&quot; /&gt;
+						-->
+					</Attr>
+					<Attr name="tinit.dbmtDbLen" seps="07:30:00-20:20:00.120" comment="数据库表大小属性">
+						<Table name="sync.t_tbcommand" database="TM_BDB_BJ"/>
+					</Attr>
+					<Attr name="tinit.tinitDbLen" seps="07:30:00-20:20:00.120" comment="数据库表大小属性">
+						<Table name="sync.t_Exchange" database="TM_BDB_BJ"/>
+						<Table name="sync.t_SettlementGroup" database="TM_BDB_BJ"/>
+						<Table name="sync.t_Market" database="TM_BDB_BJ"/>
+						<Table name="sync.t_MarketProduct" database="TM_BDB_BJ"/>
+						<Table name="sync.t_MarketProductGroup" database="TM_BDB_BJ"/>
+						<Table name="sync.t_MarketDataTopic" database="TM_BDB_BJ"/>
+						<Table name="sync.t_PartTopicSubscribe" database="TM_BDB_BJ"/>
+						<Table name="sync.t_Participant" database="TM_BDB_BJ"/>
+						<Table name="sync.t_User" database="TM_BDB_BJ"/>
+						<Table name="sync.t_Client" database="TM_BDB_BJ"/>
+						<Table name="sync.t_PartClient" database="TM_BDB_BJ"/>
+						<Table name="sync.t_UserIP" database="TM_BDB_BJ"/>
+						<Table name="sync.t_MdPubStatus" database="TM_BDB_BJ"/>
+						<Table name="sync.t_AliasDefine" database="TM_BDB_BJ"/>
+						<Table name="sync.t_ClearingTradingPart" database="TM_BDB_BJ"/>
+						<Table name="sync.t_UserFunctionRight" database="TM_BDB_BJ"/>
+						<Table name="sync.t_Account" database="TM_BDB_BJ"/>
+						<Table name="sync.t_UserCommFlux" database="TM_BDB_BJ"/>
+						<Table name="sync.t_Instrument" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CombinationLeg" database="TM_BDB_BJ"/>
+						<Table name="sync.t_PartRoleAccount" database="TM_BDB_BJ"/>
+						<Table name="sync.t_PartProductRole" database="TM_BDB_BJ"/>
+						<Table name="sync.t_PartProductRight" database="TM_BDB_BJ"/>
+						<Table name="sync.t_PartInstrumentRight" database="TM_BDB_BJ"/>
+						<Table name="sync.t_ClientProductRight" database="TM_BDB_BJ"/>
+						<Table name="sync.t_ClientInstrumentRight" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrProductProperty" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrInstrumentProperty" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrPriceBanding" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrMarginRate" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrMarginRateDetail" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrPartPosiLimit" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrPartPosiLimitDetail" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrClientPosiLimit" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrClientPosiLimitDetail" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrSpecialPosiLimit" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrSpecialPosiLimitDetail" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrHedgeRule" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrTradingSegmentAttr" database="TM_BDB_BJ"/>
+						<Table name="sync.t_CurrFuse" database="TM_BDB_BJ"/>
+						<Table name="sync.t_TradingAccount" database="TM_BDB_BJ"/>
+						<Table name="sync.t_PartPosition" database="TM_BDB_BJ"/>
+						<Table name="sync.t_ClientPosition" database="TM_BDB_BJ"/>
+						<Table name="sync.t_HedgeVolume" database="TM_BDB_BJ"/>
+						<Table name="sync.t_MarketData" database="TM_BDB_BJ"/>
+						<Table name="sync.t_BaseReserveAccount" database="TM_BDB_BJ"/>
+						<Table name="sync.t_RemainOrder" database="TM_BDB_BJ"/>
+					</Attr>
+				</Attrs>
+			</Host>
+			<Host name="TRADE-BJ58" address="tcp://172.23.38.58:18800" hostname="tmdb_bj" datacenter="BeiJing" comment="tmdb" hostrack="BA" position="4" alias="tmdb" process="主要进程:
+tmdb">
+				<AppSyslogs>
+					<Object name="tmdb" item="0" path="/home/PTrade/tmdb1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE-BJ59" address="tcp://172.23.38.59:18800" hostname="tinit_bj" datacenter="BeiJing" comment="tinit" hostrack="BC" position="4" alias="tinit" process="主要进程:
+tinit">
+				<AppSyslogs>
+					<Object name="tinit" item="0" path="/home/PTrade/tinit1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+				<RecSizeLog>
+					<Object name="tinit.dfmtFSLen" path="/home/PTrade/tinit1/bin/TBCommand.dat" comment="DFMT文件"/>
+				</RecSizeLog>
+				<KeyFile>
+					<Object name="TBCommand.dat" path="/home/PTrade/tinit1/bin/TBCommand.dat" comment="业务系统的关键文件"/>
+				</KeyFile>
+			</Host>
+		</System>
+		<System name="MD2" alias="深度行情系统">
+			<Common>
+				<SystemLog>
+					<Object name="message" path="/var/log/message" comment="主机系统的日志文件"/>
+				</SystemLog>
+			</Common>
+			<Host name="MD2-PD-MDF1" address="tcp://192.168.87.151:18800" hostname="md2_front1_pd" datacenter="PuDian" comment="md2kernel1" hostrack="FA" position="1" alias="md2kernel1" process="主要进程:
+md2kernel1">
+				<AppSyslogs>
+					<Object name="md2kernel" item="1" path="/home/md2/md2kernel1/log/Syslog.log" root="/home"/>
+					<Object name="md2relay" item="1" path="/home/md2/md2relay1/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-PD-MDF2" address="tcp://192.168.87.152:18800" hostname="md2_front2_pd" datacenter="PuDian" comment="md2kernel2" hostrack="FA" position="2" alias="md2kernel2" process="主要进程:
+md2kernel2">
+				<AppSyslogs>
+					<Object name="md2kernel" item="2" path="/home/md2/md2kernel2/log/Syslog.log" root="/home"/>
+					<Object name="md2relay" item="2" path="/home/md2/md2relay2/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-PD-MDM1" address="tcp://192.168.83.161:18800" hostname="md2_manager1_pd" datacenter="PuDian" comment="md2_manager1" hostrack="MT" position="1" alias="md2_manager1" process="主要进程:
+md2manager1
+md2sync1
+md2dbaux1
+md2tickgen1
+md2tickqry1">
+				<AppSyslogs>
+					<Object name="md2sync" item="1" path="/home/md2/md2sync1/log/Syslog.log" root="/home"/>
+					<Object name="md2dbaux" item="1" path="/home/md2/md2dbaux1/log/Syslog.log" root="/home"/>
+					<Object name="md2tickgen" item="1" path="/home/md2/md2tickgen1/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-PD-MDM2" address="tcp://192.168.83.162:18800" hostname="md2_manager2_pd" datacenter="PuDian" comment="md2_manager2" hostrack="MT" position="2" alias="md2_manager2" process="主要进程:
+md2manager2
+md2sync2
+md2dbaux2
+md2tickgen2">
+				<AppSyslogs>
+					<Object name="md2sync" item="2" path="/home/md2/md2sync2/log/Syslog.log" root="/home"/>
+					<Object name="md2dbaux" item="2" path="/home/md2/md2dbaux2/log/Syslog.log" root="/home"/>
+					<Object name="md2tickgen" item="2" path="/home/md2/md2tickgen2/log/Syslog.log" root="/home"/>
+					<Object name="md2tickqry" item="1" path="/home/md2/md2tickqry1/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-ZJ-MDF1" address="tcp://172.18.37.81:18800" hostname="md2_front1_zj" datacenter="ZhangJ" comment="md2kernel1" hostrack="FA" position="3" alias="md2kernel1" process="主要进程:
+md2front1
+md2kernel1">
+				<AppSyslogs>
+					<Object name="md2kernel" item="3" path="/home/md2/md2kernel3/log/Syslog.log" root="/home"/>
+					<Object name="md2relay" item="3" path="/home/md2/md2relay3/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-ZJ-MDF2" address="tcp://172.18.37.82:18800" hostname="md2_front2_zj" datacenter="ZhangJ" comment="md2kernel2" hostrack="FB" position="4" alias="md2kernel2" process="主要进程:
+md2front2
+md2kernel2">
+				<AppSyslogs>
+					<Object name="md2kernel" item="4" path="/home/md2/md2kernel4/log/Syslog.log" root="/home"/>
+					<Object name="md2relay" item="4" path="/home/md2/md2relay4/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-ZJ-MDM1" address="tcp://172.18.33.81:18800" hostname="md2_manager1_zj" datacenter="ZhangJ" comment="md2_manager1" hostrack="MT" position="3" alias="md2_manager1" process="主要进程:
+md2sync1
+md2dbaux1
+md2tickgen1
+md2tickqry1">
+				<AppSyslogs>
+					<Object name="md2sync" item="3" path="/home/md2/md2sync3/log/Syslog.log" root="/home"/>
+					<Object name="md2dbaux" item="3" path="/home/md2/md2dbaux3/log/Syslog.log" root="/home"/>
+					<Object name="md2tickgen" item="3" path="/home/md2/md2tickgen3/log/Syslog.log" root="/home"/>
+					<Object name="md2tickqry" item="2" path="/home/md2/md2tickqry2/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-ZJ-MDM2" address="tcp://172.18.33.82:18800" hostname="md2_manager2_zj" datacenter="ZhangJ" comment="md2_manager2" hostrack="MT" position="4" alias="md2_manager2" process="主要进程:
+md2sync2
+md2dbaux2
+md2tickgen2
+md2tickqry2">
+				<AppSyslogs>
+					<Object name="md2sync" item="4" path="/home/md2/md2sync4/log/Syslog.log" root="/home"/>
+					<Object name="md2dbaux" item="4" path="/home/md2/md2dbaux4/log/Syslog.log" root="/home"/>
+					<Object name="md2tickgen" item="4" path="/home/md2/md2tickgen4/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-BJ-MDF1" address="tcp://172.23.37.151:18800" hostname="md2_front1_bj" datacenter="BeiJing" comment="md2kernel1" hostrack="FA" position="3" alias="md2kernel1" process="主要进程:
+md2kernel5
+md2relay5">
+				<AppSyslogs>
+					<Object name="md2kernel" item="5" path="/home/md2/md2kernel5/log/Syslog.log" root="/home"/>
+					<Object name="md2relay" item="5" path="/home/md2/md2relay5/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-BJ-MDF2" address="tcp://172.23.37.152:18800" hostname="md2_front2_bj" datacenter="BeiJing" comment="md2kernel2" hostrack="FB" position="4" alias="md2kernel2" process="主要进程:
+md2kernel6
+md2relay6">
+				<AppSyslogs>
+					<Object name="md2kernel" item="6" path="/home/md2/md2kernel6/log/Syslog.log" root="/home"/>
+					<Object name="md2relay" item="6" path="/home/md2/md2relay6/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-BJ-MDM1" address="tcp://172.23.33.161:18800" hostname="md2_manager1_bj" datacenter="BeiJing" comment="md2_manager1" hostrack="MT" position="3" alias="md2_manager1" process="主要进程:
+md2sync5
+md2dbaux5
+md2tickgen5
+md2tickqry5">
+				<AppSyslogs>
+					<Object name="md2sync" item="5" path="/home/md2/md2sync5/log/Syslog.log" root="/home"/>
+					<Object name="md2dbaux" item="5" path="/home/md2/md2dbaux5/log/Syslog.log" root="/home"/>
+					<Object name="md2tickgen" item="5" path="/home/md2/md2tickgen5/log/Syslog.log" root="/home"/>
+					<Object name="md2tickqry" item="5" path="/home/md2/md2tickqry5/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="MD2-BJ-MDM2" address="tcp://172.23.33.162:18800" hostname="md2_manager2_bj" datacenter="BeiJing" comment="md2_manager2" hostrack="MT" position="4" alias="md2_manager2" process="主要进程:
+md2sync6
+md2dbaux6
+md2tickgen6
+md2tickqry6">
+				<AppSyslogs>
+					<Object name="md2sync" item="6" path="/home/md2/md2sync6/log/Syslog.log" root="/home"/>
+					<Object name="md2dbaux" item="6" path="/home/md2/md2dbaux6/log/Syslog.log" root="/home"/>
+					<Object name="md2tickgen" item="6" path="/home/md2/md2tickgen6/log/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+		</System>
+		<System name="RISK" alias="风险监控系统">
+			<Common>
+				<Timers>
+					<Object name="AppSyslog" seps="1" comment="业务进程日志信息采样定时器"/>
+					<Object name="KeyFile" seps="1" comment="关键文件信息采样定时器"/>
+				</Timers>
+				<SystemLog>
+					<Object name="message" path="/var/log/message" comment="主机系统的日志文件"/>
+				</SystemLog>
+			</Common>
+			<Host name="RISK-PD-RA" address="tcp://192.168.66.110:18800" hostname="r_arb_pd" datacenter="PuDian" hostrack="AG" position="2" alias="ra" process="主要进程:
+riskarb">
+				<AppSyslogs>
+					<Object name="riskarb" item="0" path="/home/PRisk/riskarb/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-PD-RC1" address="tcp://192.168.66.111:18800" hostname="r_compositor1_pd" datacenter="PuDian" hostrack="AG" position="6" alias="rc1" process="主要进程:
+riskcompositor1
+riskproxy1">
+				<AppSyslogs>
+					<Object name="riskcompositor" item="1" path="/home/PRisk/riskcompositor1/dump/Syslog.log" root="/home"/>
+					<Object name="riskproxy" item="1" path="/home/PRisk/riskproxy1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-PD-RC2" address="tcp://192.168.66.112:18800" hostname="r_compositor2_pd" datacenter="PuDian" hostrack="AF" position="6" alias="rc2" process="主要进程:
+riskcompositor2
+
+riskproxy2">
+				<AppSyslogs>
+					<Object name="riskcompositor" item="2" path="/home/PRisk/riskcompositor2/dump/Syslog.log" root="/home"/>
+					<Object name="riskproxy" item="2" path="/home/PRisk/riskproxy2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-PD-RE1" address="tcp://192.168.66.113:18800" hostname="r_engine1_pd" datacenter="PuDian" hostrack="AG" position="5" alias="re1" process="主要进程:
+riskengine1">
+				<AppSyslogs>
+					<Object name="riskengine" item="1" path="/home/PRisk/riskengine1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-PD-RE2" address="tcp://192.168.66.114:18800" hostname="r_engine2_pd" datacenter="PuDian" hostrack="AF" position="5" alias="re2" process="主要进程:
+riskengine2">
+				<AppSyslogs>
+					<Object name="riskengine" item="2" path="/home/PRisk/riskengine2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-PD-RF1" address="tcp://192.168.66.41:18800" hostname="r_front1_pd" datacenter="PuDian" hostrack="AG" position="4" alias="rf1" process="主要进程:
+riskfront1
+mdkernel1
+riskdatafront">
+				<AppSyslogs>
+					<Object name="riskfront" item="1" path="/home/PRisk/riskfront1/dump/Syslog.log" root="/home"/>
+					<Object name="riskfens" item="1" path="/home/PRisk/riskfens1/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="1" path="/home/PRisk/mdkernel1/dump/Syslog.log" root="/home"/>
+					<Object name="riskdatafront" item="0" path="/home/PRisk/riskdatafront/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-PD-RF2" address="tcp://192.168.66.42:18800" hostname="r_front2_pd" datacenter="PuDian" hostrack="AF" position="4" alias="rf2" process="主要进程:
+riskfront2
+mdkernel2
+riskfront3">
+				<AppSyslogs>
+					<Object name="riskfront" item="2" path="/home/PRisk/riskfront2/dump/Syslog.log" root="/home"/>
+					<Object name="riskfens" item="2" path="/home/PRisk/riskfens2/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="2" path="/home/PRisk/mdkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-PD-CFG" address="tcp://192.168.66.151:18800" hostname="r_config_pd" datacenter="PuDian" hostrack="AF" position="3" alias="cfg" process="主要进程:
+config"/>
+			<Host name="RISK-PD-DBF" address="tcp://192.168.66.159:18800" hostname="r_dbfront_pd" datacenter="PuDian" hostrack="AG" position="3" alias="rdf" process="主要进程:
+riskdbfront
+riskdbwriter">
+				<AppSyslogs>
+					<Object name="riskdbfront" item="0" path="/home/PRisk/riskdbfront/dump/Syslog.log" root="/home"/>
+					<Object name="riskdbwriter" item="0" path="/home/PRisk/riskdbwriter/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-PD-RDB1" address="tcp://192.168.85.81:18800" hostname="rdb1" datacenter="PuDian" hostrack="AG" position="1" alias="rdb1" process=""/>
+			<Host name="RISK-PD-RDB2" address="tcp://192.168.85.86:18800" hostname="rdb2" datacenter="PuDian" hostrack="AF" position="2" alias="rdb2" process=""/>
+			<Host name="RISK-ZJ-RA" address="tcp://172.18.44.42:18800" hostname="r_arb_zj" datacenter="ZhangJ" hostrack="BS" position="2" alias="ra" process="主要进程:
+riskarb">
+				<AppSyslogs>
+					<Object name="riskarb" item="0" path="/home/PRisk/riskarb1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RC1" address="tcp://172.18.44.52:18800" hostname="r_compositor1_zj" datacenter="ZhangJ" hostrack="BR" position="2" alias="rc1" process="主要进程:
+riskcompositor1
+riskproxy1">
+				<AppSyslogs>
+					<Object name="riskcompositor" item="1" path="/home/PRisk/riskcompositor1/dump/Syslog.log" root="/home"/>
+					<Object name="riskproxy" item="1" path="/home/PRisk/riskproxy1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RC2" address="tcp://172.18.44.32:18800" hostname="r_compositor2_zj" datacenter="ZhangJ" hostrack="BT" position="2" alias="rc2" process="主要进程:
+riskcompositor2
+riskproxy2">
+				<AppSyslogs>
+					<Object name="riskcompositor" item="2" path="/home/PRisk/riskcompositor2/dump/Syslog.log" root="/home"/>
+					<Object name="riskproxy" item="2" path="/home/PRisk/riskproxy2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RE1" address="tcp://172.18.44.41:18800" hostname="r_engine1_zj" datacenter="ZhangJ" hostrack="BS" position="1" alias="re1" process="主要进程:
+riskengine1">
+				<AppSyslogs>
+					<Object name="riskengine" item="1" path="/home/PRisk/riskengine1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RE2" address="tcp://172.18.44.31:18800" hostname="r_engine2_zj" datacenter="ZhangJ" hostrack="BT" position="1" alias="re2" process="主要进程:
+riskengine2">
+				<AppSyslogs>
+					<Object name="riskengine" item="2" path="/home/PRisk/riskengine2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RTE1" address="tcp://172.18.44.45:18800" hostname="r_rtengine1_zj" datacenter="ZhangJ" hostrack="BS" position="1" alias="rte1" process="主要进程:
+riskrtengine1">
+				<AppSyslogs>
+					<Object name="riskrtengine" item="1" path="/home/PRisk/riskrtengine1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RTE2" address="tcp://172.18.44.35:18800" hostname="r_rtengine2_zj" datacenter="ZhangJ" hostrack="BT" position="1" alias="rte2" process="主要进程:
+riskrtengine2">
+				<AppSyslogs>
+					<Object name="riskrtengine" item="2" path="/home/PRisk/riskrtengine2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RF1" address="tcp://172.18.44.43:18800" hostname="r_front1_zj" datacenter="ZhangJ" hostrack="BS" position="3" alias="rf1" process="主要进程:
+riskfront1
+mdkernel1
+riskdatafront">
+				<AppSyslogs>
+					<Object name="riskfront" item="1" path="/home/PRisk/riskfront1/dump/Syslog.log" root="/home"/>
+					<Object name="riskfens" item="1" path="/home/PRisk/riskfens1/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="1" path="/home/PRisk/mdkernel1/dump/Syslog.log" root="/home"/>
+					<Object name="riskdatafront" item="0" path="/home/PRisk/riskdatafront1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RF2" address="tcp://172.18.44.33:18800" hostname="r_front2_zj" datacenter="ZhangJ" hostrack="BT" position="3" alias="rf2" process="主要进程:
+riskfront2
+mdkernel2
+riskfront3">
+				<AppSyslogs>
+					<Object name="riskfront" item="2" path="/home/PRisk/riskfront2/dump/Syslog.log" root="/home"/>
+					<Object name="riskfens" item="2" path="/home/PRisk/riskfens2/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="2" path="/home/PRisk/mdkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-CFG" address="tcp://172.18.44.51:18800" hostname="r_config_zj" datacenter="ZhangJ" hostrack="BR" position="1" alias="cfg" process="主要进程:
+config"/>
+			<Host name="RISK-ZJ-DBF" address="tcp://172.18.44.44:18800" hostname="r_dbfront_zj" datacenter="ZhangJ" hostrack="BS" position="4" alias="rdf" process="主要进程:
+riskdbfront
+riskdbwriter">
+				<AppSyslogs>
+					<Object name="riskdbfront" item="0" path="/home/PRisk/riskdbfront1/dump/Syslog.log" root="/home"/>
+					<Object name="riskdbwriter" item="0" path="/home/PRisk/riskdbwriter1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-ZJ-RDB1" address="tcp://172.18.35.81:18800" hostname="rdb1_zj" datacenter="ZhangJ" hostrack="BR" position="3" alias="rdb1" process=""/>
+			<Host name="RISK-ZJ-RDB2" address="tcp://172.18.35.86:18800" hostname="rdb2_zj" datacenter="ZhangJ" hostrack="BR" position="4" alias="rdb2" process=""/>
+			<Host name="RISK-BJ-RA" address="tcp://172.23.44.40:18800" hostname="r_arb_bj" datacenter="BeiJing" hostrack="AG" position="2" alias="ra" process="主要进程:
+riskarb">
+				<AppSyslogs>
+					<Object name="riskarb" item="0" path="/home/PRisk/riskarb1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RF1" address="tcp://172.23.44.41:18800" hostname="r_front1_bj" datacenter="BeiJing" hostrack="AG" position="4" alias="rf1" process="主要进程:
+riskfront1
+mdkernel1
+riskdatafront">
+				<AppSyslogs>
+					<Object name="riskfront" item="1" path="/home/PRisk/riskfront1/dump/Syslog.log" root="/home"/>
+					<Object name="riskfens" item="1" path="/home/PRisk/riskfens1/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="1" path="/home/PRisk/mdkernel1/dump/Syslog.log" root="/home"/>
+					<Object name="riskdatafront" item="0" path="/home/PRisk/riskdatafront1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RF2" address="tcp://172.23.44.42:18800" hostname="r_front2_bj" datacenter="BeiJing" hostrack="AF" position="4" alias="rf2" process="主要进程:
+riskfront2
+mdkernel2
+riskfront3">
+				<AppSyslogs>
+					<Object name="riskfront" item="2" path="/home/PRisk/riskfront2/dump/Syslog.log" root="/home"/>
+					<Object name="riskfens" item="2" path="/home/PRisk/riskfens2/dump/Syslog.log" root="/home"/>
+					<Object name="mdkernel" item="2" path="/home/PRisk/mdkernel2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RE1" address="tcp://172.23.44.43:18800" hostname="r_engine1_bj" datacenter="BeiJing" hostrack="AG" position="5" alias="re1" process="主要进程:
+riskengine1">
+				<AppSyslogs>
+					<Object name="riskengine" item="1" path="/home/PRisk/riskengine1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RE2" address="tcp://172.23.44.44:18800" hostname="r_engine2_bj" datacenter="BeiJing" hostrack="AF" position="5" alias="re2" process="主要进程:
+riskengine2">
+				<AppSyslogs>
+					<Object name="riskengine" item="2" path="/home/PRisk/riskengine2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RTE1" address="tcp://172.23.44.47:18800" hostname="r_rtengine1_bj" datacenter="BeiJing" hostrack="AG" position="5" alias="rte1" process="主要进程:
+riskrtengine1">
+				<AppSyslogs>
+					<Object name="riskrtengine" item="1" path="/home/PRisk/riskrtengine1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RTE2" address="tcp://172.23.44.48:18800" hostname="r_rtengine2_bj" datacenter="BeiJing" hostrack="AF" position="5" alias="rte2" process="主要进程:
+riskrtengine2">
+				<AppSyslogs>
+					<Object name="riskrtengine" item="2" path="/home/PRisk/riskrtengine2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RC1" address="tcp://172.23.44.45:18800" hostname="r_compositor1_bj" datacenter="BeiJing" hostrack="AG" position="6" alias="rc1" process="主要进程:
+riskcompositor1
+riskproxy1">
+				<AppSyslogs>
+					<Object name="riskcompositor" item="1" path="/home/PRisk/riskcompositor1/dump/Syslog.log" root="/home"/>
+					<Object name="riskproxy" item="1" path="/home/PRisk/riskproxy1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RC2" address="tcp://172.23.44.46:18800" hostname="r_compositor2_bj" datacenter="BeiJing" hostrack="AF" position="6" alias="rc2" process="主要进程:
+riskcompositor2
+
+riskproxy2">
+				<AppSyslogs>
+					<Object name="riskcompositor" item="2" path="/home/PRisk/riskcompositor2/dump/Syslog.log" root="/home"/>
+					<Object name="riskproxy" item="2" path="/home/PRisk/riskproxy2/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-CFG" address="tcp://172.23.44.30:18800" hostname="r_config_bj" datacenter="BeiJing" hostrack="AF" position="3" alias="cfg" process="主要进程:
+config"/>
+			<Host name="RISK-BJ-DBF" address="tcp://172.23.44.49:18800" hostname="r_dbfront_bj" datacenter="BeiJing" hostrack="AG" position="3" alias="rdf" process="主要进程:
+riskdbfront
+riskdbwriter">
+				<AppSyslogs>
+					<Object name="riskdbfront" item="0" path="/home/PRisk/riskdbfront1/dump/Syslog.log" root="/home"/>
+					<Object name="riskdbwriter" item="0" path="/home/PRisk/riskdbwriter1/dump/Syslog.log" root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK-BJ-RDB1" address="tcp://172.23.35.31:18800" hostname="rdb1_bj" datacenter="BeiJing" hostrack="AG" position="1" alias="rdb1" process=""/>
+			<Host name="RISK-BJ-RDB2" address="tcp://172.23.35.36:18800" hostname="rdb2_bj" datacenter="BeiJing" hostrack="AF" position="2" alias="rdb2" process=""/>
+		</System>
+		<System name="EXCHANGE" alias="交易所管理">
+			<Host name="EXCHANGE-PD37" address="tcp://192.168.84.137:19900" hostname="tbdb02_pd" datacenter="PuDian" comment="tbdb02" hostrack="BE" position="3" alias="bdb02" process="主要进程:
+bdb02">
+				<AppSPs>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetNewClientTotal" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日持仓总手数"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetClientTotal" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日会员总权益金额"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetTradeSize" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日会员出入金总笔数"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetOrderSize" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日收取仓储费用金额"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetExchangeSyncStatus" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日支付仓储费用金额"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetSGSyncStatus" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日调运费笔数"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetPositionTotal" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日手工结算单笔数"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetExchangeStatus" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日商品入库条数"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetTopicSubSrcibe" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日商品出库条数"/>
+					<SP name="EXCHANGEADMIN.PKG_MONITOR.up_GetTraderNum" type="NOCURSOR" seps="00:00:00-23:59:59.60" database="BDB02_PD" comment="当日商品出库条数"/>
+				</AppSPs>
+				<DBlogs>
+					<Table name="exchangeadmin.t_syslog" seps="00:00:00-23:59:59.60" database="BDB02_PD"/>
+				</DBlogs>
+			</Host>
+		</System>
+	</HostConfig>
+	<PhysicsDataCenterRack>
+		<OriginalWidth>1680</OriginalWidth>
+		<OriginalHeight>950</OriginalHeight>
+		<TopSpace>0.2</TopSpace>
+		<LeftSpace>0.03</LeftSpace>
+		<BottomSpace>0.2</BottomSpace>
+		<RightSpace>0.07</RightSpace>
+		<ItemInnerSpace>0.1</ItemInnerSpace>
+		<TextFont>18</TextFont>
+	</PhysicsDataCenterRack>
+	<PhysicsDeploy>
+		<OriginalWidth>1680</OriginalWidth>
+		<OriginalHeight>950</OriginalHeight>
+		<ItemWidth>140</ItemWidth>
+		<ItemHeight>80</ItemHeight>
+		<ItemInnerSpace>15</ItemInnerSpace>
+		<LineWidth>4</LineWidth>
+		<TextFont>20</TextFont>
+		<FirstLineStartY>0.3</FirstLineStartY>
+		<SecondLineStartY>0.8</SecondLineStartY>
+		<TRADE_PuDian_Gateway>
+			<address>192.168.130.0</address>
+			<Name>B2.1 192.168.130.0</Name>
+			<Left>0.08</Left>
+			<Top>0.1</Top>
+			<Width>0.37</Width>
+		</TRADE_PuDian_Gateway>
+		<TRADE_PuDian_Gateway>
+			<address>192.168.131.0</address>
+			<Name>B2.2 192.168.131.0</Name>
+			<Left>0.08</Left>
+			<Top>0.15</Top>
+			<Width>0.37</Width>
+		</TRADE_PuDian_Gateway>
+		<TRADE_PuDian_Gateway>
+			<address>192.168.128.0</address>
+			<Name>B1.1 192.168.128.0</Name>
+			<Left>0.05</Left>
+			<Top>0.5</Top>
+			<Width>0.93</Width>
+		</TRADE_PuDian_Gateway>
+		<TRADE_PuDian_Gateway>
+			<address>192.168.129.0</address>
+			<Name>B1.2 192.168.129.0</Name>
+			<Left>0.05</Left>
+			<Top>0.55</Top>
+			<Width>0.93</Width>
+		</TRADE_PuDian_Gateway>
+		<TRADE_PuDian_Gateway>
+			<address>192.168.77.0</address>
+			<Name>B1.3 192.168.77.0</Name>
+			<Left>0.05</Left>
+			<Top>0.6</Top>
+			<Width>0.93</Width>
+		</TRADE_PuDian_Gateway>
+		<TRADE_ZhangJ_Gateway>
+			<address>192.168.130.0</address>
+			<Name>B2.1 192.168.130.0</Name>
+			<Left>0.08</Left>
+			<Top>0.1</Top>
+			<Width>0.37</Width>
+		</TRADE_ZhangJ_Gateway>
+		<TRADE_ZhangJ_Gateway>
+			<address>192.168.131.0</address>
+			<Name>B2.2 192.168.131.0</Name>
+			<Left>0.08</Left>
+			<Top>0.15</Top>
+			<Width>0.37</Width>
+		</TRADE_ZhangJ_Gateway>
+		<TRADE_ZhangJ_Gateway>
+			<address>192.168.128.0</address>
+			<Name>B1.1 192.168.128.0</Name>
+			<Left>0.05</Left>
+			<Top>0.5</Top>
+			<Width>0.93</Width>
+		</TRADE_ZhangJ_Gateway>
+		<TRADE_ZhangJ_Gateway>
+			<address>192.168.129.0</address>
+			<Name>B1.2 192.168.129.0</Name>
+			<Left>0.05</Left>
+			<Top>0.55</Top>
+			<Width>0.93</Width>
+		</TRADE_ZhangJ_Gateway>
+		<TRADE_ZhangJ_Gateway>
+			<address>172.18.38.0</address>
+			<Name>B1.3 172.18.38.0</Name>
+			<Left>0.05</Left>
+			<Top>0.6</Top>
+			<Width>0.93</Width>
+		</TRADE_ZhangJ_Gateway>
+	</PhysicsDeploy>
+	<Configurations>
+		<Configuration name="syseventcounter" srcPath="" version="1" remark="事件计算进程" type="exe"/>
+		<Configuration name="syseventcounter.ini" srcPath="" version="1" remark="事件计算进程配置文件" type="file"/>
+	</Configurations>
+	<AttrDefine>
+		<Attr name="MemoryDatabase" valueType="int" interval="20" displayType="" comment=" 内存数据库使用的空间 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="syseventcounter"/>
+			<app name="sysfront"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="riskarb"/>
+			<app name="riskcompositor"/>
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+			<app name="riskdbwriter"/>
+			<app name="riskdbfront"/>
+			<app name="riskdatafront"/>
+			<app name="riskproxy"/>
+		</Attr>
+		<Attr name="MemoryDatabaseUsage" valueType="percent" interval="20" displayType="" comment=" 内存数据库使用空间比例 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="syseventcounter"/>
+			<app name="sysfront"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="riskarb"/>
+			<app name="riskcompositor"/>
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+			<app name="riskdbwriter"/>
+			<app name="riskdbfront"/>
+			<app name="riskdatafront"/>
+			<app name="riskproxy"/>
+		</Attr>
+		<Attr name="MDBBlock" valueType="int" interval="20" displayType="" comment=" 内存数据库分块数 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="syseventcounter"/>
+			<app name="sysfront"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="riskarb"/>
+			<app name="riskcompositor"/>
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+			<app name="riskdbwriter"/>
+			<app name="riskdbfront"/>
+			<app name="riskdatafront"/>
+			<app name="riskproxy"/>
+		</Attr>
+		<Attr name="MDBBlockUsage" valueType="percent" interval="20" displayType="" comment=" 内存数据库分块数比例 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="syseventcounter"/>
+			<app name="sysfront"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="riskarb"/>
+			<app name="riskcompositor"/>
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+			<app name="riskdbwriter"/>
+			<app name="riskdbfront"/>
+			<app name="riskdatafront"/>
+			<app name="riskproxy"/>
+		</Attr>
+		<Attr name="OrderSize" valueType="int" interval="1" comment=" 报单表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="DbOrderSize" valueType="int" interval="60" comment=" DB报单表大小 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="TradeSize" valueType="int" interval="1" comment=" 成交表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="DbTradeSize" valueType="int" interval="60" comment=" DB成交表大小 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="ClientSize" valueType="int" interval="60" comment=" 客户表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="PartClientSize" valueType="int" interval="60" comment=" 会员客户表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientPositionSize" valueType="int" interval="10" comment=" 客户持仓表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="UserSessionSize" valueType="int" interval="10" comment=" 用户会话表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="TotalVolume" valueType="int" interval="10" comment=" 成交手数 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="md2kernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="DbTotalVolume" valueType="int" interval="60" comment=" DB成交手数 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="TotalAmount" valueType="float" interval="10" comment=" 成交金额 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="md2kernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="DbTotalAmount" valueType="float" interval="60" comment=" DB成交金额 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="HandleInputTotal" valueType="int" interval="20" comment=" 处理的请求总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleInput" valueType="int" interval="20" displayType="1" comment=" 本次处理的请求数量(周期:20秒)">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="md2kernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderInsertTotal" valueType="int" interval="1" comment=" 处理的报单插入总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderInsert" valueType="int" interval="1" displayType="1" comment=" 本次处理的报单插入数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderActionTotal" valueType="int" interval="1" comment=" 处理的报单操作总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderAction" valueType="int" interval="1" displayType="1" comment=" 本次处理的报单操作数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderInsertErrorTotal" valueType="int" interval="1" comment=" 错误的报单插入总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderInsertError" valueType="int" interval="1" displayType="1" comment=" 本次错误的报单插入数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderActionErrorTotal" valueType="int" interval="1" comment=" 错误的报单操作总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderActionError" valueType="int" interval="1" displayType="1" comment=" 本次错误的报单操作数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleLoginTotal" valueType="int" interval="5" comment=" 处理的登录总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleLogin" valueType="int" interval="5" displayType="1" comment=" 本次处理的登录数量(周期:5秒) ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleLoginErrorTotal" valueType="int" interval="5" comment=" 处理的登录失败总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleLoginError" valueType="int" interval="5" displayType="1" comment=" 本次处理的登录失败数量(周期:5秒) ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleFTDRequestTotal" valueType="int" interval="5" comment=" 处理的FTD请求总数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDRequest" valueType="int" interval="5" displayType="1" comment=" 本次处理的FTD请求数量(周期:5秒) ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDQueryTotal" valueType="int" interval="5" comment=" 处理的FTD查询总数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDQuery" valueType="int" interval="5" displayType="1" comment=" 本次处理的FTD查询数量(周期:5秒) ">
+			<app name="front"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="HandleFTDErrorTotal" valueType="int" interval="5" comment=" 处理的FTD错误总数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDError" valueType="int" interval="5" displayType="1" comment=" 本次处理的FTD错误数量(周期:5秒) ">
+			<app name="front"/>
+		</Attr>
+		<!--
+		&lt;Attr name=&quot;HandleOFPRequestTotal&quot; valueType=&quot;int&quot; interval=&quot;5&quot; comment=&quot; 处理的OFP请求总数量 &quot;&gt;
+			&lt;app name=&quot;front&quot;/&gt;
+		&lt;/Attr&gt;
+		&lt;Attr name=&quot;HandleOFPRequest&quot; valueType=&quot;int&quot; interval=&quot;5&quot; displayType=&quot;1&quot; comment=&quot; 本次处理的OFP请求数量(周期:5秒) &quot;&gt;
+			&lt;app name=&quot;front&quot;/&gt;
+		&lt;/Attr&gt;
+		&lt;Attr name=&quot;HandleOFP2RequestTotal&quot; valueType=&quot;int&quot; interval=&quot;5&quot; displayType=&quot;&quot; comment=&quot; 处理的OFP2请求总数量 &quot;&gt;
+			&lt;app name=&quot;front&quot;/&gt;
+		&lt;/Attr&gt;
+		&lt;Attr name=&quot;HandleOFP2Request&quot; valueType=&quot;int&quot; interval=&quot;5&quot; displayType=&quot;1&quot; comment=&quot; 本次处理的OFP2请求数量(周期:5秒) &quot;&gt;
+			&lt;app name=&quot;front&quot;/&gt;
+		&lt;/Attr&gt;
+-->
+		<Attr name="complogLen" valueType="int" interval="20" comment=" 排队机的流长度 ">
+			<app name="compositor"/>
+			<app name="riskcompositor"/>
+		</Attr>
+		<Attr name="CompLogLen" valueType="int" interval="20" comment=" 排队机的流长度 ">
+			<app name="fiblogger"/>
+		</Attr>
+		<Attr name="tseriesLen" valueType="int" interval="20" comment=" 交易输入的流长度 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="fibgate"/>
+			<app name="riskproxy"/>
+		</Attr>
+		<Attr name="tresultLen" valueType="int" interval="20" comment=" 交易结果的流长度 ">
+			<app name="tkernel"/>
+			<app name="fiblogger"/>
+			<app name="md2kernel"/>
+			<app name="riskproxy"/>
+		</Attr>
+		<Attr name="tinitLen" valueType="int" interval="20" comment=" 初始化的流长度 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="dfmtLen" valueType="int" interval="20" comment=" DFMT的流长度 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="dbmtLen" valueType="int" interval="20" comment=" DBMT的流长度 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="frontLen" valueType="int" interval="20" comment=" 前置的流长度 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="OFPMarketDataSentTotal" valueType="int" interval="20" comment=" 老行情前置发送行情总数量 ">
+			<app name="ofpmd"/>
+		</Attr>
+		<Attr name="OFPMarketDataSent" valueType="int" interval="20" displayType="1" comment=" 本次老行情前置发送行情数量(周期:20秒) ">
+			<app name="ofpmd"/>
+		</Attr>
+		<Attr name="TMDBCountTotal" valueType="int" interval="20" comment=" TMDB的总数量 ">
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="TMDBCount" valueType="int" interval="20" displayType="1" comment=" 本次TMDB的数量(周期:20秒) ">
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="CurrentTime" valueType="string" interval="10" comment=" 当前业务时间 "/>
+		<Attr name="IsActive" valueType="int" interval="20" comment=" 是否活跃 ">
+			<app name="arb"/>
+			<app name="compositor"/>
+			<app name="front"/>
+			<app name="mdkernel"/>
+			<app name="ofpmd"/>
+			<app name="qkernel"/>
+			<app name="tkernel"/>
+			<app name="tinit"/>
+			<app name="tmdb"/>
+			<app name="fens"/>
+			<app name="dbmt"/>
+			<app name="fibgate"/>
+			<app name="fibproxy"/>
+			<app name="fiblogger"/>
+			<app name="fibclient"/>
+			<app name="fibplay"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="md2sync"/>
+			<app name="md2dbaux"/>
+			<app name="md2tickgen"/>
+			<app name="md2tickqry"/>
+			<app name="riskarb"/>
+			<app name="riskcompositor"/>
+			<app name="riskengine"/>
+			<app name="riskrtengine"/>
+			<app name="riskfront"/>
+			<app name="riskfens"/>
+			<app name="riskdbwriter"/>
+			<app name="riskdbfront"/>
+			<app name="riskdatafront"/>
+			<app name="riskproxy"/>
+		</Attr>
+		<Attr name="FTD_0" valueType="int" interval="5" comment=" FTD_0席位 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="FTD_1" valueType="int" interval="5" comment=" FTD_1席位 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="FTD_2" valueType="int" interval="5" comment=" FTD_2席位 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="FTD_3" valueType="int" interval="5" comment=" FTD_3席位 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="FTD_4" valueType="int" interval="5" comment=" FTD_4席位 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="ftdclientcount" valueType="int" interval="5" comment=" FTD总席位 ">
+			<app name="front"/>
+		</Attr>
+		<!--
+		&lt;Attr name=&quot;OFP_1_0&quot; valueType=&quot;int&quot; interval=&quot;5&quot; comment=&quot; OFP席位 &quot;&gt;
+			&lt;app name=&quot;front&quot;/&gt;
+		&lt;/Attr&gt;
+		&lt;Attr name=&quot;OFP_2_0&quot; valueType=&quot;int&quot; interval=&quot;5&quot; comment=&quot; OFP2席位 &quot;&gt;
+			&lt;app name=&quot;front&quot;/&gt;
+		&lt;/Attr&gt;
+-->
+		<Attr name="0X00001001" valueType="int" interval="10" comment=" TResult流 ">
+			<app name="fibclient"/>
+		</Attr>
+		<Attr name="0X00001003" valueType="int" interval="10" comment=" TSeries流 ">
+			<app name="fibclient"/>
+		</Attr>
+		<Attr name="CompositorState" valueType="int" interval="20" comment=" 排队机当前状态 ">
+			<app name="compositor"/>
+			<app name="riskcompositor"/>
+		</Attr>
+		<Attr name="Version" valueType="string" interval="1" comment=" 当前版本 "/>
+		<Attr name="TimeSyncTotal" valueType="int" interval="20" comment=" 发出的心跳报文个数 "/>
+		<Attr name="CPUUsage" valueType="percent" interval="5" comment=" 业务进程CPU使用率 ">
+			<app name="arb"/>
+			<app name="compositor"/>
+			<app name="front"/>
+			<app name="mdkernel"/>
+			<app name="ofpmd"/>
+			<app name="qkernel"/>
+			<app name="tkernel"/>
+			<app name="tinit"/>
+			<app name="tmdb"/>
+			<app name="dbmt"/>
+			<app name="fens"/>
+			<app name="fibclient"/>
+			<app name="fibplay"/>
+			<app name="fibproxy"/>
+			<app name="fiblogger"/>
+			<app name="sysprobe"/>
+			<app name="sysagent"/>
+			<app name="syseventcounter"/>
+			<app name="sysquery"/>
+			<app name="sysfibclient"/>
+			<app name="sysfront"/>
+			<app name="syswebserver"/>
+			<app name="riskarb"/>
+			<app name="riskcompositor"/>
+			<app name="riskdatafront"/>
+			<app name="riskdbfront"/>
+			<app name="riskdbwriter"/>
+			<app name="riskengine"/>
+			<app name="riskrtengine"/>
+			<app name="riskfront"/>
+			<app name="riskfens"/>
+			<app name="riskproxy"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="md2sync"/>
+			<app name="md2dbaux"/>
+			<app name="md2tickgen"/>
+			<app name="md2tickqry"/>
+		</Attr>
+		<Attr name="MemoryUsage" valueType="percent" interval="5" comment=" 业务进程MEMORY使用率 ">
+			<app name="arb"/>
+			<app name="compositor"/>
+			<app name="front"/>
+			<app name="mdkernel"/>
+			<app name="ofpmd"/>
+			<app name="qkernel"/>
+			<app name="tkernel"/>
+			<app name="tinit"/>
+			<app name="tmdb"/>
+			<app name="dbmt"/>
+			<app name="fens"/>
+			<app name="fibclient"/>
+			<app name="fibplay"/>
+			<app name="fibproxy"/>
+			<app name="fiblogger"/>
+			<app name="sysprobe"/>
+			<app name="sysagent"/>
+			<app name="syseventcounter"/>
+			<app name="sysquery"/>
+			<app name="sysfibclient"/>
+			<app name="sysfront"/>
+			<app name="syswebserver"/>
+			<app name="riskarb"/>
+			<app name="riskcompositor"/>
+			<app name="riskdatafront"/>
+			<app name="riskdbfront"/>
+			<app name="riskdbwriter"/>
+			<app name="riskengine"/>
+			<app name="riskrtengine"/>
+			<app name="riskfront"/>
+			<app name="riskfens"/>
+			<app name="riskproxy"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="md2sync"/>
+			<app name="md2dbaux"/>
+			<app name="md2tickgen"/>
+			<app name="md2tickqry"/>
+		</Attr>
+		<Attr name="DiskUsage" valueType="percent" interval="5" comment=" 业务进程所在文件系统使用率 ">
+			<app name="arb"/>
+			<app name="compositor"/>
+			<app name="front"/>
+			<app name="mdkernel"/>
+			<app name="ofpmd"/>
+			<app name="qkernel"/>
+			<app name="tkernel"/>
+			<app name="tinit"/>
+			<app name="tmdb"/>
+			<app name="dbmt"/>
+			<app name="fens"/>
+			<app name="fibclient"/>
+			<app name="fibplay"/>
+			<app name="fibproxy"/>
+			<app name="fiblogger"/>
+			<app name="sysprobe"/>
+			<app name="sysagent"/>
+			<app name="syseventcounter"/>
+			<app name="sysquery"/>
+			<app name="sysfibclient"/>
+			<app name="sysfront"/>
+			<app name="syswebserver"/>
+			<app name="riskarb"/>
+			<app name="riskcompositor"/>
+			<app name="riskdatafront"/>
+			<app name="riskdbfront"/>
+			<app name="riskdbwriter"/>
+			<app name="riskengine"/>
+			<app name="riskrtengine"/>
+			<app name="riskfront"/>
+			<app name="riskfens"/>
+			<app name="riskproxy"/>
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+			<app name="md2sync"/>
+			<app name="md2dbaux"/>
+			<app name="md2tickgen"/>
+			<app name="md2tickqry"/>
+		</Attr>
+		<Attr name="FlowCount_tseries" valueType="int" interval="20" comment="本次接收tseries流水长度">
+			<app name="fibplay"/>
+		</Attr>
+		<Attr name="FlowCount_tseriesTotal" valueType="int" interval="20" comment="接收tseries流水总长度">
+			<app name="fibplay"/>
+		</Attr>
+		<Attr name="tinitDbLen" valueType="int" interval="60" comment="tinit表大小">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="dbmtDbLen" valueType="int" interval="60" comment="dbmt表大小">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="dfmtFSLen" valueType="int" interval="60" comment="dfmt文件大小">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="MdSessionSize" valueType="int" interval="10" comment="行情核心连接数">
+			<app name="mdkernel"/>
+		</Attr>
+		<Attr name="Active" valueType="int" interval="3" comment="进程主机是否激活标志"/>
+		<Attr name="TopCPU" valueType="int" interval="2" comment="主机CPU信息"/>
+		<Attr name="TopMemory" valueType="int" interval="2" comment="主机内存信息"/>
+		<Attr name="TopProcess" valueType="int" interval="2" comment="主机进程信息"/>
+		<Attr name="Network" valueType="int" interval="5" comment="主机网络信息"/>
+		<Attr name="TotalNumber" valueType="int" interval="10" comment=" 成交笔数 ">
+			<app name="md2kernel"/>
+		</Attr>
+		<Attr name="HandleOrder" valueType="int" interval="1" displayType="1" comment=" 已处理的报单数 ">
+			<app name="md2kernel"/>
+		</Attr>
+		<Attr name="HandleTrade" valueType="int" interval="1" displayType="1" comment=" 已处理的成交数 ">
+			<app name="md2kernel"/>
+		</Attr>
+		<Attr name="0X000007d1" valueType="int" interval="10" comment=" 发送行情FTD报文个数 ">
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="0X00001389" valueType="int" interval="10" comment=" 发送通知FTD报文个数 ">
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="HandleRelayLogin" valueType="int" interval="5" comment=" 本次处理的中继登录数量 ">
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="HandleRelayLoginError" valueType="int" interval="5" comment=" 本次处理的中继登录失败数量 ">
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="HandleNotification" valueType="int" interval="20" comment=" 处理通知总数 ">
+			<app name="md2dbaux"/>
+		</Attr>
+		<Attr name="MBLSize" valueType="int" interval="20" comment="分价表记录数">
+			<app name="md2kernel"/>
+		</Attr>
+		<Attr name="MBLOrderSize" valueType="int" interval="20" comment="分价表报单队列记录数">
+			<app name="md2kernel"/>
+		</Attr>
+		<Attr name="MBLSummarySize" valueType="int" interval="20" comment="分价表汇总信息记录数">
+			<app name="md2kernel"/>
+		</Attr>
+		<Attr name="MarketDataModifySize" valueType="int" interval="20" comment="行情变更记录数">
+			<app name="md2kernel"/>
+		</Attr>
+		<Attr name="TopicMarketDataModifySize" valueType="int" interval="20" comment="主题行情变更记录数">
+			<app name="md2kernel"/>
+		</Attr>
+		<Attr name="MarketDataVersionSize" valueType="int" interval="20" comment="基础行情版本记录数">
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="MarketLevelVersionSize" valueType="int" interval="20" comment="委托档位行情版本记录数">
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="MarketOrderVersionSize" valueType="int" interval="20" comment="报单队列行情版本记录数">
+			<app name="md2kernel"/>
+			<app name="md2relay"/>
+		</Attr>
+		<Attr name="DealSize" valueType="int" interval="30" comment="买卖成交单记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientPositionDetailSize" valueType="int" interval="30" comment="客户合约持仓明细记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientProductPosiDetailSize" valueType="int" interval="30" comment="客户品种持仓明细记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientInstPositionSortSize" valueType="int" interval="30" comment="客户合约持仓排名记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientProductPositionSortSize" valueType="int" interval="30" comment="客户品种持仓排名记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientInstTradeSize" valueType="int" interval="30" comment="客户合约交易记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientProductTradeSize" valueType="int" interval="30" comment="客户品种交易记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientInstTradeSortSize" valueType="int" interval="30" comment="客户合约成交排名表记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientProductTradeSortSize" valueType="int" interval="30" comment="客户产品成交排名表记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="ClientInstProfitSortSize" valueType="int" interval="30" comment="客户合约盈亏表记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="BiOpenTradeSize" valueType="int" interval="30" comment="双开仓记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="BiCloseTradeSize" valueType="int" interval="30" comment="双平仓记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="SpecialTradeSize" valueType="int" interval="30" comment="对敲记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="triskseriesLen" valueType="int" interval="20" comment="从风控排队机收到的报文数量">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="triskengineLen" valueType="int" interval="20" comment="riskengine输出的报文数量">
+			<app name="riskengine"/>
+		</Attr>
+		<Attr name="triskgateLen" valueType="int" interval="20" comment="riskproxy输出的报文数量">
+			<app name="riskproxy"/>
+		</Attr>
+		<Attr name="riskOrderSize" valueType="int" interval="30" comment="报单表记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="riskTradeSize" valueType="int" interval="30" comment="成交表记录数">
+			<app name="riskengine"/>
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="frontpubLen" valueType="int" interval="20" comment="风控前置向排队机发送的报文数量">
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="triskengineLen1" valueType="int" interval="20" comment="从riskengine的第一个广播地址收到的报文数量">
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="triskengineLen2" valueType="int" interval="20" comment="从riskengine的第二个广播地址收到的报文数量">
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="riskTotalVolume" valueType="int" interval="20" comment="当天累计成交量">
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="riskTotalAmount" valueType="int" interval="20" comment="当天累计成交金额">
+			<app name="riskfront"/>
+		</Attr>
+		<Attr name="riskseriesLen" valueType="int" interval="20" comment="从风控排队机收到的报文数量">
+			<app name="riskdbfront"/>
+		</Attr>
+		<Attr name="riskdbfrontLen" valueType="int" interval="20" comment="发到排队机的报文数量">
+			<app name="riskdbfront"/>
+		</Attr>
+		<Attr name="riskRecCount" valueType="int" interval="20" comment="riskdbfront从数据库里读取数据的记录数">
+			<app name="riskdbfront"/>
+		</Attr>
+		<Attr name="triskengine1" valueType="int" interval="20" comment="从riskengine的第一个广播地址收到的报文数量">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="triskengine2" valueType="int" interval="20" comment="从riskengine的第二个广播地址收到的报文数量">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexm1" valueType="int" interval="1" comment="成功写入t_indexm1表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexm2" valueType="int" interval="1" comment="成功写入t_indexm2表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexm3" valueType="int" interval="1" comment="成功写入t_indexm3表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexc1" valueType="int" interval="1" comment="成功写入t_indexc1表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexp2" valueType="int" interval="1" comment="成功写入t_indexp2表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexc3" valueType="int" interval="1" comment="成功写入t_indexc3表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexc4" valueType="int" interval="1" comment="成功写入t_indexc4表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexym" valueType="int" interval="1" comment="成功写入t_indexym表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexyp" valueType="int" interval="1" comment="成功写入t_indexyp表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexjp" valueType="int" interval="1" comment="成功写入t_indexjp表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexjk" valueType="int" interval="1" comment="成功写入t_indexjk表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexp3" valueType="int" interval="1" comment="成功写入t_indexp3表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexc2" valueType="int" interval="1" comment="成功写入t_indexc2表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexl1" valueType="int" interval="1" comment="成功写入t_indexl1表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexyc" valueType="int" interval="1" comment="成功写入t_indexyc表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexjc" valueType="int" interval="1" comment="成功写入t_indexjc表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_indexm2" valueType="int" interval="1" comment="成功写入t_indexm2表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_PartProfitDetail" valueType="int" interval="1" comment="成功写入t_PartProfitDetail表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_ClientProfitDetail" valueType="int" interval="1" comment="成功写入t_ClientProfitDetail表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_RiskSettlePrice" valueType="int" interval="1" comment="成功写入t_RiskSettlePrice表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_InstrumentClass" valueType="int" interval="1" comment="成功写入t_InstrumentClass表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_LightInstCliProfit" valueType="int" interval="1" comment="成功写入t_LightInstCliProfit表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="t_SpecialTrade" valueType="int" interval="1" comment="成功写入t_SpecialTrade表的记录数">
+			<app name="riskdbwriter"/>
+		</Attr>
+		<Attr name="triskseries" valueType="int" interval="20" comment="从风控排队机收到的报文数量">
+			<app name="riskdatafront"/>
+		</Attr>
+		<Attr name="riskdatafront" valueType="int" interval="20" comment="发到排队机的报文数量">
+			<app name="riskdatafront"/>
+		</Attr>
+		<Attr name="PositionTotal" valueType="int" interval="500" comment="当日持仓总手数">
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="NewClientTotal" valueType="int" interval="500" comment="新开户总数">
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="ClientTotal" valueType="int" interval="500" comment="总开户数">
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="ExchangeSyncStatus" valueType="string" interval="500" comment="交易所初始化同步状态">
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="SGSyncStatus" valueType="string" interval="500" comment="结算组初始化同步状态">
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="ExchangeStatus" valueType="string" interval="500" comment="交易所状态">
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="TopicSubscribe" valueType="int" interval="500" comment="行情订阅数量">
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+		<Attr name="TraderNum" valueType="int" interval="500" comment="交易员数量">
+			<app name="EXCHANGE_sp"/>
+		</Attr>
+	</AttrDefine>
+	<SessionIpConfig>
+		<Attr name="LanSessionSize" comment="场内席位">
+			<ipconfig value="172.16."/>
+		</Attr>
+		<Attr name="WanSessionSize" comment="场外席位">
+			<ipconfig value="192.168."/>
+			<ipconfig value="10."/>
+		</Attr>
+	</SessionIpConfig>
+	<Events>
+		<!-- 以下为通用告警配置项 -->
+		<Event name="AppStatusInvalid" FullName="进程状态异常" type="os" level="notify" Comment="探针未能侦测到该进程" MSG_SubjectId="TradeMonitor"/>
+		<Event name="DBConnectLost" FullName="数据库连接断开" type="os" level="error" Comment="主机探针无法正常连接到数据库" MSG_SubjectId="TradeMonitor"/>
+		<Event name="DBGetLogWrong" FullName="读取数据库日志表出错" type="os" level="error" Comment="读取数据库日志表时出错" MSG_SubjectId="TradeMonitor"/>
+		<Event name="DBExeSPWrong" FullName="调用数据库SP出错" type="os" level="error" Comment="调用数据库存储过程时发生异常" MSG_SubjectId="TradeMonitor"/>
+		<!-- 以下为交易监控专有告警配置项 -->
+		<Event name="TM_FirstLoginSucc" FullName="交易系统首次成功登录" type="app" level="notify" GiveupTime="36000" Control="nowbetween(&quot;07:00:00&quot;,&quot;09:00:00&quot;)" Expr="ObjectEventSummary(&quot;TRADE.PuDian.app.tkernel.1&quot;,&quot;LoginSuccess&quot;,1800) &gt; 0" ObjectId="TRADE.PuDian.app.tkernel.1" Comment="交易系统首次成功登录" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_HostInactive" FullName="主机不活跃" type="os" level="error" GiveupTime="600" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:05:00&quot;)" Expr="(^@Active &lt; (now-30)&amp;&amp;(getSystemName(@)==&quot;TRADE&quot;))" Comment="连续30秒未收到主机活跃信息" ObjectAttr="Active" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_AppInactive" FullName="进程不活跃" type="app" level="error" GiveupTime="600" Control="nowbetween(&quot;08:20:00&quot;,&quot;15:00:00&quot;)" Expr="((^@IsActive &lt; (now-60)) &amp;&amp; (((getmaincentername()==&quot;TRADE.PuDian&quot;) &amp;&amp; (@!=&quot;TRADE.ZhangJ.app.tmdb&quot;) &amp;&amp; (@!=&quot;TRADE.ZhangJ.app.tinit&quot;) &amp;&amp; (@!=&quot;TRADE.ZhangJ.app.arb&quot;) &amp;&amp; (@!=&quot;TRADE.ZhangJ.app.compositor.1&quot;)&amp;&amp; (@!=&quot;TRADE.ZhangJ.app.compositor.2&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.tmdb&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.tinit&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.arb&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.compositor.1&quot;)&amp;&amp; (@!=&quot;TRADE.BeiJing.app.compositor.2&quot;) &amp;&amp; (@!=&quot;TRADE.PuDian.app.fiblogger.1&quot;)&amp;&amp; (@!=&quot;TRADE.PuDian.app.fiblogger.2&quot;)) || ((getmaincentername()==&quot;TRADE.ZhangJ&quot;) &amp;&amp; (@!=&quot;TRADE.PuDian.app.tmdb&quot;) &amp;&amp; (@!=&quot;TRADE.PuDian.app.tinit&quot;) &amp;&amp; (@!=&quot;TRADE.PuDian.app.arb&quot;)&amp;&amp; (@!=&quot;TRADE.PuDian.app.compositor.1&quot;)&amp;&amp; (@!=&quot;TRADE.PuDian.app.compositor.2&quot;)&amp;&amp; (@!=&quot;TRADE.ZhangJ.app.fiblogger.1&quot;)&amp;&amp; (@!=&quot;TRADE.ZhangJ.app.fiblogger.2&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.tmdb&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.tinit&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.arb&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.compositor.1&quot;)&amp;&amp; (@!=&quot;TRADE.BeiJing.app.compositor.2&quot;))))&amp;&amp;(getSystemName(@)!=&quot;MD2&quot;)&amp;&amp;(@!=&quot;RISK.PuDian.app.riskdbfront&quot;)&amp;&amp;(@!=&quot;RISK.ZhangJ.app.riskdbfront&quot;)" Comment="连续1分钟未收到进程IsActive信息" ObjectAttr="IsActive" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_CpuUsageNotifing" FullName="CPU比较忙" type="app" level="warning" GiveupTime="60" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:00:00&quot;)" Expr="(@CPUUsage&gt;=20 &amp;&amp; @CPUUsage&lt;50) &amp;&amp; (@!=&quot;TRADE.PuDian.app.tmdb&quot;) &amp;&amp; (@!=&quot;TRADE.ZhangJ.app.tmdb&quot;) &amp;&amp; (getSystemName(@)!=&quot;RISK&quot;)" Comment="进程CPU使用率超过20%" ObjectAttr="CPUUsage" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_CpuUsageTooLarge" FullName="CPU太忙" type="app" level="error" GiveupTime="60" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:00:00&quot;)" Expr="(@CPUUsage&gt;=50) &amp;&amp; (@!=&quot;TRADE.PuDian.app.tmdb&quot;) &amp;&amp; (@!=&quot;TRADE.ZhangJ.app.tmdb&quot;) &amp;&amp; (@!=&quot;TRADE.BeiJing.app.tmdb&quot;) &amp;&amp; (getSystemName(@)!=&quot;RISK&quot;)" Comment="进程CPU使用率超过50%" ObjectAttr="CPUUsage" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_DiskUsageNotifing" FullName="硬盘使用率略高" type="app" level="notify" GiveupTime="43200" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:05:00&quot;)" Expr="@DiskUsage&gt;=40 &amp;&amp; @DiskUsage&lt;50 " Comment="进程所在硬盘使用率超过40%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_DiskUsageWarning" FullName="硬盘使用率较高" type="app" level="warning" GiveupTime="43200" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:05:00&quot;)" Expr="@DiskUsage&gt;=50 &amp;&amp; @DiskUsage&lt;80 " Comment="进程所在硬盘使用率超过50%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_DiskUsageTooLarge" FullName="硬盘使用率过高" type="app" level="error" GiveupTime="43200" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:05:00&quot;)" Expr="@DiskUsage&gt;=80 &amp;&amp; @DiskUsage&lt;95 " Comment="进程所在硬盘使用率超过80%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_DiskUsageDisaster" FullName="硬盘严重不足" type="app" level="fatal" GiveupTime="43200" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:05:00&quot;)" Expr="@DiskUsage&gt;=95" Comment="进程所在硬盘使用率超过95%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_MemUsageWarning" FullName="内存使用率较高" type="app" level="warning" GiveupTime="600" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:05:00&quot;)" Expr="@MemoryUsage&gt;=50 &amp;&amp; @MemoryUsage&lt;80" Comment="进程内存使用率超过50%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_MemUsageTooLarge" FullName="内存使用率过高" type="app" level="error" GiveupTime="600" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:05:00&quot;)" Expr="@MemoryUsage&gt;=80 &amp;&amp; @MemoryUsage&lt;95" Comment="进程内存使用率超过80%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_MemUsageDisaster" FullName="内存严重不足" type="app" level="fatal" GiveupTime="600" Control="nowbetween(&quot;08:10:00&quot;,&quot;15:05:00&quot;)" Expr="@MemoryUsage&gt;=95" Comment="进程内存使用率超过95%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_MDBUsageWarning" FullName="内存数据库警告" type="app" level="warning" GiveupTime="86400" Control="nowbetween(&quot;08:30:00&quot;,&quot;15:05:00&quot;)" Expr="((@MemoryDatabaseUsage &gt; 50) | (@MDBBlockUsage &gt; 50)&amp;&amp;(getSystemName(@)==&quot;TRADE&quot;))" Comment="进程内存数据库空间或块数使用超过50%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_MDBUsageTooLarge" FullName="内存数据库不足" type="app" level="error" GiveupTime="86400" Control="nowbetween(&quot;08:30:00&quot;,&quot;15:05:00&quot;)" Expr="(@MemoryDatabaseUsage &gt; 70) | (@MDBBlockUsage &gt; 70)" Comment="进程内存数据库空间或块数使用超过70%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_MDBUsageDisaster" FullName="内存数据库灾难" type="app" level="fatal" GiveupTime="86400" Control="nowbetween(&quot;08:30:00&quot;,&quot;15:05:00&quot;)" Expr="(@MemoryDatabaseUsage &gt; 95) | (@MDBBlockUsage &gt; 95)" Comment="进程内存数据库空间或块数使用超过95%" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_OrderNotIncrease" FullName="报单无增长" type="app" level="fatal" GiveupTime="60" Control="(nowbetween(&quot;09:01:00&quot;,&quot;10:14:49&quot;) | nowbetween(&quot;10:31:00&quot;,&quot;11:29:49&quot;) | nowbetween(&quot;13:31:00&quot;,&quot;14:59:49&quot;))" Expr="(@OrderSize &lt;= $OrderSize(now-3)) &amp;&amp;( ((getmaincentername()==&quot;TRADE.PuDian&quot;)&amp;&amp;(@!=&quot;TRADE.ZhangJ.app.tmdb&quot;)&amp;&amp;(@!=&quot;TRADE.BeiJing.app.tmdb&quot;)) || ((getmaincentername()==&quot;TRADE.ZhangJ&quot;)&amp;&amp; (@!=&quot;TRADE.PuDian.app.tmdb&quot;)&amp;&amp; (@!=&quot;TRADE.BeiJing.app.tmdb&quot;)) &amp;&amp;(getSystemName(@)==&quot;TRADE&quot;))" Comment="报单数量连续3秒未增长" ObjectAttr="OrderSize" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_UserSessionLostMuch" FullName="用户会话快速丢失" type="app" level="error" GiveupTime="60" Control="(nowbetween(&quot;09:01:00&quot;,&quot;10:14:49&quot;) | nowbetween(&quot;10:31:00&quot;,&quot;11:29:49&quot;) | nowbetween(&quot;13:31:00&quot;,&quot;14:59:49&quot;))" Expr="(@UserSessionSize-#UserSessionSize) &lt; -20" Comment="最近两次会话采样中丢失了至少20个会话" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_FrontConnLostMuch" FullName="前置连接断开太快" type="app" level="warning" GiveupTime="600" Control="(nowbetween(&quot;09:01:00&quot;,&quot;10:14:49&quot;) | nowbetween(&quot;10:31:00&quot;,&quot;11:29:49&quot;) | nowbetween(&quot;13:31:00&quot;,&quot;14:59:49&quot;))" Expr="(@HandleFTDRequest &gt;= 0 &amp;&amp; ObjectEventSummary(@, &quot;disconnected&quot; , 5) &gt;= 5)" Comment="前置5秒内发生至少5次席位断线" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_TotalConnLostMuch" FullName="前置连接断开总数过大" type="app" level="fatal" GiveupTime="60" Control="(nowbetween(&quot;09:01:00&quot;,&quot;10:14:49&quot;) | nowbetween(&quot;10:31:00&quot;,&quot;11:29:49&quot;) | nowbetween(&quot;13:31:00&quot;,&quot;14:59:49&quot;))" Expr="Summary(&quot;disconnected&quot;,10) &gt;= 10" Comment="所有前置10秒内共发生至少10次席位断线" ObjectId="TRADE.PuDian.app.tkernel.1" ObjectAttr="event" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_LanStatusDown" FullName="网卡处于Down状态" type="os" level="error" GiveupTime="600" Control="nowbetween(&quot;08:00:00&quot;,&quot;16:00:00&quot;)" Expr="(@LANSTATUS==&quot;Down&quot;)" Comment="主机有网卡处于Down状态" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_TradeSizeCheckWarning" FullName="TradeSize不匹配" type="app" level="warning" GiveupTime="600" Control="(nowbetween(&quot;10:20:00&quot;,&quot;10:25:00&quot;) | nowbetween(&quot;11:40:00&quot;,&quot;12:00:00&quot;) | nowbetween(&quot;15:05:00&quot;,&quot;15:30:00&quot;))" Expr="((@TRADE.PuDian.app.tkernel.1:TradeSize != @TRADE.PuDian.app.tinit:DbTradeSize)&amp;&amp;(getmaincentername()==&quot;TRADE.PuDian&quot;)) | ((getmaincentername()==&quot;TRADE.ZhangJ&quot;)&amp;&amp;(@TRADE.ZhangJ.app.tkernel.1:TradeSize != @TRADE.ZhangJ.app.tinit:DbTradeSize)) | ((getmaincentername()==&quot;TRADE.BeiJing&quot;)&amp;&amp;(@TRADE.BeiJing.app.tkernel.1:TradeSize != @TRADE.BeiJing.app.tinit:DbTradeSize))" Comment="主数据中心日志文件TradeSize与数据库记录数不匹配" ObjectId="TRADE.PuDian.app.tmdb" MSG_SubjectId="TradeMonitor"/>
+		<Event name="TM_OrderSizeCheckWarning" FullName="OrderSize不匹配" type="app" level="warning" GiveupTime="600" Control="(nowbetween(&quot;10:20:00&quot;,&quot;10:25:00&quot;) | nowbetween(&quot;11:40:00&quot;,&quot;12:00:00&quot;) | nowbetween(&quot;15:05:00&quot;,&quot;15:30:00&quot;))" Expr="((@TRADE.PuDian.app.tkernel.1:OrderSize != @TRADE.PuDian.app.tinit:DbOrderSize)&amp;&amp;(getmaincentername()==&quot;TRADE.PuDian&quot;)) | ((getmaincentername()==&quot;TRADE.ZhangJ&quot;)&amp;&amp;(@TRADE.ZhangJ.app.tkernel.1:OrderSize != @TRADE.ZhangJ.app.tinit:DbOrderSize)) | ((getmaincentername()==&quot;TRADE.BeiJing&quot;)&amp;&amp;(@TRADE.BeiJing.app.tkernel.1:OrderSize != @TRADE.BeiJing.app.tinit:DbOrderSize))" Comment="主数据中心日志文件OrderSize与数据库记录数不匹配" ObjectId="TRADE.PuDian.app.tmdb" MSG_SubjectId="TradeMonitor"/>
+		<!--
+		&lt;Event name=&quot;TM_TradeSizeCheckWarning&quot; 	FullName=&quot;TradeSize不匹配&quot; 		type=&quot;app&quot; 	level=&quot;warning&quot; 	GiveupTime=&quot;600&quot; 	Control=&quot;(nowbetween(&quot;09:40:00&quot;,&quot;10:15:00&quot;) | nowbetween(&quot;10:30:00&quot;,&quot;11:30:00&quot;) | nowbetween(&quot;13:30:00&quot;,&quot;15:00:00&quot;))&quot; Expr=&quot;((getmaincentername()==&quot;TRADE.PuDian&quot;) &amp;&amp; (($TRADE.PuDian.app.tkernel.1:TradeSize(^@TRADE.PuDian.app.tinit:DbTradeSize) - @TRADE.PuDian.app.tinit:DbTradeSize) &gt; 20000)) | ((getmaincentername()==&quot;TRADE.ZhangJ&quot;) &amp;&amp; (($TRADE.ZhangJ.app.tkernel.1:TradeSize(^@TRADE.ZhangJ.app.tinit:DbTradeSize) - @TRADE.ZhangJ.app.tinit:DbTradeSize) &gt; 20000))&quot; Comment=&quot;主数据中心日志文件TradeSize与数据库记录数不匹配&quot; ObjectId=&quot;TRADE.PuDian.app.tmdb&quot; MSG_SubjectId=&quot;TradeMonitor&quot;/&gt;
+		&lt;Event name=&quot;TM_OrderSizeCheckWarning&quot; 	FullName=&quot;OrderSize不匹配&quot; 		type=&quot;app&quot; 	level=&quot;warning&quot; 	GiveupTime=&quot;600&quot; 	Control=&quot;(nowbetween(&quot;09:40:00&quot;,&quot;10:15:00&quot;) | nowbetween(&quot;10:30:00&quot;,&quot;11:30:00&quot;) | nowbetween(&quot;13:30:00&quot;,&quot;15:00:00&quot;))&quot; Expr=&quot;((getmaincentername()==&quot;TRADE.PuDian&quot;) &amp;&amp; (($TRADE.PuDian.app.tkernel.1:OrderSize(^@TRADE.PuDian.app.tinit:DbOrderSize) - @TRADE.PuDian.app.tinit:DbOrderSize) &gt; 20000)) | ((getmaincentername()==&quot;TRADE.ZhangJ&quot;) &amp;&amp; (($TRADE.ZhangJ.app.tkernel.1:OrderSize(^@TRADE.ZhangJ.app.tinit:DbOrderSize) - @TRADE.ZhangJ.app.tinit:DbOrderSize) &gt; 20000))&quot; Comment=&quot;主数据中心日志文件OrderSize与数据库记录数不匹配&quot; ObjectId=&quot;TRADE.PuDian.app.tmdb&quot; MSG_SubjectId=&quot;TradeMonitor&quot;/&gt;
+-->
+	</Events>
+	<Peaks>
+		<Peak app="TRADE.PuDian.app.tkernel.1" Attr="HandleOrderInsert" RltAttr="HandleOrderInsertError"/>
+		<Peak app="TRADE.PuDian.app.tkernel.1" Attr="HandleOrderInsert" RltAttr="HandleOrderAction"/>
+		<Peak app="TRADE.PuDian.app.tkernel.2" Attr="HandleOrderInsert" RltAttr="HandleOrderInsertError"/>
+		<Peak app="TRADE.PuDian.app.tkernel.2" Attr="HandleOrderInsert" RltAttr="HandleOrderAction"/>
+		<Peak app="TRADE.PuDian.app.tkernel.1" Attr="TotalAmount" RltAttr="OrderSize"/>
+		<Peak app="TRADE.PuDian.app.tkernel.1" Attr="TotalVolume" RltAttr="OrderSize"/>
+		<Peak app="TRADE.PuDian.app.tkernel.1" Attr="OrderSize" RltAttr="TotalVolume"/>
+	</Peaks>
+	<MemberLinks>
+		<object oid="TRADE.PuDian.app.Link.1" name="交易厅">
+			<item left="172.16.0.0" right="172.16.255.255"/>
+		</object>
+		<object oid="TRADE.PuDian.app.Link.2" name="浦电">
+			<item left="10.32.0.0" right="10.36.247.255"/>
+			<item left="10.36.250.0" right="10.47.255.255"/>
+		</object>
+		<object oid="TRADE.PuDian.app.Link.3" name="张江">
+			<item left="10.64.0.0" right="10.70.247.255"/>
+			<item left="10.70.250.0" right="10.47.255.255"/>
+		</object>
+		<object oid="TRADE.PuDian.app.Link.4" name="北京">
+			<item left="10.128.0.0" right="10.134.247.255"/>
+			<item left="10.134.250.0" right="10.143.255.255"/>
+		</object>
+		<object oid="TRADE.PuDian.app.Link.5" name="中金">
+			<item left="10.48.0.0" right="10.63.255.255"/>
+			<item left="10.112.0.0" right="10.127.255.255"/>
+		</object>
+		<object oid="TRADE.PuDian.app.Link.6" name="三所">
+			<item left="10.0.0.0" right="10.11.255.255"/>
+			<item left="10.16.0.0" right="10.31.255.255"/>
+			<item left="10.96.0.0" right="10.111.255.255"/>
+		</object>
+		<object oid="TRADE.PuDian.app.Link.7" name="拨号">
+			<item left="10.36.248.0" right="10.36.249.255"/>
+			<item left="10.70.248.0" right="10.70.249.255"/>
+			<item left="10.134.248.0" right="10.134.249.255"/>
+		</object>
+	</MemberLinks>
+	<DataCenters>
+		<DataCenter name="PuDian" id="1" sysname="TRADE.PuDian" alias="TRADE-PD" comment="浦电路数据中心">
+			<app name="front" item="1"/>
+			<app name="front" item="2"/>
+			<app name="front" item="3"/>
+			<app name="front" item="4"/>
+			<app name="front" item="5"/>
+			<app name="front" item="6"/>
+			<app name="front" item="7"/>
+			<app name="front" item="8"/>
+		</DataCenter>
+		<DataCenter name="ZhangJ" id="2" sysname="TRADE.ZhangJ" alias="TRADE-ZJ" comment="张江数据中心">
+			<app name="front" item="11"/>
+			<app name="front" item="12"/>
+			<app name="front" item="13"/>
+			<app name="front" item="14"/>
+			<app name="front" item="15"/>
+			<app name="front" item="16"/>
+			<app name="front" item="17"/>
+			<app name="front" item="18"/>
+		</DataCenter>
+	</DataCenters>
+</SystemConfig>

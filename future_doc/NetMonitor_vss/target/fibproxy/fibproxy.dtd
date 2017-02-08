@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!ELEMENT fibproxy (topic+, user+)>
+<!ATTLIST fibproxy
+	flowpath CDATA #REQUIRED
+	listenaddr CDATA #REQUIRED
+	SyslogPath CDATA #IMPLIED
+	UseBizStatusLog (yes|no) #IMPLIED
+	UseBizOperationLog (yes|no) #IMPLIED
+	UseBizExceptionLog (yes|no) #IMPLIED
+	UseNetStatusLog (yes|no) #IMPLIED
+	UseNetConnectLog (yes|no) #IMPLIED
+	UseNetIOLog (yes|no) #IMPLIED
+	UseNetPackageLog (yes|no) #IMPLIED
+	UseNetCompressLog (yes|no) #IMPLIED
+	UseNetExceptionLog (yes|no) #IMPLIED
+	UseProcessLog (yes|no) #IMPLIED
+>
+<!ELEMENT topic (subscribe+)>
+<!ATTLIST topic
+	id CDATA #REQUIRED
+>
+<!ELEMENT subscribe EMPTY>
+<!ATTLIST subscribe
+	address CDATA #REQUIRED
+>
+<!ELEMENT user EMPTY>
+<!ATTLIST user
+	userid CDATA #REQUIRED
+	password CDATA #REQUIRED
+>

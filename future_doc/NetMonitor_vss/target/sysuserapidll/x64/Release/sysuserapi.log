@@ -1,0 +1,209 @@
+﻿生成启动时间为 2016/11/16 10:22:13。
+     1>项目“C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\sysuserapi.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\..\source\platform\system.cpp ..\..\source\platform\platform.cpp ..\..\source\platform\mpath.cpp ..\..\source\base\CBaseObject.cpp ..\..\source\base\DesignError.cpp ..\..\source\base\RuntimeError.cpp ..\..\source\base\CLogger.cpp ..\..\source\base\CProbeLogger.cpp ..\..\source\base\monitorIndex.cpp ..\..\source\utility\CTimeMeter.cpp ..\..\source\utility\utility.cpp ..\..\source\utility\Config.cpp ..\..\source\probelogger\CSyslogService.cpp ..\..\source\probelogger\CFilelogService.cpp ..\..\source\datastruct\CConfig.cpp ..\..\source\datastruct\CFixMem.cpp ..\..\source\datastruct\CAVLTree.cpp ..\..\source\datastruct\CTransaction.cpp ..\..\source\datastruct\CMemory.cpp ..\..\source\datastruct\CFiniteState.cpp ..\..\source\datastruct\CacheList.cpp ..\..\source\datastruct\FieldDescribe.cpp ..\..\source\datastruct\FieldSet.cpp ..\..\source\datastruct\Index.cpp ..\..\source\datastruct\Package.cpp ..\..\source\datastruct\Flow.cpp ..\..\source\datastruct\ReadOnlyFlow.cpp ..\..\source\datastruct\FlowReader.cpp ..\..\source\datastruct\OrderingQ.cpp ..\..\source\datastruct\CachedFileFlow.cpp ..\..\source\datastruct\CachedFlow.cpp ..\..\source\datastruct\FileFlow.cpp ..\..\source\datastruct\IndexPackageFlow.cpp ..\..\source\datastruct\CSVParser.cpp ..\..\source\datastruct\CSequenceInterface.cpp ..\..\source\datastruct\CMemorySequence.cpp ..\..\source\datastruct\CErrorEngine.cpp ..\..\source\datastruct\CDate.cpp ..\..\source\datastruct\Allocator.cpp ..\..\source\datastruct\CHashIndex.cpp ..\..\source\datastruct\PtrList.cpp ..\..\source\datastruct\ObjAllocator.cpp ..\..\source\event\EventHandler.cpp ..\..\source\event\EventQueue.cpp ..\..\source\event\EventDispatcher.cpp ..\..\source\event\Reactor.cpp ..\..\source\event\Semaphore.cpp ..\..\source\event\Thread.cpp ..\..\source\event\SelectReactor.cpp ..\..\source\event\TimerHeap.cpp ..\..\source\event\EpollReactor.cpp ..\..\source\network\Channel.cpp ..\..\source\network\Client.cpp ..\..\source\network\ListenCtrl.cpp ..\..\source\network\NetworkFactory.cpp ..\..\source\network\Server.cpp ..\..\source\network\ServiceName.cpp ..\..\source\network\SocketInit.cpp ..\..\source\tcpnetwork\TcpChannel.cpp ..\..\source\tcpnetwork\TcpClient.cpp ..\..\source\tcpnetwork\TcpServer.cpp ..\..\source\tcpnetwork\TcpNetworkFactory.cpp ..\..\source\protocol\Protocol.cpp ..\..\source\channelprotocol\ChannelProtocol.cpp ..\..\source\channelprotocol\ChannelPackage.cpp ..\..\source\channelprotocol\Session.cpp ..\..\source\channelprotocol\SessionFactory.cpp ..\..\source\xmpprotocol\XMPPackage.cpp ..\..\source\xmpprotocol\XMPSession.cpp ..\..\source\xmpprotocol\XMPProtocol.cpp ..\..\source\compressprotocol\CompressPackage.cpp ..\..\source\compressprotocol\CompressProtocol.cpp ..\..\source\compressprotocol\CompressUtil.cpp ..\..\source\ftdprotocol\FTDCPackage.cpp ..\..\source\ftdprotocol\FTDCProtocol.cpp ..\..\source\ftdprotocol\FTDCSession.cpp ..\..\source\ftdprotocol\FTDCPubEndPoint.cpp ..\..\source\ftdprotocol\FTDCSubEndPoint.cpp ..\..\source\ftdfield\FtdData.cpp ..\..\source\ftdfield\FtdPackageDesc.cpp ..\..\source\sysuserapi\FtdcSysUserApiImpl.cpp ..\..\source\sysuserapi\FtdcSysUserApiImplBase.cpp
+         system.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(491): error C2079: “timeout”使用未定义的 struct“GetPreciseTime::timeval”
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(492): error C3861: “gettimeofday”:  找不到标识符
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(493): error C2228: “.tv_sec”的左边必须有类/结构/联合
+                 类型是“int”
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(494): error C2228: “.tv_usec”的左边必须有类/结构/联合
+                 类型是“int”
+         platform.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(491): error C2079: “timeout”使用未定义的 struct“GetPreciseTime::timeval”
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(492): error C3861: “gettimeofday”:  找不到标识符
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(493): error C2228: “.tv_sec”的左边必须有类/结构/联合
+                 类型是“int”
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(494): error C2228: “.tv_usec”的左边必须有类/结构/联合
+                 类型是“int”
+     1>..\..\source\platform\platform.cpp(92): error C2079: “timeout”使用未定义的 struct“GetSysClock::timeval”
+     1>..\..\source\platform\platform.cpp(93): error C3861: “gettimeofday”:  找不到标识符
+     1>..\..\source\platform\platform.cpp(94): error C2228: “.tv_sec”的左边必须有类/结构/联合
+                 类型是“int”
+     1>..\..\source\platform\platform.cpp(95): error C2228: “.tv_usec”的左边必须有类/结构/联合
+                 类型是“int”
+     1>..\..\source\platform\platform.cpp(112): error C2079: “timeout”使用未定义的 struct“GetSysMicroClock::timeval”
+     1>..\..\source\platform\platform.cpp(113): error C3861: “gettimeofday”:  找不到标识符
+     1>..\..\source\platform\platform.cpp(114): error C2228: “.tv_sec”的左边必须有类/结构/联合
+                 类型是“int”
+     1>..\..\source\platform\platform.cpp(115): error C2228: “.tv_usec”的左边必须有类/结构/联合
+                 类型是“int”
+         mpath.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(491): error C2079: “timeout”使用未定义的 struct“GetPreciseTime::timeval”
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(492): error C3861: “gettimeofday”:  找不到标识符
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(493): error C2228: “.tv_sec”的左边必须有类/结构/联合
+                 类型是“int”
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\platform\platform.h(494): error C2228: “.tv_usec”的左边必须有类/结构/联合
+                 类型是“int”
+     1>..\..\source\platform\mpath.cpp(20): error C2065: “PATH_SPLIT”: 未声明的标识符
+         CBaseObject.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\base\CBaseObject.h(15): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         DesignError.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\base\CBaseObject.h(15): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         RuntimeError.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\base\CBaseObject.h(15): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CLogger.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\base\CLogger.h(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CProbeLogger.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\base\CProbeLogger.h(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         monitorIndex.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\base\monitorIndex.h(20): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CTimeMeter.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\utility\CTimeMeter.h(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         utility.cpp
+     1>..\..\source\utility\utility.cpp(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         Config.cpp
+     1>..\..\source\utility\Config.cpp(3): fatal error C1083: 无法打开包括文件: “CBaseObject.h”: No such file or directory
+         CSyslogService.cpp
+         CFilelogService.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\probelogger\CFilelogService.h(14): fatal error C1083: 无法打开包括文件: “CProbeLogger.h”: No such file or directory
+         CConfig.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CConfig.h(14): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CFixMem.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CFixMem.h(39): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CAVLTree.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CAVLTree.h(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CTransaction.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CTransaction.h(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CMemory.cpp
+     1>..\..\source\datastruct\CMemory.cpp(10): fatal error C1083: 无法打开包括文件: “CBaseObject.h”: No such file or directory
+         CFiniteState.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CFiniteState.h(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         正在生成代码...
+         正在编译...
+         CacheList.cpp
+     1>..\..\source\datastruct\CacheList.cpp(7): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FieldDescribe.cpp
+     1>..\..\source\datastruct\FieldDescribe.cpp(7): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FieldSet.cpp
+     1>..\..\source\datastruct\FieldSet.cpp(8): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Index.cpp
+     1>..\..\source\datastruct\Index.cpp(4): fatal error C1083: 无法打开包括文件: “CBaseObject.h”: No such file or directory
+         Package.cpp
+     1>..\..\source\datastruct\Package.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Flow.cpp
+     1>..\..\source\datastruct\Flow.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         ReadOnlyFlow.cpp
+     1>..\..\source\datastruct\ReadOnlyFlow.cpp(4): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FlowReader.cpp
+     1>..\..\source\datastruct\FlowReader.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         OrderingQ.cpp
+     1>..\..\source\datastruct\OrderingQ.cpp(4): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         CachedFileFlow.cpp
+     1>..\..\source\datastruct\CachedFileFlow.cpp(4): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         CachedFlow.cpp
+     1>..\..\source\datastruct\CachedFlow.cpp(9): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FileFlow.cpp
+     1>..\..\source\datastruct\FileFlow.cpp(9): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         IndexPackageFlow.cpp
+     1>..\..\source\datastruct\IndexPackageFlow.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         CSVParser.cpp
+     1>..\..\source\datastruct\CSVParser.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         CSequenceInterface.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CSequenceInterface.h(13): fatal error C1083: 无法打开包括文件: “CBaseObject.h”: No such file or directory
+         CMemorySequence.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CSequenceInterface.h(13): fatal error C1083: 无法打开包括文件: “CBaseObject.h”: No such file or directory
+         CErrorEngine.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CErrorEngine.h(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CDate.cpp
+     1>..\..\source\datastruct\CDate.cpp(1): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Allocator.cpp
+     1>..\..\source\datastruct\Allocator.cpp(5): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         CHashIndex.cpp
+     1>c:\users\liu.bo.sfit\netmonitor_vss\source\datastruct\CHashIndex.h(13): fatal error C1083: 无法打开包括文件: “platform.h”: No such file or directory
+         正在生成代码...
+         正在编译...
+         PtrList.cpp
+     1>..\..\source\datastruct\PtrList.cpp(4): fatal error C1083: 无法打开包括文件: “CBaseObject.h”: No such file or directory
+         ObjAllocator.cpp
+     1>..\..\source\datastruct\ObjAllocator.cpp(4): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         EventHandler.cpp
+     1>..\..\source\event\EventHandler.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         EventQueue.cpp
+     1>..\..\source\event\EventQueue.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         EventDispatcher.cpp
+     1>..\..\source\event\EventDispatcher.cpp(8): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Reactor.cpp
+     1>..\..\source\event\Reactor.cpp(7): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Semaphore.cpp
+     1>..\..\source\event\Semaphore.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Thread.cpp
+     1>..\..\source\event\Thread.cpp(10): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         SelectReactor.cpp
+     1>..\..\source\event\SelectReactor.cpp(10): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         TimerHeap.cpp
+     1>..\..\source\event\TimerHeap.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         EpollReactor.cpp
+     1>..\..\source\event\EpollReactor.cpp(4): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Channel.cpp
+     1>..\..\source\network\Channel.cpp(8): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Client.cpp
+     1>..\..\source\network\Client.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         ListenCtrl.cpp
+     1>..\..\source\network\ListenCtrl.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         NetworkFactory.cpp
+     1>..\..\source\network\NetworkFactory.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Server.cpp
+     1>..\..\source\network\Server.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         ServiceName.cpp
+     1>..\..\source\network\ServiceName.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         SocketInit.cpp
+     1>..\..\source\network\SocketInit.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         TcpChannel.cpp
+     1>..\..\source\tcpnetwork\TcpChannel.cpp(7): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         TcpClient.cpp
+     1>..\..\source\tcpnetwork\TcpClient.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         正在生成代码...
+         正在编译...
+         TcpServer.cpp
+     1>..\..\source\tcpnetwork\TcpServer.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         TcpNetworkFactory.cpp
+     1>..\..\source\tcpnetwork\TcpNetworkFactory.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Protocol.cpp
+     1>..\..\source\protocol\Protocol.cpp(7): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         ChannelProtocol.cpp
+     1>..\..\source\channelprotocol\ChannelProtocol.cpp(7): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         ChannelPackage.cpp
+     1>..\..\source\channelprotocol\ChannelPackage.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         Session.cpp
+     1>..\..\source\channelprotocol\Session.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         SessionFactory.cpp
+     1>..\..\source\channelprotocol\SessionFactory.cpp(24): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         XMPPackage.cpp
+     1>..\..\source\xmpprotocol\XMPPackage.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         XMPSession.cpp
+     1>..\..\source\xmpprotocol\XMPSession.cpp(7): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         XMPProtocol.cpp
+     1>..\..\source\xmpprotocol\XMPProtocol.cpp(10): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         CompressPackage.cpp
+     1>..\..\source\compressprotocol\CompressPackage.cpp(4): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         CompressProtocol.cpp
+     1>..\..\source\compressprotocol\CompressProtocol.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         CompressUtil.cpp
+     1>..\..\source\compressprotocol\CompressUtil.cpp(11): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FTDCPackage.cpp
+     1>..\..\source\ftdprotocol\FTDCPackage.cpp(4): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FTDCProtocol.cpp
+     1>..\..\source\ftdprotocol\FTDCProtocol.cpp(6): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FTDCSession.cpp
+     1>..\..\source\ftdprotocol\FTDCSession.cpp(13): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FTDCPubEndPoint.cpp
+     1>..\..\source\ftdprotocol\FTDCPubEndPoint.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FTDCSubEndPoint.cpp
+     1>..\..\source\ftdprotocol\FTDCSubEndPoint.cpp(4): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FtdData.cpp
+     1>..\..\source\ftdfield\FtdData.cpp(1): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FtdPackageDesc.cpp
+     1>..\..\source\ftdfield\FtdPackageDesc.cpp(5): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         正在生成代码...
+         正在编译...
+         FtdcSysUserApiImpl.cpp
+     1>..\..\source\sysuserapi\FtdcSysUserApiImpl.cpp(13): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         FtdcSysUserApiImplBase.cpp
+     1>..\..\source\sysuserapi\FtdcSysUserApiImplBase.cpp(12): fatal error C1083: 无法打开包括文件: “public.h”: No such file or directory
+         正在生成代码...
+     1>已完成生成项目“C:\Users\liu.bo.SFIT\NetMonitor_vss\target\sysuserapidll\sysuserapi.vcxproj”(Rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:05.87

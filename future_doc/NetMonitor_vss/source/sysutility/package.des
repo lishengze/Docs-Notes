@@ -1,0 +1,52 @@
+<sysutility version="1" type="cpp" includedir="." platform="all">
+	<parameter/>
+	<depend>
+		<platform version="1"/>
+		<base version="1"/>
+		<utility version="1"/>
+		<probelogger version="1"/>
+		<datastruct version="1"/>
+		<network version="1"/>
+		<event version="1"/>
+		<protocol version="1"/>
+		<channelprotocol version="1"/>
+		<xmpprotocol version="1"/>
+		<scpprotocol version="1"/>
+		<customDataType version="1"/>
+		<ftdfield version="1"/>
+		<ftdprotocol version="1"/>
+		<refobject version="1"/>
+	</depend>
+	<cppfile>
+		<systools.cpp/>
+		<xmlcfg.cpp/>
+		<FileRecordFinder.cpp/>
+		<md5Handler.cpp/>
+		<CTimePolicy.cpp/>
+		<ThreadPool.cpp/>	
+		<StringUtil.cpp/>
+		<CDeployConfig.cpp/>
+		<PrjCommon.cpp/>
+		<CCalendar.cpp/>
+		<CSysInternalTopology.cpp/>		
+	</cppfile>
+	<headfile>
+		<systools.h/>
+		<xmlcfg.h/>
+		<FileRecordFinder.h/>
+		<md5Handler.h/>
+		<CTimePolicy.h/>
+		<FTDDataHelper.h/>	
+		<ThreadPool.h/>
+		<SyncEvent.h/>
+		<SyncEvent_Platform.h/>
+		<ScopedLock.h/>		
+		<PrjCommon.h/>		
+		<StringUtil.h/>
+		<CDeployConfig.h/>
+		<CCalendar.h/>
+		<CSysInternalTopology.h/>
+	</headfile>
+	<command>
+	</command>
+</sysutility>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<!-- CustomType Element specify the path of UFDataType.xml. 
+	You could add any Entity element which should have been defined in MDBMisc.xml of datamodel-->
+
+<MemoryDBInitFunc>
+	<UFEntity path="../../datamodel/commonEnv/UFEntity.xml" />
+	
+	<CustomType path="../../datamodel/commonEnv/UFDataType.xml" />
+	
+	<MemDBType path="../../datamodel/envGenerated/MDB.xml" />
+	
+	<Entity name="SysNetGeneralOID" />
+	<Entity name="SysNetBaseLine" />
+	<!-- <GeneralOperation>节点下的表按照GeneralOperation操作模式处理报文 /-->	
+	<GeneralOperation>
+		<Entity name="SysNetArea" />	
+		<Entity name="SysNetSubArea" />
+		<Entity name="SysNetSubAreaIP" />
+		<Entity name="SysNetDeviceType" />
+		<Entity name="SysNetOID" />
+		<Entity name="SysNetTimePolicy" />
+		<Entity name="SysNetGatherTask" />
+		<Entity name="SysNetDeviceCategory" />
+		<Entity name="SysNetManufactory" />
+		<Entity name="SysNetCommunity" />
+		<Entity name="SysNetMonitorAttrScope" />
+		<Entity name="SysNetMonitorAttrType" />
+		<Entity name="SysNetMonitorType" />	
+		<Entity name="SysNetFuncArea" />	
+		<Entity name="SysNetDevice" />
+		<Entity name="SysNetMonitorCommandType" />
+		<Entity name="SysNetMonitorActionGroup" />
+		<Entity name="SysNetMonitorDeviceGroup" />
+		<Entity name="SysNetMonitorTaskInfo" />
+		<Entity name="SysNetMonitorActionAttr" />
+		<Entity name="SysNetPartyLinkInfo" />
+		<Entity name="SysNetEventExpr" />
+		<Entity name="SysNetEventType" />
+		<Entity name="SysNetSubEventType" />
+		<Entity name="SysNetEventLevel" />
+		<Entity name="SysNetMonitorTaskInstAttrs" />
+		<Entity name="SysNetBaseLineTask" />
+		<Entity name="SysNetDeviceLinked" />
+		<Entity name="SysNetInterface" />
+        <!-- 目前实际没有针对SysNetModule的通用操作，将其在通用操作内定义为冗余考虑 /-->	
+        <Entity name="SysNetModule" />      
+        <!-- 目前SysNetMonitorDeviceTask的操作按专有消息进行，因为其要考虑包的组合与分片，将其在通用操作内定义为过渡 /-->
+		<Entity name="SysNetMonitorDeviceTask" />        
+		<Entity name="SysNetMemberSDHLineInfo" />        
+		<Entity name="SysNetDDNLinkInfo" />        
+		<Entity name="SysNetPseudMemberLinkInfo" /> 
+		<Entity name="SysNetDelPartyLinkInfo" />
+		<Entity name="SysNetPartyLinkAddrChange" />
+		<!-- Entity name="SysLocalPingResultInfo" rtnfield="NetLocalPingResultInfo" rspfield="NetLocalPingResultInfo"/ -->        
+		<Entity name="SysNetOuterDeviceInfo" rtnfield="NetOuterDeviceInf" rspfield="OuterDeviceInf" />
+		<Entity name="SysMemberLinkCost" />
+		<Entity name="SysNetPartylinkMonthlyRent" />
+		<Entity name="SysNetNonPartyLinkInfo" />
+		<!-- Entity name="SysRomotePingResultInfo" rtnfield="NetRomotePingResultInfo" rspfield="NetRomotePingResultInfo"/ -->        
+
+	</GeneralOperation>
+</MemoryDBInitFunc>

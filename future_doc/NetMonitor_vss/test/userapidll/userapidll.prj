@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE project SYSTEM "C:\wsh\project.dtd">
+<project target="userapi" targettype="dll" hasdebug="no" hasmap="no" hasprofile="no" multithread="yes" warninglevel="2" libs="" cppflags="-DUSERAPI_IS_LIB -DLIB_USER_API_EXPORT -DDEBUG_NOT_LOG" ldflags="" arflags="">
+	<package name="platform" dir="../../source/platform"/>
+	<package name="base" dir="../../source/base"/>
+	<package name="utility" dir="../../source/utility"/>
+	<package name="datastruct" dir="../../source/datastruct"/>
+	<package name="event" dir="../../source/event"/>
+	<package name="network" dir="../../source/network"/>
+	<package name="tcpnetwork" dir="../../source/tcpnetwork"/>
+	<package name="openssl" dir="../../source/openssl"/>
+	<package name="sslnetwork" dir="../../source/sslnetwork"/>
+	<package name="protocol" dir="../../source/protocol"/>
+	<package name="channelprotocol" dir="../../source/channelprotocol"/>
+	<package name="xmpprotocol" dir="../../source/xmpprotocol"/>
+	<package name="ftdprotocol" dir="../../source/ftdprotocol"/>
+	<package name="nsprotocol" dir="../../source/nsprotocol"/>
+	<package name="compressprotocol" dir="../../source/compressprotocol"/>
+	<package name="customDataType" dir="../../source/customDataType">
+		<parameter name="UFDatatypeEnv" value="../../datamodel/commonEnv/UFDataType.xml"/>
+	</package>
+	<package name="ftdfield" dir="../../source/ftdfield">
+		<parameter name="FTDEnv" value="../../datamodel/envGenerated/FTD.xml"/>
+	</package>
+	<package name="UFCopy" dir="../../source/UFCopy">
+		<parameter name="UFEntityEnv" value="../../datamodel/commonEnv/UFEntity.xml"/>
+		<parameter name="MDBEnv" value="../../datamodel/envGenerated/MDB.xml"/>
+		<parameter name="XTPEnv" value="../../datamodel/envGenerated/XTP.xml"/>
+		<parameter name="FTDEnv" value="../../datamodel/envGenerated/FTD.xml"/>
+	</package>
+	<package name="userapi" dir="../../source/userapi">
+		<parameter name="FTDEnv" value="../../datamodel/envGenerated/FTD.xml ../../datamodel/commonEnv/shfeexchangeinfo.xml"/>
+	</package>
+	<package name="probelogger" dir="../../source/probelogger"/>
+</project>

@@ -1,0 +1,1303 @@
+ISAClient.cpp:		ln += Devidend[LittleEndianSize-i-1];
+ISAClient.cpp:		Quotient[LittleEndianSize-i-1] = (unsigned short)(ln / Devisor);
+ISAClient.cpp:		if(nLen == -1)	// object that mbchar points to does not form a valid multibyte character within the first count characters
+ISAClient.cpp:			// 1 = length of multi-byte '\0'
+ISAClient.cpp:			--count;
+ISAClient.cpp:			// nLen = length of last multi-byte character
+ISAClient.cpp:			count -= nLen;
+ISAClient.cpp:	return pchData - pchDataTgt;
+ISAClient.cpp:		if(nLen == -1)	// the conversion is not possible in the current locale
+ISAClient.cpp:	m_pSAConnection->EnumCursors(fn, pAddlData);
+ISAClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const SAChar*)Param.Name());
+ISAClient.cpp:		// 2) always returns size in single characters (converts to multi-byte under Unicode)
+ISAClient.cpp:		// without converting them to multi-byte before binding
+ISAClient.cpp:// align all members to 16-byte boundary
+ISAClient.cpp:// platforms (like SPARC Solaris) to avoid non-aligment
+ISAClient.cpp:	int cParamCount = m_pCommand->ParamCount();
+ISAClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(iParam);
+ISAClient.cpp:// align all members to 16-byte boundary
+ISAClient.cpp:// platforms (like Sun SPARC) to avoid non-aligment
+ISAClient.cpp:		SAParam &Param = *ppPlaceHolders[i]->getParam();
+ISAClient.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+ISAClient.cpp:			// nDataSize is always (under Unicode or multi-byte builds)
+ISAClient.cpp:// align all members to 16-byte boundary
+ISAClient.cpp:// platforms (like Sun SPARC) to avoid non-aligment
+ISAClient.cpp:	int cFieldCount = m_pCommand->FieldCount();
+ISAClient.cpp:		SAField &Field = m_pCommand->Field(iField);
+ISAClient.cpp:// default indicator test: -1 is null value
+ISAClient.cpp:	int/* nPos*/,	// 1-based
+ISAClient.cpp:		bNull = ((char*)pInd)[nBulkReadingBufPos] == -1;
+ISAClient.cpp:		bNull = ((short*)pInd)[nBulkReadingBufPos] == -1;
+ISAClient.cpp:		bNull = ((long*)pInd)[nBulkReadingBufPos] == -1;
+ISAClient.cpp:	int nPos,	// 1-based
+ISAClient.cpp:	int nPos,	// 1 - based
+ISAClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+ISAClient.cpp:		m_pISAConnection->CnvtInternalToNumeric(
+ISAClient.cpp:		m_pISAConnection->CnvtInternalToDateTime(
+ISAClient.cpp:		m_pISAConnection->CnvtInternalToCursor(
+ISAClient.cpp:// (in both Unicode and multi-byte builds)
+ISAClient.cpp:	for(int i = 0; i < m_pCommand->ParamCount(); ++i)
+ISAClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+ISAClient.cpp:	assert(nParamPos <= m_pCommand->ParamCount());
+ISAClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+ISAClient.cpp:	for(int i = 0; i < m_pCommand->ParamCount(); ++i)
+ISAClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+ISAClient.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const SAChar*)Param.Name());
+ISAClient.cpp:	int cFieldCount = m_pCommand->FieldCount();
+ISAClient.cpp:		SAField &Field = m_pCommand->Field(iField);
+ISAClient.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_COLUMN_TYPE, (const SAChar*)Field.Name());
+ISAClient.cpp:		for(int j = 0; j < m_pCommand->FieldCount(); j++)
+ISAClient.cpp:			if(m_pCommand->Field(j+1).FieldType() == eDataType)
+ISAClient.cpp:			if(ppPlaceHolders[j]->getParam()->ParamDirType() == eType)
+ISAClient.cpp:	SAString s = m_pCommand->Option("BulkReadingBufSize");
+ISAClient.cpp:		value.m_pString->Empty();
+ISAClient.cpp:			// for non-binary (text) data:
+ISAClient.cpp:			int nBinaryLen = value.m_pString->GetBinaryLength();
+ISAClient.cpp:			memcpy((unsigned char*)value.m_pString->GetBinaryBuffer(nBinaryLen + nActualWrite) + nBinaryLen, pBuf, nActualWrite);
+ISAClient.cpp:			value.m_pString->ReleaseBinaryBuffer(nBinaryLen + nActualWrite);
+ISAClient.cpp:		memmove(pBuf, pBuf + nSizeToReturn, nCurSize + nDataSize - nSizeToReturn);
+ISAClient.cpp:		m_Buffer.ReleaseBinaryBuffer(nCurSize + nDataSize - nSizeToReturn);
+ISAClient.cpp:			--nDataSize;
+ISAClient.cpp:			--nDataSize;
+ISAClient.cpp:			nNewReminderBytesCount = nNewMultibyteBytes - ((unsigned int)lpchStop-(unsigned int)pNewData);
+SQLAPI.cpp:	"For help on using the Library e-mail to:\n"
+SQLAPI.cpp:			SAException::throwUserException(-1, "Trial version exception:\n%s", sTrialText);
+SQLAPI.cpp:	-1,	// nRefs
+SQLAPI.cpp:	assert(nLen <= INT_MAX-1);    // max size (enough room for 1 extra)
+SQLAPI.cpp:		pData->nAllocLength = nLen;
+SQLAPI.cpp:		pData->pConvertedData = NULL;
+SQLAPI.cpp:		pData->nBinaryDataLengthDiff = 0;
+SQLAPI.cpp:		pData->nRefs = 1;
+SQLAPI.cpp:		pData->data()[nLen] = _SA('\0');
+SQLAPI.cpp:		pData->nDataLength = nLen;
+SQLAPI.cpp:		m_pchData = pData->data();
+SQLAPI.cpp:	delete [] (unsigned char*)pData->pConvertedData;
+SQLAPI.cpp:	// concatenating an empty string is a no-op!
+SQLAPI.cpp:	delete [] (unsigned char*)GetData()->pConvertedData;
+SQLAPI.cpp:	GetData()->pConvertedData = NULL;
+SQLAPI.cpp:	// if the buffer is too small, or we have a width mis-match, just
+SQLAPI.cpp:	if (GetData()->nRefs > 1 || nNewLenInChars > GetData()->nAllocLength)
+SQLAPI.cpp:		GetData()->nDataLength = nNewLenInChars;
+SQLAPI.cpp:		GetData()->nBinaryDataLengthDiff = nBinaryDataLengthDiff;
+SQLAPI.cpp:		assert(GetData()->nDataLength <= GetData()->nAllocLength);
+SQLAPI.cpp:		m_pchData[GetData()->nDataLength] = _SA('\0');
+SQLAPI.cpp:	//  -- the main routine for += operators
+SQLAPI.cpp:	// concatenating an empty string is a no-op!
+SQLAPI.cpp:	delete [] (unsigned char*)GetData()->pConvertedData;
+SQLAPI.cpp:	GetData()->pConvertedData = NULL;
+SQLAPI.cpp:	GetData()->nBinaryDataLengthDiff = 0;
+SQLAPI.cpp:	// if the buffer is too small, or we have a width mis-match, just
+SQLAPI.cpp:	if (GetData()->nRefs > 1 || GetData()->nDataLength + nSrcLen > GetData()->nAllocLength)
+SQLAPI.cpp:		ConcatCopy(GetData()->nDataLength, m_pchData, nSrcLen, lpszSrcData);
+SQLAPI.cpp:		memcpy(m_pchData+GetData()->nDataLength, lpszSrcData, nSrcLen*sizeof(SAChar));
+SQLAPI.cpp:		GetData()->nDataLength += nSrcLen;
+SQLAPI.cpp:		assert(GetData()->nDataLength <= GetData()->nAllocLength);
+SQLAPI.cpp:		m_pchData[GetData()->nDataLength] = '\0';
+SQLAPI.cpp:	// byte == character in non-Unicode build
+SQLAPI.cpp:	ConcatInPlace(string.GetData()->nDataLength, string.m_pchData);
+SQLAPI.cpp:	if (GetData()->nRefs > 1 || nMinBufLength > GetData()->nAllocLength)
+SQLAPI.cpp:		int nOldLen = GetData()->nDataLength;   // AllocBuffer will tromp it
+SQLAPI.cpp:		memcpy(m_pchData, pOldData->data(), (nOldLen+1)*sizeof(SAChar));
+SQLAPI.cpp:		GetData()->nDataLength = nOldLen;
+SQLAPI.cpp:	assert(GetData()->nRefs <= 1);
+SQLAPI.cpp:	if (nNewLength == -1)
+SQLAPI.cpp:	assert(nNewLength <= GetData()->nAllocLength);
+SQLAPI.cpp:	GetData()->nDataLength = nNewLength;
+SQLAPI.cpp:	GetData()->nBinaryDataLengthDiff = 0;
+SQLAPI.cpp:	GetData()->nRefs = -1;
+SQLAPI.cpp:	assert(GetData()->nRefs == -1);
+SQLAPI.cpp:		GetData()->nRefs = 1;
+SQLAPI.cpp:	if (GetData()->nRefs > 1)
+SQLAPI.cpp:		AllocBuffer(pData->nDataLength);
+SQLAPI.cpp:		memcpy(m_pchData, pData->data(), (pData->nDataLength+1)*sizeof(SAChar));
+SQLAPI.cpp:		delete [] (unsigned char*)GetData()->pConvertedData;
+SQLAPI.cpp:		GetData()->pConvertedData = NULL;
+SQLAPI.cpp:		GetData()->nBinaryDataLengthDiff = 0;
+SQLAPI.cpp:	assert(GetData()->nRefs <= 1);
+SQLAPI.cpp:	if (GetData()->nRefs > 1 || nLen > GetData()->nAllocLength)
+SQLAPI.cpp:		delete [] (unsigned char*)GetData()->pConvertedData;
+SQLAPI.cpp:		GetData()->pConvertedData = NULL;
+SQLAPI.cpp:		GetData()->nBinaryDataLengthDiff = 0;
+SQLAPI.cpp:	assert(GetData()->nRefs <= 1);
+SQLAPI.cpp:		assert(GetData()->nRefs != 0);
+SQLAPI.cpp:		if(--GetData()->nRefs <= 0)
+SQLAPI.cpp:		assert(pData->nRefs != 0);
+SQLAPI.cpp:		if (--pData->nRefs <= 0)
+SQLAPI.cpp:	return ((SAStringData *)m_pchData)-1;
+SQLAPI.cpp:	assert(stringSrc.GetData()->nRefs != 0);
+SQLAPI.cpp:	if (stringSrc.GetData()->nRefs >= 0)
+SQLAPI.cpp:		++GetData()->nRefs;
+SQLAPI.cpp:		*this = stringSrc;	//*this = stringSrc.m_pchData; - not right, will not copy strings with embedded '\0'
+SQLAPI.cpp:		if (--GetData()->nRefs <= 0)
+SQLAPI.cpp:	if (GetData()->nDataLength == 0)
+SQLAPI.cpp:	if (GetData()->nRefs >= 0)
+SQLAPI.cpp:	assert(GetData()->nDataLength == 0);
+SQLAPI.cpp:	assert(GetData()->nRefs < 0 || GetData()->nAllocLength == 0);
+SQLAPI.cpp:	return GetData()->nDataLength == 0;
+SQLAPI.cpp:	return GetData()->nDataLength;
+SQLAPI.cpp:	GetData()->nDataLength = nSrcLenInChars;
+SQLAPI.cpp:	GetData()->nBinaryDataLengthDiff = nBinaryDataLengthDiff;
+SQLAPI.cpp:	GetData()->nDataLength = nSrcLen;
+SQLAPI.cpp:		if ((GetData()->nRefs < 0 && GetData() != _saDataNil) ||
+SQLAPI.cpp:			stringSrc.GetData()->nRefs < 0)
+SQLAPI.cpp:			AssignCopy(stringSrc.GetData()->nDataLength, stringSrc.m_pchData);
+SQLAPI.cpp:			++GetData()->nRefs;
+SQLAPI.cpp:	// -- master concatenation routine (binary)
+SQLAPI.cpp:	// -- assume that 'this' is a new SAString object
+SQLAPI.cpp:		GetData()->nBinaryDataLengthDiff = nBinaryDataLengthDiff;
+SQLAPI.cpp:	// -- master concatenation routine
+SQLAPI.cpp:	// -- assume that 'this' is a new SAString object
+SQLAPI.cpp:	s.ConcatCopy(string1.GetData()->nDataLength, string1.m_pchData,
+SQLAPI.cpp:		string2.GetData()->nDataLength, string2.m_pchData);
+SQLAPI.cpp:	s.ConcatCopy(string.GetData()->nDataLength, string.m_pchData,
+SQLAPI.cpp:	s.ConcatCopy(SAString::SafeStrlen(lpsz), lpsz, string.GetData()->nDataLength,
+SQLAPI.cpp:	s.ConcatCopy(string1.GetData()->nDataLength, string1.m_pchData, 1, &ch);
+SQLAPI.cpp:	s.ConcatCopy(1, &ch, string.GetData()->nDataLength, string.m_pchData);
+SQLAPI.cpp:			else if (*lpsz == '-' || *lpsz == '+' || *lpsz == '0' ||
+SQLAPI.cpp:			else // hit non-flag character
+SQLAPI.cpp:					// 312 == strlen("-1+(309 zeroes).")
+SQLAPI.cpp:	// if the buffer is too small, or we have a width mis-match, just
+SQLAPI.cpp:	if (GetData()->nRefs > 1 || nMaxLen > GetData()->nAllocLength)
+SQLAPI.cpp:	return Mid(nFirst, GetData()->nDataLength - nFirst);
+SQLAPI.cpp:	// out-of-bounds requests return sensible things
+SQLAPI.cpp:		nCount = GetLength() - nFirst;
+SQLAPI.cpp:	assert(nFirst + nCount <= GetData()->nDataLength);
+SQLAPI.cpp:	if (nFirst == 0 && nFirst + nCount == GetData()->nDataLength)
+SQLAPI.cpp:	if (nCount >= GetData()->nDataLength)
+SQLAPI.cpp:	SAString dest(m_pchData+GetData()->nDataLength-nCount, nCount);
+SQLAPI.cpp:	if (nCount >= GetData()->nDataLength)
+SQLAPI.cpp:	int nNewLength = GetData()->nDataLength;
+SQLAPI.cpp:		int nBytesToCopy = nNewLength - (nIndex + nCount) + 1;
+SQLAPI.cpp:		GetData()->nDataLength = nNewLength - nCount;
+SQLAPI.cpp:	int nNewLength = GetData()->nDataLength;
+SQLAPI.cpp:	if (GetData()->nAllocLength < nNewLength)
+SQLAPI.cpp:		memcpy(m_pchData, pstr, (pOldData->nDataLength+1)*sizeof(SAChar));
+SQLAPI.cpp:		m_pchData + nIndex, (nNewLength-nIndex)*sizeof(SAChar));
+SQLAPI.cpp:	GetData()->nDataLength = nNewLength;
+SQLAPI.cpp:	int nNewLength = GetData()->nDataLength;
+SQLAPI.cpp:		if (GetData()->nAllocLength < nNewLength)
+SQLAPI.cpp:			memcpy(m_pchData, pstr, (pOldData->nDataLength+1)*sizeof(SAChar));
+SQLAPI.cpp:			(nNewLength-nIndex-nInsertLength+1)*sizeof(SAChar));
+SQLAPI.cpp:		GetData()->nDataLength = nNewLength;
+SQLAPI.cpp:	SAChar *lpszEnd = m_pchData + GetData()->nDataLength;
+SQLAPI.cpp:		int nOldLength = GetData()->nDataLength;
+SQLAPI.cpp:		int nNewLength =  nOldLength + (nReplacementLen-nSourceLen)*nCount;
+SQLAPI.cpp:		if (GetData()->nAllocLength < nNewLength || GetData()->nRefs > 1)
+SQLAPI.cpp:			memcpy(m_pchData, pstr, pOldData->nDataLength*sizeof(SAChar));
+SQLAPI.cpp:		// else, we just do it in-place
+SQLAPI.cpp:		lpszEnd = m_pchData + GetData()->nDataLength;
+SQLAPI.cpp:				int nBalance = nOldLength - (lpszTarget - m_pchData + nSourceLen);
+SQLAPI.cpp:				nOldLength += (nReplacementLen - nSourceLen);
+SQLAPI.cpp:		GetData()->nDataLength = nNewLength;
+SQLAPI.cpp:		// truncate at left-most matching character
+SQLAPI.cpp:		GetData()->nDataLength = lpszLast - m_pchData;
+SQLAPI.cpp:		// truncate at left-most matching character
+SQLAPI.cpp:		GetData()->nDataLength = lpszLast - m_pchData;
+SQLAPI.cpp:		GetData()->nDataLength = lpszLast - m_pchData;
+SQLAPI.cpp:		int nDataLength = GetData()->nDataLength - (lpsz - m_pchData);
+SQLAPI.cpp:		GetData()->nDataLength = nDataLength;
+SQLAPI.cpp:	// find first non-matching character
+SQLAPI.cpp:		int nDataLength = GetData()->nDataLength - (lpsz - m_pchData);
+SQLAPI.cpp:		GetData()->nDataLength = nDataLength;
+SQLAPI.cpp:	// find first non-space character
+SQLAPI.cpp:		int nDataLength = GetData()->nDataLength - (lpsz - m_pchData);
+SQLAPI.cpp:		GetData()->nDataLength = nDataLength;
+SQLAPI.cpp:	// implement our own case-insensitive comparison
+SQLAPI.cpp:		return -1;
+SQLAPI.cpp:		return -1;
+SQLAPI.cpp:	int nLength = GetData()->nDataLength;
+SQLAPI.cpp:		return -1;
+SQLAPI.cpp:	// return -1 if not found and index otherwise
+SQLAPI.cpp:	return (lpsz == NULL) ? -1 : (int)(lpsz - m_pchData);
+SQLAPI.cpp:	return (lpsz == NULL) ? -1 : (int)(lpsz - m_pchData);
+SQLAPI.cpp:	// return -1 if not found, distance from beginning otherwise
+SQLAPI.cpp:	return (lpsz == NULL) ? -1 : (int)(lpsz - m_pchData);
+SQLAPI.cpp:// find a sub-string (like strstr)
+SQLAPI.cpp:	int nLength = GetData()->nDataLength;
+SQLAPI.cpp:		return -1;
+SQLAPI.cpp:	// return -1 for not found, distance from beginning otherwise
+SQLAPI.cpp:	return (lpsz == NULL) ? -1 : (int)(lpsz - m_pchData);
+SQLAPI.cpp:		GetData()->nBinaryDataLengthDiff = nBinaryDataLengthDiff;
+SQLAPI.cpp:	// byte == character in non-Unicode build
+SQLAPI.cpp:	return GetLength()*sizeof(SAChar) - GetData()->nBinaryDataLengthDiff;
+SQLAPI.cpp:	// byte == character in non-Unicode build
+SQLAPI.cpp:	int nSave = GetData()->nBinaryDataLengthDiff;
+SQLAPI.cpp:	GetData()->nBinaryDataLengthDiff = nSave;
+SQLAPI.cpp:	// byte == character in non-Unicode build
+SQLAPI.cpp:// release buffer, setting length to nNewLength (or to first nul if -1)
+SQLAPI.cpp:	GetData()->nBinaryDataLengthDiff = nBinaryDataLengthDiff;
+SQLAPI.cpp:	// byte == character in non-Unicode build
+SQLAPI.cpp:// Special conversion functions (multi byte <-> unicode)
+SQLAPI.cpp:	if(pData->pConvertedData)	// already converted and cached
+SQLAPI.cpp:	// calculate multi-byte length
+SQLAPI.cpp:		NULL, pData->data(), pData->nDataLength);
+SQLAPI.cpp:	pData->pConvertedData = (SAStringConvertedData *)
+SQLAPI.cpp:	pData->pConvertedData->nDataLength = mbLen;
+SQLAPI.cpp:	pData->pConvertedData->data()[mbLen] = '\0';
+SQLAPI.cpp:	SAWideCharToMultiByte(pData->pConvertedData->data(), pData->data(), pData->nDataLength);
+SQLAPI.cpp:	return GetData()->pConvertedData->data();
+SQLAPI.cpp:	return GetData()->pConvertedData->nDataLength;
+SQLAPI.cpp:	if(pData->pConvertedData)	// already converted and cached
+SQLAPI.cpp:	pData->pConvertedData = (SAStringConvertedData *)
+SQLAPI.cpp:		new unsigned char[sizeof(SAStringConvertedData) + (pData->nDataLength+1)*sizeof(wchar_t)];
+SQLAPI.cpp:	int wLen = SAMultiByteToWideChar(pData->pConvertedData->data(), pData->data(), pData->nDataLength);
+SQLAPI.cpp:	pData->pConvertedData->nDataLength = wLen;
+SQLAPI.cpp:	pData->pConvertedData->data()[wLen] = '\0';
+SQLAPI.cpp:	return GetData()->pConvertedData->data();
+SQLAPI.cpp:	return GetData()->pConvertedData->nDataLength;
+SQLAPI.cpp:		m_saMonthDays[wMonth] - m_saMonthDays[wMonth-1] +
+SQLAPI.cpp:	nDate = wYear*365L + wYear/4 - wYear/100 + wYear/400 +
+SQLAPI.cpp:		m_saMonthDays[wMonth-1] + wDay;
+SQLAPI.cpp:		--nDate;
+SQLAPI.cpp:	nDate -= 693959L;
+SQLAPI.cpp:	dtDest = (double) nDate + ((nDate >= 0) ? dblTime : -dblTime);
+SQLAPI.cpp:	long MIN_DATE		=	(-657434L);  // about year 100
+SQLAPI.cpp:	// MS Original Code:dblDate += ((dtSrc > 0.0) ? HALF_SECOND : -HALF_SECOND);
+SQLAPI.cpp:	double dblTime = dblDate - floor(dblDate);
+SQLAPI.cpp:	//   -1 because 1/1/0 is Sat.  +1 because we want 1-based
+SQLAPI.cpp:	tmDest.tm_wday = (int)((nDaysAbsolute - 1) % 7L) + 1;
+SQLAPI.cpp:	// Set nDaysAbsolute to day within 400-year block
+SQLAPI.cpp:	// -1 because first century has extra day
+SQLAPI.cpp:	n400Century = (long)((nDaysAbsolute - 1) / 36524L);
+SQLAPI.cpp:	// Non-leap century
+SQLAPI.cpp:		nDaysAbsolute = (nDaysAbsolute - 1) % 36524L;
+SQLAPI.cpp:		// Leap century - not special case!
+SQLAPI.cpp:		// -1 because first year has 366 days
+SQLAPI.cpp:		n4Yr = (n4Day - 1) / 365;
+SQLAPI.cpp:			n4Day = (n4Day - 1) % 365;
+SQLAPI.cpp:	// n4Day is now 0-based day of year. Save 1-based day of year, year number
+SQLAPI.cpp:			--n4Day;
+SQLAPI.cpp:	// Make n4DaY a 1-based day of non-leap year and compute
+SQLAPI.cpp:	tmDest.tm_mday = (int)(n4Day - m_saMonthDays[tmDest.tm_mon-1]);
+SQLAPI.cpp:	double dNanoSecs = dblTime - ((double)nSecsInDay/86400.0);
+SQLAPI.cpp:	tmDest.tm_year -= 1900;  // year is based on 1900
+SQLAPI.cpp:	tmDest.tm_mon -= 1;      // month of year is 0-based
+SQLAPI.cpp:	tmDest.tm_wday -= 1;     // day of week is 0-based
+SQLAPI.cpp:	tmDest.tm_yday -= 1;     // day of year is 0-based
+SQLAPI.cpp:	m_tm.tm_year = nYear - 1900;
+SQLAPI.cpp:	m_tm.tm_mon = nMonth - 1;
+SQLAPI.cpp:	m_tm.tm_isdst = -1;
+SQLAPI.cpp:		m_saMonthDays[nMonth] - m_saMonthDays[nMonth-1] +
+SQLAPI.cpp:	nDate = nYear*365L + nYear/4 - nYear/100 + nYear/400 +
+SQLAPI.cpp:		m_saMonthDays[nMonth-1] + nDay;
+SQLAPI.cpp:		--nDate;
+SQLAPI.cpp:	//   -1 because 1/1/0 is Sat.
+SQLAPI.cpp:	m_tm.tm_wday = (int)((nDate - 1) % 7L);
+SQLAPI.cpp:	// -1 because we want zero-based
+SQLAPI.cpp:	m_tm.tm_yday = nDate - ((nYear-1)*365L + (nYear-1)/4 - (nYear-1)/100 + (nYear-1)/400 +
+SQLAPI.cpp:		m_saMonthDays[12-1] + 31) - 1;
+SQLAPI.cpp:		delete m_ppOptions[--m_nOptionCount];
+SQLAPI.cpp:		if(m_ppOptions[i]->Name().CompareNoCase(sOptionName) == 0)
+SQLAPI.cpp:		pRef = new SAParam(NULL, sOptionName, SA_dtString, -1, -1, -1, -1, SA_ParamInputOutput);
+SQLAPI.cpp:	return pRef->setAsString();
+SQLAPI.cpp:		if(m_ppOptions[i]->Name().CompareNoCase(sOptionName) == 0)
+SQLAPI.cpp:			return m_ppOptions[i]->asString();
+SQLAPI.cpp:			SACommand *pCommand = (*pp)->pCommand;
+SQLAPI.cpp:			pCommand->m_pConnection = NULL;
+SQLAPI.cpp:			pp = &(*pp)->Next;
+SQLAPI.cpp:		fn(p->pISACursor, pAddlData);
+SQLAPI.cpp:		p = p->Next;
+SQLAPI.cpp:		assert((*pp)->pCommand != pCommand);
+SQLAPI.cpp:		pp = &(*pp)->Next;
+SQLAPI.cpp:	(*pp)->pCommand = pCommand;
+SQLAPI.cpp:	(*pp)->pISACursor = m_pISAConnection? m_pISAConnection->NewCursor(pCommand) : NULL;
+SQLAPI.cpp:	(*pp)->Next = NULL;
+SQLAPI.cpp:		if((*pp)->pCommand == pCommand)
+SQLAPI.cpp:			sa_Commands *pNext = (*pp)->Next;
+SQLAPI.cpp:			delete (*pp)->pISACursor;
+SQLAPI.cpp:		pp = &(*pp)->Next;
+SQLAPI.cpp:		if(p->pCommand == pCommand)
+SQLAPI.cpp:			return p->pISACursor;
+SQLAPI.cpp:		p = p->Next;
+SQLAPI.cpp:		m_pISAConnection->UnInitializeClient();
+SQLAPI.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SUPPORTED);
+SQLAPI.cpp:		ISAConnection *pISAConnection = pISAClient->QueryConnectionInterface(this);
+SQLAPI.cpp:			pISAConnection->InitializeClient();
+SQLAPI.cpp:		SACommand *pCommand = (*pp)->pCommand;
+SQLAPI.cpp:		delete (*pp)->pISACursor;
+SQLAPI.cpp:		(*pp)->pISACursor = NULL;
+SQLAPI.cpp:		(*pp)->pISACursor = m_pISAConnection? m_pISAConnection->NewCursor(pCommand) : NULL;
+SQLAPI.cpp:		pp = &(*pp)->Next;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	return m_pISAConnection->GetClientVersion();
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	return m_pISAConnection->GetServerVersion();
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	return m_pISAConnection->GetServerVersionString();
+SQLAPI.cpp:	return m_pISAConnection->IsConnected();
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	m_pISAConnection->Connect(sDBString, sUserID, sPassword);
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:		SACommand *pCommand = p->pCommand;
+SQLAPI.cpp:		if(pCommand->isOpened())
+SQLAPI.cpp:			pCommand->Close();
+SQLAPI.cpp:		p = p->Next;
+SQLAPI.cpp:	m_pISAConnection->Disconnect();
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	if(m_pISAConnection->IsConnected())
+SQLAPI.cpp:		m_pISAConnection->Commit();
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	if(m_pISAConnection->IsConnected())
+SQLAPI.cpp:		m_pISAConnection->Rollback();
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	m_pISAConnection->setIsolationLevel(eIsolationLevel);
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	m_pISAConnection->setAutoCommit(eAutoCommit);
+SQLAPI.cpp:		p->pISACursor->OnConnectionAutoCommitChanged();
+SQLAPI.cpp:		p = p->Next;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	return m_pISAConnection->NativeAPI();
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	return m_pISAConnection->NativeHandles();
+SQLAPI.cpp:		nParamSize, nParamPrecision, nParamScale, eDirType, sName, -1, -1);
+SQLAPI.cpp:		if(m_ppParams[i]->m_sName.CompareNoCase(sName) == 0) {
+SQLAPI.cpp:		delete m_ppPlaceHolders[--m_nPlaceHolderCount];
+SQLAPI.cpp:		delete m_ppParams[--m_nParamCount];
+SQLAPI.cpp:		delete m_ppFields[--m_nFieldCount];
+SQLAPI.cpp:			m_pConnection->UnRegisterCommand(this);
+SQLAPI.cpp:		m_pConnection->UnRegisterCommand(this);
+SQLAPI.cpp:		m_pConnection->RegisterCommand(this);
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	pISACursor->Open();
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:	return pISACursor->IsOpened();
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	pISACursor->Close();
+SQLAPI.cpp:	// simple test for StoredProc - no spaces
+SQLAPI.cpp:				const SAChar *sTempLast = CurPos-1;
+SQLAPI.cpp:					--sTempLast;
+SQLAPI.cpp:				sName = SAString(sTemp, sTempLast-sTemp+1);
+SQLAPI.cpp:				sName = SAString(StartPos + 1, CurPos-StartPos-1);
+SQLAPI.cpp:			sFullName = SAString(StartPos + 1, CurPos-StartPos-1);
+SQLAPI.cpp:				-1,	// native data type
+SQLAPI.cpp:				0, -1, -1,	// size, precision, scale
+SQLAPI.cpp:				sFullName, StartPos-Value, CurPos-1-Value);
+SQLAPI.cpp:		ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:		pISACursor->UnExecute();
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	pISACursor->Prepare(
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	pISACursor->Execute(m_nPlaceHolderCount, m_ppPlaceHolders);
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	pISACursor->Cancel();
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	return pISACursor->ResultSetExists();
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:		pISACursor->SetSelectBuffers();
+SQLAPI.cpp:	bool bFetch = pISACursor->FetchNext();
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:		return -1;
+SQLAPI.cpp:	return pISACursor->GetRowsAffected();
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	pISACursor->DescribeParamSP();
+SQLAPI.cpp:	int iReturn = -1;
+SQLAPI.cpp:		if(iReturn == -1 && ParamByIndex(i).ParamDirType() == SA_ParamReturn)
+SQLAPI.cpp:	if(sParamByName.CompareNoCase(_SA("RETURN_VALUE")) == 0 && iReturn != -1)
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_BIND_VAR_NOT_FOUND, (const SAChar*)sParamByName);
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	pISACursor->DescribeFields(&SACommand::CreateField);
+SQLAPI.cpp:SAField &SACommand::Field(int nField)	// 1-based field number in result set
+SQLAPI.cpp:	return *m_ppFields[nField-1];
+SQLAPI.cpp:		if(m_ppFields[i]->Name().CompareNoCase(sField) == 0)
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_FIELD_NOT_FOUND, (const SAChar*)sField);
+SQLAPI.cpp:SAField &SACommand::operator[](int nField)	// 1-based field number in result set
+SQLAPI.cpp:	return s.IsEmpty() && m_pConnection? m_pConnection->Option(sOptionName) : s;
+SQLAPI.cpp:	ISACursor *pISACursor = m_pConnection? m_pConnection->GetISACursor(this) : NULL;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CLIENT_NOT_SET);
+SQLAPI.cpp:	return pISACursor->NativeHandles();
+SQLAPI.cpp:	SAException(SA_UserGenerated_Error, nUserCode, -1, sMsg)
+SQLAPI.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_CONVERTION_FROM_STRING_TO_SHORT_ERROR, (const SAChar*)*m_pString);
+SQLAPI.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_CONVERTION_FROM_STRING_TO_LONG_ERROR, (const SAChar*)*m_pString);
+SQLAPI.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_CONVERTION_FROM_STRING_TO_DOUBLE_ERROR, (const SAChar*)*m_pString);
+SQLAPI.cpp:		return m_pNumeric->operator SAString();
+SQLAPI.cpp:		s.Delete(s.GetLength()-1);	// remove '\n'
+SQLAPI.cpp:		nLenInBytes = m_pString->GetBinaryLength();
+SQLAPI.cpp:		pBuf = (unsigned char*)m_pString->GetBinaryBuffer(nPrepareSize);
+SQLAPI.cpp:		m_pString->ReleaseBinaryBuffer(m_nReaderRead);
+SQLAPI.cpp:				pBuf = (unsigned char*)m_pString->GetBinaryBuffer(m_nReaderRead + m_nPieceSize);
+SQLAPI.cpp:			(unsigned int)m_pString->GetBinaryLength() > m_nWriterWritten? sa_min(nSize, m_pString->GetBinaryLength() - m_nWriterWritten) : 0;
+SQLAPI.cpp:		if(m_nWriterWritten < (unsigned int)m_pString->GetBinaryLength())
+SQLAPI.cpp:	ISACursor *pISACursor = m_pCommand->Connection()->GetISACursor(m_pCommand);
+SQLAPI.cpp:	pISACursor->GetParamBuffer(*this, pValue, nParamBufSize);
+SQLAPI.cpp:	pISACursor->ReadLongOrLOB(ISACursor::ISA_ParamValue, *this, pValue, nParamBufSize, fnReader, nReaderWantedSize, pAddlData);
+SQLAPI.cpp:		int nPos,	// 1-based
+SQLAPI.cpp:	ISACursor *pISACursor = m_Command.Connection()->GetISACursor(&m_Command);
+SQLAPI.cpp:	pISACursor->GetFieldBuffer(Pos(), pValue, nFieldBufSize);
+SQLAPI.cpp:	pISACursor->ReadLongOrLOB(ISACursor::ISA_FieldValue, *this, pValue, nFieldBufSize, fnReader, nReaderWantedSize, pAddlData);
+SQLAPI.cpp:		sh = (unsigned short)(sh + Devidend[SA_NUMERIC_MANTISSA_SIZE-i-1]);
+SQLAPI.cpp:		Quotient[SA_NUMERIC_MANTISSA_SIZE-i-1] = (unsigned char)(sh / Devisor);
+SQLAPI.cpp:	if(s.Left(1) == _SA('-'))
+SQLAPI.cpp:		sInt = s.Mid(1, p-1);
+SQLAPI.cpp:	SAString sDec = s.Mid(p+1, e-p-1);
+SQLAPI.cpp:			sResult += SAString(_SA('0'), nExp10 - Scale);
+SQLAPI.cpp:		sResult = _SA('.') + SAString(_SA('0'), -(nExp10 + 1)) + sResult;
+SQLAPI.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_CONVERTION_FROM_STRING_TO_NUMERIC_ERROR, s);
+SQLAPI.cpp:	if(*s == _SA('-'))
+SQLAPI.cpp:		this->sign = 0;
+SQLAPI.cpp:		this->sign = 1;
+SQLAPI.cpp:	// convert from string to little endian 10000-based number
+SQLAPI.cpp:	this->precision = (unsigned char)i;
+SQLAPI.cpp:		if(s[i-1] == '.')
+SQLAPI.cpp:			this->scale = (unsigned char)(this->precision-- - i--);
+SQLAPI.cpp:		unsigned short i0 = (unsigned short)(i > 0? s[--i] - _SA('0') : 0);
+SQLAPI.cpp:		if(s[i-1] == '.')
+SQLAPI.cpp:			this->scale = (unsigned char)(this->precision-- - i--);
+SQLAPI.cpp:		unsigned short i1 = (unsigned short)(i > 0? s[--i] - _SA('0') : 0);
+SQLAPI.cpp:		if(s[i-1] == '.')
+SQLAPI.cpp:			this->scale = (unsigned char)(this->precision-- - i--);
+SQLAPI.cpp:		unsigned short i2 = (unsigned short)(i > 0? s[--i] - _SA('0') : 0);
+SQLAPI.cpp:		if(s[i-1] == '.')
+SQLAPI.cpp:			this->scale = (unsigned char)(this->precision-- - i--);
+SQLAPI.cpp:		unsigned short i3 = (unsigned short)(i > 0? s[--i] - _SA('0') : 0);
+SQLAPI.cpp:		this->val[Num256pos++] = (unsigned char)Reminder;
+SQLAPI.cpp:		if(Num256pos == sizeof(this->val))
+SQLAPI.cpp:		n += this->val[iVal] * e;
+SQLAPI.cpp:	for(unsigned char iScale = 0; iScale < this->scale; iScale++)
+SQLAPI.cpp:	if(this->sign == 0)	// for negative numbers
+SQLAPI.cpp:		n = -n;
+SQLAPI.cpp:		unsigned char iScale = this->scale;
+SQLAPI.cpp:			if(iScale && iScale-- == 1)
+SQLAPI.cpp:			if(iScale-- == 1)
+SQLAPI.cpp:		if(this->sign == 0)	// for negative numbers
+SQLAPI.cpp:			s = _SA("-") + s;
+db2API_linux.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sDB2DLLName);
+db2API_linux.cpp:	g_nDB2DLLRefs--;
+db2Client.cpp:			return_code, -1,
+db2Client.cpp:		NativeError, -1,
+db2Client.cpp:		if(sDBString.Find('=') == -1)	// it's not a valid connection string, but it can be DSN name
+db2Client.cpp:		int nCol,	// 1-based
+db2Client.cpp:		int nPos,	// 1-based
+db2Client.cpp:	case SQL_VARCHAR:	// Variable-length character string
+db2Client.cpp:	case SQL_LONGVARCHAR:	// Variable-length character data
+db2Client.cpp:	case SQL_LONGVARBINARY: // Variable-length binary data
+db2Client.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+db2Client.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+db2Client.cpp:		g_db2API.SQLAllocHandle(SQL_HANDLE_STMT, ((Idb2Connection*)m_pISAConnection)->m_handles.m_hdbc, &m_handles.m_hstmt),
+db2Client.cpp:		SQL_HANDLE_DBC, ((Idb2Connection*)m_pISAConnection)->m_handles.m_hdbc);
+db2Client.cpp:			sStmtDB2 += sStmt.Mid(nPos, ppPlaceHolders[i]->getStart()-nPos);
+db2Client.cpp:			nPos = ppPlaceHolders[i]->getEnd() + 1;
+db2Client.cpp:	int nParams = m_pCommand->ParamCount();
+db2Client.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+db2Client.cpp:	sSQL += m_pCommand->CommandText();
+db2Client.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+db2Client.cpp:			while((nActualWrite = pParam->InvokeWriter(
+db2Client.cpp:		SAParam &Param = *ppPlaceHolders[i]->getParam();
+db2Client.cpp:					throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+db2Client.cpp:			*StrLen_or_IndPtr = ((Idb2Connection*)m_pISAConnection)->LenDataAtExec();
+db2Client.cpp:				&Param,	// ParameterValuePtr - context
+db2Client.cpp:				ValueType, -1, nDataBufSize,
+db2Client.cpp:		(m_pCommand->*fn)(
+db2Client.cpp:	SQLINTEGER RowCount = -1;
+db2Client.cpp:	int nCol,	// 1-based
+db2Client.cpp:	SAField &Field = m_pCommand->Field(nCol);
+db2Client.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_COLUMN_TYPE, (const char*)Field.Name());
+db2Client.cpp:				-1,
+db2Client.cpp:	SAString sOption = m_pCommand->Option(
+db2Client.cpp:	// column-wise binding.
+db2Client.cpp:	int nPos,	// 1-based
+db2Client.cpp:				nPortionSize = sa_min(nPortionSize, nLongSize - nTotalRead);
+db2Client.cpp:	SAString sText = m_pCommand->CommandText();
+db2Client.cpp:	SACommand cmd(m_pISAConnection->getSAConnection());
+db2Client.cpp:		pHandles->m_hstmt,
+db2Client.cpp:		SQL_NTS), SQL_HANDLE_STMT, pHandles->m_hstmt);
+db2Client.cpp:		m_pCommand->CreateParam(sParamName, eParamType, nDataType, nColSize, nColSize, nDecDigits, eDirType);
+db2Client.cpp:	numeric.precision = pSQL_NUMERIC_STRUCT->precision;
+db2Client.cpp:	numeric.scale = pSQL_NUMERIC_STRUCT->scale;
+db2Client.cpp:	numeric.sign = pSQL_NUMERIC_STRUCT->sign;
+db2Client.cpp:		pSQL_NUMERIC_STRUCT->val,
+db2Client.cpp:		sa_min(sizeof(numeric.val), sizeof(pSQL_NUMERIC_STRUCT->val)));
+ib5API_linux.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sCryptDLLName);
+ib5API_linux.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sIB5DLLName);
+ib5API_linux.cpp:	g_nIB5DLLRefs--;
+ibClient.cpp:			error_code, -1,
+ibClient.cpp:		SAString sOption = m_pSAConnection->Option(DPB_Strings[i].sKey);
+ibClient.cpp:	// 1-byte values
+ibClient.cpp:		SAString sOption = m_pSAConnection->Option(DPB_Byte_1[i].sKey);
+ibClient.cpp:	m_DPB_buffer_length = (short)(dpb - m_DPB_buffer);
+ibClient.cpp:	SAString sCommitRetaining = m_pSAConnection->Option(_SA("CommitRetaining"));
+ibClient.cpp:		int nCol,	// 1-based
+ibClient.cpp:		int nPos,	// 1-based
+ibClient.cpp:		&((IibConnection*)m_pISAConnection)->m_handles.m_db_handle,
+ibClient.cpp:		&((IibConnection*)m_pISAConnection)->m_handles.m_tr_handle,
+ibClient.cpp:		// (even if it is not end-of-file),
+ibClient.cpp:				nPieceSize = sa_min(nPieceSize, nBlobSize - nTotalRead);
+ibClient.cpp:			pIConverter->PutStream(pBuf, actual_seg_length, ePieceType);
+ibClient.cpp:			// smart while: initialize nCnvtPieceSize before calling pIConverter->GetStream
+ibClient.cpp:				sa_min(nCnvtPieceSize, nCnvtBlobSizeMax - nTotalPassedToReader) : nCnvtPieceSize),
+ibClient.cpp:				pIConverter->GetStream(pBuf, nCnvtPieceSize, nCnvtSize, eCnvtPieceType))
+ibClient.cpp:		assert(pIConverter->IsEmpty());
+ibClient.cpp:	catch(SAException &)	// try to clean-up
+ibClient.cpp:	pXSQLDA->version = SQLDA_VERSION1;
+ibClient.cpp:	pXSQLDA->sqln = nVars;
+ibClient.cpp:	pXSQLDA->sqld = nVars;
+ibClient.cpp:		&((IibConnection*)m_pISAConnection)->m_handles.m_db_handle,
+ibClient.cpp:			sStmtIB += sCmd.Mid(nPos, ppPlaceHolders[i]->getStart()-nPos);
+ibClient.cpp:			nPos = ppPlaceHolders[i]->getEnd() + 1;
+ibClient.cpp:		for(i = 0; i < m_pCommand->ParamCount(); ++i)
+ibClient.cpp:			SAParam &Param = m_pCommand->ParamByIndex(i);
+ibClient.cpp:		&((IibConnection*)m_pISAConnection)->m_handles.m_tr_handle,
+ibClient.cpp:		&((IibConnection*)m_pISAConnection)->m_handles.m_db_handle,
+ibClient.cpp:		&((IibConnection*)m_pISAConnection)->m_handles.m_tr_handle,
+ibClient.cpp:	assert(!nOutputCount || (nOutputCount == m_pOutXSQLDA->sqld));
+ibClient.cpp:	assert(!nOutputCount || (nOutputCount == m_pOutXSQLDA->sqln));
+ibClient.cpp:		SAParam &Param = *ppPlaceHolders[i]->getParam();
+ibClient.cpp:			short &sqltype = m_pInXSQLDA->sqlvar[nInput].sqltype;
+ibClient.cpp:			short &sqlsubtype = m_pInXSQLDA->sqlvar[nInput].sqlsubtype;
+ibClient.cpp:			short *&sqlind = m_pInXSQLDA->sqlvar[nInput].sqlind;
+ibClient.cpp:			short &sqllen = m_pInXSQLDA->sqlvar[nInput].sqllen;
+ibClient.cpp:			char *&sqldata = m_pInXSQLDA->sqlvar[nInput].sqldata;
+ibClient.cpp:				*sqlind = -1;
+ibClient.cpp:					throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+ibClient.cpp:			short &sqltype = m_pOutXSQLDA->sqlvar[nOutput].sqltype;
+ibClient.cpp:			short *&sqlind = m_pOutXSQLDA->sqlvar[nOutput].sqlind;
+ibClient.cpp:			short &sqllen = m_pOutXSQLDA->sqlvar[nOutput].sqllen;
+ibClient.cpp:			char *&sqldata = m_pOutXSQLDA->sqlvar[nOutput].sqldata;
+ibClient.cpp:		m_pCommand->CommandType() == SA_CmdStoredProc? m_pOutXSQLDA : NULL;
+ibClient.cpp:		&((IibConnection*)m_pISAConnection)->m_handles.m_tr_handle,
+ibClient.cpp:	if(m_pOutXSQLDA->sqld > m_pOutXSQLDA->sqln)
+ibClient.cpp:		cFields = m_pOutXSQLDA->sqld;
+ibClient.cpp:		assert(m_pOutXSQLDA->sqld == cFields);
+ibClient.cpp:		XSQLVAR &var = m_pOutXSQLDA->sqlvar[iField];
+ibClient.cpp:		(m_pCommand->*fn)(
+ibClient.cpp:	unsigned int nField,	// 1-based
+ibClient.cpp:		if(m_pOutXSQLDA->sqld > m_pOutXSQLDA->sqln)
+ibClient.cpp:			nFields = m_pOutXSQLDA->sqld;
+ibClient.cpp:			assert(m_pOutXSQLDA->sqld == nFields);
+ibClient.cpp:	if((unsigned int)m_pOutXSQLDA->sqld < nField)
+ibClient.cpp:	XSQLVAR &var = m_pOutXSQLDA->sqlvar[nField-1];
+ibClient.cpp:	return -1;
+ibClient.cpp:	int nCol,	// 1-based
+ibClient.cpp:	short &sqltype = m_pOutXSQLDA->sqlvar[nCol-1].sqltype;
+ibClient.cpp:	short *&sqlind = m_pOutXSQLDA->sqlvar[nCol-1].sqlind;
+ibClient.cpp:	short &sqllen = m_pOutXSQLDA->sqlvar[nCol-1].sqllen;
+ibClient.cpp:	char *&sqldata = m_pOutXSQLDA->sqlvar[nCol-1].sqldata;
+ibClient.cpp:	if(!m_pCommand->Field(nCol).isFieldRequired())
+ibClient.cpp:		sqldata = (char*)pValue - sizeof(short);
+ibClient.cpp:	int nPos,	// 1-based
+ibClient.cpp:	XSQLVAR &var = m_pOutXSQLDA->sqlvar[nPos-1];
+ibClient.cpp:	if(var.sqlind == NULL || *var.sqlind != -1)	
+ibClient.cpp:	SAString sProcName = m_pCommand->CommandText();
+ibClient.cpp:	SACommand cmd(m_pISAConnection->getSAConnection(), sSQL);
+ibClient.cpp:		m_pCommand->CreateParam(sName, SA_dtUnknown, -1, 0, -1, -1, eDirType);
+ibClient.cpp:			SAParam &Param = m_pCommand->ParamByIndex(i);
+ibClient.cpp:	m_TPB_buffer_length = (short)(tpb - m_TPB_buffer);
+ibClient.cpp:		m_pSAConnection->AutoCommit());
+ibClient.cpp:		m_pSAConnection->IsolationLevel(),
+ibClient.cpp:	SAString s = m_pCommand->Option("SQLDialect");
+ibClient.cpp:	((IibCursor*)pCursor)->OnTransactionClosed(pAddlData);
+infAPI_linux.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, "", (const char*)sDLLs);
+infAPI_linux.cpp:	g_nInfDLLRefs--;
+infClient.cpp:		NativeError, -1,
+infClient.cpp:		if(sDBString.Find('=') == -1)	// it's not a valid connection string, but it can be DSN name
+infClient.cpp:		int nCol,	// 1-based
+infClient.cpp:		int nPos,	// 1-based
+infClient.cpp:	case SQL_VARCHAR:	// Variable-length character string
+infClient.cpp://	case SQL_WVARCHAR:	// Unicode variable-length character string
+infClient.cpp:	case SQL_LONGVARCHAR:	// Variable-length character data
+infClient.cpp:	case SQL_WLONGVARCHAR:	// Variable-length character data
+infClient.cpp:	case SQL_LONGVARBINARY: // Variable-length binary data
+infClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+infClient.cpp:	if(((IinfConnection*)m_pISAConnection)->m_nDriverODBCVer < 0x00030000)
+infClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+infClient.cpp:		IinfConnection::Check(g_infAPI.SQLAllocHandle(SQL_HANDLE_STMT, ((IinfConnection*)m_pISAConnection)->m_handles.m_hdbc, &m_handles.m_hstmt),
+infClient.cpp:			SQL_HANDLE_DBC, ((IinfConnection*)m_pISAConnection)->m_handles.m_hdbc);
+infClient.cpp:		IinfConnection::Check(g_infAPI.SQLAllocStmt(((IinfConnection*)m_pISAConnection)->m_handles.m_hdbc, &m_handles.m_hstmt),
+infClient.cpp:			SQL_HANDLE_DBC, ((IinfConnection*)m_pISAConnection)->m_handles.m_hdbc);
+infClient.cpp:			sStmtinf += sStmt.Mid(nPos, ppPlaceHolders[i]->getStart()-nPos);
+infClient.cpp:			nPos = ppPlaceHolders[i]->getEnd() + 1;
+infClient.cpp:	int nParams = m_pCommand->ParamCount();
+infClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+infClient.cpp:	sSQL += m_pCommand->CommandText();
+infClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+infClient.cpp:			while((nActualWrite = pParam->InvokeWriter(
+infClient.cpp:		SAParam &Param = *ppPlaceHolders[i]->getParam();
+infClient.cpp:					throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+infClient.cpp:			*StrLen_or_IndPtr = ((IinfConnection*)m_pISAConnection)->LenDataAtExec();
+infClient.cpp:				&Param,	// ParameterValuePtr - context
+infClient.cpp:		(m_pCommand->*fn)(
+infClient.cpp:	SQLINTEGER RowCount = -1;
+infClient.cpp:	int nCol,	// 1-based
+infClient.cpp:	SAField &Field = m_pCommand->Field(nCol);
+infClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_COLUMN_TYPE, (const char*)Field.Name());
+infClient.cpp:	int nPos,	// 1-based
+infClient.cpp:				nPortionSize = sa_min(nPortionSize, nLongSize - nTotalRead);
+infClient.cpp:	SAString sText = m_pCommand->CommandText();
+infClient.cpp:	SACommand cmd(m_pISAConnection->getSAConnection());
+infClient.cpp:		pHandles->m_hstmt,
+infClient.cpp:		0), SQL_HANDLE_STMT, pHandles->m_hstmt);
+infClient.cpp:		m_pCommand->CreateParam(sParamName, eParamType, nDataType, nColSize, nColSize, nDecDigits, eDirType);
+infClient.cpp:	numeric.precision = pSQL_NUMERIC_STRUCT->precision;
+infClient.cpp:	numeric.scale = pSQL_NUMERIC_STRUCT->scale;
+infClient.cpp:	numeric.sign = pSQL_NUMERIC_STRUCT->sign;
+infClient.cpp:		pSQL_NUMERIC_STRUCT->val,
+infClient.cpp:		sa_min(sizeof(numeric.val), sizeof(pSQL_NUMERIC_STRUCT->val)));
+myAPI_linux.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sMySQLDLLName);
+myAPI_linux.cpp:	g_nMySQLDLLRefs--;
+myClient.cpp:			-1,
+myClient.cpp:			--Prec;	// space for '-' sign
+myClient.cpp:			--Prec;	// space for '.'
+myClient.cpp:	case FIELD_TYPE_NULL:	// NULL-type field
+myClient.cpp:		int nCol,	// 1-based
+myClient.cpp:	bool bTimeStamp = strchr(sInternal, '-') == NULL && strchr(sInternal, ':') == NULL;
+myClient.cpp:		case 19:	//	"YYYY-MM-DD HH:MM:SS", DATETIME
+myClient.cpp:		case 10:	//	"YYYY-MM-DD", DATE
+myClient.cpp:			assert(sInternal[4] == '-');
+myClient.cpp:			assert(sInternal[7] == '-');
+myClient.cpp:	// format should be YYYY-MM-DD HH:MM:SS.fraction
+myClient.cpp:	sInternal.Format("%.4d-%.2d-%.2d %.2d:%.2d:%.2d.%.9ld",
+myClient.cpp:		throw SAException(SA_Library_Error, -1, -1, "mysql_init -> NULL");
+myClient.cpp:	m_pSAConnection->Commit();
+myClient.cpp:		SAParam &Param = *ppPlaceHolders[i]->getParam();
+myClient.cpp:		sBoundStmt += m_sOriginalStmst.Mid(nPos, ppPlaceHolders[i]->getStart()-nPos);
+myClient.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+myClient.cpp:		nPos = ppPlaceHolders[i]->getEnd() + 1;
+myClient.cpp:	myConnectionHandles *pConH = (myConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+myClient.cpp:	if(g_myAPI.mysql_real_query(pConH->mysql, sBoundStmt, sBoundStmt.GetLength()))
+myClient.cpp:		Check(pConH->mysql);
+myClient.cpp:	SAString sOption = m_pCommand->Option("HandleResult");
+myClient.cpp:		m_handles.result = g_myAPI.mysql_store_result(pConH->mysql);
+myClient.cpp:		m_handles.result = g_myAPI.mysql_use_result(pConH->mysql);
+myClient.cpp:	Check(pConH->mysql);
+myClient.cpp:		myConnectionHandles *pConH = (myConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+myClient.cpp:			pConH->mysql,
+myClient.cpp:	myConnectionHandles *pConH = (myConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+myClient.cpp:	if(g_myAPI.mysql_kill(pConH->mysql, g_myAPI.mysql_thread_id(pConH->mysql)))
+myClient.cpp:		Check(pConH->mysql);
+myClient.cpp:	g_myAPI.mysql_ping(pConH->mysql);
+myClient.cpp:	myConnectionHandles *pConH = (myConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+myClient.cpp:		cFields = g_myAPI.mysql_field_count(pConH->mysql);
+myClient.cpp:			fields->type,
+myClient.cpp:			fields->length,
+myClient.cpp:			fields->decimals,
+myClient.cpp:			fields->flags);
+myClient.cpp:		(m_pCommand->*fn)(
+myClient.cpp:			fields->name,
+myClient.cpp:			fields->type,
+myClient.cpp:			fields->length,
+myClient.cpp:			fields->decimals,
+myClient.cpp:			fields->flags & NOT_NULL_FLAG);
+myClient.cpp:	int/* nCol*/,	// 1-based
+myClient.cpp:	int cFields = m_pCommand->FieldCount();
+myClient.cpp:		SAField &Field = m_pCommand->Field(iField+1);
+myClient.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+myClient.cpp:	myConnectionHandles *pConH = (myConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+myClient.cpp:	my_ulonglong cRows = g_myAPI.mysql_affected_rows(pConH->mysql);
+myClient.cpp:	const char *pData = m_mysql_row[nPos-1];
+myClient.cpp:	unsigned long nLongSize = m_lengths[nPos-1];
+myClient.cpp:			sa_min(nPieceSize, nLongSize - nTotalRead);
+odbcAPI_linux.cpp:		SAString s = pCon->Option("UseManagerOnUNIX");
+odbcAPI_linux.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), sDLLName);
+odbcAPI_linux.cpp:	--g_nODBCDLLRefs;
+odbcClient.cpp:			return_code, -1,
+odbcClient.cpp:		NativeError, -1,
+odbcClient.cpp:		if(sDBString.Find('=') == -1)	// it's not a valid connection string, but it can be DSN name
+odbcClient.cpp:		int nCol,	// 1-based
+odbcClient.cpp:		int nPos,	// 1-based
+odbcClient.cpp:	m_nRowsAffected = -1;
+odbcClient.cpp:	case SQL_WVARCHAR:	// Unicode variable-length character string
+odbcClient.cpp:	case SQL_VARCHAR:	// Variable-length character string
+odbcClient.cpp:	case SQL_LONGVARCHAR:	// Variable-length character data
+odbcClient.cpp:	case SQL_WLONGVARCHAR:	// Variable-length character data
+odbcClient.cpp:	case SQL_LONGVARBINARY: // Variable-length binary data
+odbcClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+odbcClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+odbcClient.cpp:		g_odbcAPI.SQLAllocHandle(SQL_HANDLE_STMT, ((IodbcConnection*)m_pISAConnection)->m_handles.m_hdbc, &m_handles.m_hstmt),
+odbcClient.cpp:		SQL_HANDLE_DBC, ((IodbcConnection*)m_pISAConnection)->m_handles.m_hdbc);
+odbcClient.cpp:			sStmtODBC += sStmt.Mid(nPos, ppPlaceHolders[i]->getStart()-nPos);
+odbcClient.cpp:			nPos = ppPlaceHolders[i]->getEnd() + 1;
+odbcClient.cpp:	int nParams = m_pCommand->ParamCount();
+odbcClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+odbcClient.cpp:	sSQL += m_pCommand->CommandText();
+odbcClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+odbcClient.cpp:			while((nActualWrite = pParam->InvokeWriter(
+odbcClient.cpp:		SAParam &Param = *ppPlaceHolders[i]->getParam();
+odbcClient.cpp:					throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+odbcClient.cpp:			*StrLen_or_IndPtr = ((IodbcConnection*)m_pISAConnection)->LenDataAtExec();
+odbcClient.cpp:				&Param,	// ParameterValuePtr - context
+odbcClient.cpp:				ValueType, -1, nDataBufSize,
+odbcClient.cpp:		(m_pCommand->*fn)(
+odbcClient.cpp:	int nCol,	// 1-based
+odbcClient.cpp:	SAField &Field = m_pCommand->Field(nCol);
+odbcClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_COLUMN_TYPE, (const char*)Field.Name());
+odbcClient.cpp:				-1,
+odbcClient.cpp:	int nPos,	// 1-based
+odbcClient.cpp:				nPortionSize = sa_min(nPortionSize, nLongSize - nTotalRead);
+odbcClient.cpp:	SAString sText = m_pCommand->CommandText();
+odbcClient.cpp:	SACommand cmd(m_pISAConnection->getSAConnection());
+odbcClient.cpp:		pHandles->m_hstmt,
+odbcClient.cpp:		0), SQL_HANDLE_STMT, pHandles->m_hstmt);
+odbcClient.cpp:		m_pCommand->CreateParam(sParamName, eParamType, nDataType, nColSize, nColSize, nDecDigits, eDirType);
+odbcClient.cpp:	numeric.precision = pSQL_NUMERIC_STRUCT->precision;
+odbcClient.cpp:	numeric.scale = pSQL_NUMERIC_STRUCT->scale;
+odbcClient.cpp:	numeric.sign = pSQL_NUMERIC_STRUCT->sign;
+odbcClient.cpp:		pSQL_NUMERIC_STRUCT->val,
+odbcClient.cpp:		sa_min(sizeof(numeric.val), sizeof(pSQL_NUMERIC_STRUCT->val)));
+ora8API_linux.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sORA8DLLName);
+ora8API_linux.cpp:	g_nORA8DLLRefs--;
+oraClient.cpp:		((*pInternal)[0]-100)*100 + ((*pInternal)[1]-100),
+oraClient.cpp:		(*pInternal)[4] - 1,
+oraClient.cpp:		(*pInternal)[5] - 1,
+oraClient.cpp:		(*pInternal)[6] - 1);
+oraClient.cpp:	(*pInternal)[0] = (unsigned char)(((date_time.GetYear())/100) + 100);	// century in excess-100 notation
+oraClient.cpp:	(*pInternal)[1] = (unsigned char)(((date_time.GetYear())%100) + 100);	// year in excess-100 notation
+oraClient.cpp:		" PRODUCT || ' Release ' || VERSION || ' - ' || STATUS "
+oraClient.cpp:	ub2 peo = pCda_Def? pCda_Def->peo : m_handles.m_lda.peo;
+oraClient.cpp:	ub2 rc = pCda_Def? pCda_Def->rc : m_handles.m_lda.rc;
+oraClient.cpp:		(text*)(const char*)sUserID, -1,
+oraClient.cpp:		(text*)(const char*)sPassword, -1,
+oraClient.cpp:		(text*)(const char*)sDBString, -1,
+oraClient.cpp:		eIsolationLevel = m_pSAConnection->IsolationLevel();
+oraClient.cpp:	SAIsolationLevel_t eIsolationLevel = m_pSAConnection->IsolationLevel();
+oraClient.cpp:	_SA_OCI8TempLobSupport_Reserverd = (int)(((unsigned int)(-1))/2)
+oraClient.cpp:	int nErrPos = -1;
+oraClient.cpp:		eIsolationLevel = m_pSAConnection->IsolationLevel();
+oraClient.cpp:	SAIsolationLevel_t eIsolationLevel = m_pSAConnection->IsolationLevel();
+oraClient.cpp:	SAString s = pSAConnection->Option("UseAPI");
+oraClient.cpp:	int nParams = m_pCommand->ParamCount();
+oraClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+oraClient.cpp:	sSQL += m_pCommand->CommandText();
+oraClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+oraClient.cpp:		// so treat boolean as 16-bit signed INTEGER in Oracle
+oraClient.cpp:			int ShiftetPrec = prec - scale;	// not to deal with negative scale if it is
+oraClient.cpp:			if(ShiftetPrec < 5)	// -9,999 : 9,999
+oraClient.cpp:			else if(ShiftetPrec < 10)	// -999,999,999 : 999,999,999
+oraClient.cpp:	case 8:		// LONG		2^31-1 bytes
+oraClient.cpp:	case 24:	// LONG RAW	2^31-2 bytes
+oraClient.cpp:		int nCol,	// 1-based
+oraClient.cpp:	((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.oopen(
+oraClient.cpp:		&((Iora7Connection*)m_pISAConnection)->m_handles.m_lda,
+oraClient.cpp:		NULL, -1, -1,
+oraClient.cpp:		NULL, -1), &m_handles.m_cda);
+oraClient.cpp:	((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.oclose(
+oraClient.cpp:		int nCol,	// 1-based
+oraClient.cpp:			return ((Iora8Connection*)m_pISAConnection)->IsTemporaryLobSupported()?
+oraClient.cpp:		g_ora8API.OCIHandleAlloc(((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, (dvoid**)&m_handles.m_pOCIError, OCI_HTYPE_ERROR, 0, (dvoid**)0),
+oraClient.cpp:		((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:		g_ora8API.OCIHandleAlloc(((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, (dvoid**)&m_handles.m_pOCIStmt, OCI_HTYPE_STMT, 0, NULL),
+oraClient.cpp:		((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:	((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.oparse(
+oraClient.cpp:		(text*)(const char*)m_sInternalPrepareStmt, -1, 0, 1), &m_handles.m_cda);
+oraClient.cpp:			((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.ogetpi(
+oraClient.cpp:				pLongContext->pWriter->InvokeWriter(ePieceType, Iora7Connection::MaxLongPiece, pBuf);
+oraClient.cpp:			((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.osetpi(
+oraClient.cpp:			((Iora7Connection*)m_pISAConnection)->Check(rc, &m_handles.m_cda);
+oraClient.cpp:		((Iora7Connection*)m_pISAConnection)->Check(rc, &m_handles.m_cda);
+oraClient.cpp:	((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.obreak(
+oraClient.cpp:		&((Iora7Connection*)m_pISAConnection)->m_handles.m_lda), NULL);
+oraClient.cpp:	for(int i = 0; i < m_pCommand->ParamCount(); ++i)
+oraClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+oraClient.cpp:				const ora7CommandHandles *pH = (ora7CommandHandles *)pCursor->NativeHandles();
+oraClient.cpp:				memcpy(pvctx, &pH->m_cda, sizeof(Cda_Def));
+oraClient.cpp:					*indp = -1;	// field is null
+oraClient.cpp:						throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+oraClient.cpp:						// so treat boolean as 16-bit signed INTEGER in Oracle
+oraClient.cpp:				pLongContext->pReader = &Param;
+oraClient.cpp:				pLongContext->pWriter = &Param;
+oraClient.cpp:				pLongContext->pInd = (sb2*)pInd;
+oraClient.cpp:					((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.obindps(
+oraClient.cpp:						(text*)(const char*)PlaceHolder.getFullName(), -1,
+oraClient.cpp:					pLongContext->eState = LongContextPiecewiseBind;
+oraClient.cpp:					((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.obndra(
+oraClient.cpp:						(text*)(const char*)Param.Name(), -1,
+oraClient.cpp:					pLongContext->eState = LongContextNormal;
+oraClient.cpp:					((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.obindps(
+oraClient.cpp:						(text*)(const char*)PlaceHolder.getFullName(), -1,
+oraClient.cpp:					((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.obndra(
+oraClient.cpp:						(text*)(const char*)Param.Name(), -1,
+oraClient.cpp:		((Iora7Connection*)m_pISAConnection)->Check(rc, &m_handles.m_cda);
+oraClient.cpp:		(m_pCommand->*fn)(
+oraClient.cpp:		SAField &Field = m_pCommand->Field(m_pCommand->FieldCount());
+oraClient.cpp:	int nCol,	// 1-based
+oraClient.cpp:	SAField &Field = m_pCommand->Field(nCol);
+oraClient.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_COLUMN_TYPE, (const char*)Field.Name());
+oraClient.cpp:			ftype = 3;	// 16-bit signed integer
+oraClient.cpp:			ftype = 3;	// 32-bit signed integer
+oraClient.cpp:		pLongContext->pReader = &Field;
+oraClient.cpp:		pLongContext->pWriter = 0;
+oraClient.cpp:		pLongContext->pInd = (sb2*)pInd;
+oraClient.cpp:				((Iora7Connection*)m_pISAConnection)->Check(
+oraClient.cpp:				pLongContext->eState = LongContextPiecewiseDefine;
+oraClient.cpp:				((Iora7Connection*)m_pISAConnection)->Check(
+oraClient.cpp:				pLongContext->eState = LongContextNormal;
+oraClient.cpp:			((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.odefin(&m_handles.m_cda, nCol,
+oraClient.cpp:			pLongContext->eState = LongContextNormal;
+oraClient.cpp:			((Iora7Connection*)m_pISAConnection)->Check(
+oraClient.cpp:			((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.odefin(&m_handles.m_cda, nCol,
+oraClient.cpp:		((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.ogetpi(
+oraClient.cpp:		((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.osetpi(
+oraClient.cpp:	((Iora7Connection*)m_pISAConnection)->Check(rc, &m_handles.m_cda);
+oraClient.cpp:	((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.ogetpi(
+oraClient.cpp:	pLongContext->Len = sizeof(m_PiecewiseNullCheckPreFetch);
+oraClient.cpp:	((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.osetpi(
+oraClient.cpp:		piece, &m_PiecewiseNullCheckPreFetch[0], &pLongContext->Len), &m_handles.m_cda);
+oraClient.cpp:		((Iora7Connection*)m_pISAConnection)->Check(rc, &m_handles.m_cda);
+oraClient.cpp:	*(sb2*)pLongContext->pInd = (sb2)(pLongContext->Len? 0 : -1);
+oraClient.cpp:	// in m_PiecewiseNullCheckPreFetch, it's len in pLongContext->Len
+oraClient.cpp:		((Iora7Connection*)m_pISAConnection)->Check(rc, &m_handles.m_cda);
+oraClient.cpp:			OCILobLocator *&pLoc = m_pppBLobReturningLocs[m_nLobReturnBindsColCount-1][m_nBLobBindsRowCount-1];
+oraClient.cpp:			--m_nBLobBindsRowCount;
+oraClient.cpp:		delete m_pppBLobReturningLocs[--m_nLobReturnBindsColCount];
+oraClient.cpp://		different bind variable datatype (see ORA-01475 error)
+oraClient.cpp:			sModifiedStmt += m_sOriginalStmt.Mid(nPos, ppPlaceHolders[i]->getStart()-nPos);
+oraClient.cpp:			bool bNull = ppPlaceHolders[i]->getParam()->isNull();
+oraClient.cpp:				&& ppPlaceHolders[i]->getParam()->DataType() == SA_dtBLob
+oraClient.cpp:				&& !((Iora8Connection*)m_pISAConnection)->IsTemporaryLobSupported())
+oraClient.cpp:				sReturning += ppPlaceHolders[i]->getParam()->Name();
+oraClient.cpp:				sInto += ppPlaceHolders[i]->getParam()->Name();
+oraClient.cpp:				&& ppPlaceHolders[i]->getParam()->DataType() == SA_dtCLob
+oraClient.cpp:				&& !((Iora8Connection*)m_pISAConnection)->IsTemporaryLobSupported())
+oraClient.cpp:				sReturning += ppPlaceHolders[i]->getParam()->Name();
+oraClient.cpp:				sInto += ppPlaceHolders[i]->getParam()->Name();
+oraClient.cpp:				sModifiedStmt += m_sOriginalStmt.Mid(ppPlaceHolders[i]->getStart(), ppPlaceHolders[i]->getEnd()-ppPlaceHolders[i]->getStart()+1);
+oraClient.cpp:			nPos = ppPlaceHolders[i]->getEnd() + 1;
+oraClient.cpp:	// then check if we need to reparse to avoid ORA-01475
+oraClient.cpp:		for(int i = 0; i < m_pCommand->ParamCount(); ++i)
+oraClient.cpp:			SAParam &Param = m_pCommand->ParamByIndex(i);
+oraClient.cpp:		((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv,
+oraClient.cpp:		NULL), ((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:		((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:	m_ppTempLobs[m_cTempLobs-1] = *ppLob;
+oraClient.cpp:	m_pDTY = (ub2*)::realloc(m_pDTY, sizeof(ub2) * m_pCommand->ParamCount());
+oraClient.cpp:	for(int i = 0; i < m_pCommand->ParamCount(); ++i)
+oraClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+oraClient.cpp:				g_ora8API.OCIHandleAlloc(((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, (dvoid**)valuep, OCI_HTYPE_STMT, 0, NULL),
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:				const ora8CommandHandles *pH = (ora8CommandHandles *)pCursor->NativeHandles();
+oraClient.cpp:				memcpy(valuep, &pH->m_pOCIStmt, sizeof(OCIStmt *));
+oraClient.cpp:						throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+oraClient.cpp:						// so treat boolean as 16-bit signed INTEGER in Oracle
+oraClient.cpp:		bool bLobReturning = bLob && !((Iora8Connection*)m_pISAConnection)->IsTemporaryLobSupported();
+oraClient.cpp:			pLongContext->pReader = &Param;
+oraClient.cpp:			pLongContext->pWriter = &Param;
+oraClient.cpp:			pLongContext->pInd = indp;
+oraClient.cpp:			pLongContext->eState = LongContextCallback;
+oraClient.cpp:				pCtx->pParam = &Param;
+oraClient.cpp:				pCtx->pOCIError = m_handles.m_pOCIError;
+oraClient.cpp:				pCtx->pOCIEnv = ((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv;
+oraClient.cpp:				pCtx->pppOCILobLocators = m_pppBLobReturningLocs;
+oraClient.cpp:				pCtx->ppLobLocatorsLens = m_ppLobReturningLens;
+oraClient.cpp:				pCtx->nLobLocatorCol = nLobReturnBindsColCount++;
+oraClient.cpp:				pCtx->pnLobReturnBindsColCount = &m_nLobReturnBindsColCount;
+oraClient.cpp:				pCtx->pnBLobBindsRowCount = &m_nBLobBindsRowCount;
+oraClient.cpp:				// to avoid Ora-03135 or Ora-01460
+oraClient.cpp:		SAString sOption = m_pCommand->Option(
+oraClient.cpp:		if(m_pCommand->Connection()->AutoCommit() == SA_AutoCommitOn)
+oraClient.cpp:			((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:	catch(SAException &)	// clean-up
+oraClient.cpp:		((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:			((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:	return offset - 1;
+oraClient.cpp:		SAParam &Param = *m_ppLobReturnPlaceHolders[nCol]->getParam();
+oraClient.cpp:					((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:	if(!isInputParam(*(SAParam*)pLongContext->pWriter))
+oraClient.cpp:		*pLongContext->pInd = -1;
+oraClient.cpp:		*indpp = pLongContext->pInd;
+oraClient.cpp:		pLongContext->pWriter->InvokeWriter(ePieceType, Iora8Connection::MaxLongPiece, *bufpp);
+oraClient.cpp:	if(index == 0 && pCtx->nLobLocatorCol == 0)
+oraClient.cpp:		assert(*pCtx->pnBLobBindsRowCount == 0);
+oraClient.cpp:			bindp, OCI_HTYPE_BIND, pCtx->pnBLobBindsRowCount, NULL, OCI_ATTR_ROWS_RETURNED, pCtx->pOCIError),
+oraClient.cpp:			pCtx->pOCIError, OCI_HTYPE_ERROR);
+oraClient.cpp:		for(unsigned int nCol = 0; nCol < *pCtx->pnLobReturnBindsColCount; ++nCol)
+oraClient.cpp:			assert(pCtx->pppOCILobLocators[nCol] == NULL);
+oraClient.cpp:			pCtx->pppOCILobLocators[nCol] = new OCILobLocator*[*pCtx->pnBLobBindsRowCount];
+oraClient.cpp:			memset(pCtx->pppOCILobLocators[nCol], 0, sizeof(OCILobLocator*)* *pCtx->pnBLobBindsRowCount);
+oraClient.cpp:			assert(pCtx->ppLobLocatorsLens[nCol] == NULL);
+oraClient.cpp:			pCtx->ppLobLocatorsLens[nCol] = new ub4[*pCtx->pnBLobBindsRowCount];
+oraClient.cpp:			for(unsigned int nRow = 0; nRow < *pCtx->pnBLobBindsRowCount; nRow++)
+oraClient.cpp:					pCtx->pOCIEnv,
+oraClient.cpp:					(dvoid**)&pCtx->pppOCILobLocators[nCol][nRow],
+oraClient.cpp:					OCI_DTYPE_LOB, 0, NULL), pCtx->pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:				pCtx->ppLobLocatorsLens[nCol][nRow] = sizeof(OCILobLocator*);
+oraClient.cpp:	*bufpp	= pCtx->pppOCILobLocators[pCtx->nLobLocatorCol][index];
+oraClient.cpp:	*alenp	= &pCtx->ppLobLocatorsLens[pCtx->nLobLocatorCol][index];
+oraClient.cpp:		(m_pCommand->*fn)(
+oraClient.cpp:	unsigned int nField,	// 1-based
+oraClient.cpp://		SAField &Field = m_pCommand->Field(m_pCommand->FieldCount());
+oraClient.cpp:	int nCol,	// 1-based
+oraClient.cpp:	SAField &Field = m_pCommand->Field(nCol);
+oraClient.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_COLUMN_TYPE, (const char*)Field.Name());
+oraClient.cpp:			dty = SQLT_INT;	// 16-bit signed INTEGER
+oraClient.cpp:			dty = SQLT_INT;	// 32-bit signed INTEGER
+oraClient.cpp:					((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv,
+oraClient.cpp:					((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:					((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv,
+oraClient.cpp:					((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv,
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:				g_ora8API.OCIHandleAlloc(((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, (dvoid**)pValue, OCI_HTYPE_STMT, 0, NULL),
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:		pLongContext->pReader = &Field;
+oraClient.cpp:		pLongContext->pWriter = 0;
+oraClient.cpp:		pLongContext->pInd = (sb2*)pInd;
+oraClient.cpp:			pLongContext->eState = LongContextPiecewiseDefine;
+oraClient.cpp:			pLongContext->eState = LongContextCallback;
+oraClient.cpp:	GetFieldBuffer(pField->Pos(), pValue, nFieldBufSize);
+oraClient.cpp:	pLongContext->Len = sizeof(m_PiecewiseNullCheckPreFetch);
+oraClient.cpp:		&m_PiecewiseNullCheckPreFetch[0], &pLongContext->Len,
+oraClient.cpp:		pLongContext->pInd,
+oraClient.cpp:	*(sb2*)pLongContext->pInd = (sb2)(pLongContext->Len? 0 : -1);
+oraClient.cpp:	// in m_PiecewiseNullCheckPreFetch, it's len in pLongContext->Len
+oraClient.cpp:	if(pLongContext->eState & LongContextPiecewise)
+oraClient.cpp:		while(pLongContext->Len - nPrefetchedSent >= nPortionSize)
+oraClient.cpp:				if(pLongContext->Len == nPrefetchedSent)
+oraClient.cpp:				unsigned int nPrefetchedTail = pLongContext->Len - nPrefetchedSent;
+oraClient.cpp:					len -= nPrefetchedTail;
+oraClient.cpp:				assert(pLongContext->Len == nPrefetchedSent);
+oraClient.cpp:				((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.ogetpi(
+oraClient.cpp:				((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.osetpi(
+oraClient.cpp:				switch(pLongContext->eState)
+oraClient.cpp:			((Iora7Connection*)m_pISAConnection)->Check(rc, &m_handles.m_cda);
+oraClient.cpp:		assert(pLongContext->eState == LongContextNormal);
+oraClient.cpp:				((Iora7Connection*)m_pISAConnection)->Check(
+oraClient.cpp:	if(pLongContext->eState & LongContextPiecewise)
+oraClient.cpp:		assert(pLongContext->pReader == WhichFieldIsPiecewise());
+oraClient.cpp:		unsigned int nPortionSize = pLongContext->pReader->PrepareReader(
+oraClient.cpp:		while(pLongContext->Len - nPrefetchedSent >= nPortionSize)
+oraClient.cpp:				if(pLongContext->Len == nPrefetchedSent)
+oraClient.cpp:			pLongContext->pReader->InvokeReader(ePieceType, pBuf, nPortionSize);
+oraClient.cpp:				unsigned int nPrefetchedTail = pLongContext->Len - nPrefetchedSent;
+oraClient.cpp:					alen -= nPrefetchedTail;
+oraClient.cpp:				assert(pLongContext->Len == nPrefetchedSent);
+oraClient.cpp:					pLongContext->pInd,
+oraClient.cpp:				pLongContext->pReader->InvokeReader(ePieceType, pBuf, nPrefetchedTail+alen);
+oraClient.cpp:		assert(pLongContext->eState == LongContextCallback);
+oraClient.cpp:		SAString &sLong = *pLongContext->pReader->m_pString;
+oraClient.cpp:		unsigned int nPortionSize = pLongContext->pReader->PrepareReader(
+oraClient.cpp:			if(nLongSize - nTotal < nLen)
+oraClient.cpp:				nLen = nLongSize - nTotal;
+oraClient.cpp:			pLongContext->pReader->InvokeReader(ePieceType, piecedata, nLen);
+oraClient.cpp:		((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:			((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:		if(pLongContext->eState == LongContextCallback)
+oraClient.cpp:				pLongContext->pBuf,
+oraClient.cpp:				pLongContext->Len);
+oraClient.cpp:		unsigned int nPortionSize = pLongContext->pReader->PrepareReader(
+oraClient.cpp:			pLongContext->pBuf,
+oraClient.cpp:			pLongContext->pReader->m_nReaderWantedPieceSize,
+oraClient.cpp:		*bufpp = pLongContext->pBuf;
+oraClient.cpp:		*alenpp = &pLongContext->Len;
+oraClient.cpp:		*indpp = pLongContext->pInd;
+oraClient.cpp:		pLongContext->pReader->InvokeReader(
+oraClient.cpp:			pLongContext->pBuf,
+oraClient.cpp:			pLongContext->Len);
+oraClient.cpp:		*bufpp = pLongContext->pBuf;
+oraClient.cpp:		*alenpp = &pLongContext->Len;
+oraClient.cpp:		*indpp = pLongContext->pInd;
+oraClient.cpp:	SAString sProcName = m_pCommand->CommandText();
+oraClient.cpp:	((Iora7Connection*)m_pISAConnection)->Check(g_ora7API.odessp(
+oraClient.cpp:		&((Iora7Connection*)m_pISAConnection)->m_handles.m_lda,
+oraClient.cpp:	ub2 nOverload = (ub2)sa_strtol(m_pCommand->Option(_SA("Overload")), NULL, 10);
+oraClient.cpp:				m_pCommand->CreateParam(
+oraClient.cpp:				m_pCommand->CreateParam(
+oraClient.cpp:	SAString sName = m_pCommand->CommandText();
+oraClient.cpp:	// a) ddd - it is global method ddd
+oraClient.cpp:	// b) aaa.bbb.ccc - it is a package aaa.bbb with method ccc
+oraClient.cpp:	if(pos1 == -1)	// a)
+oraClient.cpp:		if(pos2 != -1)	// b)
+oraClient.cpp:		((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv,
+oraClient.cpp:		((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:			nOverload = (ub2)sa_strtol(m_pCommand->Option(_SA("Overload")), NULL, 10);
+oraClient.cpp:				if(--nOverload)
+oraClient.cpp:					((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:				((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:					((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:			m_pCommand->CreateParam(
+oraClient.cpp:				pDescr, OCI_HTYPE_DESCRIBE), ((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCIEnv, OCI_HTYPE_ENV);
+oraClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+oraClient.cpp:		// so treat boolean as 16-bit signed INTEGER in Oracle
+oraClient.cpp:		ftype = 3;	// 16-bit signed integer
+oraClient.cpp:		ftype = 3;	// 16-bit signed integer
+oraClient.cpp:		ftype = 3;	// 32-bit signed integer
+oraClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+oraClient.cpp:		// so treat boolean as 16-bit signed INTEGER in Oracle
+oraClient.cpp:		dty = SQLT_INT;	// 16-bit signed integer
+oraClient.cpp:		dty = SQLT_INT;	// 16-bit signed integer
+oraClient.cpp:		dty = SQLT_INT;	// 32-bit signed integer
+oraClient.cpp:	pH->m_cda = *pInternal;
+oraClient.cpp:	if(pCursor->Connection() == NULL)
+oraClient.cpp:		pCursor->setConnection(getSAConnection());
+oraClient.cpp:	pCursor->setCommandText("");
+oraClient.cpp:	if(pCursor->Connection() == NULL)
+oraClient.cpp:		pCursor->setConnection(getSAConnection());
+oraClient.cpp:	pCursor->setCommandText("");
+oraClient.cpp:	memcpy(&pH->m_pOCIStmt, &pInternal, sizeof(OCIStmt *));
+oraClient.cpp:			((Iora8Connection*)m_pISAConnection)->m_handles.m_pOCISvcCtx,
+oraClient.cpp:			m_ppTempLobs[m_cTempLobs-1]),
+oraClient.cpp:		--m_cTempLobs;
+oraClient.cpp:	unsigned int MantissaSize = OraNumSize - 1;	// minus exponent byte
+oraClient.cpp:		--MantissaSize;	// ignore trailing 102 byte
+oraClient.cpp:		Exponent = (char)(62 - ExponentOffset65);	// ???, not found in Oracle docs, just expreriment
+oraClient.cpp:		Exponent = (char)(ExponentOffset65 - 65);
+oraClient.cpp:	int OracleScale = MantissaSize - 1 - Exponent;
+oraClient.cpp:	unsigned char Scale10 = (unsigned char)((AdjustedMantissaSize - 1 - Exponent) * 2);
+oraClient.cpp:	// convert Oracle 100-based digits into little endian integer
+oraClient.cpp:	// Oracle 100-based number into 10000-based little endian
+oraClient.cpp:	for(int i = AdjustedMantissaSize-1; i >= 0; i -= 2)
+oraClient.cpp:		int Num100 = PositiveBit? OracleCodedDigits[i] - 1 : 101 - OracleCodedDigits[i];
+oraClient.cpp:			Num100 = PositiveBit? OracleCodedDigits[i-1] - 1 : 101 - OracleCodedDigits[i-1];
+oraClient.cpp:	// Oracle: The high-order bit of the exponent byte is the sign bit;
+pgAPI_linux.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sPostgreSQLDLLName);
+pgAPI_linux.cpp:	g_nPostgreSQLDLLRefs--;
+pgClient.cpp:			throw SAException(SA_DBMS_API_Error, nErr, -1, "%s", g_pgAPI.PQresultErrorMessage(res));
+pgClient.cpp:			throw SAException(SA_DBMS_API_Error, nErr, -1, "%s", "Unknown error occured");
+pgClient.cpp:	case BYTEAOID: // BYTEA - variable-length string, binary values escaped
+pgClient.cpp:	case TEXTOID: // TEXT - variable-length string, no limit specified
+pgClient.cpp:	case CHAROID: // CHAR - single character
+pgClient.cpp:	case BPCHAROID: // BPCHAR - char(length), blank-padded string, fixed storage length
+pgClient.cpp:	case NAMEOID: // NAME - 31-character type for storing system identifiers
+pgClient.cpp:	case VARCHAROID: // VARCHAR(?) - varchar(length), non-blank-padded string, variable storage length
+pgClient.cpp:	case INT8OID: // INT8|BIGINT - ~18 digit integer, 8-byte storage
+pgClient.cpp:	case FLOAT4OID: // FLOAT4 - single-precision floating point number, 4-byte storage
+pgClient.cpp:	case FLOAT8OID: // FLOAT8 - double-precision floating point number, 8-byte storage 
+pgClient.cpp:	case NUMERICOID: // NUMERIC(x,y) - numeric(precision, decimal), arbitrary precision number
+pgClient.cpp:	case INT2OID: // INT2|SMALLINT - -32 thousand to 32 thousand, 2-byte storage
+pgClient.cpp:	case INT4OID: // INT4|INTEGER - -2 billion to 2 billion integer, 4-byte storage
+pgClient.cpp:	case OIDOID: // OID - object identifier(oid), maximum 4 billion
+pgClient.cpp:	case ABSTIMEOID: // ABSTIME - absolute, limited-range date and time (Unix system time)
+pgClient.cpp:	case DATEOID: // DATE - ANSI SQL date
+pgClient.cpp:	case TIMEOID: // TIME - hh:mm:ss, ANSI SQL time
+pgClient.cpp:	case TIMESTAMPOID: // TIMESTAMP - date and time
+pgClient.cpp:	case TIMETZOID: // TIME WITH TIMEZONE - hh:mm:ss, ANSI SQL time
+pgClient.cpp:	case RELTIMEOID: // relative, limited-range time interval (Unix delta time)
+pgClient.cpp:	case ZPBITOID: // BIT(?) - fixed-length bit string
+pgClient.cpp:	case VARBITOID: // BIT VARING(?) - variable-length bit string
+pgClient.cpp:		int nCol,	// 1-based
+pgClient.cpp:	// 07:37:16-08, 07:37:16.00 PST, 07:37:16 PST
+pgClient.cpp:	else if( sTZ[0] == '-' || sTZ[0] == '+' ) // 07:37:16-08
+pgClient.cpp:	// 1997-12-17, 12/17/1997, 17.12.1997
+pgClient.cpp:	if( sDate[4] == '-' ) // 1997-12-17
+pgClient.cpp:		assert(sDate[7] == '-');
+pgClient.cpp:	// ISO		1997-12-17 07:37:16-08 
+pgClient.cpp:	// Datetime's format is YYYY-MM-DD HH:MM:SS.fraction
+pgClient.cpp:	sInternal.Format("%.4d-%.2d-%.2d %.2d:%.2d:%.2d.%.3ld",
+pgClient.cpp:		throw SAException(SA_DBMS_API_Error, CONNECTION_BAD, -1, "%s", g_pgAPI.PQerrorMessage(m_handles.conn));
+pgClient.cpp:	if( m_pSAConnection->AutoCommit() == SA_AutoCommitOff )
+pgClient.cpp:	if( m_pSAConnection->AutoCommit() == SA_AutoCommitOff )
+pgClient.cpp:	SAString sOriginalStmst = m_pCommand->CommandText();
+pgClient.cpp:		SAParam &Param = *ppPlaceHolders[i]->getParam();
+pgClient.cpp:		sBoundStmt += sOriginalStmst.Mid(nPos, ppPlaceHolders[i]->getStart()-nPos);
+pgClient.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+pgClient.cpp:		nPos = ppPlaceHolders[i]->getEnd() + 1;
+pgClient.cpp:	pgConnectionHandles *pConH = (pgConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+pgClient.cpp:		Check(m_handles.res = g_pgAPI.PQexec(pConH->conn, sBoundStmt));
+pgClient.cpp:	pgConnectionHandles *pConH = (pgConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+pgClient.cpp:	SAConnection *pSAConnection = m_pCommand->Connection();
+pgClient.cpp:	if( pSAConnection->AutoCommit() != SA_AutoCommitOff )
+pgClient.cpp:		Check(g_pgAPI.PQexec(pConH->conn, "BEGIN"));
+pgClient.cpp:	Oid blobOid = g_pgAPI.lo_creat(pConH->conn, INV_READ|INV_WRITE);
+pgClient.cpp:	int fd = g_pgAPI.lo_open(pConH->conn, blobOid, INV_WRITE);
+pgClient.cpp:			if( (nWritten = g_pgAPI.lo_write(pConH->conn, fd, pWriteBuf, nToWrite)) < 0 )
+pgClient.cpp:				g_pgAPI.lo_close(pConH->conn, fd);
+pgClient.cpp:				if( pSAConnection->AutoCommit() != SA_AutoCommitOff )
+pgClient.cpp:					g_pgAPI.PQexec(pConH->conn, "ROLLBACK");
+pgClient.cpp:				throw SAException(SA_Library_Error, -1, -1, "lo_write -> negative number");
+pgClient.cpp:			nToWrite -= nWritten;
+pgClient.cpp:	g_pgAPI.lo_close(pConH->conn, fd);
+pgClient.cpp:	if( pSAConnection->AutoCommit() != SA_AutoCommitOff )
+pgClient.cpp:		Check(g_pgAPI.PQexec(pConH->conn, "END"));
+pgClient.cpp:#define VAL(CH)			((CH) - '0')
+pgClient.cpp:	// Non-printable and '\' characters are inserted as '\nnn' (octal)
+pgClient.cpp:	for( i = nBufLen; i != 0; i--, vp++)
+pgClient.cpp:	for( i = nBufLen; i != 0; i--, vp++ )
+pgClient.cpp:				throw SAException(SA_Library_Error, -1, -1, "Bad input string for type bytea");
+pgClient.cpp:	pgConnectionHandles *pConH = (pgConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+pgClient.cpp:	if( !g_pgAPI.PQrequestCancel(pConH->conn) )
+pgClient.cpp:		throw SAException(SA_DBMS_API_Error, 0, -1, "%s", g_pgAPI.PQerrorMessage(pConH->conn));
+pgClient.cpp:	SAString s = m_pCommand->Option("OidTypeInterpretation");
+pgClient.cpp:		(m_pCommand->*fn)(
+pgClient.cpp:	int/* nCol*/,	// 1-based
+pgClient.cpp:	int cFields = m_pCommand->FieldCount();
+pgClient.cpp:		SAField &Field = m_pCommand->Field(iField+1);
+pgClient.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+pgClient.cpp:						sValue[out++] = '-';
+pgClient.cpp:	int iField = ((SAField &)vr).Pos() - 1;
+pgClient.cpp:			sa_min(nPieceSize, nLongSize - nTotalRead);
+pgClient.cpp:	int iField = ((SAField &)vr).Pos() - 1;
+pgClient.cpp:			sa_min(nPieceSize, nLongSize - nTotalRead);
+pgClient.cpp:	pgConnectionHandles *pConH = (pgConnectionHandles *)m_pCommand->Connection()->NativeHandles();
+pgClient.cpp:	SAConnection *pSAConnection = m_pCommand->Connection();
+pgClient.cpp:	if( pSAConnection->AutoCommit() != SA_AutoCommitOff )
+pgClient.cpp:		Check(g_pgAPI.PQexec(pConH->conn, "BEGIN"));
+pgClient.cpp:	int fd = g_pgAPI.lo_open(pConH->conn, blobOid, INV_READ);
+pgClient.cpp:		throw SAException(SA_Library_Error, -1, -1, "lo_open -> negative number");
+pgClient.cpp:	while( (nReaded = g_pgAPI.lo_read(pConH->conn, fd, (char*)pBuf, nPieceSize)) != 0 )
+pgClient.cpp:			g_pgAPI.lo_close(pConH->conn, fd);
+pgClient.cpp:			if( pSAConnection->AutoCommit() != SA_AutoCommitOff )
+pgClient.cpp:				g_pgAPI.PQexec(pConH->conn, "ROLLBACK");
+pgClient.cpp:			throw SAException(SA_Library_Error, -1, -1, "lo_read -> negative number");
+pgClient.cpp:	g_pgAPI.lo_close(pConH->conn, fd);
+pgClient.cpp:	if( pSAConnection->AutoCommit() != SA_AutoCommitOff )
+pgClient.cpp:		Check(g_pgAPI.PQexec(pConH->conn, "END"));
+samisc.cpp:		if(sMinor != p+1 && (sMinor != p+2 && *(p-1) != _SA(' ')))
+samisc.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_GET_LIBRARY_VERSION_FAILS, sDLLName);
+samisc.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_GET_LIBRARY_VERSION_FAILS, sDLLName);
+samisc.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_GET_LIBRARY_VERSION_FAILS, sDLLName);
+samisc.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_GET_LIBRARY_VERSION_FAILS, sDLLName);
+samisc.cpp:	long nVersion = pVS_FIXEDFILEINFO->dwProductVersionMS;
+sybAPI_linux.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sDLLName_INTL);
+sybAPI_linux.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sDLLName_COMN);
+sybAPI_linux.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sDLLName_TCL);
+sybAPI_linux.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sDLLName_CT);
+sybAPI_linux.cpp:				throw SAException(SA_Library_Error, -1, -1, IDS_LOAD_LIBRARY_FAILS, ::dlerror(), g_sDLLName_CS);
+sybAPI_linux.cpp:	g_nDLLRefs--;
+sybClient.cpp:	if(pSybErrInfo->msgnumber == 0	// only if no error is waiting to be handled yet
+sybClient.cpp:		&& message->severity != CS_SV_INFORM)
+sybClient.cpp:		pSybErrInfo->msgnumber = message->msgnumber;
+sybClient.cpp:		strncpy(pSybErrInfo->msgstring, message->msgstring, message->msgstringlen);
+sybClient.cpp:		pSybErrInfo->msgstring[message->msgstringlen] = 0;
+sybClient.cpp:		pSybErrInfo->line = -1;
+sybClient.cpp:	if(pSybErrInfo->msgnumber == 0	// only if no error is waiting to be handled yet
+sybClient.cpp:		&& message->severity > 10)	
+sybClient.cpp:		pSybErrInfo->msgnumber = message->msgnumber;
+sybClient.cpp:		strncpy(pSybErrInfo->msgstring, message->text, message->textlen);
+sybClient.cpp:		pSybErrInfo->msgstring[message->textlen] = 0;
+sybClient.cpp:		pSybErrInfo->line = message->line;
+sybClient.cpp:			throw SAException(SA_Library_Error, -1, -1, "cs_ctx_alloc -> CS_MEM_ERROR");
+sybClient.cpp:			throw SAException(SA_Library_Error, -1, -1, "cs_ctx_alloc -> CS_FAIL");
+sybClient.cpp:			throw SAException(SA_Library_Error, -1, -1, "ct_init -> CS_MEM_ERROR");
+sybClient.cpp:			throw SAException(SA_Library_Error, -1, -1, "ct_init -> CS_FAIL");
+sybClient.cpp:	_tm.tm_year = rec.dateyear-1900;
+sybClient.cpp:	_tm.tm_isdst = -1;
+sybClient.cpp:	// convert CS_DATEREC::datedweek 0 - 6 (Sun. - Sat.) 
+sybClient.cpp:	// to struct tm::tm_wday 0 - 6 (Sun. - Sat.)
+sybClient.cpp:	// convert CS_DATEREC::datedyear 1-366
+sybClient.cpp:	// to struct tm::tm_yday 0-365
+sybClient.cpp:	_tm.tm_yday = rec.datedyear - 1;
+sybClient.cpp:	// or YYYYMMDD hh:mm:ss.mmm	- we use this currently
+sybClient.cpp:	// or YYYYMMDD hh:mm:ss		- and this
+sybClient.cpp:			(int)((double)date_time.Fraction() / 1.0e6 + 0.5e-6));
+sybClient.cpp:		SAString sPacketSize = m_pSAConnection->Option("CS_PACKETSIZE");
+sybClient.cpp:		SAString sAppName = m_pSAConnection->Option("CS_APPNAME");
+sybClient.cpp:		SAString sHostName = m_pSAConnection->Option("CS_HOSTNAME");
+sybClient.cpp:		SAString sBulkLogin = m_pSAConnection->Option("CS_BULK_LOGIN");
+sybClient.cpp:	if(m_pSAConnection->AutoCommit() == SA_AutoCommitOff)
+sybClient.cpp:	if(m_pSAConnection->AutoCommit() == SA_AutoCommitOff)
+sybClient.cpp:		int nPos,	// 1-based
+sybClient.cpp:		int nCol,	// 1-based
+sybClient.cpp:		int nPos,	// 1-based
+sybClient.cpp:	m_nRowsAffected = -1;
+sybClient.cpp:		throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_DATA_TYPE);
+sybClient.cpp:		type = CS_SMALLINT_TYPE;	// 2-byte integer type
+sybClient.cpp:		type = CS_INT_TYPE;	// 4-byte integer type
+sybClient.cpp:		type = CS_FLOAT_TYPE;		// 8-byte float type
+sybClient.cpp:		type = CS_DATETIME_TYPE;	// 8-byte datetime type
+sybClient.cpp:	((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_cmd_alloc(
+sybClient.cpp:		((IsybConnection*)m_pISAConnection)->m_handles.m_connection,
+sybClient.cpp:	((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_cancel(
+sybClient.cpp:	((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_cmd_drop(m_handles.m_command));
+sybClient.cpp:	while((rcd = ((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_results(
+sybClient.cpp:				((IsybConnection *)m_pISAConnection)->Check(g_sybAPI.ct_res_info(
+sybClient.cpp:				((IsybConnection *)m_pISAConnection)->Check(CS_FAIL);
+sybClient.cpp:		((IsybConnection*)m_pISAConnection)->Check(rcd);
+sybClient.cpp:	if(m_pCommand->CommandType() == SA_CmdStoredProc)
+sybClient.cpp:		((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_command(
+sybClient.cpp:			(CS_CHAR*)(const char*)m_pCommand->CommandText(),
+sybClient.cpp:	((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_send(
+sybClient.cpp:	((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_cancel(
+sybClient.cpp:		*pValue += ((IsybConnection*)m_pISAConnection)->ConvertToString(
+sybClient.cpp:	SAString sOriginalStmst = m_pCommand->CommandText();
+sybClient.cpp:	if(m_pCommand->CommandType() == SA_CmdSQLStmt)
+sybClient.cpp:			SAParam &Param = *ppPlaceHolders[i]->getParam();
+sybClient.cpp:			sBoundStmt += sOriginalStmst.Mid(nPos, ppPlaceHolders[i]->getStart()-nPos);
+sybClient.cpp:					throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+sybClient.cpp:					sBoundValue = ((IsybConnection*)m_pISAConnection)->ConvertToString(
+sybClient.cpp:					sBoundValue = ((IsybConnection*)m_pISAConnection)->ConvertToString(
+sybClient.cpp:					sBoundValue = ((IsybConnection*)m_pISAConnection)->ConvertToString(
+sybClient.cpp:					sBoundValue = ((IsybConnection*)m_pISAConnection)->ConvertToString(
+sybClient.cpp:					sBoundValue += ((IsybConnection*)m_pISAConnection)->ConvertToString(
+sybClient.cpp:			nPos = ppPlaceHolders[i]->getEnd() + 1;
+sybClient.cpp:		((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_command(
+sybClient.cpp:		assert(m_pCommand->CommandType() == SA_CmdStoredProc);
+sybClient.cpp:		for(int i = 0; i < m_pCommand->ParamCount(); ++i)
+sybClient.cpp:			SAParam &Param = m_pCommand->ParamByIndex(i);
+sybClient.cpp:				indicator = -1;
+sybClient.cpp:							throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_PARAMETER_TYPE, (const char*)Param.Name());
+sybClient.cpp:							((IsybConnection*)m_pISAConnection)->CnvtDateTimeToInternal(
+sybClient.cpp:								Param.m_pString->Empty();
+sybClient.cpp:							datalen = (CS_INT)Param.m_pString->GetLength();
+sybClient.cpp:			((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_param(
+sybClient.cpp:	((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_res_info(
+sybClient.cpp:		((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_describe(
+sybClient.cpp:		(m_pCommand->*fn)(
+sybClient.cpp:	int nCol,	// 1-based
+sybClient.cpp:			throw SAException(SA_Library_Error, -1, -1, IDS_UNKNOWN_COLUMN_TYPE, (const char*)sName);
+sybClient.cpp:		((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_bind(
+sybClient.cpp:	int nCol,	// 1-based
+sybClient.cpp:	SAField &Field = m_pCommand->Field(nCol);
+sybClient.cpp:	SAString sOption = m_pCommand->Option(
+sybClient.cpp:	int nPos,	// 1-based, can be field or param pos
+sybClient.cpp:	CS_RETCODE rcd = ((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_get_data(
+sybClient.cpp:	for(int i = 0; i < m_pCommand->ParamCount(); ++i)
+sybClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+sybClient.cpp:	CS_RETCODE rcd = ((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_fetch(
+sybClient.cpp:		rcd = ((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_fetch(
+sybClient.cpp:	for(int i = 0; i < m_pCommand->ParamCount(); ++i)
+sybClient.cpp:		SAParam &Param = m_pCommand->ParamByIndex(i);
+sybClient.cpp:	CS_RETCODE rcd = ((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_fetch(
+sybClient.cpp:		rcd = ((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_fetch(
+sybClient.cpp:		CS_RETCODE rcd = ((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_fetch(
+sybClient.cpp:	((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_data_info(
+sybClient.cpp:			sa_min(nPortionSize, nLongLen - nTotalRead);
+sybClient.cpp:		((IsybConnection*)m_pISAConnection)->Check(g_sybAPI.ct_get_data(
+sybClient.cpp:	SACommand cmd(m_pISAConnection->getSAConnection());
+sybClient.cpp:	SAString sProcName = m_pCommand->CommandText();
+sybClient.cpp:		m_pCommand->CreateParam(sName,
+sybClient.cpp:	m_pCommand->CreateParam(
+sybClient.cpp:	if(m_pCon->isConnected())
+sybClient.cpp:		m_pCon->Disconnect();
+sybClient.cpp:	m_pCon->setClient(SA_Sybase_Client);
+sybClient.cpp:	sybAPI *psybAPI = (sybAPI *)m_pCon->NativeAPI();
+sybClient.cpp:		m_pCon->NativeHandles();
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->cs_config(
+sybClient.cpp:		rc = psybAPI->cs_config(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:		psybConnectionHandles->m_context, NULL, CS_GET, CS_CLIENTMSG_CB,
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:		psybConnectionHandles->m_context, NULL, CS_GET, CS_SERVERMSG_CB,
+sybClient.cpp:	rc = psybAPI->cs_config(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	m_contextSaved = psybConnectionHandles->m_context;
+sybClient.cpp:	m_connectionSaved = psybConnectionHandles->m_connection;
+sybClient.cpp:	psybConnectionHandles->m_context = m_context;
+sybClient.cpp:	psybConnectionHandles->m_connection = m_connection;
+sybClient.cpp:	assert(m_pCon->isConnected());
+sybClient.cpp:	sybAPI *psybAPI = (sybAPI *)m_pCon->NativeAPI();
+sybClient.cpp:		m_pCon->NativeHandles();
+sybClient.cpp:	psybConnectionHandles->m_context = m_contextSaved;
+sybClient.cpp:	psybConnectionHandles->m_connection = m_connectionSaved;
+sybClient.cpp:		rc = psybAPI->cs_config(
+sybClient.cpp:		rc = psybAPI->cs_config(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	rc = psybAPI->ct_callback(
+sybClient.cpp:	numeric.precision = pCS_NUMERIC->precision;
+sybClient.cpp:	numeric.scale = pCS_NUMERIC->scale;
+sybClient.cpp:	numeric.sign = (unsigned char)(pCS_NUMERIC->array[0]? 0:1);
+sybClient.cpp:	unsigned int SybaseMantissaSize = nInternalSize - ((unsigned int)&pCS_NUMERIC->array[1] - (unsigned int)pCS_NUMERIC);
+sybClient.cpp:		numeric.val[iLittleEndian++] = pCS_NUMERIC->array[1 + --nBytesToCopy];

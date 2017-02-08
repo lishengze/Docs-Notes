@@ -1,0 +1,130 @@
+void CFtdcSysUserApiImpl::OnRspQryHostEnvTopic(CFTDCPackage *pMessage, WORD nSequenceSeries)
+{
+         CFTDRspInfoField rspInfoField;
+         CShfeFtdcRspInfoField *pRspInfoField = (CShfeFtdcRspInfoField *)&rspInfoField;
+         if (FTDC_GET_SINGLE_FIELD(pMessage, &rspInfoField) <= 0)
+         {
+                   pRspInfoField = NULL;
+         }
+
+//      CNamedFieldIterator itor[7];
+         CFTDRspQryHostEnvCommonField RspQryHostEnvCommon;
+         CShfeFtdcRspQryHostEnvCommonField *pRspQryHostEnvCommon = NULL;
+         CNamedFieldIterator itor0 =pMessage->GetNamedFieldIterator(&CFTDRspQryHostEnvCommonField::m_Describe);
+         
+         CFTDRspQryHostEnvLanField RspQryHostEnvLan;
+         CShfeFtdcRspQryHostEnvLanField *pRspQryHostEnvLan = NULL;
+         CNamedFieldIterator itor1 = pMessage->GetNamedFieldIterator(&CFTDRspQryHostEnvLanField::m_Describe);
+         
+         CFTDRspQryHostEnvStorageField RspQryHostEnvStorage;
+         CShfeFtdcRspQryHostEnvStorageField *pRspQryHostEnvStorage = NULL;
+         CNamedFieldIterator itor2 = pMessage->GetNamedFieldIterator(&CFTDRspQryHostEnvStorageField::m_Describe);
+         
+         CFTDRspQryHostEnvIOField RspQryHostEnvIO;
+         CShfeFtdcRspQryHostEnvIOField *pRspQryHostEnvIO = NULL;
+         CNamedFieldIterator itor3 = pMessage->GetNamedFieldIterator(&CFTDRspQryHostEnvIOField::m_Describe);
+         
+         CFTDRspQryHostEnvFSField RspQryHostEnvFS;
+         CShfeFtdcRspQryHostEnvFSField *pRspQryHostEnvFS = NULL;
+         CNamedFieldIterator itor4 = pMessage->GetNamedFieldIterator(&CFTDRspQryHostEnvFSField::m_Describe);
+         
+         CFTDRspQryHostEnvSwapField RspQryHostEnvSwap;
+         CShfeFtdcRspQryHostEnvSwapField *pRspQryHostEnvSwap = NULL;
+         CNamedFieldIterator itor5 = pMessage->GetNamedFieldIterator(&CFTDRspQryHostEnvSwapField::m_Describe);
+         
+         CFTDRspQryHostEnvLanCfgField RspQryHostEnvLanCfg;
+         CShfeFtdcRspQryHostEnvLanCfgField *pRspQryHostEnvLanCfg = NULL;
+         CNamedFieldIterator itor6 = pMessage->GetNamedFieldIterator(&CFTDRspQryHostEnvLanCfgField::m_Describe);
+
+         while(1)
+         {
+                   if(!itor0.IsEnd())
+                   {
+                            itor0.Retrieve(&RspQryHostEnvCommon);
+                            pRspQryHostEnvCommon = (CShfeFtdcRspQryHostEnvCommonField *)&RspQryHostEnvCommon;
+                            itor0.Next();
+                   }
+                   else
+                   {
+                            pRspQryHostEnvCommon =NULL;
+                   }
+
+                   if(!itor1.IsEnd())
+                   {
+                            itor1.Retrieve(&RspQryHostEnvLan);
+                            pRspQryHostEnvLan = (CShfeFtdcRspQryHostEnvLanField *)&RspQryHostEnvLan;
+                            itor1.Next();
+                   }
+                   else
+                   {
+                            pRspQryHostEnvLan =NULL;
+                   }
+
+                   if(!itor2.IsEnd())
+                   {
+                            itor2.Retrieve(&RspQryHostEnvStorage);
+                            pRspQryHostEnvStorage = (CShfeFtdcRspQryHostEnvStorageField *)&RspQryHostEnvStorage;
+                            itor2.Next();
+                   }
+                   else
+                   {
+                            pRspQryHostEnvStorage =NULL;
+                   }
+
+                   if(!itor3.IsEnd())
+                   {
+                            itor3.Retrieve(&RspQryHostEnvIO);
+                            pRspQryHostEnvIO = (CShfeFtdcRspQryHostEnvIOField *)&RspQryHostEnvIO;
+                            itor3.Next();
+                   }
+                   else
+                   {
+                            pRspQryHostEnvIO =NULL;
+                   }
+
+                   if(!itor4.IsEnd())
+                   {
+                            itor4.Retrieve(&RspQryHostEnvFS);
+                            pRspQryHostEnvFS = (CShfeFtdcRspQryHostEnvFSField *)&RspQryHostEnvFS;
+                            itor4.Next();
+                   }
+                   else
+                   {
+                            pRspQryHostEnvFS =NULL;
+                   }
+
+                   if(!itor5.IsEnd())
+                   {
+                            itor5.Retrieve(&RspQryHostEnvSwap);
+                            pRspQryHostEnvSwap = (CShfeFtdcRspQryHostEnvSwapField *)&RspQryHostEnvSwap;
+                            itor5.Next();
+                   }
+                   else
+                   {
+                            pRspQryHostEnvSwap =NULL;
+                   }
+
+                   if(!itor6.IsEnd())
+                   {
+                            itor6.Retrieve(&RspQryHostEnvLanCfg);
+                            pRspQryHostEnvLanCfg = (CShfeFtdcRspQryHostEnvLanCfgField *)&RspQryHostEnvLanCfg;
+                            itor6.Next();
+                   }
+                   else
+                   {
+                            pRspQryHostEnvLanCfg =NULL;
+                   }
+
+                   if (m_pSpi != NULL)
+                   {
+                            bool bIsLast = false;
+                            if ((pMessage->GetChain() == FTDC_CHAIN_LAST)         && (itor0.IsEnd() &&itor1.IsEnd() &&itor2.IsEnd() &&itor3.IsEnd() &&itor4.IsEnd() &&itor5.IsEnd() &&itor6.IsEnd()))
+                            {
+                                     bIsLast = true;
+                            }
+                   m_pSpi->OnRspQryHostEnvTopic(pRspQryHostEnvCommon,pRspQryHostEnvLan,pRspQryHostEnvStorage,pRspQryHostEnvIO,pRspQryHostEnvFS,pRspQryHostEnvSwap,pRspQryHostEnvLanCfg,pRspInfoField,pMessage->GetRequestId(),bIsLast);
+                   }
+                   if((itor0.IsEnd() &&itor1.IsEnd() &&itor2.IsEnd() &&itor3.IsEnd() &&itor4.IsEnd() &&itor5.IsEnd() &&itor6.IsEnd()))
+                            return;
+         }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by Henchi (HuaLang) -->
+<Config>
+	<AttrConfig>
+		<AttrList name="TradeInfo" seps="15:02:30-15:04:00.300" MSG_SubjectId="TradeMonitor" Comment="成交汇总">
+			<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="OrderSize"   Comment="总报单数"/>
+			<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="TradeSize"   Comment="成交单数"/>
+			<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="TotalVolume" Comment="成交手数"/>
+			<Object ObjectId="TRADE.PuDian.app.tkernel.1" Attr="TotalAmount" Comment="成交金额"/>
+		</AttrList>
+	</AttrConfig>
+</Config>

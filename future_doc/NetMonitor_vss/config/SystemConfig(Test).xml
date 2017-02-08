@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE SystemConfig SYSTEM "">
+<SystemConfig>
+	<Topics>
+		<Topic name="tseries" type="tseries" id="0x00001003"/>
+		<Topic name="tresult" type="tresult" id="0x00001001"/>
+	</Topics>
+	<HostConfig>
+		<Common>
+			<Timers>
+				<Object name="HostEnv" seps="5" comment="主机环境信息采样定时器"/>
+				<Object name="CPU" seps="2" comment="主机CPU信息采样定时器"/>
+				<Object name="Memory" seps="5" comment="主机内存信息采样定时器"/>
+				<Object name="Process" seps="2" comment="主机进程信息采样定时器"/>
+				<Object name="Disk" seps="5" comment="主机硬盘信息采样定时器"/>
+				<Object name="User" seps="5" comment="主机用户信息采样定时器"/>
+				<Object name="Network" seps="5" comment="主机网络信息采样定时器"/>
+			</Timers>
+		</Common>
+		<System name="TRADE" alias="交易系统">
+			<Common>
+				<Timers>
+					<Object name="HostEnv" seps="30" comment="主机环境信息采样定时器"/>
+					<Object name="AppSyslog" seps="8" comment="业务进程日志信息采样定时器"/>
+					<Object name="SystemLog" seps="8" comment="系统日志信息采样定时器"/>
+					<Object name="SessionLog" seps="8" comment="会话日志信息采样定时器"/>
+					<Object name="KeyFile" seps="8" comment="关键文件信息采样定时器"/>
+					<Object name="DfmtLog" seps="1" comment="DFMT文件信息采样定时器"/>
+					<Object name="Database" seps="5" comment="数据库表信息采样定时器"/>
+				</Timers>
+				<SystemLog>
+					<Object name="message" path="/var/log/message" comment="主机系统的日志文件"/>
+				</SystemLog>
+			</Common>
+			<Host name="TRADE01" address="tcp://172.16.94.65:22201" hostname="PD-01" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="arb"         item="0"  path="/home/henchi/logs/arb/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE02" address="tcp://172.16.94.65:22202" hostname="PD-02" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="compositor"  item="1"  path="/home/henchi/logs/compositor1/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE03" address="tcp://172.16.94.65:22203" hostname="PD-03" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="compositor"  item="2"  path="/home/henchi/logs/compositor2/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE04" address="tcp://172.16.94.65:22204" hostname="PD-04" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="front"       item="1"  path="/home/henchi/logs/front1/dump/Syslog.log"	root="/home"/>
+					<Object name="front"       item="5"  path="/home/henchi/logs/front5/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="1ofp2_00000000.slog" path="/home/henchi/logs/front1/flow/1ofp2_00000000.slog"/>
+					<Object name="1ofp_00000000.slog" path="/home/henchi/logs/front1/flow/1ofp_00000000.slog"/>
+				</SessionLog>
+			</Host>
+			<Host name="TRADE05" address="tcp://172.16.94.65:22205" hostname="PD-05" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="front"       item="2"  path="/home/henchi/logs/front2/dump/Syslog.log"	root="/home"/>
+					<Object name="front"       item="6"  path="/home/henchi/logs/front6/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE06" address="tcp://172.16.94.65:22206" hostname="ZJ-01" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="mdkernel"    item="4"  path="/home/henchi/logs/mdkernel4/dump/Syslog.log"	root="/home"/>
+					<Object name="mdkernel"    item="8"  path="/home/henchi/logs/mdkernel8/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE07" address="tcp://172.16.94.65:22207" hostname="ZJ-02" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="qkernel"     item="1"  path="/home/henchi/logs/qkernel1/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE08" address="tcp://172.16.94.65:22208" hostname="ZJ-03" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="qkernel"     item="2"  path="/home/henchi/logs/qkernel2/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE09" address="tcp://172.16.94.65:22209" hostname="ZJ-04" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="tinit"       item="0"  path="/home/henchi/logs/tinit/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="TRADE10" address="tcp://172.16.94.65:22210" hostname="ZJ-05" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="tkernel"     item="1"  path="/home/henchi/logs/tkernel1/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+		</System>
+		<System name="RISK" alias="风险监控系统">
+			<Host name="RISK01" address="tcp://172.16.94.65:22211" hostname="PD-06" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="front"       item="3"  path="/home/henchi/logs/front3/dump/Syslog.log"	root="/home"/>
+					<Object name="front"       item="7"  path="/home/henchi/logs/front7/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+				<SessionLog>
+					<Object name="7ftd_00000000.slog" path="/home/henchi/logs/front7/flow/7ftd_00000000.slog"/>
+					<Object name="7ofp2_00000000.slog" path="/home/henchi/logs/front7/flow/7ofp2_00000000.slog"/>
+				</SessionLog>
+			</Host>
+			<Host name="RISK02" address="tcp://172.16.94.65:22212" hostname="PD-07" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="front"       item="8"  path="/home/henchi/logs/front8/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK03" address="tcp://172.16.94.65:22213" hostname="PD-08" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="mdkernel"    item="1"  path="/home/henchi/logs/mdkernel1/dump/Syslog.log"	root="/home"/>
+					<Object name="mdkernel"    item="5"  path="/home/henchi/logs/mdkernel5/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK04" address="tcp://172.16.94.65:22214" hostname="PD-09" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="mdkernel"    item="2"  path="/home/henchi/logs/mdkernel2/dump/Syslog.log"	root="/home"/>
+					<Object name="mdkernel"    item="6"  path="/home/henchi/logs/mdkernel6/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK05" address="tcp://172.16.94.65:22215" hostname="PD-10" datacenter="PuDian">
+				<AppSyslogs>
+					<Object name="mdkernel"    item="3"  path="/home/henchi/logs/mdkernel3/dump/Syslog.log"	root="/home"/>
+					<Object name="mdkernel"    item="7"  path="/home/henchi/logs/mdkernel7/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK06" address="tcp://172.16.94.65:22216" hostname="ZJ-06" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="tkernel"     item="2"  path="/home/henchi/logs/tkernel2/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK07" address="tcp://172.16.94.65:22217" hostname="ZJ-07" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="tmdb"        item="0"  path="/home/henchi/logs/tmdb/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK08" address="tcp://172.16.94.65:22218" hostname="ZJ-08" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="ofpmd"       item="1"  path="/home/henchi/logs/ofpmd1/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK09" address="tcp://172.16.94.65:22219" hostname="ZJ-09" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="ofpmd"       item="2"  path="/home/henchi/logs/ofpmd2/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+			<Host name="RISK10" address="tcp://172.16.94.65:22220" hostname="ZJ-10" datacenter="ZhangJ">
+				<AppSyslogs>
+					<Object name="ofpmd"       item="3"  path="/home/henchi/logs/ofpmd3/dump/Syslog.log"	root="/home"/>
+					<Object name="fiblogger"   item="1"  path="/home/henchi/logs/fiblogger1/dump/Syslog.log"	root="/home"/>
+					<Object name="fiblogger"   item="2"  path="/home/henchi/logs/fiblogger2/dump/Syslog.log"	root="/home"/>
+				</AppSyslogs>
+			</Host>
+		</System>
+		<Agent name="Agent1" address="tcp://172.16.94.81:18801"/>
+		<Agent name="Agent2" address="tcp://172.16.94.81:18802"/>
+	</HostConfig>
+	<PhysicsDataCenterRack>
+		<OriginalWidth>1680</OriginalWidth>
+		<OriginalHeight>950</OriginalHeight>
+		<TopSpace>0.1</TopSpace>
+		<LeftSpace>0.1</LeftSpace>
+		<BottomSpace>0.1</BottomSpace>
+		<RightSpace>0.1</RightSpace>
+		<ItemInnerSpace>0.15</ItemInnerSpace>
+		<TextFont>28</TextFont>
+	</PhysicsDataCenterRack>
+	<PhysicsDeploy>
+		<OriginalWidth>1680</OriginalWidth>
+		<OriginalHeight>950</OriginalHeight>
+		<ItemWidth>140</ItemWidth>
+		<ItemHeight>80</ItemHeight>
+		<ItemInnerSpace>15</ItemInnerSpace>
+		<LineWidth>4</LineWidth>
+		<TextFont>20</TextFont>
+		<PuDian_Gateway>
+			<address>192.168.130.0</address>
+			<Name>A1 192.168.130.0</Name>
+			<Left>0.1</Left>
+			<Top>0.1</Top>
+			<Width>0.6</Width>
+		</PuDian_Gateway>
+		<PuDian_Gateway>
+			<address>192.168.129.0</address>
+			<Name>B1 192.168.129.0</Name>
+			<Left>0.05</Left>
+			<Top>0.5</Top>
+			<Width>0.92</Width>
+		</PuDian_Gateway>
+		<PuDian_Gateway>
+			<address>192.168.128.0</address>
+			<Name>C1 192.168.128.0</Name>
+			<Left>0.05</Left>
+			<Top>0.55</Top>
+			<Width>0.92</Width>
+		</PuDian_Gateway>
+		<PuDian_Gateway>
+			<address>192.168.77.0</address>
+			<Name>D1 192.168.77.0</Name>
+			<Left>0.05</Left>
+			<Top>0.6</Top>
+			<Width>0.92</Width>
+		</PuDian_Gateway>
+		<ZhangJ_Gateway>
+			<address>192.168.130.0</address>
+			<Name>A1 192.168.130.0</Name>
+			<Left>0.1</Left>
+			<Top>0.1</Top>
+			<Width>0.6</Width>
+		</ZhangJ_Gateway>
+		<ZhangJ_Gateway>
+			<address>192.168.129.0</address>
+			<Name>B1 192.168.129.0</Name>
+			<Left>0.05</Left>
+			<Top>0.5</Top>
+			<Width>0.92</Width>
+		</ZhangJ_Gateway>
+		<ZhangJ_Gateway>
+			<address>192.168.128.0</address>
+			<Name>C1 192.168.128.0</Name>
+			<Left>0.05</Left>
+			<Top>0.55</Top>
+			<Width>0.92</Width>
+		</ZhangJ_Gateway>
+		<ZhangJ_Gateway>
+			<address>172.18.38.0</address>
+			<Name>D1 172.18.38.0</Name>
+			<Left>0.05</Left>
+			<Top>0.6</Top>
+			<Width>0.92</Width>
+		</ZhangJ_Gateway>
+	</PhysicsDeploy>
+	<Configurations>
+		<Configuration name="syseventcounter" srcPath="" version="1" remark="事件计算进程" type="exe"/>
+		<Configuration name="syseventcounter.ini" srcPath="" version="1" remark="事件计算进程配置文件" type="file"/>
+	</Configurations>
+	<AttrDefine>
+		<Attr name="MemoryDatabase" valueType="int" interval="20" comment=" 内存数据库使用的空间 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="syseventcounter"/>
+			<app name="sysfront"/>
+		</Attr>
+		<Attr name="MemoryDatabaseUsage" valueType="percent" interval="20" comment=" 内存数据库使用空间比例 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="syseventcounter"/>
+			<app name="sysfront"/>
+		</Attr>
+		<Attr name="MDBBlock" valueType="int" interval="20" comment=" 内存数据库分块数 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="syseventcounter"/>
+			<app name="sysfront"/>
+		</Attr>
+		<Attr name="MDBBlockUsage" valueType="percent" interval="20" comment=" 内存数据库分块数比例 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="syseventcounter"/>
+			<app name="sysfront"/>
+		</Attr>
+		<Attr name="OrderSize" valueType="int" interval="1" comment=" 报单表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="DbOrderSize" valueType="int" interval="60" comment=" DB报单表大小 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="TradeSize" valueType="int" interval="1" comment=" 成交表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="DbTradeSize" valueType="int" interval="60" comment=" DB成交表大小 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="ClientSize" valueType="int" interval="60" comment=" 客户表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="PartClientSize" valueType="int" interval="60" comment=" 会员客户表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="ClientPositionSize" valueType="int" interval="10" comment=" 客户持仓表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="UserSessionSize" valueType="int" interval="10" comment=" 用户会话表大小 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="TotalVolume" valueType="int" interval="10" comment=" 成交手数 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="DbTotalVolume" valueType="int" interval="60" comment=" DB成交手数 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="TotalAmount" valueType="float" interval="10" comment=" 成交金额 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="DbTotalAmount" valueType="float" interval="60" comment=" DB成交金额 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="HandleInputTotal" valueType="int" interval="20" comment=" 处理的请求总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleInput" valueType="int" interval="20" comment=" 本次处理的请求数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderInsertTotal" valueType="int" interval="1" comment=" 处理的报单插入总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderInsert" valueType="int" interval="1" comment=" 本次处理的报单插入数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderActionTotal" valueType="int" interval="1" comment=" 处理的报单操作总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderAction" valueType="int" interval="1" comment=" 本次处理的报单操作数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderInsertErrorTotal" valueType="int" interval="1" comment=" 错误的报单插入总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderInsertError" valueType="int" interval="1" comment=" 本次错误的报单插入数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderActionErrorTotal" valueType="int" interval="1" comment=" 错误的报单操作总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleOrderActionError" valueType="int" interval="1" comment=" 本次错误的报单操作数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleLoginTotal" valueType="int" interval="5" comment=" 处理的登录总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleLogin" valueType="int" interval="5" comment=" 本次处理的登录数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleLoginErrorTotal" valueType="int" interval="5" comment=" 处理的登录失败总数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleLoginError" valueType="int" interval="5" comment=" 本次处理的登录失败数量 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="HandleFTDRequestTotal" valueType="int" interval="5" comment=" 处理的FTD请求总数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDRequest" valueType="int" interval="5" comment=" 本次处理的FTD请求数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDQueryTotal" valueType="int" interval="5" comment=" 处理的FTD查询总数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDQuery" valueType="int" interval="5" comment=" 本次处理的FTD查询数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDErrorTotal" valueType="int" interval="5" comment=" 处理的FTD错误总数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleFTDError" valueType="int" interval="5" comment=" 本次处理的FTD错误数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleOFPRequestTotal" valueType="int" interval="5" comment=" 处理的OFP请求总数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleOFPRequest" valueType="int" interval="5" comment=" 本次处理的OFP请求数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleOFP2RequestTotal" valueType="int" interval="5" comment=" 处理的OFP2请求总数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="HandleOFP2Request" valueType="int" interval="5" comment=" 本次处理的OFP2请求数量 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="complogLen" valueType="int" interval="20" comment=" 排队机的流长度 ">
+			<app name="compositor"/>
+		</Attr>
+		<Attr name="CompLogLen" valueType="int" interval="20" comment=" 排队机的流长度 ">
+			<app name="fiblogger"/>
+		</Attr>
+		<Attr name="tseriesLen" valueType="int" interval="20" comment=" 交易输入的流长度 ">
+			<app name="tkernel"/>
+			<app name="qkernel"/>
+			<app name="mdkernel"/>
+			<app name="tmdb"/>
+			<app name="fibgate"/>
+		</Attr>
+		<Attr name="tresultLen" valueType="int" interval="20" comment=" 交易结果的流长度 ">
+			<app name="tkernel"/>
+			<app name="fiblogger"/>
+		</Attr>
+		<Attr name="tinitLen" valueType="int" interval="20" comment=" 初始化的流长度 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="dfmtLen" valueType="int" interval="20" comment=" DFMT的流长度 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="dbmtLen" valueType="int" interval="20" comment=" DBMT的流长度 ">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="frontLen" valueType="int" interval="20" comment=" 前置的流长度 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="OFPMarketDataSentTotal" valueType="int" interval="20" comment=" 老行情前置发送行情总数量 ">
+			<app name="ofpmd"/>
+		</Attr>
+		<Attr name="OFPMarketDataSent" valueType="int" interval="20" comment=" 本次老行情前置发送行情数量 ">
+			<app name="ofpmd"/>
+		</Attr>
+		<Attr name="TMDBCountTotal" valueType="int" interval="20" comment=" TMDB的总数量 ">
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="TMDBCount" valueType="int" interval="20" comment=" 本次TMDB的数量 ">
+			<app name="tmdb"/>
+		</Attr>
+		<Attr name="CurrentTime" valueType="string" interval="10" comment=" 当前业务时间 "/>
+		<Attr name="IsActive" valueType="int" interval="20" comment=" 是否活跃 ">
+			<app name="arb"/>
+			<app name="compositor"/>
+			<app name="front"/>
+			<app name="mdkernel"/>
+			<app name="ofpmd"/>
+			<app name="qkernel"/>
+			<app name="tkernel"/>
+			<app name="tinit"/>
+			<app name="tmdb"/>
+			<app name="dbmt"/>
+			<app name="fibgate"/>
+			<app name="md2kernel"/>
+			<app name="fiblogger"/>
+			<app name="fibclient"/>
+		</Attr>
+		<Attr name="FTD_0" valueType="int" interval="5" comment=" FTD席位1 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="FTD_1" valueType="int" interval="5" comment=" FTD席位2 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="FTD_2" valueType="int" interval="5" comment=" FTD席位3 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="FTD_3" valueType="int" interval="5" comment=" FTD席位4 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="OFP_1_0" valueType="int" interval="5" comment=" OFP席位 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="OFP_2_0" valueType="int" interval="5" comment=" OFP2席位 ">
+			<app name="front"/>
+		</Attr>
+		<Attr name="0X00001001" valueType="int" interval="10" comment=" TResult流 ">
+			<app name="fibclient"/>
+		</Attr>
+		<Attr name="0X00001003" valueType="int" interval="10" comment=" TSeries流 ">
+			<app name="fibclient"/>
+		</Attr>
+		<Attr name="CompositorState" valueType="int" interval="20" comment=" 排队机当前状态 ">
+			<app name="compositor"/>
+		</Attr>
+		<Attr name="Version" valueType="string" interval="1" comment=" 当前版本 "/>
+		<Attr name="TimeSyncTotal" valueType="int" interval="20" comment=" 发出的心跳报文个数 "/>
+		<Attr name="CPUUsage" valueType="percent" interval="5" comment=" 业务进程CPU使用率 ">
+			<app name="arb"/>
+			<app name="compositor"/>
+			<app name="front"/>
+			<app name="mdkernel"/>
+			<app name="ofpmd"/>
+			<app name="qkernel"/>
+			<app name="tkernel"/>
+			<app name="tinit"/>
+			<app name="tmdb"/>
+			<app name="dbmt"/>
+			<app name="fens"/>
+			<app name="fibclient"/>
+			<app name="fibproxy"/>
+			<app name="fiblogger"/>
+			<app name="sysprobe"/>
+			<app name="sysagent"/>
+			<app name="syseventcounter"/>
+			<app name="sysquery"/>
+			<app name="sysfibclient"/>
+			<app name="sysfront"/>
+			<app name="syswebserver"/>
+		</Attr>
+		<Attr name="MemoryUsage" valueType="percent" interval="5" comment=" 业务进程MEMORY使用率 ">
+			<app name="arb"/>
+			<app name="compositor"/>
+			<app name="front"/>
+			<app name="mdkernel"/>
+			<app name="ofpmd"/>
+			<app name="qkernel"/>
+			<app name="tkernel"/>
+			<app name="tinit"/>
+			<app name="tmdb"/>
+			<app name="dbmt"/>
+			<app name="fens"/>
+			<app name="fibclient"/>
+			<app name="fibproxy"/>
+			<app name="fiblogger"/>
+			<app name="sysprobe"/>
+			<app name="sysagent"/>
+			<app name="syseventcounter"/>
+			<app name="sysquery"/>
+			<app name="sysfibclient"/>
+			<app name="sysfront"/>
+			<app name="syswebserver"/>
+		</Attr>
+		<Attr name="DiskUsage" valueType="percent" interval="5" comment=" 业务进程所在文件系统使用率 ">
+			<app name="arb"/>
+			<app name="compositor"/>
+			<app name="front"/>
+			<app name="mdkernel"/>
+			<app name="ofpmd"/>
+			<app name="qkernel"/>
+			<app name="tkernel"/>
+			<app name="tinit"/>
+			<app name="tmdb"/>
+			<app name="dbmt"/>
+			<app name="fens"/>
+			<app name="fibclient"/>
+			<app name="fibproxy"/>
+			<app name="fiblogger"/>
+			<app name="sysprobe"/>
+			<app name="sysagent"/>
+			<app name="syseventcounter"/>
+			<app name="sysquery"/>
+			<app name="sysfibclient"/>
+			<app name="sysfront"/>
+			<app name="syswebserver"/>
+		</Attr>
+		<Attr name="MemberSize" valueType="int" interval="5" comment=" 会员数 ">
+			<app name="tkernel"/>
+			<app name="front"/>
+		</Attr>
+		<Attr name="tinitDbLen" valueType="int" interval="60" comment="tinit表大小">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="dbmtDbLen" valueType="int" interval="60" comment="dbmt表大小">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="dfmtFSLen" valueType="int" interval="60" comment="dfmt文件大小">
+			<app name="tinit"/>
+		</Attr>
+		<Attr name="MdSessionSize" valueType="int" interval="10" comment="行情核心连接数">
+			<app name="mdkernel"/>
+		</Attr>
+		<Attr name="Active" valueType="int" interval="2" comment="进程主机是否激活标志"/>
+		<Attr name="TopCPU" valueType="int" interval="2" comment="主机CPU信息"/>
+		<Attr name="TopMemory" valueType="int" interval="2" comment="主机内存信息"/>
+		<Attr name="TopProcess" valueType="int" interval="2" comment="主机进程信息"/>
+		<Attr name="Network" valueType="int" interval="5" comment="主机网络信息"/>
+	</AttrDefine>
+	<SessionIpConfig>
+		<Attr name="LanSessionSize" comment="场内席位">
+			<ipconfig value="172.16."/>
+		</Attr>
+		<Attr name="WanSessionSize">
+			<ipconfig value="192.168." comment="场外席位"/>
+			<ipconfig value="10."/>
+		</Attr>
+	</SessionIpConfig>
+	<Events>
+		<event name="NotActive" FullName="进程不活跃" type="app" level="error" GiveupTime="60" Control="nowbetween(&quot;08:50:00&quot;,&quot;16:00:00&quot;) &amp;&amp; (getmaincentername()==&quot;PuDian&quot;) " Expr="(^@PuDian.app.compositor.1:IsActive &lt; (now-getperiod(&quot;IsActive&quot;)*3) )" Comment="有1分钟没有收到新的IsActive信息" ObjectId="PuDian.app.compositor.1" ObjectAttr="IsActive"/>
+		<Event name="UserSessionFastLost" FullName="用户会话快速丢失" type="app" level="error" GiveupTime="60" Control="nowbetween(&quot;09:00:00&quot;,&quot;10:15:00&quot;) | nowbetween(&quot;10:30:00&quot;,&quot;11:30:00&quot;) | nowbetween(&quot;13:30:00&quot;,&quot;14:10:00&quot;) | nowbetween(&quot;14:10:00&quot;,&quot;15:00:00&quot;)" Expr="(@UserSessionSize-#UserSessionSize) &lt; -20" Comment="在最近两次会话采样中，丢失了20个会话"/>
+		<Event name="OrderNotIncrease" FullName="报单无增长" type="app" level="fatal" GiveupTime="60" Control="nowbetween(&quot;09:00:00&quot;,&quot;10:15:00&quot;) | nowbetween(&quot;10:30:00&quot;,&quot;11:30:00&quot;) | nowbetween(&quot;13:30:00&quot;,&quot;14:10:00&quot;) | nowbetween(&quot;14:10:00&quot;,&quot;15:00:00&quot;)" Expr="@OrderSize &lt;= $OrderSize(now-3)" Comment="本次采样的ordersize小于等于3秒前的"/>
+		<Event name="DiskNotifing" FullName="硬盘使用率提示" type="app" level="notify" GiveupTime="900" Control="" Expr="@DiskUsage&gt;=20 &amp;&amp; @DiskUsage&lt;50 " Comment="硬盘使用率超过20%"/>
+		<Event name="DiskWarning" FullName="硬盘使用率比较高" type="app" level="warning" GiveupTime="900" Control="" Expr="@DiskUsage&gt;=50 &amp;&amp; @DiskUsage&lt;80 " Comment="硬盘使用率超过50%"/>
+		<Event name="InsufficientDisk" FullName="硬盘不足" type="app" level="error" GiveupTime="900" Control="" Expr="@DiskUsage&gt;=80 &amp;&amp; @DiskUsage&lt;95 " Comment="硬盘使用率超过80%"/>
+		<Event name="DiskDisaster" FullName="硬盘不足灾难" type="app" level="fatal" GiveupTime="900" Control="" Expr="@DiskUsage&gt;=95" Comment="硬盘使用率超过95%"/>
+		<Event name="CPUBusy" FullName="CPU比较忙" type="app" level="warning" GiveupTime="60" Control="" Expr="@CPUUsage&gt;=20 &amp;&amp; @CPUUsage&lt;50" Comment="CPU使用率超过20%"/>
+		<Event name="CPUTired" FullName="CPU太忙" type="app" level="error" GiveupTime="60" Control="" Expr="@CPUUsage&gt;=50" Comment="CPU使用率超过50%"/>
+		<Event name="MemoryWaring" FullName="内存使用率比较高" type="app" level="warning" GiveupTime="60" Control="" Expr="@MemoryUsage&gt;=50 &amp;&amp; @MemoryUsage&lt;80" Comment="内存使用率超过50%"/>
+		<Event name="InsufficientMemory" FullName="内存不足" type="app" level="error" GiveupTime="60" Control="" Expr="@MemoryUsage&gt;=80 &amp;&amp; @MemoryUsage&lt;95" Comment="内存使用率超过80%"/>
+		<Event name="MemoryDisaster" FullName="内存不足灾难" type="app" level="fatal" GiveupTime="60" Control="" Expr="@MemoryUsage&gt;=95" Comment="内存使用率超过95%"/>
+		<Event name="MemoryDatabaseWarning" FullName="内存数据库警告" type="app" level="warning" GiveupTime="86400" Control="nowbetween(&quot;08:30:00&quot;,&quot;15:00:00&quot;)" Expr="(@MemoryDatabaseUsage &gt; 50) | (@MDBBlockUsage &gt; 50)" Comment="内存数据库空间或者块数超过50%"/>
+		<Event name="InsufficientMemoryDatabase" FullName="内存数据库不足" type="app" level="error" GiveupTime="86400" Control="nowbetween(&quot;08:30:00&quot;,&quot;15:00:00&quot;)" Expr="(@MemoryDatabaseUsage &gt; 70) | (@MDBBlockUsage &gt; 70)" Comment="内存数据库空间或者块数超过70%"/>
+		<Event name="MemoryDatabaseDisaster" FullName="内存数据库灾难" type="app" level="fatal" GiveupTime="86400" Control="nowbetween(&quot;08:30:00&quot;,&quot;15:00:00&quot;)" Expr="(@MemoryDatabaseUsage &gt; 95) | (@MDBBlockUsage &gt; 95)" Comment="内存数据库空间或者块数超过95%"/>
+		<Event name="LanDown" FullName="网卡处于Down状态" type="os" level="error" GiveupTime="600" Control="nowbetween(&quot;08:30:00&quot;,&quot;15:00:00&quot;)" Expr="(@LANSTATUS==getStringId(&quot;Down&quot;))" Comment="网卡处于Down状态"/>
+		<Event name="DBConnectLost" FullName="数据库连接断开" type="os" level="error" Comment="无法正常建立数据库访问连接"/>
+	</Events>
+	<Peaks>
+		<Peak app="PuDian.app.tkernel.1" Attr="HandleOrderInsert" RltAttr="HandleOrderInsertError"/>
+		<Peak app="PuDian.app.tkernel.1" Attr="HandleOrderInsert" RltAttr="HandleOrderAction"/>
+		<Peak app="PuDian.app.tkernel.2" Attr="HandleOrderInsert" RltAttr="HandleOrderInsertError"/>
+		<Peak app="PuDian.app.tkernel.2" Attr="HandleOrderInsert" RltAttr="HandleOrderAction"/>
+	</Peaks>
+	<DataCenters>
+		<DataCenter name="PuDian" id="1" alias="FE" comment="浦电路数据中心">
+			<app name="front" item="1"/>
+			<app name="front" item="2"/>
+			<app name="front" item="3"/>
+			<app name="front" item="4"/>
+			<app name="front" item="5"/>
+			<app name="front" item="6"/>
+			<app name="front" item="7"/>
+			<app name="front" item="8"/>
+		</DataCenter>
+		<DataCenter name="ZhangJ" id="2" alias="ZJ" comment="张江数据中心">
+			<app name="front" item="9"/>
+			<app name="front" item="10"/>
+			<app name="front" item="11"/>
+			<app name="front" item="12"/>
+			<app name="front" item="13"/>
+			<app name="front" item="14"/>
+			<app name="front" item="15"/>
+			<app name="front" item="16"/>
+		</DataCenter>
+	</DataCenters>
+</SystemConfig>

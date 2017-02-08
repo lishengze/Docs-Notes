@@ -1,0 +1,29 @@
+<project target=sysprobe targettype=exe hasdebug="yes" hasmap="no" hasprofile="no" multithread="yes" warninglevel="2" libs="-lnm" cppflags="" ldflags="" arflags="">
+	<platform dir="../../source/platform"/>
+	<base dir="../../source/base"/>
+	<utility dir="../../source/utility"/>
+	<datastruct dir="../../source/datastruct"/>
+	<event dir="../../source/event"/>
+	<network dir="../../source/network"/>
+	<tcpnetwork dir="../../source/tcpnetwork"/>
+	<udpnetwork dir="../../source/udpnetwork"/>
+	<protocol dir="../../source/protocol"/>
+	<channelprotocol dir="../../source/channelprotocol"/>
+	<scpprotocol dir="../../source/scpprotocol"/>
+	<xmpprotocol dir="../../source/xmpprotocol"/>
+	<compressprotocol dir="../../source/compressprotocol"/>
+	<ftdprotocol dir="../../source/ftdprotocol"/>
+	<xml dir="../../source/xml"/>
+	<probelogger dir="../../source/probelogger"/>
+	<package name="refobject" dir="../../source/refobject"/>
+	<version dir="../../source/version"/>
+	<sqlapi dir="../../source/sqlapi"/>
+	<customDataType dir="../../source/customDataType">
+		<UFDatatypeEnv value="../../datamodel/commonEnv/UFDataType.xml"/>
+	</customDataType>
+	<ftdfield dir="../../source/ftdfield">
+		<FTDEnv value="../../datamodel/envGenerated/FTD.xml"/>
+	</ftdfield>
+	<sysutility dir="../../source/sysutility"/>
+	<sysprobe dir="../../source/sysprobe"/>
+</project>

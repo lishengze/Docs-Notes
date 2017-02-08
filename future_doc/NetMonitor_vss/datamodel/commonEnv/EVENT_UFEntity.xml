@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by wangzhaodong (ORiON) -->
+<!DOCTYPE UFEntityModel SYSTEM "UFEntity.dtd">
+<UFEntityModel>
+	<Entity name="MonitorEntity" title="监控实体" description="监控实体">
+		<Field name="MonitorObject" type="MonitorObject" label="监控对象"/>
+		<Field name="MonitorItem" type="MonitorItem" label="监控指标项"/>
+		<Field name="MonitorTime" type="MonitorTime" label="监控时间"/>
+		<Field name="Time" type="Time" label="时间字符串格式" description=""/>
+		<Field name="ValueType" type="ValueType" label="监控指标的值类型" description="监控指标的值类型"/>
+		<Field name="AttrValue" type="AttrValue" label="监控指标的具体值" description="以字符串表示"/>
+		<!--
+		<Field name="MonitorValue" type="MonitorValue" label="监控指标值"/>
+		-->
+	</Entity>
+	<Entity name="EventEntity" title="事件实体" description="事件实体">
+		<Field name="MonitorTime" type="MonitorTime" label="监控时间"/>
+		<Field name="EventName" type="MonitorItem" label="事件名"/>
+		<Field name="MonitorObject" type="MonitorObject" label="监控对象ID"/>
+		<Field name="EventDes" type="TypeDescription" label="事件描述" description="事件描述"/>
+		<Field name="ProcessFlag" type="TypeProcessFlag" label="事件持续标记" description="事件持续标记,C表示有后续描述,L表示描述结束"/>		
+		<Field name="Time" type="Time" label="时间字符串格式" description="时间字符串格式"/>
+		<Field name="WarningLevel" type="TypeWarningLevel" label="日志事件级别" description="日志事件级别"/>
+	</Entity>
+</UFEntityModel>

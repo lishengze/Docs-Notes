@@ -1,0 +1,140 @@
+表组说明：
+SystemConfig：应用系统内部配置信息
+CurrStatus：当前有效的交易所、结算组和合约状态
+BaseExchange：交易所最根本的信息，这些信息只能加入，不能删除和修改，对其中信息的修改必须通过开发来完成
+BaseSG：结算组最根本的信息，所有表包含SettlementGroupRef作为主码，这些信息只能加入，不能删除和修改，对其中信息的修改必须通过开发来完成
+Rule：当前有效的规则，这些规则主要用户合约创建之时，可以修改，不保存历史记录
+SGSnapShot：说明结算组快照的信息，所有表包含SettlementRef作为主码，将用来生成两个库：CurrSGSnapShot和HistorySGSnapShot
+SGOperation：说明结算组操作的信息，所有表包含SettlementRef作为主码，将用来生成两个库：CurrSGOperation和HistorySGOperation
+	SGSnapShot[n+1]=Settlement(SGSnapShot[n],SGOperation[n+1])
+StaticExchangeConfig：交易所的静态配置，可以修改，不保存历史记录
+StaticSGConfig：结算组的静态配置，所有表包含SettlementGroupRef作为主码，可以修改，不保存历史记录
+DynExchangeConfig：交易所的动态配置，可以修改，不保存历史记录
+DynSGConfig：结算组的动态配置，所有表包含SettlementGroupRef作为主码，可以修改，不保存历史记录
+	动态配置是指每天的配置是不同的，静态配置是只有在经过人工修改后才会不同的
+CurrDynExchangeConfig：当前的交易所动态配置，与DynExchangeConfig中的表一一对应，每日丢弃
+CurrDynSGConfig：当前的结算组动态配置，所有表包含SettlementGroupRef作为主码，与DynSGConfig中的表一一对应，每日丢弃
+	在没有经过修改的情况下：
+		curDynExchangeConfig=DynExchangeConfig[today]
+		curDynSGConfig=DynSGConfig[today]
+Participant：会员客户信息，基本信息只能增加，附加信息可以修改，保存历史记录
+History：记录历史上发生的大事的编号
+Log：记录发生事情的日志，将用来生成两个库CurrLog和HistoryLog
+
+运行说明：
+在初始状态下(交易所处在非活跃状态)，所有的当前表组为空，包括
+	CurrStatus
+	CurrDynExchangeConfig
+	CurrDynSGConfig
+	CurrSGSnapShot
+	CurrSGOperation
+	CurrLog
+当发生切换交易日操作时，需要做如下工作：
+	锁定全部数据库
+	将DynExchangeConfig中的配置信息，根据当前日期，复制到CurrDynExchangeConfig
+		将ExchangeProperty中所有ExchangeLifePhase=活跃的进行复制
+		将SettlementGroupProperty中所有SettlementGroupLifePhase=活跃的进行复制
+	根据CurrDynExchangeConfig中的信息，初始化CurrStatus中的交易所和结算组信息
+		所有ExchangeProperty中的交易所，在ExchangeStatus中产生一条记录，记录交易日期，并说明其为活跃状态
+		所有SettlementGroupProperty中的结算组，在SettlementGroupStatus中产生一条记录，设为初始化状态，并为每个结算组分配一个新的结算编号
+	在History中进行记录
+		将上述日期和结算会话编号添加到HistoryTradingDay和HistorySettlementSession
+	执行交易引擎的日初操作
+		发出切换交易日信息
+		同步内存数据库，包括：
+			BaseExchange中的所有表（当前有意义的记录）
+			StaticExchangeConfig的所有表（当前有意义的记录）
+			CurrDynExchangeConfig的所有表（当前有意义的记录）
+			Participant的所有基本信息（当前有意义的记录）
+	解锁全部数据库
+当一个结算组从初始化切换至交易准备状态时，需要做如下工作：
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录的状态改为交易准备
+	将DynSGConfig中的配置信息，根据当前日期，复制到CurrDynSGConfig
+		ProductGroupProperty、ProductProperty和InstrumentProperty中所有活跃的，进行复制
+		其他属性，根据当前日期进行计算，得到当前的属性值，复制到到对应的表
+	初始化CurrSGSnapShot
+		根据History中的HistorySettlementSession，找到上一结算编号
+		根据上一结算编号，从HistorySGSnapShot中选出数据，倒入CurrSGSnapShot
+	执行交易引擎的初始化结算组操作
+		发出初始化结算组信息
+		同步内存数据库，包括：
+			BaseSG中的所有表（当前有意义的记录）
+			StaticSGConfig的所有表（当前有意义的记录）
+			CurrDynSGConfig的所有表（当前有意义的记录）
+			CurrSGSnapShot中的所有表（当前有意义的记录）
+			CurrSGOperation中的所有表（当前有意义的记录）
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录的状态改为交易准备完成
+当一个结算组从交易准备状态切换至交易状态，需要做如下工作：
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录的状态改为交易状态
+		根据DynSGConfig中的InstrumentProperty为活跃的记录，在InstrumentStatus中添加相应记录，设为非交易状态
+	通知交易引擎
+		发出结算组开始交易指令，对合约交易状态的控制转给交易控制终端，由其来同步InstrumentStatus
+当一个结算组从交易状态切换至交易完成状态，需要做如下工作：
+	检查交易状态
+		如果本结算组所属的合约对应的InstrumentStatus不全部是非交易状态，则失败返回
+	通知交易引擎
+		发出结算组交易完成指令
+		交易引擎需要将所有没有写完的结果写入CurrSGOperation
+		交易引擎需要清除在交易准备阶段载入的以及交易过程中产生的所有本结算组数据
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录改为交易完成状态
+		将本结算组所属的所有合约对应的InstrumentStatus记录清除
+当一个结算组从初始化切换至结算准备状态时，需要做如下工作：
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录的状态改为结算准备
+	将DynSGConfig中的配置信息，根据当前日期，复制到CurrDynSGConfig
+		ProductGroupProperty、ProductProperty和InstrumentProperty中所有活跃的，进行复制
+		其他属性，根据当前日期进行计算，得到当前的属性值，复制到到对应的表
+当一个结算组从交易完成状态切换至结算准备状态时，需要做如下工作：
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录的状态改为结算准备
+当一个结算组从结算准备状态切换至结算准备完成状态时，需要做如下工作：
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录的状态改为结算准备完成
+	设置结算规则
+		将CurrDynSGConfig中的CurrMarginRate和CurrMarginRateDetail复制到SGOperation中的MarginRate和MarginRateDetail
+当一个结算组从结算准备完成状态切换至结算状态时，需要做如下工作：
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录的状态改为结算状态
+	初始化CurrSGSnapShot
+		清除CurrSGSnapShot中的所有本结算组信息
+		根据History中的HistorySettlementSession，找到上一结算编号
+		根据上一结算编号，从HistorySGSnapShot中选出数据，倒入CurrSGSnapShot
+	进行结算
+		根据CurrSGSnapShot和CurrSGOperation，完成结算工作，结果仍然在CurrSGSnapShot
+		重新设置CurrSGSnapShot中所有的结算编号
+		将CurrSGSnapShot中的信息加入到HistorySGSnapShot中
+		将CurrSGOperation中的信息加入到HistorySGOperation中
+	修改CurrStatus中的信息
+		将SettlementGroupStatus中的相应记录的状态改为结算完成状态
+当一个结算组从结算完成状态切换至初始状态时，需要完成如下工作：
+	清理环境
+		清除CurrDynSGConfig、CurrSGSnapShot和CurrSGOperation中的所有数据
+	更新CurrStatus
+		为本结算组申请一个新的结算编号
+		更新SettlementGroupStatus中的相应记录
+当交易所切换至不活跃状态时，需要完成如下工作：
+	锁定全部数据库
+	检查结算状态
+		如果存在结算组的状态不是结算完成状态，则失败返回
+	通知交易引擎
+		向交易引擎发出日终指令，交易引擎将清除切换交易日时读入的所有信息
+	日终处理
+		生成合约
+		重新计算所有活跃合约的未到期的各种日期
+	清理日志
+		将CurrLog中的内容复制到HistoryLog
+		清除CurrLog
+	清理环境
+		清除CurrDynExchangeConfig
+	更新CurrStatus
+		删除CurrStatus中的所有数据
+	解锁全部数据库
+
+有待调整的内容:
+	核对现有结算业务，增加质押等业务
+	核对本次期权业务，增加主交易商义务等内容
+	期权保证金调整字段应该放在哪里？

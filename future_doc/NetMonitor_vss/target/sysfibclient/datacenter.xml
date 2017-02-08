@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="GB2312"?>
+<Configuration>
+	<DataCenters>
+		<DataCenter name="PuDian" role="Main" id="1" sysname="TRADE2.PuDian" alias="TRADE-PD" available="1" comment="浦电数据中心">
+			<app name="arb" item="1" args="0"/>
+			<app name="compositor" item="1" args="1"/>
+			<app name="compositor" item="2" args="2"/>
+			<app name="tkernel" item="1" args="1"/>
+			<app name="tkernel" item="2" args="2"/>
+			<app name="qkernel" item="1" args="1"/>
+			<app name="qkernel" item="2" args="2"/>
+			<app name="mdkernel" item="3" args="3"/>
+			<app name="front" item="3" args="3"/>
+			<app name="tinit" item="1" args="0"/>
+			<app name="tdbsync" item="1" args="1"/>
+			<app name="tmdb" item="1" args="0"/>
+			<app name="fens" item="1" args="1"/>
+			<app name="fibproxy" item="1" args="1"/>
+			<app name="mdkernel" item="1" args="1"/>
+			<app name="mdkernel" item="2" args="2"/>
+			<app name="mdkernel" item="4" args="4"/>
+			<app name="mdkernel" item="5" args="5"/>
+			<app name="mdkernel" item="6" args="6"/>
+			<app name="mdkernel" item="7" args="7"/>
+			<app name="mdkernel" item="8" args="8"/>
+			<app name="front" item="1" args="1"/>
+			<app name="front" item="2" args="2"/>
+			<app name="front" item="3" args="3"/>
+			<app name="front" item="4" args="4"/>
+			<app name="front" item="5" args="5"/>
+			<app name="front" item="6" args="6"/>
+			<app name="front" item="7" args="7"/>
+			<app name="front" item="8" args="8"/>
+			<app name="front" item="9" args="9"/>
+			<app name="front" item="10" args="10"/>
+			<app name="ofpmd" item="1" args="0"/>
+		</DataCenter>
+		<DataCenter name="ZhangJ" role="RBackup" id="2" sysname="TRADE2.ZhangJ" alias="TRADE-ZJ" available="1" comment="张江数据中心">
+			<app name="tkernel" item="1" args="1"/>
+			<app name="tkernel" item="2" args="2"/>
+			<app name="qkernel" item="1" args="1"/>
+			<app name="qkernel" item="2" args="2"/>
+			<app name="mdkernel" item="3" args="3"/>
+			<app name="front" item="3" args="13"/>
+			<app name="fens" item="1" args="1"/>
+			<app name="fibproxy" item="1" args="1"/>
+			<app name="fibclient" item="1" args="1"/>
+			<app name="fiblogger" item="1" args="1"/>
+			<app name="mdkernel" item="1" args="1"/>
+			<app name="mdkernel" item="2" args="2"/>
+			<app name="mdkernel" item="4" args="4"/>
+			<app name="mdkernel" item="5" args="5"/>
+			<app name="mdkernel" item="6" args="6"/>
+			<app name="mdkernel" item="7" args="7"/>
+			<app name="mdkernel" item="8" args="8"/>
+			<app name="front" item="1" args="41"/>
+			<app name="front" item="2" args="42"/>
+			<app name="front" item="3" args="41"/>
+			<app name="front" item="4" args="44"/>
+			<app name="front" item="5" args="45"/>
+			<app name="front" item="6" args="46"/>
+			<app name="front" item="7" args="47"/>
+			<app name="front" item="8" args="48"/>
+			<app name="front" item="9" args="49"/>
+			<app name="front" item="10" args="50"/>
+		</DataCenter>
+		<DataCenter name="BeiJing" role="Backup" id="3" sysname="TRADE2.BeiJing" alias="TRADE-BJ" available="1" comment="北京数据中心">
+			<app name="tkernel" item="1" args="1"/>
+			<app name="tkernel" item="2" args="2"/>
+			<app name="qkernel" item="1" args="1"/>
+			<app name="qkernel" item="2" args="2"/>
+			<app name="mdkernel" item="3" args="3"/>
+			<app name="front" item="3" args="23"/>
+			<app name="fens" item="1" args="1"/>
+			<app name="fibproxy" item="1" args="1"/>
+			<app name="fibclient" item="1" args="1"/>
+			<app name="fiblogger" item="1" args="1"/>
+			<app name="mdkernel" item="1" args="1"/>
+			<app name="mdkernel" item="2" args="2"/>
+			<app name="mdkernel" item="4" args="4"/>
+			<app name="mdkernel" item="5" args="5"/>
+			<app name="mdkernel" item="6" args="6"/>
+			<app name="mdkernel" item="7" args="7"/>
+			<app name="mdkernel" item="8" args="8"/>
+			<app name="front" item="1" args="21"/>
+			<app name="front" item="2" args="22"/>
+			<app name="front" item="4" args="24"/>
+			<app name="front" item="5" args="25"/>
+			<app name="front" item="6" args="26"/>
+			<app name="front" item="7" args="27"/>
+			<app name="front" item="8" args="28"/>
+		</DataCenter>
+	</DataCenters>
+	<MemberLinks>
+		<object oid="TRADE2.PuDian.app.Link.1" name="交易厅">
+			<item left="20.1.0.0" right="20.1.255.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.2" name="浦电">
+			<item left="10.32.0.0" right="10.36.247.255"/>
+			<item left="10.36.250.0" right="10.47.255.255"/>
+			<item left="192.168.106.0" right="192.168.106.255"/>
+			<item left="192.168.96.0" right="192.168.96.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.3" name="张江">
+			<item left="10.64.0.0" right="10.70.247.255"/>
+			<item left="10.70.250.0" right="10.79.255.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.4" name="北京">
+			<item left="10.128.0.0" right="10.134.247.255"/>
+			<item left="10.134.250.0" right="10.143.255.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.5" name="中金">
+			<item left="10.48.0.0" right="10.63.255.255"/>
+			<item left="10.112.0.0" right="10.127.255.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.6" name="三所">
+			<item left="10.0.0.0" right="10.11.255.255"/>
+			<item left="10.16.0.0" right="10.31.255.255"/>
+			<item left="10.96.0.0" right="10.111.255.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.7" name="拨号">
+			<item left="10.36.248.0" right="10.36.249.255"/>
+			<item left="10.70.248.0" right="10.70.249.255"/>
+			<item left="10.134.248.0" right="10.134.249.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.0" name="其它"/>
+	</MemberLinks>
+	<TuoGuanMemberLinks>
+		<object oid="TRADE2.PuDian.app.Link.2" name="浦电" type="SFIT">
+			<item left="10.36.0.0" right="10.36.32.0"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.2" name="浦电" type="DFITC">
+			<item left="10.36.32.0" right="10.36.35.255"/>
+			<item left="10.36.36.0" right="10.36.39.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.3" name="张江" type="SFIT">
+			<item left="10.70.0.0" right="10.70.32.0"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.3" name="张江" type="DFITC">
+			<item left="10.70.32.0 " right="10.70.35.255"/>
+			<item left="10.70.36.0" right="10.70.39.255"/>
+		</object>
+		<object oid="TRADE2.PuDian.app.Link.6" name="三所" type="DFITC">
+			<item left="10.7.0.0" right="10.7.255.255"/>
+			<item left="10.2.6.0" right="10.2.6.255"/>
+			<item left="10.2.7.0" right="10.2.7.255"/>
+			<item left="10.3.96.0" right="10.3.127.255"/>
+			<item left="10.3.224.0" right="10.3.255.255"/>
+		</object>
+	</TuoGuanMemberLinks>
+	<!-- 会员/席位登陆告警 -->
+	<LoginWarningEvents objectid="TRADE.PuDian.app.tkernel.1">
+		<!--
+		 定义：在interval秒之内若某会员/席位的登陆次数超过threshold则发送eventname类型的告警
+		 登陆次数会在交易日切换时重置，因此将interval设置为大于24小时，即可表示整个交易日的登陆次数
+		 warningap制定了两次告警之间的最小时间间隔
+		 -->
+		 <!-- user/participant表示是否针对席位/会员启用告警功能，默认值是启用 -->
+		<event eventname="TotalLoginWarning" user="1" participant="0" interval="86400" threshold="10" warninggap="60"/>
+		<event eventname="IntervalLoginWarning" user="1" participant="1" interval="120" threshold="5" warninggap="60"/>
+	</LoginWarningEvents>
+</Configuration>

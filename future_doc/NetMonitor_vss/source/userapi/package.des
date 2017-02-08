@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE packageDefine SYSTEM "C:\wsh\package.dtd">
+<packageDefine name="userapi" version="1" type="cpp" includedir="." platform="all">
+	<parameter>
+		<useParameter name="FTDEnv"/>
+	</parameter>
+	<depend>
+		<package name="ftdprotocol" version="1"/>
+		<package name="sslnetwork" version="1"/>
+		<package name="UFCopy" version="1"/>
+	</depend>
+	<cppfile>
+		<file name="FtdcUserApiImpl.cpp"/>
+		<file name="FtdcUserApiImplBase.cpp"/>
+	</cppfile>
+	<headfile>
+		<file name="FtdcUserApiDataType.h"/>
+		<file name="FtdcUserApiStruct.h"/>
+		<file name="FtdcUserApi.h"/>
+		<file name="FtdcUserApiImpl.h"/>
+		<file name="FtdcUserApiImplBase.h"/>
+		<file name="FtdcUserApiMacro.h"/>
+	</headfile>
+	<command>
+		<pump>
+			<target type="file" value="FtdcUserApiDataType.h"/>
+			<template type="file" value="FtdcUserApiDataType.h.tpl"/>
+			<env type="parameter" value="FTDEnv"/>
+		</pump>
+		<pump>
+			<target type="file" value="FtdcUserApiStruct.h"/>
+			<template type="file" value="FtdcUserApiStruct.h.tpl"/>
+			<env type="parameter" value="FTDEnv"/>
+		</pump>
+		<pump>
+			<target type="file" value="FtdcUserApi.h"/>
+			<template type="file" value="FtdcUserApi.h.tpl"/>
+			<env type="parameter" value="FTDEnv"/>
+		</pump>
+		<pump>
+			<target type="file" value="FtdcUserApiImpl.h"/>
+			<template type="file" value="FtdcUserApiImpl.h.tpl"/>
+			<env type="parameter" value="FTDEnv"/>
+		</pump>
+		<pump>
+			<target type="file" value="FtdcUserApiImpl.cpp"/>
+			<template type="file" value="FtdcUserApiImpl.cpp.tpl"/>
+			<env type="parameter" value="FTDEnv"/>
+		</pump>
+		<pump>
+			<target type="file" value="FtdcUserApiMacro.h"/>
+			<template type="file" value="FtdcUserApiMacro.h.tpl"/>
+			<env type="parameter" value="FTDEnv"/>
+		</pump>
+	</command>
+</packageDefine>

@@ -1,0 +1,153 @@
+<?xml version="" encoding=""?>
+<!DOCTYPE DeployConfig SYSTEM "">
+<DeployConfig>
+	<Datacenters comment="数据中心标示符，大小写不敏感">
+		<PuDian>
+			<Description name="PuDian"/>
+			<Description name="PD"/>
+		</PuDian>
+		<ZhangJiang>
+			<Description name="ZhangJiang"/>
+			<Description name="ZhangJ"/>
+			<Description name="ZJ"/>
+		</ZhangJiang>
+		<BeiJing>
+			<Description name="BeiJing"/>
+			<Description name="BJ"/>
+		</BeiJing>
+	</Datacenters>
+	<Services>
+		<snmpmanager comment="采集管理服务通讯连接关系">
+			<Service id="1" center="PuDian" role="Master">
+				<Object type="syseventcounter" address="tcp://172.1.128.115:18881"/>
+				<Object type="synconfig" role="Master"/>
+			</Service>
+			<Service id="2" center="PuDian" role="Slave">
+				<Object type="syseventcounter" address="tcp://172.1.128.116:18881"/>
+				<Object type="synconfig" role="Master"/>
+			</Service>
+			<Service id="3" center="ZhangJ" role="Master">
+				<Object type="syseventcounter" address="tcp://172.1.128.115:18882"/>
+				<Object type="synconfig" role="Master"/>
+			</Service>
+			<Service id="4" center="ZhangJ" role="Slave">
+				<Object type="syseventcounter" address="tcp://172.1.128.116:18882"/>
+				<Object type="synconfig" role="Master"/>
+			</Service>
+			<Service id="5" center="BeiJing" role="Master">
+				<Object type="syseventcounter" address="tcp://172.1.128.115:18883"/>
+				<Object type="synconfig" role="Master"/>
+			</Service>
+			<Service id="6" center="BeiJing" role="Slave">
+				<Object type="syseventcounter" address="tcp://172.1.128.116:18883"/>
+				<Object type="synconfig" role="Master"/>
+			</Service>
+		</snmpmanager>
+		<synconfig comment="配置同步服务通讯连接关系">
+			<Attribute>
+				<snmptimeout timeout="5" comment="用于决定切换SNMP主从连接的超时时间，单位为秒"/>
+			</Attribute>
+			<Service id="1" center="ZhangJ" role="Master">
+				<Object type="sysfront" address="tcp://172.1.128.144:18850"/>
+				<Object type="syseventcounter" address="tcp://172.1.128.144:18851"/>
+				<Object type="snmpmanager" address="tcp://172.1.128.144:18852"/>
+				<Object type="synconfig" address="tcp://172.1.128.144:18855"/>
+				<Object type="Database" center="ZhangJ"/>
+			</Service>
+		</synconfig>
+		<sysfront comment="前置服务端口">
+			<Service id="1" center="ZhangJ">
+				<Object type="client" address="tcp://172.1.128.144:18843"/>
+				<Object type="synconfig" role="Master"/>
+				<Object type="syseventcounter" center="ZhangJ"/>
+				<Object type="sysquery" center="ZhangJ"/>
+				<Object type="sysslog" center="ZhangJ"/>
+				<Object type="sysfibclient" center="ZhangJ"/>
+			</Service>
+			<Service id="2" center="ZhangJ">
+				<Object type="client" address="tcp://172.1.128.144:18844"/>
+				<Object type="synconfig" role="Master"/>
+				<Object type="syseventcounter" center="ZhangJ"/>
+				<Object type="sysquery" center="ZhangJ"/>
+				<Object type="sysslog" center="ZhangJ"/>
+				<Object type="sysfibclient" center="ZhangJ"/>
+			</Service>
+			<Service id="3" center="ZhangJ">
+				<Object type="client" address="tcp://192.168.1.110:12345"/>
+				<Object type="synconfig" role="Master"/>
+				<Object type="syseventcounter" center="ZhangJ"/>
+				<Object type="sysquery" center="ZhangJ"/>
+				<Object type="sysslog" center="ZhangJ"/>
+				<Object type="sysfibclient" center="ZhangJ"/>
+			</Service>
+		</sysfront>
+		<sysquery comment="查询服务通讯连接关系">
+			<Service id="1" center="ZhangJ">
+				<Object type="sysfront" address="tcp://172.1.128.144:18832"/>
+				<Object type="syseventcounter" center="ZhangJ"/>
+				<Object type="Database" center="ZhangJ"/>
+			</Service>
+		</sysquery>
+		<sysslog comment="Slog">
+			<Service id="1" center="ZhangJ">
+				<Object type="sysfront" address="tcp://172.1.128.144:18835"/>
+				<Object type="syseventcounter" center="ZhangJ"/>
+			</Service>
+		</sysslog>
+		<syseventcounter comment="事件分析服务通讯连接关系">
+			<Service id="1" center="ZhangJ">
+				<Object type="sysfront" address="tcp://172.1.128.144:18822"/>
+				<Object type="sysquery" address="tcp://172.1.128.144:18822"/>
+				<Object type="sysslog" address="tcp://172.1.128.144:18822"/>
+				<Object type="sysfibclient" address="tcp://172.1.128.144:18817"/>
+				<Object type="sysagent" address="tcp://172.1.128.144:18817"/>
+				<Object type="probeserver" address="tcp://172.1.128.144:18827"/>
+				<Object type="synconfig" role="Master"/>
+			</Service>
+		</syseventcounter>
+		<sysagent comment="代理服务连接关系">
+			<Service id="1" center="ZhangJ">
+				<Object type="syseventcounter" center="ZhangJ"/>
+			</Service>
+		</sysagent>
+		<sysfibclient comment="业务报单流客户端">
+			<Service id="1" center="ZhangJ">
+				<Object type="sysfront" address="tcp://172.1.128.144:18812"/>
+				<Object type="syseventcounter" center="ZhangJ"/>
+				<Object type="fibproxy1" center="PuDian"/>
+				<Object type="fibproxy2" center="ZhangJ"/>
+				<Object type="fibproxy3" center="BeiJing"/>
+				<Object type="fens1" center="PuDian"/>
+				<Object type="fens2" center="ZhangJ"/>
+				<Object type="fens3" center="BeiJing"/>
+			</Service>
+		</sysfibclient>
+		<fibproxy comment="业务报单流服务端">
+			<Service id="1" center="PuDian">
+				<Object type="sysfibclient" address="tcp://172.1.128.146:10001"/>
+			</Service>
+			<Service id="2" center="ZhangJ">
+				<Object type="sysfibclient" address="tcp://172.1.128.146:10002"/>
+			</Service>
+			<Service id="3" center="BeiJing">
+				<Object type="sysfibclient" address="tcp://172.1.128.146:10003"/>
+			</Service>
+		</fibproxy>
+		<fens comment="报单流服务端">
+			<Service id="1" center="PuDian">
+				<Object type="sysfibclient" address="tcp://172.1.128.146:10004"/>
+			</Service>
+			<Service id="2" center="ZhangJ">
+				<Object type="sysfibclient" address="tcp://172.1.128.146:10005"/>
+			</Service>
+			<Service id="3" center="BeiJing">
+				<Object type="sysfibclient" address="tcp://172.1.128.146:10006"/>
+			</Service>
+		</fens>
+	</Services>
+	<Databases comment="数据库连接信息">
+		<Database id="1" center="PuDian" dbname="MDB" ip="172.1.128.111" port="1521" username="monitor_pd" password="monitor_pd"/>
+		<Database id="2" center="ZhangJ" dbname="MDB" ip="172.1.128.137" port="1521" username="monitor_zj" password="monitor_zj"/>
+		<Database id="3" center="BeiJing" dbname="MDB" ip="172.1.128.137" port="1521" username="monitor_bj" password="monitor_bj"/>
+	</Databases>
+</DeployConfig>
