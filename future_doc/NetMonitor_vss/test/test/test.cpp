@@ -5,7 +5,7 @@
 int htmlTest(const char *pServerIp, int nPort, const char *pServerName, const char *pHtmlUrl, const char *pHtmlValue)
 {
 	int      sSocket;
-	sockaddr_in stSvrAddrIn = {0}; /* �������˵�ַ */
+	sockaddr_in stSvrAddrIn = {0}; /* 服务器端地址 */
 	char        sndBuf[512] = {0};
 	char        rcvBuf[4096] = {0};
 	char        tmpBuf[4096] = {0};
@@ -13,11 +13,11 @@ int htmlTest(const char *pServerIp, int nPort, const char *pServerName, const ch
 	int         num          = 0;
 	int         nRet         = -1;
 
-	/* HTTP ��Ϣ���쿪ʼ�����ǳ���Ĺؼ�֮�� */
+	/* HTTP 消息构造开始，这是程序的关键之处 */
 	sprintf(sndBuf, "GET %s HTTP/1.1\r\nHost: %s\r\n", pHtmlUrl, pServerName);
 	strcat(sndBuf, "Connection: Keep-Alive\r\n");
 	strcat(sndBuf, "\r\n");
-	/* HTTP ��Ϣ������� */
+	/* HTTP 消息构造结束 */
 
 	stSvrAddrIn.sin_family      = AF_INET;
 	stSvrAddrIn.sin_port        = htons(nPort);
@@ -25,7 +25,7 @@ int htmlTest(const char *pServerIp, int nPort, const char *pServerName, const ch
 
 	sSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
-	/* ���� */
+	/* 连接 */
 	nRet = connect(sSocket, (struct sockaddr *)&stSvrAddrIn, sizeof(struct sockaddr));
 	printf("Connect rtn code [%d]\n", nRet);
 	
@@ -41,10 +41,10 @@ int htmlTest(const char *pServerIp, int nPort, const char *pServerName, const ch
 		return -2;
 	}
 
-	/* ����HTTP������Ϣ */
+	/* 发送HTTP请求消息 */
 	send(sSocket, (char*)sndBuf, sizeof(sndBuf), 0);
 	printf("Connect Succeed!\nSnd msg[%s]\n", sndBuf);
-	/* ����HTTP��Ӧ��Ϣ */
+	/* 接收HTTP响应消息 */
 	while(1)
 	{
 		num = recv(sSocket, pRcv, 4096-(pRcv-rcvBuf), 0);
@@ -56,7 +56,7 @@ int htmlTest(const char *pServerIp, int nPort, const char *pServerName, const ch
 #else
 	close(sSocket);
 #endif
-	/* ��ӡ��Ӧ��Ϣ */
+	/* 打印响应消息 */
 	printf("Rcv msg[%s]\n", rcvBuf);
 	strncpy(tmpBuf, rcvBuf, strlen(rcvBuf));
 	pRcv = strstr(tmpBuf, "Content-Type: text/html");
@@ -123,7 +123,7 @@ bool explainUrl(const char *pUrl, string & sDomainName, int & nPort, string & sH
 		return false;
 	}
 	r = strchr(p, ':');
-	if ( r == NULL || r > q ) //url��û�ж˿ڣ�Ĭ��Ϊ80�˿�
+	if ( r == NULL || r > q ) //url中没有端口，默认为80端口
 	{
 		nPort = 80;
 		*q = '\0';
