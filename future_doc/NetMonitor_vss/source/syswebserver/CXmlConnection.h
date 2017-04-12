@@ -1,8 +1,0 @@
-#if !defined(AFX_CXmlConnection_H__88022E6A_66E9_46E0_B66F_8F73B23CDEFA__INCLUDED_)
-#define AFX_CXmlConnection_H__88022E6A_66E9_46E0_B66F_8F73B23CDEFA__INCLUDED_
-
-
-
-
-#endif
-

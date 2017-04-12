@@ -1,1 +1,0 @@
-@attr_monitor_clear

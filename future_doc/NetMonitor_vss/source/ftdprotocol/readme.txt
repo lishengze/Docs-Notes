@@ -1,2 +1,0 @@
-FTDCPackage.cpp
-FTDCPackage.h
